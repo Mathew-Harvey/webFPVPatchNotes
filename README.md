@@ -42,7 +42,7 @@ SIM_DIR=../WebFPVSimulator node tools/shoot/run.js c1
 node tools/ink/panels.js c1
 ```
 
-`run.js c1 p3 p4-a` shoots just those, and `--scale=0.4` shoots small for a first look. The front door's shot needs the site served too (`LANDING_URL`, default http://127.0.0.1:8766/), and the board's is the live board. For a sandbox: `PW_CHROMIUM` names a Chromium, `THREE_DIR` a local copy of three@0.160.0 for a browser that cannot reach the CDN, and `SHOOT_GL=swiftshader` renders without a GPU. The rig needs Playwright (`npm install --prefix tools/survey`) and the ink step needs sharp (`npm install --prefix tools/ink`).
+`run.js c1 p3 p4-a` shoots just those, and `--scale=0.4` shoots small for a first look. The front door's shot needs the site served too (`cd ../landingpage-WebFPVSimulator- && PORT=8766 node scripts/serve.js`, or `LANDING_URL`), and the board's is the live board. For a sandbox: `PW_CHROMIUM` names a Chromium, `THREE_DIR` a local copy of three@0.160.0 for a browser that cannot reach the CDN, and `SHOOT_GL=swiftshader` renders without a GPU. The rig needs Playwright (`npm install --prefix tools/survey`) and the ink step needs sharp (`npm install --prefix tools/ink`).
 
 ## Checks
 
