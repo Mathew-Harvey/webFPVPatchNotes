@@ -1,0 +1,25 @@
+{
+  "id": "p9-c",
+  "treatment": "colour",
+  "from": "p9-c",
+  "world": "builder",
+  "simulator": "/src/trackbuilder/index.html?mode=race",
+  "commit": "3628663",
+  "frame": [
+    1600,
+    900
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 887,
+    "height": 135
+  },
+  "framing": null,
+  "clip": [
+    205,
+    765,
+    887,
+    135
+  ]
+}

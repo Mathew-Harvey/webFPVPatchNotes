@@ -1,0 +1,40 @@
+{
+  "id": "n9",
+  "treatment": "colour",
+  "from": "n9",
+  "world": "yard",
+  "simulator": null,
+  "commit": "3628663",
+  "frame": [
+    850,
+    409
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 850,
+    "height": 409
+  },
+  "framing": {
+    "follow": {
+      "slots": [
+        3,
+        4
+      ],
+      "side": -1,
+      "dist": 11,
+      "up": 2.4,
+      "ahead": 3,
+      "lookAhead": 0.5,
+      "lookUp": 0.7,
+      "fov": 42,
+      "minSlip": 0.35,
+      "near": [
+        -48,
+        -100,
+        9
+      ]
+    }
+  },
+  "clip": null
+}

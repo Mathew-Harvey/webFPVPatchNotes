@@ -20,15 +20,18 @@ const GATE0 = [17.88, 0.88, 15.01];
 /* Where the quad stands for the paper pages: open grass past the first gate. */
 const SPOT = [17.0, 0.11, 11.0];
 
-/* The camera's mount on the five inch, forward and up of the centre, in
- * metres (src/render/lens.js in the simulator). */
-const MOUNT_FORWARD = 0.08;
-const MOUNT_UP = 0.018;
+/* The lens on the five inch, forward and up of the centre, in metres, as
+ * the model is built: the camera block sits at the nose, 0.1 m out. */
+const MOUNT_FORWARD = 0.1;
+const MOUNT_UP = 0.028;
 
 /* The sun for a paper page: high for a quad in the air, so its shadow lies
  * under it; low for one on the ground, so its shadow reaches out of it. */
 const SUN_HIGH = [0.18, 1, 0.3];
 const SUN_LOW = [-0.95, 0.6, 0.55];
+/* Nearly overhead, for a quad in the air whose shadow should lie right
+ * under it, as the front door's does. */
+const SUN_TOP = [0.05, 1, 0.12];
 
 function sub(a, b) { return [a[0] - b[0], a[1] - b[1], a[2] - b[2]]; }
 function add(a, b) { return [a[0] + b[0], a[1] + b[1], a[2] + b[2]]; }
@@ -87,6 +90,9 @@ module.exports = {
     title: { track: 'tracks/json/trk-a75a1bc4.json', airframe: '5inch', ui: 'title' },
     bench: { track: 'tracks/json/trk-a75a1bc4.json', airframe: '5inch', ui: 'fc' },
     room: { preset: 'racegow5-track1', airframe: 'whoop65' },
+    /* Hibari Yard Tandem: the yard with its drift course and two cars in
+     * tandem, the 26 September note. The cars run on the world's clock. */
+    yard: { freestyle: 'showpiece', map: 'built', settings: { map: 'built', freestyleScoring: 'off' } },
     town: { map: 'city', settings: { map: 'city', freestyleScoring: 'off' } },
     builder: { path: '/src/trackbuilder/index.html?mode=race', track: 'tracks/json/trk-a75a1bc4.json', keys: ['v', 'f'], wait: 14000, viewport: [1600, 900] },
     landing: { url: process.env.LANDING_URL || 'http://127.0.0.1:8766/', landing: true, wait: 16000, viewport: [1600, 777] },
@@ -96,8 +102,8 @@ module.exports = {
     /* ---- the cover ---- */
     {
       id: 'cover-hero', page: 'c1-cover', panel: 'hero', world: 'field',
-      paper: { probes: [[17, 11], [17, 13], [15, 9], [19, 10]], sun: SUN_HIGH },
-      make: (L, lib, ctx) => frame([17.0, 0.95, 11.0], ctx, { az: 300, el: 17, fov: 30, fill: 0.44, at: [0.34, 0.12], quad: { pos: [17.0, 0.95, 11.0], yaw: 38, pitch: 22, roll: 26 } })
+      paper: { probes: [[17, 11], [17, 13], [15, 9], [19, 10]], sun: SUN_TOP },
+      make: (L, lib, ctx) => frame([17.0, 0.3, 11.0], ctx, { az: 300, el: 30, fov: 42, fill: 0.44, at: [0.4, -0.3], quad: { pos: [17.0, 0.3, 11.0], yaw: 30, pitch: 14, roll: 24 } })
     },
     {
       id: 'cover-w1', page: 'c1-cover', panel: 'w1', world: 'field',
@@ -116,7 +122,7 @@ module.exports = {
     },
     {
       id: 'p1-b', page: 'c1-p1', panel: 'b', world: 'field',
-      make: (L, lib, ctx) => frame([15.57, 0.52, 29.85], ctx, { az: 214, el: -3, fov: 40, fill: 0.66, at: [0.02, 0.18], quad: { pos: [15.57, 0.52, 29.85], yaw: PAD_YAW, pitch: 6, roll: 0 } })
+      make: (L, lib, ctx) => frame([15.57, 0.34, 29.85], ctx, { az: 206, el: 2, fov: 38, fill: 0.74, at: [0.02, 0.12], quad: { pos: [15.57, 0.34, 29.85], yaw: PAD_YAW, pitch: 4, roll: 0 } })
     },
     {
       id: 'p1-c', page: 'c1-p1', panel: 'c', world: 'field',
@@ -152,7 +158,7 @@ module.exports = {
     {
       id: 'p3', page: 'c1-p3', panel: 'a', world: 'field',
       paper: { probes: [[17.2, 10], [17, 12], [15, 9], [19, 9]], sun: SUN_LOW },
-      make: (L, lib, ctx) => frame([17.2, 0.11, 10.0], ctx, { az: 25, el: 40, fov: 30, fill: 0.36, at: [0.02, -0.34], quad: { pos: [17.2, 0.11, 10.0], yaw: 145, pitch: -3, roll: 0 } })
+      make: (L, lib, ctx) => frame([17.2, 0.11, 10.0], ctx, { az: 25, el: 36, fov: 30, fill: 0.5, at: [0.04, -0.38], quad: { pos: [17.2, 0.11, 10.0], yaw: 145, pitch: -3, roll: 0 } })
     },
 
     /* ---- page 4: the question, on paper ---- */
@@ -164,7 +170,7 @@ module.exports = {
     {
       id: 'p4-b', page: 'c1-p4', panel: 'b', world: 'field',
       paper: { probes: [[17, 11], [17, 13]], sun: SUN_LOW },
-      make: (L, lib, ctx) => frame(SPOT, ctx, { az: 35, el: 22, fov: 32, fill: 0.6, at: [0, -0.42], quad: { pos: SPOT, yaw: 200, pitch: -3, roll: 0 } })
+      make: (L, lib, ctx) => frame(SPOT, ctx, { az: 35, el: 22, fov: 32, fill: 0.36, at: [-0.25, -0.45], quad: { pos: SPOT, yaw: 200, pitch: -3, roll: 0 } })
     },
     {
       id: 'p4-c', page: 'c1-p4', panel: 'c', world: 'field',
@@ -173,7 +179,7 @@ module.exports = {
         /* The lens itself, on its mount at the nose. */
         const fwd = forwardOf(200);
         const mount = add(add(SPOT, mul(fwd, MOUNT_FORWARD)), [0, MOUNT_UP, 0]);
-        return frame(mount, ctx, { az: azOf(fwd) + 18, el: 6, fov: 22, span: 0.06, fill: 0.62, at: [0, 0.05], quad: { pos: SPOT, yaw: 200, pitch: -3, roll: 0 } });
+        return frame(mount, ctx, { az: azOf(fwd) + 5, el: 3, fov: 14, span: 0.13, fill: 0.62, at: [0, 0], quad: { pos: SPOT, yaw: 200, pitch: -3, roll: 0 } });
       }
     },
 
@@ -187,7 +193,7 @@ module.exports = {
     {
       id: 'p5-c', page: 'c1-p5', panel: 'c', world: 'field',
       paper: { probes: [[17, 11], [17, 13]], sun: SUN_HIGH },
-      make: (L, lib, ctx) => frame([17.0, 2.6, 11.0], ctx, { az: 160, el: -36, fov: 44, fill: 0.32, at: [0.22, 0.3], quad: { pos: [17.0, 2.6, 11.0], yaw: 10, pitch: -12, roll: 6 } })
+      make: (L, lib, ctx) => frame([17.0, 2.6, 11.0], ctx, { az: 160, el: -38, fov: 44, fill: 0.34, at: [0.36, 0.42], quad: { pos: [17.0, 2.6, 11.0], yaw: 10, pitch: -12, roll: 6 } })
     },
 
     /* ---- page 6: a project ---- */
@@ -199,9 +205,9 @@ module.exports = {
     {
       id: 'p6-b', page: 'c1-p6', panel: 'b', world: 'field',
       make: (L, lib, ctx) => {
-        const q = [13.0, 4.2, 4.0];
-        const yaw = yawToward(q, [-6, 0, -26]);
-        return frame(q, ctx, { az: yaw + 180 + 28, el: 22, fov: 58, fill: 0.15, at: [0.12, 0.38], quad: { pos: q, yaw, pitch: 14, roll: -14 } });
+        const q = [14.5, 5.2, 7.0];
+        const yaw = yawToward(q, [4, 0, -14]);
+        return frame(q, ctx, { az: azOf(forwardOf(yaw)) + 180 + 26, el: 22, fov: 60, fill: 0.36, at: [-0.06, 0.26], quad: { pos: q, yaw, pitch: 26, roll: -20 } });
       }
     },
 
@@ -226,17 +232,28 @@ module.exports = {
     /* ---- page 9: their game ---- */
     { id: 'p9-a', page: 'c1-p9', panel: 'a', world: 'builder', viewport: [1600, 900], clip: [560, 140, 680, 576] },
     { id: 'p9-b', page: 'c1-p9', panel: 'b', world: 'builder', viewport: [1600, 900], clip: [8, 140, 1240, 480] },
-    { id: 'p9-c', page: 'c1-p9', panel: 'c', world: 'builder', viewport: [1600, 900], clip: [205, 770, 1030, 158] },
+    { id: 'p9-c', page: 'c1-p9', panel: 'c', world: 'builder', viewport: [1600, 900], clip: [205, 765, 887, 135] },
 
     /* ---- page 10: their game, flown ---- */
-    { id: 'p10-a', page: 'c1-p10', panel: 'a', world: 'field', make: (L) => fpv(L, 55.4 - 3.2, { ahead: 4, fov: 100 }) },
+    {
+      /* Over the dive gate, the lens pointed down through it at the grass:
+       * the gate lies nearly flat, pitched 72 degrees, 2.4 m up. */
+      id: 'p10-a', page: 'c1-p10', panel: 'a', world: 'field',
+      make: (L) => {
+        const g = L.at(118.5);
+        const back = L.frame(116).fwd;
+        return { cam: add(sub(g, mul(back, 2.2)), [0, 2.1, 0]), look: add(g, add(mul(back, 1.2), [0, -1.6, 0])), fov: 100, roll: 8, quad: null };
+      }
+    },
     {
       id: 'p10-b', page: 'c1-p10', panel: 'b', world: 'field',
-      make: (L, lib, ctx) => {
-        const d = 118.8;
-        const f = L.frame(d);
+      make: (L, lib) => {
+        /* The double stack, flown through its upper opening. */
+        const f = L.frame(226.5);
         const q = f.p;
-        return frame(q, ctx, { az: azOf(f.right) + 30, el: 4, fov: 46, fill: 0.2, at: [0, -0.1], quad: { pos: q, yaw: lib.yawFor(f.fwd), pitch: -30, roll: 0 } });
+        const stack = [-5.68, 2.05, -32.07];
+        const cam = around([stack[0], 2.5, stack[2]], 4.6, azOf(f.right) + 36, 4);
+        return { cam, look: [stack[0], 2.5, stack[2]], fov: 56, quad: { pos: q, yaw: lib.yawFor(f.fwd), pitch: 18, roll: 0 } };
       }
     },
     {
@@ -247,15 +264,24 @@ module.exports = {
     /* ---- page 11: the feel ---- */
     {
       id: 'p11-a', page: 'c1-p11', panel: 'a', world: 'room',
-      make: (L, lib, ctx) => frame([-1.9, 1.25, 1.0], ctx, { az: 140, el: 18, fov: 54, fill: 0.13, at: [-0.22, -0.08], quad: { pos: [-1.9, 1.25, 1.0], yaw: -90, pitch: 25, roll: 12 } })
+      /* The room from its corner, the whoop close in front of the lens on
+       * its way to the lit start gate. */
+      make: () => {
+        const cam = [-7.6, 2.7, 4.9];
+        const dir = norm(sub([0.2, 1.0, -0.8], cam));
+        const right = norm(cross(dir, [0, 1, 0]));
+        const q = add(add(cam, mul(dir, 1.0)), add(mul(right, -0.34), [0, -0.2, 0]));
+        return { cam, look: [0.2, 1.0, -0.8], fov: 62, quad: { pos: q, yaw: yawToward(q, [-2.52, 1.22, 1.11]), pitch: 16, roll: -10 } };
+      }
     },
     {
       id: 'p11-b', page: 'c1-p11', panel: 'b', world: 'room',
-      make: (L, lib, ctx) => frame([-1.0, 1.35, 0.6], ctx, { az: 150, el: 24, fov: 36, fill: 0.56, at: [0.04, -0.06], quad: { pos: [-1.0, 1.35, 0.6], yaw: -80, pitch: 18, roll: 4 } })
+      /* Short of the start gate, its lit face behind the whoop. */
+      make: (L, lib, ctx) => frame([-3.6, 1.3, 2.6], ctx, { az: 324, el: 8, fov: 36, fill: 0.5, at: [0.16, -0.42], quad: { pos: [-3.6, 1.3, 2.6], yaw: 40, pitch: 12, roll: -8 } })
     },
     {
       id: 'p11-c', page: 'c1-p11', panel: 'c', world: 'room',
-      make: () => ({ cam: [0.0, 1.25, -0.3], look: [2.54, 1.22, -1.42], fov: 96, quad: null })
+      make: () => ({ cam: [-5.1, 1.3, 1.11], look: [-2.52, 1.22, 1.11], fov: 92, quad: null })
     },
 
     /* ---- page 12: the testers ---- */
@@ -278,7 +304,7 @@ module.exports = {
     {
       id: 'n1', page: 'c1-p14', panel: 'n1', world: 'field',
       paper: { probes: [[17, 11], [17, 17], [17, 5], [20, 11]], sun: SUN_LOW },
-      make: (L, lib, ctx) => frame(SPOT, ctx, { az: 20, el: 8, fov: 24, fill: 0.15, at: [0.2, -0.32], quad: { pos: SPOT, yaw: 200, pitch: -3, roll: 0 } })
+      make: (L, lib, ctx) => frame(SPOT, ctx, { az: 20, el: 12, fov: 24, fill: 0.28, at: [0.5, 0.3], quad: { pos: SPOT, yaw: 200, pitch: -3, roll: 0 } })
     },
     { id: 'n2', page: 'c1-p14', panel: 'n2', world: 'builder', viewport: [1600, 900], clip: [600, 300, 640, 311] },
     { id: 'n3', page: 'c1-p14', panel: 'n3', world: 'board', viewport: [1600, 777] },
@@ -302,8 +328,17 @@ module.exports = {
       }
     },
     {
+      /* The tandem in the north west corner, the clipping zone, both cars
+       * sliding: the camera rides beside the pair. */
+      id: 'n9', page: 'c1-p14', panel: 'n9', world: 'yard',
+      follow: { slots: [3, 4], side: -1, dist: 11, up: 2.4, ahead: 3, lookAhead: 0.5, lookUp: 0.7, fov: 42, minSlip: 0.35, near: [-48, -100, 9] }
+    },
+    {
       id: 'n10', page: 'c1-p14', panel: 'n10', world: 'field',
-      make: (L, lib, ctx) => frame([17.88, 2.75, 15.55], ctx, { az: 35, el: 2, fov: 40, fill: 0.2, at: [0.12, 0.3], quad: { pos: [17.88, 2.75, 15.55], yaw: -3.3, pitch: 0, roll: 180 } })
+      /* Over the top of a power loop: inverted above the first gate, the
+       * nose coming back down, seen from low and in front so the quad is
+       * not edge on. */
+      make: () => ({ cam: around([17.86, 2.5, 15.2], 2.4, 24, -9), look: [17.86, 2.5, 15.2], fov: 46, quad: { pos: [17.8, 3.02, 15.35], yaw: -3.3, pitch: 40, roll: 180 } })
     },
 
     /* ---- page 15: next ---- */

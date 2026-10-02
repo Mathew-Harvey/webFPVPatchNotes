@@ -1,0 +1,33 @@
+{
+  "id": "n6",
+  "treatment": "colour",
+  "from": "n6",
+  "world": "town",
+  "simulator": null,
+  "commit": "3628663",
+  "frame": [
+    850,
+    409
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 850,
+    "height": 409
+  },
+  "framing": {
+    "cam": [
+      21.3,
+      19,
+      24.16
+    ],
+    "look": [
+      19.6,
+      17.9,
+      34
+    ],
+    "fov": 52,
+    "quad": null
+  },
+  "clip": null
+}

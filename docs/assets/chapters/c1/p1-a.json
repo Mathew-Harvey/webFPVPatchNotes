@@ -1,0 +1,33 @@
+{
+  "id": "p1-a",
+  "treatment": "colour",
+  "from": "p1-a",
+  "world": "field",
+  "simulator": null,
+  "commit": "3628663",
+  "frame": [
+    1872,
+    791
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1872,
+    "height": 791
+  },
+  "framing": {
+    "cam": [
+      15.57,
+      0.42,
+      29.5
+    ],
+    "look": [
+      17.88,
+      1,
+      15
+    ],
+    "fov": 92,
+    "quad": null
+  },
+  "clip": null
+}

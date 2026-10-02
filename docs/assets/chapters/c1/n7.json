@@ -1,0 +1,33 @@
+{
+  "id": "n7",
+  "treatment": "colour",
+  "from": "n7",
+  "world": "room",
+  "simulator": null,
+  "commit": "3628663",
+  "frame": [
+    850,
+    409
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 850,
+    "height": 409
+  },
+  "framing": {
+    "cam": [
+      -4.6,
+      3.1,
+      4
+    ],
+    "look": [
+      0.8,
+      1,
+      -1.2
+    ],
+    "fov": 60,
+    "quad": null
+  },
+  "clip": null
+}

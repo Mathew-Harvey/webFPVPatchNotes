@@ -1,184 +1,159 @@
 /*
- * Open the book in Chrome and walk it like a reader.
- * node tools/check/read.js
+ * Open the book in Chromium and read it the way a reader does.
+ *
+ *   node tools/check/read.js
+ *
+ * On a desk (1440 by 900, spreads) and on a phone (390 by 844, one page at
+ * a time): walk every view with the arrow keys, wait for its pictures, and
+ * fail on a picture that did not load, a page error, a page wider than the
+ * window, or a link out that is not the simulator. Then the contents, the
+ * text view, a drag and a swipe. Screenshots of every view go to OUT
+ * (default: the system temp folder, webfpv-book), for a person to look at.
+ *
+ * Playwright comes from tools/survey (npm install --prefix tools/survey) or
+ * NODE_PATH; PW_CHROMIUM names a Chromium to launch instead of Chrome.
+ *
+ * This file is part of the WebFPV comic. Copyright 2026 Mathew Harvey
+ * (andAgainFPV). Licensed under CC BY-ND 4.0, see LICENSE.
  */
 const fs = require('fs');
+const os = require('os');
 const path = require('path');
-const { chromium } = require(path.join(__dirname, '..', 'survey', 'node_modules', 'playwright'));
+
+function playwright() {
+  const local = path.join(__dirname, '..', 'survey', 'node_modules', 'playwright');
+  if (fs.existsSync(local)) return require(local);
+  return require('playwright');
+}
+const { chromium } = playwright();
 
 const ROOT = path.resolve(__dirname, '..', '..');
-const OUT = path.join(process.env.TEMP || process.env.TMP || ROOT, 'webfpv-book');
-const FILE = 'file:///' + path.join(ROOT, 'docs', 'index.html').replace(/\\/g, '/');
+const OUT = process.env.OUT || path.join(os.tmpdir(), 'webfpv-book');
+const FILE = 'file://' + (process.platform === 'win32' ? '/' : '') + path.join(ROOT, 'docs', 'index.html').replace(/\\/g, '/');
+const problems = [];
 
-async function shot(page, name) {
-  const file = path.join(OUT, name + '.png');
-  await page.screenshot({ path: file, fullPage: false });
-  process.stdout.write('shot ' + name + '\n');
+function say(line) { process.stdout.write(line + '\n'); }
+
+async function settle(page) {
+  await page.waitForFunction(() => {
+    const imgs = Array.from(document.querySelectorAll('#book .slot:not([hidden]) img, #book .leaf img'));
+    return imgs.every((img) => img.complete);
+  }, null, { timeout: 20000 }).catch(() => {});
+  await page.waitForTimeout(250);
+}
+
+async function views(page) {
+  return page.evaluate(() => {
+    const c = window.__comic;
+    return c.mode === 'spread' ? Math.ceil((c.flat.length + 1) / 2) : c.flat.length;
+  });
+}
+
+async function walk(page, label) {
+  const n = await views(page);
+  for (let i = 0; i < n; i += 1) {
+    await settle(page);
+    const state = await page.evaluate(() => {
+      const shown = Array.from(document.querySelectorAll('#book .slot img'));
+      const broken = shown.filter((img) => img.complete && img.naturalWidth === 0).map((img) => img.getAttribute('src'));
+      const noAlt = shown.filter((img) => !img.getAttribute('alt')).length;
+      const wide = document.documentElement.scrollWidth > document.documentElement.clientWidth + 2;
+      return { where: document.getElementById('where').textContent, broken, noAlt, wide };
+    });
+    if (state.broken.length) problems.push(`${label} view ${i}: did not load ${state.broken.join(', ')}`);
+    if (state.noAlt) problems.push(`${label} view ${i}: ${state.noAlt} pictures with no alt`);
+    if (state.wide) problems.push(`${label} view ${i}: the page is wider than the window`);
+    await page.screenshot({ path: path.join(OUT, `${label}-${String(i).padStart(2, '0')}.png`) });
+    say(`${label} ${i} ${state.where}`);
+    if (i < n - 1) {
+      await page.keyboard.press('ArrowRight');
+      await page.waitForTimeout(label === 'desk' ? 1100 : 800);
+    }
+  }
+  const fly = await page.locator('#book a.fly').evaluateAll((as) => as.map((a) => [a.getAttribute('href'), a.getAttribute('aria-label')]));
+  if (fly.length !== 1 || fly[0][0] !== 'https://webfpv.org/sim/') problems.push(`${label}: the last view's link out is ${JSON.stringify(fly)}`);
+  else say(`${label} fly ${fly[0][0]} (${fly[0][1]})`);
 }
 
 async function main() {
   fs.mkdirSync(OUT, { recursive: true });
-  const browser = await chromium.launch({
-    channel: 'chrome',
-    headless: true,
-    args: ['--disable-gpu'],
-  });
+  const exe = process.env.PW_CHROMIUM;
+  const browser = await chromium.launch(exe ? { executablePath: exe } : { channel: 'chrome' });
   const errors = [];
-  const desktop = await browser.newContext({
-    viewport: { width: 1440, height: 900 },
-    deviceScaleFactor: 1,
-  });
-  const page = await desktop.newPage();
-  page.on('pageerror', (err) => errors.push(String(err)));
-  page.on('console', (msg) => {
-    if (msg.type() === 'error') errors.push(msg.text());
-  });
+
+  const desk = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+  const page = await desk.newPage();
+  page.on('pageerror', (err) => errors.push('desk ' + err));
+  page.on('console', (m) => { if (m.type() === 'error') errors.push('desk ' + m.text()); });
   await page.goto(FILE);
-  await page.waitForSelector('#book img');
-  await page.waitForFunction(() => {
-    const img = document.querySelector('#book img');
-    return img && img.complete && img.naturalWidth > 0;
-  });
-  const coverAlt = await page.locator('#book img').first().getAttribute('alt');
-  process.stdout.write('cover alt ' + (coverAlt || '').slice(0, 80) + '\n');
-  process.stdout.write('where ' + (await page.locator('#where').innerText()) + '\n');
-  await shot(page, 'desktop-cover');
-
-  const box = await page.locator('#book').boundingBox();
-  await page.mouse.move(box.x + box.width * 0.82, box.y + box.height * 0.72);
-  await page.mouse.down();
-  await page.mouse.move(box.x + box.width * 0.28, box.y + box.height * 0.62, { steps: 12 });
-  await shot(page, 'desktop-curl');
-  await page.mouse.up();
-  await page.waitForTimeout(1000);
-  process.stdout.write('after drag ' + (await page.locator('#where').innerText()) + '\n');
-  await shot(page, 'desktop-spread');
-  const spread = await page.locator('#book').boundingBox();
-  await page.mouse.move(spread.x + spread.width * 0.78, spread.y + spread.height * 0.62);
-  await page.mouse.down();
-  await page.mouse.move(spread.x + spread.width * 0.22, spread.y + spread.height * 0.5, { steps: 14 });
-  await shot(page, 'desktop-spread-curl');
-  await page.mouse.up();
-  await page.waitForTimeout(1000);
-  process.stdout.write('after spread drag ' + (await page.locator('#where').innerText()) + '\n');
-
-  await page.keyboard.press('ArrowRight');
-  await page.waitForTimeout(1000);
-  process.stdout.write('after key ' + (await page.locator('#where').innerText()) + '\n');
-  const fly = page.locator('a.fly');
-  await page.keyboard.press('End');
-  await page.waitForSelector('a.fly');
-  process.stdout.write('fly count ' + (await fly.count()) + '\n');
-  process.stdout.write('fly href ' + (await fly.getAttribute('href')) + '\n');
-  process.stdout.write('fly name ' + (await fly.getAttribute('aria-label')) + '\n');
-  process.stdout.write('captions ' + (await page.locator('.caption').count()) + '\n');
-  process.stdout.write('balloon ' + (await page.locator('.balloon').count()) + '\n');
-  await shot(page, 'desktop-end');
+  await page.waitForFunction(() => window.__comic && document.querySelector('#book .page'));
+  say('desk mode ' + (await page.evaluate(() => window.__comic.mode)));
+  await walk(page, 'desk');
 
   await page.keyboard.press('Home');
-  await page.waitForTimeout(400);
-  process.stdout.write('home ' + (await page.locator('#where').innerText()) + '\n');
-  await page.keyboard.press('End');
-  await page.waitForTimeout(500);
-  process.stdout.write('end ' + (await page.locator('#where').innerText()) + '\n');
-  await page.keyboard.press('ArrowLeft');
-  await page.waitForTimeout(1000);
-  process.stdout.write('back ' + (await page.locator('#where').innerText()) + '\n');
+  await page.waitForTimeout(900);
+  const box = await page.locator('#book').boundingBox();
+  await page.mouse.move(box.x + box.width * 0.85, box.y + box.height * 0.7);
+  await page.mouse.down();
+  await page.mouse.move(box.x + box.width * 0.3, box.y + box.height * 0.6, { steps: 12 });
+  await page.screenshot({ path: path.join(OUT, 'desk-drag.png') });
+  await page.mouse.up();
+  await page.waitForTimeout(1200);
+  say('desk after drag ' + (await page.locator('#where').innerText()));
 
   await page.click('#contents-btn');
-  await page.click('#contents a[href="#c1-p1"]');
-  await page.waitForTimeout(1000);
-  process.stdout.write('contents ' + (await page.locator('#where').innerText()) + '\n');
+  const rows = await page.locator('#contents a').count();
+  if (!rows) problems.push('the contents sheet is empty');
+  await page.locator('#contents a').nth(Math.min(5, rows - 1)).click();
+  await page.waitForTimeout(1200);
+  say(`contents ${rows} rows, jumped to ${await page.locator('#where').innerText()}`);
 
   await page.click('#text-btn');
-  await shot(page, 'desktop-text');
-  const transcript = await page.locator('#book .transcript').first().innerText();
-  process.stdout.write('transcript ' + transcript + '\n');
+  await page.waitForTimeout(300);
+  const script = await page.locator('#script').innerText();
+  if (script.length < 800 || !script.includes('fly decent')) problems.push('the text view is short, or does not carry the question');
+  say(`text view ${script.length} characters`);
+  await page.screenshot({ path: path.join(OUT, 'desk-text.png') });
   await page.keyboard.press('Escape');
-  const textPressed = await page.locator('#text-btn').getAttribute('aria-pressed');
-  process.stdout.write('text after escape ' + textPressed + '\n');
+  await desk.close();
 
-  const wideOverflow = await page.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth + 2);
-  process.stdout.write('desktop overflow ' + wideOverflow + '\n');
-  const missing = await page.evaluate(() => {
-    const imgs = Array.from(document.querySelectorAll('#book img'));
-    const alts = imgs.filter((img) => !img.getAttribute('alt'));
-    const figures = Array.from(document.querySelectorAll('#book figure'));
-    const bare = figures.filter((fig) => !fig.querySelector('.transcript'));
-    return { imgs: imgs.length, alts: alts.length, figures: figures.length, bare: bare.length };
-  });
-  process.stdout.write('a11y ' + JSON.stringify(missing) + '\n');
-
-  await desktop.close();
-
-  const phone = await browser.newContext({
-    viewport: { width: 390, height: 844 },
-    deviceScaleFactor: 2,
-    hasTouch: true,
-  });
+  const phone = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, hasTouch: true, isMobile: true });
   const mobile = await phone.newPage();
   mobile.on('pageerror', (err) => errors.push('phone ' + err));
+  mobile.on('console', (m) => { if (m.type() === 'error') errors.push('phone ' + m.text()); });
   await mobile.goto(FILE);
-  await mobile.waitForSelector('#book img');
-  await mobile.waitForFunction(() => {
-    const img = document.querySelector('#book img');
-    return img && img.complete && img.naturalWidth > 0;
-  });
-  await shot(mobile, 'phone-cover');
-  for (let i = 1; i <= 3; i++) {
-    await mobile.click('#next');
-    await mobile.waitForTimeout(900);
-    process.stdout.write('phone ' + i + ' ' + (await mobile.locator('#where').innerText()) + '\n');
-    await shot(mobile, 'phone-p' + i);
-  }
-  const phoneOverflow = await mobile.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth + 2);
-  process.stdout.write('phone overflow ' + phoneOverflow + '\n');
-  await mobile.keyboard.press('End');
-  await mobile.waitForSelector('a.fly');
-  const phoneFly = await mobile.locator('a.fly').getAttribute('href');
-  process.stdout.write('phone fly ' + phoneFly + '\n');
-
-  await mobile.click('#prev');
-  await mobile.waitForTimeout(200);
-  const swipeBox = await mobile.locator('#book').boundingBox();
-  await mobile.mouse.move(swipeBox.x + swipeBox.width * 0.8, swipeBox.y + swipeBox.height * 0.5);
+  await mobile.waitForFunction(() => window.__comic && document.querySelector('#book .page'));
+  say('phone mode ' + (await mobile.evaluate(() => window.__comic.mode)));
+  await walk(mobile, 'phone');
+  await mobile.keyboard.press('Home');
+  await mobile.waitForTimeout(800);
+  const b = await mobile.locator('#book').boundingBox();
+  await mobile.mouse.move(b.x + b.width * 0.85, b.y + b.height * 0.5);
   await mobile.mouse.down();
-  await mobile.mouse.move(swipeBox.x + swipeBox.width * 0.15, swipeBox.y + swipeBox.height * 0.5, { steps: 10 });
+  await mobile.mouse.move(b.x + b.width * 0.15, b.y + b.height * 0.5, { steps: 10 });
   await mobile.mouse.up();
   await mobile.waitForTimeout(1000);
-  process.stdout.write('phone swipe ' + (await mobile.locator('#where').innerText()) + '\n');
+  say('phone after swipe ' + (await mobile.locator('#where').innerText()));
+  await phone.close();
 
-  const still = await browser.newContext({
-    viewport: { width: 1440, height: 900 },
-    reducedMotion: 'reduce',
-  });
-  const stillPage = await still.newPage();
-  await stillPage.goto(FILE + '#c1-cover');
-  await stillPage.waitForSelector('#where');
-  const motionLabel = await stillPage.locator('#motion-btn').innerText();
-  process.stdout.write('reduced label ' + motionLabel + '\n');
-  await stillPage.click('#next');
-  await stillPage.waitForTimeout(400);
-  process.stdout.write('reduced where ' + (await stillPage.locator('#where').innerText()) + '\n');
-  await shot(stillPage, 'desktop-still');
-
-  const flyPage = await desktopBrowserPage(browser);
-  errors.forEach((err) => process.stdout.write('ERR ' + err + '\n'));
-  await flyPage.goto(FILE + '#c1-next');
-  await flyPage.waitForSelector('a.fly');
-  await Promise.all([
-    flyPage.waitForURL(/webfpv\.org\/sim\/?/, { timeout: 20000 }),
-    flyPage.click('a.fly'),
-  ]);
-  process.stdout.write('opened ' + flyPage.url() + '\n');
+  const still = await browser.newContext({ viewport: { width: 1440, height: 900 }, reducedMotion: 'reduce' });
+  const sp = await still.newPage();
+  sp.on('pageerror', (err) => errors.push('still ' + err));
+  await sp.goto(FILE + '#c1-p5');
+  await sp.waitForFunction(() => window.__comic && document.querySelector('#book .page'));
+  await sp.click('#next');
+  await sp.waitForTimeout(400);
+  say('reduced motion ' + (await sp.locator('#where').innerText()));
+  await still.close();
 
   await browser.close();
-  if (errors.length) process.exitCode = 1;
-}
-
-async function desktopBrowserPage(browser) {
-  const ctx = await browser.newContext({ viewport: { width: 1280, height: 800 } });
-  return ctx.newPage();
+  errors.forEach((e) => problems.push(e));
+  say('screenshots in ' + OUT);
+  if (problems.length) {
+    problems.forEach((p) => process.stderr.write('FAIL ' + p + '\n'));
+    process.exit(1);
+  }
+  say('read check ok');
 }
 
 main().catch((err) => {

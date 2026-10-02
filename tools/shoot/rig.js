@@ -97,6 +97,16 @@ async function open(browser, world, viewport) {
   let doc = null;
   if (world.track) doc = readTrack(world.track);
   if (world.preset) doc = await readPreset(world.preset);
+  /* A freestyle map from the simulator's own source, as the builder ships
+   * it (the showpiece is Hibari Yard Tandem), seated as the pilot's map. */
+  let freestyle = null;
+  if (world.freestyle) {
+    const url = require('url').pathToFileURL(path.join(SIM_DIR, 'src', 'maps', 'built', world.freestyle + '.js')).href;
+    const mod = await import(url);
+    const make = mod[world.freestyle + 'Map'];
+    if (!make) throw new Error('no map ' + world.freestyle);
+    freestyle = make();
+  }
   await page.addInitScript((p) => {
     const s = Object.assign({
       airframeAsked: true, hasFlown: true, feelAsked: true, airframe: p.airframe || '5inch',
@@ -108,7 +118,8 @@ async function open(browser, world, viewport) {
       const key = p.doc.trackClass === 'micro' ? 'webfpv.trackbuilder.autosave.micro.v1' : 'webfpv.trackbuilder.autosave.v1';
       localStorage.setItem(key, JSON.stringify(p.doc));
     }
-  }, { doc, airframe: world.airframe, map: world.map, settings: world.settings });
+    if (p.freestyle) localStorage.setItem('webfpv.trackbuilder.autosave.freestyle.v1', JSON.stringify(p.freestyle));
+  }, { doc, freestyle, airframe: world.airframe, map: world.map, settings: world.settings });
   if (world.landing) {
     /* The front door, with its invitation already seen and Global Privacy
      * Control on, as its own share card script loads it (scripts/og.js). */
@@ -133,6 +144,29 @@ async function open(browser, world, viewport) {
     const orig = T.Object3D.prototype.lookAt;
     T.Object3D.prototype.lookAt = function (...a) {
       if (this.isPerspectiveCamera && !window.__mainCam) window.__mainCam = this;
+      /* A camera that rides with cars (window.__follow), placed every frame
+       * from their poses: beside the pair, on one side of the line from the
+       * second to the first, so a moving subject is framed in any frame. */
+      const f = window.__follow;
+      if (f && this === window.__mainCam && window.__vehicles) {
+        const cars = window.__vehicles().filter((c) => f.slots.includes(c.slot));
+        if (cars.length === f.slots.length) {
+          const lead = cars.find((c) => c.slot === f.slots[0]);
+          const last = cars.find((c) => c.slot === f.slots[f.slots.length - 1]);
+          const mx = cars.reduce((s, c) => s + c.x, 0) / cars.length;
+          const mz = cars.reduce((s, c) => s + c.z, 0) / cars.length;
+          let dx = lead.x - last.x;
+          let dz = lead.z - last.z;
+          const dl = Math.hypot(dx, dz) || 1;
+          dx /= dl; dz /= dl;
+          const rx = -dz * f.side;
+          const rz = dx * f.side;
+          this.position.set(mx + rx * f.dist + dx * (f.ahead || 0), f.up, mz + rz * f.dist + dz * (f.ahead || 0));
+          const r = orig.call(this, mx + dx * (f.lookAhead || 0), f.lookUp || 0.6, mz + dz * (f.lookAhead || 0));
+          if (window.__camRoll) this.rotateZ(window.__camRoll);
+          return r;
+        }
+      }
       const r = orig.apply(this, a);
       if (this === window.__mainCam && window.__camRoll) this.rotateZ(window.__camRoll);
       return r;

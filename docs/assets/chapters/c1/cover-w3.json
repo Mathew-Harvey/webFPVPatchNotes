@@ -1,0 +1,33 @@
+{
+  "id": "cover-w3",
+  "treatment": "colour",
+  "from": "cover-w3",
+  "world": "room",
+  "simulator": null,
+  "commit": "3628663",
+  "frame": [
+    560,
+    707
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 560,
+    "height": 707
+  },
+  "framing": {
+    "cam": [
+      -4.7,
+      1.55,
+      2.9
+    ],
+    "look": [
+      1.4,
+      1.25,
+      -1.1
+    ],
+    "fov": 62,
+    "quad": null
+  },
+  "clip": null
+}

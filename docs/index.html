@@ -139,12 +139,15 @@ body {
   position: relative;
   height: calc(var(--pw) * 1.414);
   perspective: calc(var(--pw) * 4.5);
-  touch-action: pan-y;
+  /* A finger turns the page sideways; two fingers still zoom, so the words
+   * can be read on a phone. Zoomed in, the book stops turning and pans. */
+  touch-action: pan-y pinch-zoom;
   user-select: none;
   -webkit-user-select: none;
   cursor: grab;
 }
 #book.dragging { cursor: grabbing; }
+#book.zoomed { touch-action: auto; cursor: auto; }
 .shift {
   position: absolute;
   inset: 0;
@@ -172,7 +175,7 @@ body {
 }
 .spread .slot.left::after { right: 0; background: linear-gradient(to left, rgba(11, 17, 22, 0.22), rgba(11, 17, 22, 0)); }
 .spread .slot.right::after { left: 0; background: linear-gradient(to right, rgba(11, 17, 22, 0.24), rgba(11, 17, 22, 0)); }
-.slot:empty::after { display: none; }
+.slot:empty::after, .slot.alone::after { display: none; }
 .leaf {
   position: absolute;
   top: 0;
@@ -382,10 +385,12 @@ svg.bubbles { z-index: 4; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 13cqw;
+  transform: translateX(-50%);
+  min-width: 26cqw;
   min-height: 44px;
-  padding: 1.4cqw 3cqw 1.3cqw;
-  font-size: calc(2.6cqw + 0.1rem);
+  padding: 2cqw 4cqw 1.9cqw;
+  white-space: nowrap;
+  font-size: calc(3.4cqw + 0.1rem);
   font-weight: 800;
   letter-spacing: 0.18em;
   color: var(--page-ink);
@@ -471,11 +476,14 @@ svg.bubbles { z-index: 4; }
 #script .alt { color: #4b5763; font-style: italic; font-size: 16px; }
 #script .said { font-weight: 700; }
 #script .fx { font-weight: 800; letter-spacing: 0.08em; }
-#script a.fly { position: static; margin-top: 12px; }
+#script a.fly { position: static; transform: none; margin-top: 12px; }
 
 @media (max-width: 640px) {
   :root { --bar: 46px; }
+  .tools { flex-wrap: nowrap; gap: 4px; }
   .tools .wide { display: none; }
+  .tools .btn { padding: 0 8px; letter-spacing: 0.1em; font-size: 10px; }
+  .mark { width: 92px; height: 26px; }
   #where { min-width: 0; font-size: 10px; letter-spacing: 0.12em; }
   .turn { min-width: 64px; }
 }
@@ -521,6 +529,7 @@ svg.bubbles { z-index: 4; }
     <p>The testers found bugs and gave feedback on the flight feel, in a chat channel: Asylum, Jannes, LeStar and CrapShack. That helped me direct my development effort.</p>
     <p>If it feels like a real quad, the rest is easy.</p>
     <p>The game will keep building.</p>
+    <p>Chapter 02. What's coming next?</p>
     <p><a href="https://webfpv.org/sim/">Fly WebFPV</a></p>
   </div>
 </noscript>
@@ -614,6 +623,14 @@ svg.bubbles { z-index: 4; }
     runs.forEach(function (r, k) { Array.from(r.t).forEach(function () { runOf.push(k); }); });
     var adv = chars.map(function (ch) { return advanceOf(ch, size); });
     var total = adv.reduce(function (a, b) { return a + b; }, 0);
+    /* The system's heaviest sans is a different width on every machine, so
+     * a word that has a measure (max, in page units) is brought down to it
+     * where this machine's face would run it past its panel. */
+    if (w.max && total > w.max) {
+      size = size * w.max / total;
+      adv = chars.map(function (ch) { return advanceOf(ch, size); });
+      total = adv.reduce(function (a, b) { return a + b; }, 0);
+    }
     var x0 = w.anchor === 'start' ? 0 : (w.anchor === 'end' ? -total : -total / 2);
     var seed = w.seed || text;
     var g = sv('g', { transform: 'translate(' + w.x + ' ' + w.y + ') rotate(' + (w.rot || 0) + ')' });
@@ -680,6 +697,19 @@ svg.bubbles { z-index: 4; }
     (panel.fx || []).forEach(function (f, k) {
       var seed = pageId + panel.id + k;
       var gr = sv('g', { fill: f.colour ? (COLOURS[f.colour] || f.colour) : INK, opacity: f.alpha != null ? f.alpha : 0.8 });
+      /* Lines are held off any box that has to be read (off, in page
+       * units), as the front door holds its lines off its copy. */
+      if (f.off && f.off.length) {
+        gradientSeq += 1;
+        var mid = 'off' + gradientSeq;
+        var mask = sv('mask', { id: mid, maskUnits: 'userSpaceOnUse', x: box.x, y: box.y, width: box.w, height: box.h });
+        mask.appendChild(sv('rect', { x: box.x, y: box.y, width: box.w, height: box.h, fill: '#fff' }));
+        f.off.forEach(function (r) {
+          mask.appendChild(sv('rect', { x: r[0], y: r[1], width: r[2], height: r[3], rx: 18, fill: '#000' }));
+        });
+        s.appendChild(mask);
+        gr.setAttribute('mask', 'url(#' + mid + ')');
+      }
       var diag = Math.hypot(box.w, box.h);
       var i;
       if (f.k === 'focus') {
@@ -877,6 +907,8 @@ svg.bubbles { z-index: 4; }
       return node;
     }
     if (w.k === 'fly') {
+      /* Centred on x, its top on y: the one link out, as big as a button
+       * on the front door's bar. */
       node = el('a', 'fly', w.t);
       node.href = w.href;
       node.setAttribute('aria-label', w.name || w.t);
@@ -899,7 +931,10 @@ svg.bubbles { z-index: 4; }
       node = el('p', 'w cap' + (w.big ? ' big' : ''), w.t);
     }
     node.style.left = px(w.x, PAGE_W);
-    node.style.top = px(w.y, PAGE_H);
+    /* A box given yb hangs from the bottom up, so a longer line on a wider
+     * system font grows into the picture and never out of its panel. */
+    if (w.yb != null) node.style.bottom = px(PAGE_H - w.yb, PAGE_H);
+    else node.style.top = px(w.y, PAGE_H);
     if (w.w) node.style.width = px(w.w, PAGE_W);
     if (w.rot) node.style.transform = 'rotate(' + w.rot + 'deg)';
     return node;
@@ -1046,8 +1081,9 @@ svg.bubbles { z-index: 4; }
     bookEl.replaceChildren();
     var shift = el('div', 'shift');
     shift.style.transform = 'translateX(' + shiftFor(vi) + 'px)';
+    var lone = views[vi].filter(function (i) { return i != null; }).length === 1;
     slotsFor(vi).forEach(function (s) {
-      var slot = el('div', s.cls);
+      var slot = el('div', s.cls + (lone ? ' alone' : ''));
       mount(slot, s.i);
       shift.appendChild(slot);
     });
@@ -1194,8 +1230,26 @@ svg.bubbles { z-index: 4; }
 
   /* Drag: a page follows the hand, and is let go either way. */
   var drag = null;
+  function zoomed() {
+    return Boolean(window.visualViewport && window.visualViewport.scale > 1.02);
+  }
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener('resize', function () {
+      bookEl.classList.toggle('zoomed', zoomed());
+    });
+  }
+  var fingers = 0;
   bookEl.addEventListener('pointerdown', function (e) {
-    if (e.button !== 0 || turning) return;
+    if (e.pointerType === 'touch') fingers += 1;
+    /* A second finger is a pinch, not a turn. */
+    if (fingers > 1 && drag) {
+      var t0 = drag.turn;
+      drag = null;
+      bookEl.classList.remove('dragging');
+      if (t0) animateTurn(t0, 0, 200, function () { show(vi); });
+      return;
+    }
+    if (e.button !== 0 || turning || zoomed()) return;
     if (e.target.closest('a, button')) return;
     drag = { id: e.pointerId, x: e.clientX, y: e.clientY, t: performance.now(), moved: false, turn: null };
     try { bookEl.setPointerCapture(e.pointerId); } catch (err) { /* old browser */ }
@@ -1246,6 +1300,9 @@ svg.bubbles { z-index: 4; }
     });
   }
   bookEl.addEventListener('pointerup', endDrag);
+  ['pointerup', 'pointercancel'].forEach(function (k) {
+    bookEl.addEventListener(k, function (e) { if (e.pointerType === 'touch') fingers = Math.max(0, fingers - 1); });
+  });
   bookEl.addEventListener('pointercancel', function (e) {
     if (drag && drag.turn) {
       var t = drag.turn;

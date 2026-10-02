@@ -1,0 +1,42 @@
+{
+  "id": "n10",
+  "treatment": "colour",
+  "from": "n10",
+  "world": "field",
+  "simulator": null,
+  "commit": "3628663",
+  "frame": [
+    850,
+    409
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 850,
+    "height": 409
+  },
+  "framing": {
+    "cam": [
+      18.824149696141056,
+      2.124557283903446,
+      17.36551567308139
+    ],
+    "look": [
+      17.86,
+      2.5,
+      15.2
+    ],
+    "fov": 46,
+    "quad": {
+      "pos": [
+        17.8,
+        3.02,
+        15.35
+      ],
+      "yaw": -3.3,
+      "pitch": 40,
+      "roll": 180
+    }
+  },
+  "clip": null
+}

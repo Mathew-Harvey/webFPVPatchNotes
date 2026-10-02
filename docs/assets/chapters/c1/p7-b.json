@@ -1,0 +1,33 @@
+{
+  "id": "p7-b",
+  "treatment": "colour",
+  "from": "p7-b",
+  "world": "field",
+  "simulator": null,
+  "commit": "3628663",
+  "frame": [
+    901,
+    1325
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 901,
+    "height": 1325
+  },
+  "framing": {
+    "cam": [
+      17.75,
+      0.9,
+      20.6
+    ],
+    "look": [
+      17.9,
+      0.88,
+      12
+    ],
+    "fov": 85,
+    "quad": null
+  },
+  "clip": null
+}

@@ -1,0 +1,34 @@
+{
+  "id": "p2-a",
+  "treatment": "colour",
+  "from": "p2-a",
+  "world": "field",
+  "simulator": null,
+  "commit": "3628663",
+  "frame": [
+    1872,
+    1207
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1872,
+    "height": 1207
+  },
+  "framing": {
+    "cam": [
+      17.25,
+      1,
+      16.45
+    ],
+    "look": [
+      17.6,
+      0.85,
+      14
+    ],
+    "fov": 104,
+    "roll": 12,
+    "quad": null
+  },
+  "clip": null
+}

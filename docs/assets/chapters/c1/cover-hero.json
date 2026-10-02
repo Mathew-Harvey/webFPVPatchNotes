@@ -1,0 +1,43 @@
+{
+  "id": "cover-hero",
+  "treatment": "paper",
+  "from": "cover-hero",
+  "world": "field",
+  "simulator": null,
+  "commit": "3628663",
+  "frame": [
+    1741,
+    1804
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1741,
+    "height": 1804
+  },
+  "framing": {
+    "cam": [
+      16.125776400891812,
+      0.8828157327387913,
+      11.504733230277035
+    ],
+    "look": [
+      20.405701276819244,
+      -1.4775923888720524,
+      8.02468774841173
+    ],
+    "fov": 42,
+    "roll": 0,
+    "quad": {
+      "pos": [
+        17,
+        0.3,
+        11
+      ],
+      "yaw": 30,
+      "pitch": 14,
+      "roll": 24
+    }
+  },
+  "clip": null
+}

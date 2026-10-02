@@ -1,0 +1,42 @@
+{
+  "id": "p7-c",
+  "treatment": "colour",
+  "from": "p7-c",
+  "world": "field",
+  "simulator": null,
+  "commit": "3628663",
+  "frame": [
+    972,
+    1231
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 972,
+    "height": 1231
+  },
+  "framing": {
+    "cam": [
+      17.65,
+      1.12,
+      17.4
+    ],
+    "look": [
+      17.9,
+      0.85,
+      13
+    ],
+    "fov": 46,
+    "quad": {
+      "pos": [
+        17.88,
+        0.92,
+        15
+      ],
+      "yaw": -3.3,
+      "pitch": 18,
+      "roll": 0
+    }
+  },
+  "clip": null
+}

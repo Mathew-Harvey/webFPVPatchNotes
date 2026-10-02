@@ -41,10 +41,13 @@ const sharp = sharpLib();
 const PAPER = [247, 240, 220];
 const INK = [11, 17, 22];
 /* The front door's tone: pitch is the frame height over 180, which on a
- * 1414 unit page is 7.86 units, and a dot at full shadow covers what a
- * 0.62 amount does in its shader. */
+ * 1414 unit page is 7.86 units, and a dot under a full shadow is as heavy
+ * as the front door prints the shadow of its quad, a little over half ink. */
 const PITCH_UNITS = 1414 / 180;
-const TONE_K = 0.62;
+const TONE_K = 0.85;
+/* The ink line round the quad, the front door's hull, in page units: one
+ * weight on every page, as a pen has, whatever size the quad is drawn. */
+const HULL_UNITS = 2.6;
 const SCALES = [['@1x', 0.72], ['@2x', 1.44]];
 
 function clamp(v, a, b) { return v < a ? a : v > b ? b : v; }
@@ -64,30 +67,72 @@ async function raw(file) {
 /*
  * The quad's cut out, from the matte pass: its distance from the magenta
  * key is its alpha, and an edge pixel's colour is unmixed from the key so
- * no pink fringe is left on the paper.
+ * no pink fringe is left on the paper. The simulator vignettes its frame,
+ * so the key is not one colour: it is the clean magenta round each pixel,
+ * averaged over a window from a summed area table, and what fringe the
+ * unmixing leaves at the very edge is pulled back toward grey.
  */
+function isKey(r, g, b) { return g < 70 && r > 150 && b > 140 && Math.abs(r - b) < 50; }
 function cutOut(m) {
-  const n = m.w * m.h;
-  const key = [m.data[0], m.data[1], m.data[2]];
-  const rgba = Buffer.alloc(n * 4);
-  for (let i = 0; i < n; i += 1) {
-    const r = m.data[i * 3];
-    const g = m.data[i * 3 + 1];
-    const b = m.data[i * 3 + 2];
-    const d = Math.hypot(r - key[0], g - key[1], b - key[2]);
-    const a = smooth(28, 110, d);
-    let cr = r;
-    let cg = g;
-    let cb = b;
-    if (a > 0.01 && a < 0.999) {
-      cr = clamp((r - (1 - a) * key[0]) / a, 0, 255);
-      cg = clamp((g - (1 - a) * key[1]) / a, 0, 255);
-      cb = clamp((b - (1 - a) * key[2]) / a, 0, 255);
+  const { w, h, data } = m;
+  const n = w * h;
+  const W1 = w + 1;
+  const sum = [new Float64Array(W1 * (h + 1)), new Float64Array(W1 * (h + 1)), new Float64Array(W1 * (h + 1)), new Float64Array(W1 * (h + 1))];
+  for (let y = 0; y < h; y += 1) {
+    const row = [0, 0, 0, 0];
+    for (let x = 0; x < w; x += 1) {
+      const i = y * w + x;
+      const r = data[i * 3];
+      const g = data[i * 3 + 1];
+      const b = data[i * 3 + 2];
+      if (isKey(r, g, b)) { row[0] += r; row[1] += g; row[2] += b; row[3] += 1; }
+      const j = (y + 1) * W1 + x + 1;
+      for (let c = 0; c < 4; c += 1) sum[c][j] = sum[c][j - W1] + row[c];
     }
-    rgba[i * 4] = cr;
-    rgba[i * 4 + 1] = cg;
-    rgba[i * 4 + 2] = cb;
-    rgba[i * 4 + 3] = Math.round(a * 255);
+  }
+  const R = Math.max(8, Math.round(Math.max(w, h) / 40));
+  const global = [data[0], data[1], data[2]];
+  const rgba = Buffer.alloc(n * 4);
+  const key = [0, 0, 0];
+  for (let y = 0; y < h; y += 1) {
+    const y0 = Math.max(0, y - R);
+    const y1 = Math.min(h, y + R + 1);
+    for (let x = 0; x < w; x += 1) {
+      const i = y * w + x;
+      const r = data[i * 3];
+      const g = data[i * 3 + 1];
+      const b = data[i * 3 + 2];
+      const x0 = Math.max(0, x - R);
+      const x1 = Math.min(w, x + R + 1);
+      const at = (c) => sum[c][y1 * W1 + x1] - sum[c][y0 * W1 + x1] - sum[c][y1 * W1 + x0] + sum[c][y0 * W1 + x0];
+      const k = at(3);
+      if (k > 0) { key[0] = at(0) / k; key[1] = at(1) / k; key[2] = at(2) / k; } else { key[0] = global[0]; key[1] = global[1]; key[2] = global[2]; }
+      const d = Math.hypot(r - key[0], g - key[1], b - key[2]);
+      const a = smooth(30, 120, d);
+      let cr = r;
+      let cg = g;
+      let cb = b;
+      if (a > 0.01 && a < 0.999) {
+        cr = clamp((r - (1 - a) * key[0]) / a, 0, 255);
+        cg = clamp((g - (1 - a) * key[1]) / a, 0, 255);
+        cb = clamp((b - (1 - a) * key[2]) / a, 0, 255);
+      }
+      /* Despill: a magenta cast, red and blue both well over green, is
+       * drawn back toward green wherever it is, because a spinning prop's
+       * see through disc carries the key into the blades under it. The
+       * quad's own pinks keep red and blue within 30 of green, so they are
+       * not touched. */
+      const m2 = Math.min(cr, cb);
+      if (m2 > cg + 34) {
+        const k2 = m2 - cg - 34;
+        cr -= k2;
+        cb -= k2;
+      }
+      rgba[i * 4] = clamp(cr, 0, 255);
+      rgba[i * 4 + 1] = cg;
+      rgba[i * 4 + 2] = clamp(cb, 0, 255);
+      rgba[i * 4 + 3] = Math.round(a * 255);
+    }
   }
   return rgba;
 }
@@ -145,6 +190,36 @@ function shadowMap(s, alpha, opts) {
   return { amt, horizon };
 }
 
+/* The quad's silhouette grown by r pixels: a disc of offsets, the largest
+ * alpha under it, so the hull is as round at a prop tip as along an arm.
+ * Only what is solid counts: a spinning prop's disc is drawn see through,
+ * and a pen does not outline a blur. */
+function grow(alpha, W, H, r) {
+  const offs = [];
+  const R = Math.ceil(r);
+  for (let dy = -R; dy <= R; dy += 1) {
+    for (let dx = -R; dx <= R; dx += 1) {
+      const d = Math.hypot(dx, dy);
+      if (d <= r + 0.5) offs.push([dx, dy, clamp(r + 0.5 - d, 0, 1)]);
+    }
+  }
+  const out = new Float32Array(W * H);
+  for (let y = 0; y < H; y += 1) {
+    for (let x = 0; x < W; x += 1) {
+      let m = 0;
+      for (const [dx, dy, k] of offs) {
+        const xx = x + dx;
+        const yy = y + dy;
+        if (xx < 0 || yy < 0 || xx >= W || yy >= H) continue;
+        const a = smooth(0.45, 0.75, alpha[(yy * W + xx) * 4 + 3] / 255) * k;
+        if (a > m) { m = a; if (m >= 1) break; }
+      }
+      out[y * W + x] = m;
+    }
+  }
+  return out;
+}
+
 /* The 45 degree grid, a dot as big as the amount under it, antialiased. */
 function dots(amount, x, y, pitch) {
   if (amount < 0.015) return 0;
@@ -184,6 +259,11 @@ async function inkPaper(job, box, src, outBase) {
   const s = await raw(src + '.shadow.png');
   const quad = cutOut(m);
   const { amt, horizon } = shadowMap(s, quad, job);
+  if (process.env.INK_DEBUG) {
+    const a8 = Buffer.alloc(m.w * m.h);
+    for (let i = 0; i < amt.length; i += 1) a8[i] = Math.round(amt[i] * 255);
+    await sharp(a8, { raw: { width: m.w, height: m.h, channels: 1 } }).png().toFile(src + '.amt.png');
+  }
   const aspect = box.w / box.h;
   const crop = cropFor(m.w, m.h, aspect, job.focus);
   const results = [];
@@ -193,9 +273,12 @@ async function inkPaper(job, box, src, outBase) {
     const quadC = await sharp(quad, { raw: { width: m.w, height: m.h, channels: 4 } }).extract(crop).resize(W, H, { fit: 'fill', kernel: 'lanczos3' }).raw().toBuffer();
     const amt8 = Buffer.alloc(m.w * m.h);
     for (let i = 0; i < amt.length; i += 1) amt8[i] = Math.round(amt[i] * 255);
-    const amtC = await sharp(amt8, { raw: { width: m.w, height: m.h, channels: 1 } }).extract(crop).resize(W, H, { fit: 'fill', kernel: 'lanczos3' }).raw().toBuffer();
+    /* sharp hands a one channel raw image back as three channels. */
+    const amtC = await sharp(amt8, { raw: { width: m.w, height: m.h, channels: 1 } }).extract(crop).resize(W, H, { fit: 'fill', kernel: 'lanczos3' }).toColourspace('b-w').raw().toBuffer();
+    if (amtC.length !== W * H) throw new Error('tone map is ' + amtC.length + ' bytes, not ' + W * H);
     const pitch = Math.max(4, PITCH_UNITS * (W / box.w));
     const lineW = Math.max(1.2, 1.1 * (W / box.w));
+    const hull = grow(quadC, W, H, Math.max(1.2, HULL_UNITS * (W / box.w)));
     const out = Buffer.alloc(W * H * 3);
     const hz = new Float32Array(W).fill(-1);
     if (job.horizon !== false) {
@@ -210,10 +293,14 @@ async function inkPaper(job, box, src, outBase) {
         const i = Y * W + X;
         let ink = dots((amtC[i] / 255) * TONE_K, X, Y, pitch);
         if (hz[X] >= 0) ink = Math.max(ink, 1 - smooth(lineW * 0.5 - 0.5, lineW * 0.5 + 0.5, Math.abs(Y - hz[X])));
+        ink = Math.max(ink, hull[i]);
         let r = PAPER[0] + (INK[0] - PAPER[0]) * ink;
         let g = PAPER[1] + (INK[1] - PAPER[1]) * ink;
         let b = PAPER[2] + (INK[2] - PAPER[2]) * ink;
-        const a = quadC[i * 4 + 3] / 255;
+        /* The quad over its hull with a hard edge: the soft pixels of its
+         * outline are mixed with the key, and the pen's line is what shows
+         * there instead. */
+        const a = smooth(0.5, 0.92, quadC[i * 4 + 3] / 255);
         if (a > 0) {
           r = r * (1 - a) + quadC[i * 4] * a;
           g = g * (1 - a) + quadC[i * 4 + 1] * a;

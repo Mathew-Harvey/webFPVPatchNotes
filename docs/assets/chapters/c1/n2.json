@@ -1,0 +1,25 @@
+{
+  "id": "n2",
+  "treatment": "colour",
+  "from": "n2",
+  "world": "builder",
+  "simulator": "/src/trackbuilder/index.html?mode=race",
+  "commit": "3628663",
+  "frame": [
+    1600,
+    900
+  ],
+  "crop": {
+    "left": 0,
+    "top": 2,
+    "width": 640,
+    "height": 308
+  },
+  "framing": null,
+  "clip": [
+    600,
+    300,
+    640,
+    311
+  ]
+}

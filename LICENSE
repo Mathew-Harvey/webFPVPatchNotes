@@ -6,7 +6,7 @@ The comic in this repository is licensed under CC BY-ND 4.0. You may share it un
 
 You may not distribute a changed version. That includes a version that presents itself as this book or as Mat.
 
-The words, the page design, and the reader in docs/ are the comic. Fonts in docs/vendor/fonts/ stay under the SIL Open Font License 1.1. Their licence files are beside the font files.
+The words, the page design, the pictures and the reader in docs/ are the comic. No font ships with it: the lettering is drawn over the reader's own system font.
 
 The WebFPV simulator, the public board, and the website are separate programs under GPL-3.0. They are not in this repository. The flight pictures are captures of that simulator, framed for this book.
 

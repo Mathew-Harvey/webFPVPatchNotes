@@ -1,0 +1,33 @@
+{
+  "id": "cover-w1",
+  "treatment": "colour",
+  "from": "cover-w1",
+  "world": "field",
+  "simulator": null,
+  "commit": "3628663",
+  "frame": [
+    604,
+    781
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 604,
+    "height": 781
+  },
+  "framing": {
+    "cam": [
+      17.55,
+      1.15,
+      21.4
+    ],
+    "look": [
+      17.88,
+      1.05,
+      15
+    ],
+    "fov": 54,
+    "quad": null
+  },
+  "clip": null
+}

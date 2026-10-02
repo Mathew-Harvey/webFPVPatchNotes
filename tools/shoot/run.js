@@ -100,6 +100,21 @@ async function main() {
         window.__manga.tone(true);
       }, Boolean(shot.lines)).catch(() => {});
       let framing = null;
+      if (shot.follow) {
+        /* A moving subject: the camera rides with it, and the frame is
+         * taken when the cars are where the shot wants them. */
+        await rig.pose(page, { cam: [0, 30, 0], look: [0, 0, 1], fov: shot.follow.fov || 40, quad: null });
+        await page.evaluate((f) => { window.__follow = f; }, shot.follow);
+        await page.waitForFunction((f) => {
+          const cars = window.__vehicles().filter((c) => f.slots.includes(c.slot));
+          if (cars.length !== f.slots.length) return false;
+          if (!cars.every((c) => Math.abs(c.slip) >= f.minSlip)) return false;
+          if (!f.near) return true;
+          const lead = cars.find((c) => c.slot === f.slots[0]);
+          return Math.hypot(lead.x - f.near[0], lead.z - f.near[1]) < f.near[2];
+        }, shot.follow, { timeout: 240000, polling: 100 });
+        framing = { follow: shot.follow };
+      }
       if (shot.make) {
         framing = shot.make(line, lineLib, { aspect: W / H });
         await rig.pose(page, framing);
@@ -117,8 +132,9 @@ async function main() {
         await page.waitForTimeout(settle);
         await page.screenshot({ path: base + '.png', clip: clip || undefined });
       } else {
-        await rig.snap(page, base + '.png', settle, clip);
+        await rig.snap(page, base + '.png', shot.follow ? 0 : settle, clip);
       }
+      if (shot.follow) await page.evaluate(() => { window.__follow = null; });
       const side = {
         id: shot.id,
         chapter: chapterId,

@@ -1,0 +1,20 @@
+{
+  "id": "n4",
+  "treatment": "colour",
+  "from": "n4",
+  "world": "landing",
+  "simulator": "http://127.0.0.1:8766/",
+  "commit": "3628663",
+  "frame": [
+    1600,
+    777
+  ],
+  "crop": {
+    "left": 0,
+    "top": 4,
+    "width": 1600,
+    "height": 770
+  },
+  "framing": null,
+  "clip": null
+}

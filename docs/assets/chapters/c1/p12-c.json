@@ -1,0 +1,25 @@
+{
+  "id": "p12-c",
+  "treatment": "colour",
+  "from": "p12-c",
+  "world": "bench",
+  "simulator": null,
+  "commit": "3628663",
+  "frame": [
+    1600,
+    900
+  ],
+  "crop": {
+    "left": 23,
+    "top": 0,
+    "width": 1004,
+    "height": 389
+  },
+  "framing": null,
+  "clip": [
+    200,
+    300,
+    1050,
+    389
+  ]
+}
