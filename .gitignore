@@ -1,0 +1,9 @@
+# Fresh clones of the simulator, the board and the site. Read only. Never served.
+_upstream/
+
+# Survey tooling
+tools/survey/node_modules/
+tools/ink/node_modules/
+
+# Raw flight frames stay on disk. The book serves the inked WebP files.
+captures/

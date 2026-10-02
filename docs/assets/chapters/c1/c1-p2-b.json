@@ -1,0 +1,13 @@
+{
+  "id": "c1-p2-b",
+  "source": "captures/c1/c1-p1-c_a1_fpv_2.png",
+  "extract": {
+    "left": 0,
+    "top": 0,
+    "width": 1920,
+    "height": 1080
+  },
+  "commit": "cbaee3f",
+  "course": "tracks/json/trk-a75a1bc4.json",
+  "note": "The horizon tips. Gate marker off to the side."
+}

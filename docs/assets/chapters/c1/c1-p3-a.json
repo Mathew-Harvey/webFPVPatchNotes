@@ -1,0 +1,13 @@
+{
+  "id": "c1-p3-a",
+  "source": "captures/c1/c1-p1-a_a1_fpv_1.png",
+  "extract": {
+    "left": 0,
+    "top": 0,
+    "width": 1920,
+    "height": 1080
+  },
+  "commit": "cbaee3f",
+  "course": "tracks/json/trk-a75a1bc4.json",
+  "note": "The same first approach as c1-p1-a, framed again as the invitation. Not a second liftoff."
+}

@@ -1,0 +1,13 @@
+{
+  "id": "c1-p2-a",
+  "source": "captures/c1/c1-p1-b_a1_fpv_2.png",
+  "extract": {
+    "left": 0,
+    "top": 188,
+    "width": 1920,
+    "height": 892
+  },
+  "commit": "cbaee3f",
+  "course": "tracks/json/trk-a75a1bc4.json",
+  "note": "The miss. Gate edge and the red back of the gate at the bottom of the glass. 5 m, 1 bounce. Top buttons cropped."
+}
