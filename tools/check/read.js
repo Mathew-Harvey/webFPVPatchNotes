@@ -66,10 +66,12 @@ async function main() {
   await page.waitForTimeout(1000);
   process.stdout.write('after key ' + (await page.locator('#where').innerText()) + '\n');
   const fly = page.locator('a.fly');
+  await page.keyboard.press('End');
+  await page.waitForSelector('a.fly');
   process.stdout.write('fly count ' + (await fly.count()) + '\n');
   process.stdout.write('fly href ' + (await fly.getAttribute('href')) + '\n');
   process.stdout.write('fly name ' + (await fly.getAttribute('aria-label')) + '\n');
-  process.stdout.write('next label ' + (await page.locator('.empty-label').innerText()) + '\n');
+  process.stdout.write('captions ' + (await page.locator('.caption').count()) + '\n');
   process.stdout.write('balloon ' + (await page.locator('.balloon').count()) + '\n');
   await shot(page, 'desktop-end');
 
@@ -131,6 +133,8 @@ async function main() {
   }
   const phoneOverflow = await mobile.evaluate(() => document.documentElement.scrollWidth > document.documentElement.clientWidth + 2);
   process.stdout.write('phone overflow ' + phoneOverflow + '\n');
+  await mobile.keyboard.press('End');
+  await mobile.waitForSelector('a.fly');
   const phoneFly = await mobile.locator('a.fly').getAttribute('href');
   process.stdout.write('phone fly ' + phoneFly + '\n');
 
@@ -160,7 +164,7 @@ async function main() {
 
   const flyPage = await desktopBrowserPage(browser);
   errors.forEach((err) => process.stdout.write('ERR ' + err + '\n'));
-  await flyPage.goto(FILE + '#c1-p3');
+  await flyPage.goto(FILE + '#c1-next');
   await flyPage.waitForSelector('a.fly');
   await Promise.all([
     flyPage.waitForURL(/webfpv\.org\/sim\/?/, { timeout: 20000 }),

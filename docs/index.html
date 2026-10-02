@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>WebFPV</title>
-<meta name="description" content="A comic about WebFPV, the free browser FPV simulator. Chapter 1, The gate.">
-<meta name="theme-color" content="#0c120e">
-<link rel="preload" href="assets/chapters/c1/c1-cover@1x.webp" as="image">
+<meta name="description" content="A comic about WebFPV, the free browser FPV simulator. The story of andAgainFPV, in colour.">
+<meta name="theme-color" content="#101614">
+<link rel="preload" href="assets/chapters/c1/gate-cover@1x.webp" as="image">
 <style>
 @font-face {
   font-family: "Comic Neue";
@@ -37,16 +37,17 @@
   src: url("vendor/fonts/literata-700.woff2") format("woff2");
 }
 :root {
-  --ink: #0c120e;
-  --paper: #f3ead4;
+  --ink: #14120c;
+  --paper: #f6f1e4;
   --mint: #7dffb4;
-  --edge: #e4d8bf;
+  --pink: #f4a4c4;
+  --field: #101614;
 }
 * { box-sizing: border-box; }
 html, body {
   margin: 0;
   height: 100%;
-  background: var(--ink);
+  background: var(--field);
   color: var(--paper);
   font-family: Literata, Georgia, serif;
 }
@@ -82,38 +83,26 @@ body {
 }
 .book {
   position: relative;
-  perspective: 2400px;
-  perspective-origin: 50% 50%;
+  background: transparent;
 }
 .spread {
-  display: flex;
+  position: relative;
   width: 100%;
   height: 100%;
-  align-items: stretch;
-  transition: opacity 160ms linear;
+  overflow: hidden;
 }
-.book.fade .spread { opacity: 0; }
 .sheet {
-  flex: 1 1 0;
-  min-width: 0;
   height: 100%;
+}
+.sheet.under {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.sheet.top {
   position: relative;
-}
-.sheet[hidden], .gutter[hidden], .leaf[hidden] { display: none !important; }
-.gutter {
-  flex: 0 0 28px;
-  background:
-    linear-gradient(90deg, #cbbfa6 0%, #f3ead4 22%, #d5c9b0 46%, #b7ad96 50%, #d5c9b0 54%, #f3ead4 78%, #cbbfa6 100%);
-}
-.book.closed .sheet .page {
-  box-shadow:
-    -3px 0 0 var(--edge),
-    -6px 1px 0 #d9cdb4,
-    -9px 2px 0 #cbbfa6,
-    0 18px 44px rgba(0,0,0,0.5);
-}
-.book.spread-mode .page {
-  box-shadow: 0 14px 36px rgba(0,0,0,0.42);
+  z-index: 1;
+  background: var(--paper);
 }
 .page {
   height: 100%;
@@ -121,112 +110,133 @@ body {
   color: var(--ink);
   display: flex;
   flex-direction: column;
-  padding: 0.55rem 0.6rem 0.7rem;
-  position: relative;
+  padding: 0.45rem 0.5rem 0.55rem;
   overflow: hidden;
+  box-shadow:
+    -7px 0 0 #e7dcc4,
+    -12px 1px 0 #d4c6aa,
+    0 16px 36px rgba(0,0,0,0.45);
 }
-.endpaper {
-  height: 100%;
-  background:
-    linear-gradient(90deg, rgba(12,18,14,0.08), rgba(12,18,14,0) 18%),
-    var(--paper);
-  box-shadow: 0 14px 36px rgba(0,0,0,0.42);
-}
-.cover-mark, .cover-by {
+.kicker, .cover-mark, .cover-by, .caption, .balloon, .folio, .empty-label {
   font-family: "Comic Neue", Georgia, serif;
   font-weight: 700;
-  letter-spacing: 0.16em;
-  text-align: center;
-  margin: 0;
-  line-height: 1.1;
 }
-.cover-mark { font-size: clamp(1.05rem, 2.4vw, 1.55rem); padding-bottom: 0.35rem; }
-.cover-by { font-size: clamp(0.85rem, 1.8vw, 1.05rem); padding-top: 0.35rem; letter-spacing: 0.12em; }
-.panels { flex: 1 1 auto; min-height: 0; display: grid; gap: 0.4rem; }
+.kicker {
+  margin: 0 0 0.28rem;
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.panels { flex: 1 1 auto; min-height: 0; display: grid; gap: 0.45rem; }
 .layout-splash .panels { grid-template-rows: 1fr; }
-.layout-stack3 .panels { grid-template-rows: 1fr 1fr 1fr; }
-.layout-top2 .panels { grid-template-rows: 1.35fr 1fr; grid-template-columns: 1fr 1fr; }
-.layout-top2 .panel:first-child { grid-column: 1 / -1; }
-.layout-end .panels { grid-template-rows: auto minmax(0, 1fr); }
-.layout-end .panel:first-child { aspect-ratio: 16 / 9; width: 100%; }
+.layout-stack2 .panels { grid-template-rows: 1fr 1fr; }
+.layout-story .panels { flex: 0 1 auto; grid-template-rows: auto; align-content: start; }
+.layout-story .panel { height: auto; }
+.layout-story .panel img { flex: none; width: 100%; height: auto; object-fit: contain; }
+.panel.frame-band img {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+}
 .panel {
   position: relative;
   min-height: 0;
-  border: 2px solid var(--ink);
+  border: 3px solid var(--ink);
   background: var(--paper);
   overflow: hidden;
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
+.panel.tone-dark { background: #14201c; }
 .panel img {
   width: 100%;
-  height: 100%;
+  flex: 1 1 auto;
+  min-height: 0;
   object-fit: cover;
   object-position: center;
   display: block;
-  background: var(--paper);
   pointer-events: none;
 }
-.panel.is-empty {
-  overflow: visible;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 0.7rem 0.75rem 0.65rem;
-  background:
-    repeating-linear-gradient(0deg, rgba(12,18,14,0.035) 0 1px, transparent 1px 4px),
-    var(--paper);
-}
-.empty-label {
+.panel.fit-contain img { object-fit: contain; }
+.cover-mark {
+  position: absolute;
+  z-index: 3;
+  top: 0.35rem;
+  left: 0;
+  right: 0;
   margin: 0;
-  font-family: "Comic Neue", Georgia, serif;
-  font-weight: 700;
-  font-size: clamp(1.2rem, 2.5vw, 1.7rem);
-  letter-spacing: 0.08em;
+  text-align: center;
+  font-size: clamp(2.2rem, 8vw, 4rem);
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  color: #f7f1e4;
+  text-shadow:
+    0 3px 0 #14120c,
+    3px 0 0 #14120c,
+    -3px 0 0 #14120c,
+    0 -2px 0 #14120c;
+  pointer-events: none;
+}
+.logo-fpv { color: var(--pink); }
+.caption {
+  flex: 0 0 auto;
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  border-top: 3px solid var(--ink);
+  padding: 0.5rem 0.65rem 0.58rem;
+  font-size: clamp(1.12rem, 2.5vw, 1.5rem);
+  line-height: 1.25;
 }
 .balloon {
   position: absolute;
   z-index: 2;
   margin: 0;
+  max-width: 70%;
   transform: translate(-50%, -50%);
-  background: var(--paper);
+  background: #fffdf8;
   color: var(--ink);
-  border: 2px solid var(--ink);
-  border-radius: 0.35rem;
-  padding: 0.28rem 0.55rem 0.32rem;
-  font-family: "Comic Neue", Georgia, serif;
-  font-weight: 700;
-  font-size: clamp(0.95rem, 2vw, 1.2rem);
-  line-height: 1;
-  box-shadow: 2px 2px 0 rgba(12,18,14,0.18);
+  border: 3px solid var(--ink);
+  border-radius: 1rem;
+  padding: 0.35rem 0.7rem 0.4rem;
+  font-size: clamp(1.15rem, 2.8vw, 1.6rem);
+  line-height: 1.15;
+  box-shadow: 3px 3px 0 rgba(20,18,12,0.25);
+}
+.fly-row {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0.4rem;
 }
 .fly {
-  align-self: flex-end;
   background: var(--mint);
   color: var(--ink);
   font-family: "Comic Neue", Georgia, serif;
   font-weight: 700;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-decoration: none;
-  border: 2px solid var(--ink);
-  min-height: 44px;
-  min-width: 72px;
-  padding: 0.45rem 1rem;
+  border: 3px solid var(--ink);
+  border-radius: 4px;
+  min-height: 48px;
+  min-width: 96px;
+  padding: 0.45rem 1.15rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: 3px 3px 0 #14120c;
 }
 .fly:hover { filter: brightness(1.05); }
 .folio {
-  position: static;
   flex: 0 0 auto;
   margin: 0.28rem 0 0;
   font-size: 0.95rem;
   line-height: 1;
   letter-spacing: 0.04em;
-  z-index: 4;
+  text-align: right;
 }
-.folio-right { text-align: right; }
-.folio-left { text-align: left; }
 .transcript {
   position: absolute;
   width: 1px;
@@ -241,7 +251,8 @@ body {
 body.as-text .panel img,
 body.as-text .balloon,
 body.as-text .cover-mark,
-body.as-text .cover-by { display: none; }
+body.as-text .caption,
+body.as-text .kicker { display: none; }
 body.as-text .transcript {
   position: static;
   width: auto;
@@ -250,12 +261,15 @@ body.as-text .transcript {
   overflow: visible;
   clip: auto;
   white-space: normal;
-  padding: 0.7rem 0.5rem;
-  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  padding: 0.7rem 0.45rem;
+  font-size: clamp(1.05rem, 2.4vw, 1.35rem);
   line-height: 1.35;
 }
 body.as-text .page { overflow: auto; }
-body.as-text .panel.is-empty .transcript { padding: 0; }
+body.as-text .panel {
+  border: 0;
+  background: transparent;
+}
 .chrome {
   flex: 0 0 auto;
   display: flex;
@@ -280,15 +294,12 @@ button {
   font: inherit;
   color: var(--paper);
   background: transparent;
-  border: 1px solid rgba(243, 234, 212, 0.55);
+  border: 1px solid rgba(246, 241, 228, 0.55);
   min-height: 44px;
   padding: 0.2rem 0.75rem;
   cursor: pointer;
 }
-button:disabled {
-  opacity: 0.35;
-  cursor: default;
-}
+button:disabled { opacity: 0.35; cursor: default; }
 .contents {
   position: fixed;
   right: 0.7rem;
@@ -296,12 +307,14 @@ button:disabled {
   z-index: 6;
   background: var(--paper);
   color: var(--ink);
-  border: 2px solid var(--ink);
+  border: 3px solid var(--ink);
   padding: 0.7rem 0.9rem 0.85rem;
-  width: min(16rem, calc(100% - 1.4rem));
+  width: min(18rem, calc(100% - 1.4rem));
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  gap: 0.2rem;
+  max-height: 60vh;
+  overflow: auto;
 }
 .contents[hidden] { display: none !important; }
 .contents-title, .contents-chapter {
@@ -321,31 +334,9 @@ button:disabled {
   background: var(--paper);
   color: var(--ink);
   padding: 1rem;
+  font-family: "Comic Neue", Georgia, serif;
 }
 .noscript-book img { max-width: 100%; height: auto; }
-.leaf {
-  position: absolute;
-  z-index: 4;
-  transform-style: preserve-3d;
-  pointer-events: none;
-}
-.leaf .face {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  background: var(--paper);
-  box-shadow: 0 14px 28px rgba(0,0,0,0.35);
-  transform: translateZ(1px);
-}
-.leaf .back { transform: rotateY(180deg) translateZ(1px); }
-.leaf .bend {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  pointer-events: none;
-}
 .sr {
   position: absolute;
   width: 1px;
@@ -358,32 +349,26 @@ button:disabled {
   border: 0;
 }
 @media (max-width: 720px) {
-  .cover-mark { letter-spacing: 0.12em; }
-  .page { padding: 0.4rem 0.4rem 0.6rem; }
-  .panels { gap: 0.28rem; }
+  .page { padding: 0.35rem 0.35rem 0.45rem; }
+  .caption { font-size: 1.05rem; padding: 0.4rem 0.5rem 0.45rem; }
 }
 </style>
 </head>
 <body>
 <a class="skip" href="#book">Skip to the book</a>
 <main id="stage">
-  <div id="book" class="book closed single" tabindex="-1" role="region" aria-roledescription="comic book" aria-label="WebFPV" hidden>
+  <div id="book" class="book" tabindex="-1" role="region" aria-roledescription="comic book" aria-label="WebFPV" hidden>
     <div class="spread" id="spread">
-      <div class="sheet" id="sheet-left" hidden></div>
-      <div class="gutter" id="gutter" hidden></div>
-      <div class="sheet" id="sheet-right"></div>
-    </div>
-    <div id="leaf" class="leaf" hidden>
-      <div class="face front" id="leaf-front"></div>
-      <div class="face back" id="leaf-back"></div>
+      <div class="sheet under" id="under"></div>
+      <div class="sheet top" id="sheet"></div>
     </div>
   </div>
 </main>
-<p class="sr" id="sources">Pictures from the WebFPV simulator at commit cbaee3f, course WCMRC Round 5, 2 October 2026. Manga and scoring off. Angle mode. Five inch.</p>
+<p class="sr" id="sources">Words from Mat, andAgainFPV, 2 October 2026, and from the live site. Flight pictures from the WebFPV simulator at commit cbaee3f, course WCMRC Round 5, angle mode, manga and scoring off. The builder picture is the live track builder the same day.</p>
 <footer class="chrome">
   <div class="chrome-row">
     <button type="button" id="prev" aria-label="Previous page">Back</button>
-    <p id="where" aria-live="polite">The gate, cover</p>
+    <p id="where" aria-live="polite">Cover</p>
     <button type="button" id="next" aria-label="Next page">Next</button>
   </div>
   <div class="chrome-row quiet">
@@ -397,31 +382,40 @@ button:disabled {
 <noscript>
   <article class="noscript-book">
     <h1>WEBFPV</h1>
-    <p>andAgainFPV. The gate. 2 October 2026.</p>
-    <img src="assets/chapters/c1/c1-cover@1x.webp" alt="First person view in WebFPV. A mint race gate fills the glass on a fast approach, the distance reading 10 m. The wider frame includes the line Crashed, set down nearby. R restarts the run. This crop leaves that line out.">
-    <p>The gate is right there. It is close. Nobody speaks.</p>
-    <img src="assets/chapters/c1/c1-p1-a@1x.webp" alt="First person view. A small mint gate ahead on a grass field. The glass reads 14 m, 8 km/h, 2.0 m above the ground, ANGLE.">
-    <p>The gate is a small opening ahead.</p>
-    <img src="assets/chapters/c1/c1-p1-b@1x.webp" alt="The same approach, closer and level. The glass reads 12 m, 12 km/h, 1.3 m above the ground.">
-    <p>The opening grows.</p>
-    <img src="assets/chapters/c1/c1-p1-c@1x.webp" alt="The approach is low and fast. The glass reads 10 m, 30 km/h, 0.3 m above the ground. A faint crash notice is cropped off the top.">
-    <p>The approach is low and fast.</p>
-    <img src="assets/chapters/c1/c1-p2-a@1x.webp" alt="The line misses. The gate edge and a red marker sit at the bottom of the glass. The glass reads 5 m and 1 bounce.">
-    <p>The line misses.</p>
-    <img src="assets/chapters/c1/c1-p2-b@1x.webp" alt="The horizon tips. A gate marker reads 11 m off to the side. The glass reads 7 km/h and 6.4 m above the ground.">
-    <p>The horizon tips.</p>
-    <img src="assets/chapters/c1/c1-p2-c@1x.webp" alt="The quad sits on the grass. A mint gate is still ahead. The glass reads 9 m and 0 km/h. No crash sentence in this frame.">
-    <p>The gate is still there. Too fast.</p>
-    <img src="assets/chapters/c1/c1-p3-a@1x.webp" alt="The opening approach again. A mint gate ahead, the glass reads 14 m. Printed here as the invitation.">
-    <p>The gate waits.</p>
-    <p>Next. The next chapter is not drawn.</p>
+    <p>andAgainFPV. A pilot since 2020. It started as curiosity.</p>
+    <img src="assets/chapters/c1/gate-cover@1x.webp" alt="Colour first person view. A mint race gate fills the glass, the distance reading 10 m. Sky, trees and grass stay in colour. The crash notice is outside this crop.">
+    <h2>The question</h2>
+    <img src="assets/chapters/c1/gate-approach@1x.webp" alt="Colour approach. A mint gate ahead on the grass. The glass reads 14 m, 8 km/h, 2.0 m, ANGLE.">
+    <p>Could I compile Betaflight, put it in a virtual world, in a browser, and fly decent?</p>
+    <img src="assets/chapters/c1/gate-fast@1x.webp" alt="Colour, low and fast. The glass reads 10 m and 30 km/h. The crash notice is cropped off.">
+    <p>The day the answer was yes, I decided to see how far it could go. It was a project.</p>
+    <h2>For me</h2>
+    <img src="assets/chapters/c1/gate-level@1x.webp" alt="Colour, closer and level. The glass reads 12 m, 12 km/h, 1.3 m.">
+    <p>First it was for me. A sim that was easy to fly. For my kids, and for me.</p>
+    <img src="assets/chapters/c1/gate-sit@1x.webp" alt="Colour. The quad sits on the grass at 0 km/h. A mint gate is still ahead.">
+    <p>Too fast. It flew. Not a clean lap. Decent enough to keep going.</p>
+    <h2>For anyone</h2>
+    <img src="assets/chapters/c1/gate-miss@1x.webp" alt="Colour. The line misses. The gate edge sits at the bottom of the glass. The glass reads 5 m and 1 bounce.">
+    <p>Most school kids have no money, and they usually cannot install anything on their computers. So they have no sim.</p>
+    <img src="assets/chapters/c1/gate-tip@1x.webp" alt="Colour. The horizon tips. Sky on one side, the field on the other. A gate marker reads 11 m off to the side.">
+    <p>I wanted it for anyone who could not buy a VelociDrone, or anything like it. Free. No install. No account.</p>
+    <h2>Their game</h2>
+    <img src="assets/chapters/c1/builder-worlds@1x.webp" alt="The track builder asks what you are building, and shows three colour pictures: a grass race field, a small room with a green gate, and a town of roofs and wires.">
+    <p>What I am proudest of is the map and track builder. People can make their own game.</p>
+    <h2>The feel</h2>
+    <img src="assets/chapters/c1/whoop-room@1x.webp" alt="The whoop room from the builder: a small indoor space, a green gate, and a sign that reads WEBFPV.">
+    <p>What nearly made me quit was the feel. A real whoop and the sim. It is different. But how?</p>
+    <h2>Next</h2>
+    <img src="assets/chapters/c1/town@1x.webp" alt="The freestyle town from the builder: roofs, wires, and pink blossom.">
+    <p>The game keeps building. The next chapter is the next thing that ships.</p>
     <p><a href="https://webfpv.org/sim/">Fly WebFPV</a></p>
   </article>
 </noscript>
 <script>
 /*
  * The book. One file, no build, no fetch.
- * CHAPTERS is the whole narrative. Images live in assets/chapters/<id>/.
+ * CHAPTERS is the story. Pictures stay in colour under assets/chapters/.
+ * One page at a time. A drag or a click slides the whole page. It does not curl.
  */
 var CHAPTERS = [
   {
@@ -429,120 +423,180 @@ var CHAPTERS = [
     title: "The gate",
     date: "2 October 2026",
     sources: [
-      "WebFPV simulator commit cbaee3f, 2 October 2026",
-      "Course tracks/json/trk-a75a1bc4.json, WCMRC Round 5",
-      "Manga and scoring off. Angle mode. Five inch."
+      "Interview with Mat, andAgainFPV, 2 October 2026",
+      "WebFPV simulator commit cbaee3f, course WCMRC Round 5, angle mode, manga off",
+      "Live track builder, the same day",
+      "Landing page line: Free, no install, no account"
     ],
     pages: [
       {
         id: "c1-cover",
         layout: "splash",
-        where: "cover",
+        where: "Cover",
         contentsLabel: "Cover",
         cover: true,
-        aria: "Cover. The gate.",
+        aria: "Cover. It started as curiosity.",
         panels: [
           {
-            id: "c1-cover",
-            src: "assets/chapters/c1/c1-cover@1x.webp",
-            fit: "contain",
-            alt: "First person view in WebFPV. A mint race gate fills the glass on a fast approach, the distance reading 10 m. Cream paper, graphite ink, mint kept on the gate. Speed lines at the edges. The wider frame includes the English line Crashed, set down nearby. R restarts the run. This crop leaves that line out. The weight label shows through the gate glow. WCMRC Round 5, commit cbaee3f. Manga and scoring off.",
-            transcript: "The gate is right there. It is close. Nobody speaks.",
+            id: "gate-cover",
+            src: "assets/chapters/c1/gate-cover@1x.webp",
+            position: "center 68%",
+            alt: "Colour first person view in WebFPV. A mint race gate fills the glass on a fast approach, the distance reading 10 m. Sky, trees and grass stay in colour. A faint weight label shows through the gate glow. The wider frame includes the line Crashed, set down nearby. R restarts the run. This crop leaves that line out. WCMRC Round 5, commit cbaee3f.",
+            caption: "andAgainFPV. A pilot since 2020. It started as curiosity.",
+            transcript: "andAgainFPV. A pilot since 2020. It started as curiosity.",
             balloons: []
           }
         ]
       },
       {
         id: "c1-p1",
-        layout: "stack3",
+        layout: "stack2",
         where: "page 1",
-        contentsLabel: "Page 1",
+        contentsLabel: "The question",
+        kicker: "The question",
         folio: "1",
-        aria: "Page 1. The gate ahead.",
+        aria: "Page 1. The question.",
         panels: [
           {
-            id: "c1-p1-a",
+            id: "gate-approach",
             position: "center 58%",
-            src: "assets/chapters/c1/c1-p1-a@1x.webp",
-            alt: "First person view just airborne over a grass field. A small mint gate sits ahead. The glass reads 14 m, 8 km/h, 2.0 m above the ground, ANGLE, pack 25.1 volts. English HUD. WCMRC Round 5, commit cbaee3f. Manga and scoring off.",
-            transcript: "The gate is a small opening ahead.",
+            src: "assets/chapters/c1/gate-approach@1x.webp",
+            alt: "Colour first person view, just airborne over a grass field. A small mint gate sits ahead. The glass reads 14 m, 8 km/h, 2.0 m above the ground, ANGLE, pack 25.1 volts. WCMRC Round 5, commit cbaee3f.",
+            caption: "Could I compile Betaflight, put it in a virtual world, in a browser, and fly decent?",
+            transcript: "Could I compile Betaflight, put it in a virtual world, in a browser, and fly decent?",
             balloons: []
           },
           {
-            id: "c1-p1-b",
-            position: "center 55%",
-            src: "assets/chapters/c1/c1-p1-b@1x.webp",
-            alt: "The same approach, closer and still level. The mint gate is larger. The glass reads 12 m, 12 km/h, 1.3 m above the ground, ANGLE. WCMRC Round 5, commit cbaee3f.",
-            transcript: "The opening grows.",
-            balloons: []
-          },
-          {
-            id: "c1-p1-c",
+            id: "gate-fast",
             position: "center 62%",
-            src: "assets/chapters/c1/c1-p1-c@1x.webp",
-            alt: "The approach goes low and fast. The mint gate is ahead. The glass reads 10 m, 30 km/h, 0.3 m above the ground. A faint crash notice at the top of the frame is cropped off. Speed lines sit at the edges. WCMRC Round 5, commit cbaee3f.",
-            transcript: "The approach is low and fast.",
+            src: "assets/chapters/c1/gate-fast@1x.webp",
+            alt: "Colour. The approach is low and fast toward a mint gate. The glass reads 10 m, 30 km/h, 0.3 m above the ground. A crash notice at the top of the wider frame is cropped off. WCMRC Round 5, commit cbaee3f.",
+            caption: "The day the answer was yes, I decided to see how far it could go. It was a project.",
+            transcript: "The day the answer was yes, I decided to see how far it could go. It was a project.",
             balloons: []
           }
         ]
       },
       {
         id: "c1-p2",
-        layout: "top2",
+        layout: "stack2",
         where: "page 2",
-        contentsLabel: "Page 2",
+        contentsLabel: "For me",
+        kicker: "For me",
         folio: "2",
-        aria: "Page 2. Too fast.",
+        aria: "Page 2. For me.",
         panels: [
           {
-            id: "c1-p2-a",
-            position: "center 78%",
-            src: "assets/chapters/c1/c1-p2-a@1x.webp",
-            alt: "The line misses. The gate edge and a red wrong-side marker sit at the bottom of the glass. The glass reads 5 m, 12 km/h, 4.7 m above the ground, 1 bounce. Top buttons are cropped. WCMRC Round 5, commit cbaee3f.",
-            transcript: "The line misses. The gate edge passes under the glass.",
+            id: "gate-level",
+            position: "center 55%",
+            src: "assets/chapters/c1/gate-level@1x.webp",
+            alt: "Colour. The same approach, closer and still level. The mint gate is larger. The glass reads 12 m, 12 km/h, 1.3 m above the ground. WCMRC Round 5, commit cbaee3f.",
+            caption: "First it was for me. A sim that was easy to fly. For my kids, and for me.",
+            transcript: "First it was for me. A sim that was easy to fly. For my kids, and for me.",
             balloons: []
           },
           {
-            id: "c1-p2-b",
-            position: "center center",
-            src: "assets/chapters/c1/c1-p2-b@1x.webp",
-            alt: "The horizon tips. Sky on one side, the field and a building on the other. A gate marker reads 11 m off to the side. The glass reads 7 km/h and 6.4 m above the ground. Report bug and Pause stay upright. WCMRC Round 5, commit cbaee3f.",
-            transcript: "The horizon tips.",
-            balloons: []
-          },
-          {
-            id: "c1-p2-c",
+            id: "gate-sit",
             position: "32% 62%",
-            src: "assets/chapters/c1/c1-p2-c@1x.webp",
-            alt: "The quad sits on the grass at 0 km/h. A mint gate is still ahead, tilted, the glass reads 9 m. ANGLE. This frame has no crash sentence. Top buttons are cropped. WCMRC Round 5, commit cbaee3f.",
-            transcript: "The gate is still there. Too fast.",
-            balloons: [{ type: "narr", text: "Too fast.", x: 68, y: 18 }]
+            src: "assets/chapters/c1/gate-sit@1x.webp",
+            alt: "Colour. The quad sits on the grass at 0 km/h. A mint gate is still ahead, the glass reads 9 m. This frame has no crash sentence. Top buttons are cropped. WCMRC Round 5, commit cbaee3f.",
+            caption: "It flew. Not a clean lap. Decent enough to keep going.",
+            transcript: "Too fast. It flew. Not a clean lap. Decent enough to keep going.",
+            balloons: [{ type: "narr", text: "Too fast.", x: 68, y: 22 }]
           }
         ]
       },
       {
         id: "c1-p3",
-        layout: "end",
+        layout: "stack2",
         where: "page 3",
-        contentsLabel: "Page 3",
+        contentsLabel: "For anyone",
+        kicker: "For anyone",
         folio: "3",
-        aria: "Page 3. The gate waits.",
+        aria: "Page 3. For anyone.",
         panels: [
           {
-            id: "c1-p3-a",
-            src: "assets/chapters/c1/c1-p3-a@1x.webp",
-            alt: "The opening approach, printed again. A mint gate ahead on the grass. The glass reads 14 m, 8 km/h, 2.0 m above the ground, ANGLE. Same frame as the first panel of page 1, here as the invitation. Not a second liftoff. WCMRC Round 5, commit cbaee3f.",
-            transcript: "The gate waits.",
+            id: "gate-miss",
+            position: "center 78%",
+            src: "assets/chapters/c1/gate-miss@1x.webp",
+            alt: "Colour. The line misses. The gate edge and a red wrong-side marker sit at the bottom of the glass. The glass reads 5 m, 12 km/h, 4.7 m above the ground, 1 bounce. Top buttons are cropped. WCMRC Round 5, commit cbaee3f.",
+            caption: "Most school kids have no money, and they usually cannot install anything on their computers. So they have no sim.",
+            transcript: "Most school kids have no money, and they usually cannot install anything on their computers. So they have no sim.",
             balloons: []
           },
           {
-            id: "c1-p3-b",
-            empty: true,
-            label: "Next",
-            alt: "An empty panel labelled Next.",
-            transcript: "The next chapter is not drawn. The page offers one way to fly.",
-            balloons: [],
-            fly: { href: "https://webfpv.org/sim/", label: "FLY", name: "Fly WebFPV" }
+            id: "gate-tip",
+            position: "center center",
+            src: "assets/chapters/c1/gate-tip@1x.webp",
+            alt: "Colour. The horizon tips. Sky on one side, the field and a building on the other. A gate marker reads 11 m off to the side. The glass reads 7 km/h and 6.4 m above the ground. WCMRC Round 5, commit cbaee3f.",
+            caption: "I wanted it for anyone who could not buy a VelociDrone, or anything like it. Free. No install. No account.",
+            transcript: "I wanted it for anyone who could not buy a VelociDrone, or anything like it. Free. No install. No account.",
+            balloons: []
+          }
+        ]
+      },
+      {
+        id: "c1-p4",
+        layout: "story",
+        where: "page 4",
+        contentsLabel: "Their game",
+        kicker: "Their game",
+        folio: "4",
+        aria: "Page 4. Their game.",
+        panels: [
+          {
+            id: "builder-worlds",
+            src: "assets/chapters/c1/builder-worlds@1x.webp",
+            fit: "contain",
+            tone: "dark",
+            alt: "The live track builder, in colour. The dialog asks what you are building and shows three pictures: five inch racing on a grass field, whoop racing in a small room with a green gate, and a freestyle town of roofs and wires. The cards' own words name a sixty metre field, a 65 mm whoop, 28 inch gates, and a 160 metre plot. Patreon is outside this crop.",
+            caption: "What I am proudest of is the map and track builder. People can make their own game.",
+            transcript: "What I am proudest of is the map and track builder. People can make their own game.",
+            balloons: []
+          }
+        ]
+      },
+      {
+        id: "c1-p5",
+        layout: "story",
+        where: "page 5",
+        contentsLabel: "The feel",
+        kicker: "The feel",
+        folio: "5",
+        aria: "Page 5. The feel.",
+        panels: [
+          {
+            id: "whoop-room",
+            src: "assets/chapters/c1/whoop-room@1x.webp",
+            frame: "band",
+            tone: "dark",
+            alt: "Colour crop of the whoop room in the track builder. A green gate stands in a small indoor space. A sign on the wall reads WEBFPV. No weight is printed in this crop.",
+            caption: "What nearly made me quit was the feel. A real whoop and the sim. It is different. But how?",
+            transcript: "What nearly made me quit was the feel. A real whoop and the sim. It is different. But how?",
+            balloons: []
+          }
+        ]
+      },
+      {
+        id: "c1-next",
+        layout: "story",
+        where: "page 6",
+        contentsLabel: "Next",
+        kicker: "Next",
+        folio: "6",
+        aria: "Page 6. Next.",
+        fly: { href: "https://webfpv.org/sim/", label: "FLY", name: "Fly WebFPV" },
+        panels: [
+          {
+            id: "town",
+            src: "assets/chapters/c1/town@1x.webp",
+            frame: "band",
+            position: "center 70%",
+            tone: "dark",
+            alt: "Colour crop of the freestyle town in the track builder. Roofs, wires, and pink blossom. English is the only lettering in the crop.",
+            caption: "The game keeps building. The next chapter is the next thing that ships.",
+            transcript: "The game keeps building. The next chapter is the next thing that ships.",
+            balloons: []
           }
         ]
       }
@@ -551,12 +605,8 @@ var CHAPTERS = [
 ];
 
 var book = document.getElementById("book");
-var leftSheet = document.getElementById("sheet-left");
-var rightSheet = document.getElementById("sheet-right");
-var gutter = document.getElementById("gutter");
-var leaf = document.getElementById("leaf");
-var leafFront = document.getElementById("leaf-front");
-var leafBack = document.getElementById("leaf-back");
+var sheet = document.getElementById("sheet");
+var under = document.getElementById("under");
 var whereEl = document.getElementById("where");
 var prevBtn = document.getElementById("prev");
 var nextBtn = document.getElementById("next");
@@ -571,13 +621,12 @@ CHAPTERS.forEach(function (ch) {
   ch.pages.forEach(function (p) { pages.push(p); });
 });
 
-var views = [];
-var viewIndex = 0;
-var busy = false;
-var drag = null;
+var pageIndex = 0;
 var motion = true;
 var soundOn = false;
 var audioCtx = null;
+var anim = 0;
+var drag = null;
 
 function readStore(key) {
   try { return localStorage.getItem(key); } catch (e) { return null; }
@@ -585,57 +634,25 @@ function readStore(key) {
 function writeStore(key, value) {
   try { localStorage.setItem(key, value); } catch (e) { /* private mode */ }
 }
-
 function prefersStill() {
   return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
-function isWide() {
-  return window.matchMedia("(min-width: 900px) and (min-height: 620px)").matches;
-}
-
-function buildViews() {
-  var wide = isWide();
-  if (!wide) {
-    return pages.map(function (page, i) {
-      return { right: page, left: null, single: true, closed: i === 0 };
-    });
-  }
-  var out = [{ right: pages[0], left: null, single: true, closed: true }];
-  for (var i = 1; i < pages.length; i += 2) {
-    out.push({ right: pages[i], left: pages[i + 1] || null, single: false, closed: false });
-  }
-  return out;
-}
-
-function viewForPage(id) {
-  for (var i = 0; i < views.length; i++) {
-    var v = views[i];
-    if ((v.right && v.right.id === id) || (v.left && v.left.id === id)) return i;
-  }
-  return 0;
-}
-
-function currentAnchor() {
-  var v = views[viewIndex];
-  return v && v.right ? v.right.id : pages[0].id;
-}
-
-function pageEl(page, side) {
+function pageEl(page) {
   var art = document.createElement("article");
   art.className = "page layout-" + page.layout;
   art.setAttribute("aria-label", page.aria || page.where);
-  if (page.cover) {
-    var mark = document.createElement("p");
-    mark.className = "cover-mark";
-    mark.textContent = "WEBFPV";
-    art.appendChild(mark);
+  if (page.kicker) {
+    var kicker = document.createElement("p");
+    kicker.className = "kicker";
+    kicker.textContent = page.kicker;
+    art.appendChild(kicker);
   }
   var stack = document.createElement("div");
   stack.className = "panels";
   page.panels.forEach(function (panel) {
     var fig = document.createElement("figure");
-    fig.className = "panel" + (panel.empty ? " is-empty" : "");
+    fig.className = "panel" + (panel.tone === "dark" ? " tone-dark" : "") + (panel.fit === "contain" ? " fit-contain" : "") + (panel.frame === "band" ? " frame-band" : "");
     fig.id = panel.id;
     if (panel.src) {
       var img = document.createElement("img");
@@ -644,21 +661,21 @@ function pageEl(page, side) {
       img.srcset = panel.src + " 1x, " + hi + " 2x";
       img.alt = panel.alt;
       img.draggable = false;
-      if (panel.fit) img.style.objectFit = panel.fit;
       if (panel.position) img.style.objectPosition = panel.position;
-      if (page.cover) {
-        img.setAttribute("fetchpriority", "high");
-        img.decoding = "sync";
-      } else {
-        img.decoding = "async";
-      }
+      img.decoding = page.cover ? "sync" : "async";
       fig.appendChild(img);
     }
-    if (panel.label) {
-      var lab = document.createElement("p");
-      lab.className = "empty-label";
-      lab.textContent = panel.label;
-      fig.appendChild(lab);
+    if (page.cover) {
+      var mark = document.createElement("p");
+      mark.className = "cover-mark";
+      var web = document.createElement("span");
+      web.textContent = "WEB";
+      var fpv = document.createElement("span");
+      fpv.className = "logo-fpv";
+      fpv.textContent = "FPV";
+      mark.appendChild(web);
+      mark.appendChild(fpv);
+      fig.appendChild(mark);
     }
     (panel.balloons || []).forEach(function (b) {
       var balloon = document.createElement("p");
@@ -669,13 +686,11 @@ function pageEl(page, side) {
       balloon.textContent = b.text;
       fig.appendChild(balloon);
     });
-    if (panel.fly) {
-      var a = document.createElement("a");
-      a.className = "fly";
-      a.href = panel.fly.href;
-      a.setAttribute("aria-label", panel.fly.name);
-      a.textContent = panel.fly.label;
-      fig.appendChild(a);
+    if (panel.caption) {
+      var cap = document.createElement("figcaption");
+      cap.className = "caption";
+      cap.textContent = panel.caption;
+      fig.appendChild(cap);
     }
     var transcript = document.createElement("p");
     transcript.className = "transcript";
@@ -684,256 +699,77 @@ function pageEl(page, side) {
     stack.appendChild(fig);
   });
   art.appendChild(stack);
-  if (page.cover) {
-    var by = document.createElement("p");
-    by.className = "cover-by";
-    by.textContent = "andAgainFPV";
-    art.appendChild(by);
+  if (page.fly) {
+    var row = document.createElement("div");
+    row.className = "fly-row";
+    var a = document.createElement("a");
+    a.className = "fly";
+    a.href = page.fly.href;
+    a.setAttribute("aria-label", page.fly.name);
+    a.textContent = page.fly.label;
+    row.appendChild(a);
+    art.appendChild(row);
   }
   if (page.folio) {
     var folio = document.createElement("p");
-    folio.className = "folio " + (side === "left" ? "folio-left" : "folio-right");
+    folio.className = "folio";
     folio.textContent = page.folio;
     art.appendChild(folio);
   }
   return art;
 }
 
-function endpaper() {
-  var d = document.createElement("div");
-  d.className = "endpaper";
-  d.setAttribute("aria-hidden", "true");
-  return d;
-}
-
-function clonePage(node) {
-  var c = node.cloneNode(true);
-  c.querySelectorAll("[id]").forEach(function (el) { el.removeAttribute("id"); });
-  return c;
-}
-
 function fit() {
   var stage = document.getElementById("stage");
   var rect = stage.getBoundingClientRect();
-  var view = views[viewIndex];
-  var across = view && !view.single ? 2 : 1;
-  var gutterW = across === 2 ? 28 : 0;
-  var availW = Math.max(160, rect.width - 4);
-  var availH = Math.max(160, rect.height - 4);
-  var pageW = (availW - gutterW) / across;
-  var pageH = pageW * 1.5;
+  var availW = Math.max(160, rect.width - 8);
+  var availH = Math.max(160, rect.height - 8);
+  var pageH = availW * 1.62;
+  var pageW = availW;
   if (pageH > availH) {
     pageH = availH;
-    pageW = pageH / 1.5;
+    pageW = pageH / 1.62;
   }
-  book.style.width = (pageW * across + gutterW) + "px";
+  book.style.width = pageW + "px";
   book.style.height = pageH + "px";
-  gutter.style.flexBasis = gutterW + "px";
 }
 
-function whereText(view) {
-  if (view.closed && view.single && view.right && view.right.cover) return "The gate, cover";
-  if (view.single) return "The gate, " + view.right.where;
-  if (view.left) return "The gate, right " + view.right.where + ", then left " + view.left.where;
-  return "The gate, right " + view.right.where;
+function whereText(page) {
+  if (page.kicker) return page.kicker + ", " + page.where;
+  return page.where;
 }
 
-function paint(view) {
-  var single = !!view.single;
-  book.classList.toggle("single", single);
-  book.classList.toggle("spread-mode", !single);
-  book.classList.toggle("closed", !!view.closed);
-  leftSheet.hidden = single;
-  gutter.hidden = single;
-  rightSheet.replaceChildren(pageEl(view.right, "right"));
-  if (!single) {
-    leftSheet.replaceChildren(view.left ? pageEl(view.left, "left") : endpaper());
-  }
+function paint() {
+  var page = pages[pageIndex];
+  sheet.replaceChildren(pageEl(page));
+  sheet.style.transition = "none";
+  sheet.style.transform = "none";
+  under.style.transition = "none";
+  under.style.transform = "none";
+  under.replaceChildren();
   fit();
-  whereEl.textContent = whereText(view);
-  prevBtn.disabled = viewIndex <= 0;
-  nextBtn.disabled = viewIndex >= views.length - 1;
-  var anchor = view.right.id;
-  if (location.hash !== "#" + anchor) {
-    history.replaceState(null, "", "#" + anchor);
-  }
+  whereEl.textContent = whereText(page);
+  prevBtn.disabled = pageIndex <= 0;
+  nextBtn.disabled = pageIndex >= pages.length - 1;
+  if (location.hash !== "#" + page.id) history.replaceState(null, "", "#" + page.id);
   preloadAround();
 }
 
 function preloadAround() {
   [-1, 0, 1].forEach(function (delta) {
-    var v = views[viewIndex + delta];
-    if (!v) return;
-    [v.right, v.left].forEach(function (page) {
-      if (!page) return;
-      page.panels.forEach(function (panel) {
-        if (!panel.src) return;
-        var img = new Image();
-        img.src = panel.src;
-        var hi = new Image();
-        hi.src = panel.src.replace("@1x", "@2x");
-      });
+    var page = pages[pageIndex + delta];
+    if (!page) return;
+    page.panels.forEach(function (panel) {
+      if (!panel.src) return;
+      var img = new Image();
+      img.src = panel.src;
     });
   });
 }
 
 function can(dir) {
-  var next = viewIndex + dir;
-  return next >= 0 && next < views.length;
-}
-
-function shapeChanges(dir) {
-  var from = views[viewIndex];
-  var to = views[viewIndex + dir];
-  if (!from || !to) return false;
-  return !!from.single !== !!to.single;
-}
-
-function blankFace() {
-  var d = document.createElement("div");
-  d.className = "page";
-  return d;
-}
-
-function placeLeaf(side) {
-  var host = side === "left" ? leftSheet : rightSheet;
-  var b = book.getBoundingClientRect();
-  var s = host.getBoundingClientRect();
-  leaf.style.left = (s.left - b.left) + "px";
-  leaf.style.top = (s.top - b.top) + "px";
-  leaf.style.width = s.width + "px";
-  leaf.style.height = s.height + "px";
-}
-
-function bendGradient(originRight) {
-  if (originRight) {
-    return "linear-gradient(270deg, rgba(12,18,14,0.42), rgba(12,18,14,0.05) 20%, rgba(255,255,255,0.18) 68%, rgba(12,18,14,0.14))";
-  }
-  return "linear-gradient(90deg, rgba(12,18,14,0.42), rgba(12,18,14,0.05) 20%, rgba(255,255,255,0.18) 68%, rgba(12,18,14,0.14))";
-}
-
-function applyProgress(dir, p, instant, fromView) {
-  var from = fromView || views[viewIndex];
-  var originRight;
-  var angle;
-  if (from.single) {
-    originRight = dir < 0;
-    angle = dir > 0 ? -180 * p : 180 * p;
-  } else if (dir > 0) {
-    originRight = true;
-    angle = 180 * p;
-  } else {
-    originRight = false;
-    angle = -180 * p;
-  }
-  if (from.single) angle = dir > 0 ? -88 * p : 88 * p;
-  leaf.style.transformOrigin = originRight ? "right center" : "left center";
-  leaf.style.transition = instant ? "none" : "transform 680ms cubic-bezier(.22,.7,.2,1), opacity 680ms linear";
-  leaf.style.transform = "rotateY(" + angle + "deg)";
-  leaf.style.opacity = from.single ? String(1 - Math.max(0, (p - 0.28) / 0.72)) : "1";
-  leafBack.hidden = !!from.single;
-  var bend = leafFront.querySelector(".bend");
-  if (bend) {
-    bend.style.background = bendGradient(originRight);
-    bend.style.opacity = String(Math.sin(Math.PI * p) * 0.9);
-  }
-}
-
-function addBend() {
-  var bend = document.createElement("div");
-  bend.className = "bend";
-  leafFront.appendChild(bend);
-}
-
-function beginLeaf(dir) {
-  var from = views[viewIndex];
-  var to = views[viewIndex + dir];
-  var side = from.single ? "right" : (dir > 0 ? "left" : "right");
-  var host = side === "left" ? leftSheet : rightSheet;
-  var snapshot = host.firstElementChild ? clonePage(host.firstElementChild) : blankFace();
-  if (from.single) {
-    rightSheet.replaceChildren(pageEl(to.right, "right"));
-    book.classList.toggle("closed", !!to.closed);
-  } else if (dir > 0) {
-    leftSheet.replaceChildren(to.left ? pageEl(to.left, "left") : endpaper());
-  } else {
-    rightSheet.replaceChildren(pageEl(to.right, "right"));
-  }
-  leafFront.replaceChildren(snapshot);
-  addBend();
-  var land = from.single ? to.right : (dir > 0 ? to.right : (to.left || null));
-  if (land) leafBack.replaceChildren(pageEl(land, dir > 0 ? "right" : "left"));
-  else leafBack.replaceChildren(endpaper());
-  leaf.hidden = false;
-  placeLeaf(side);
-  applyProgress(dir, 0, true, from);
-  book.classList.add("turning");
-  return from;
-}
-
-function waitTransition(ms) {
-  return new Promise(function (resolve) {
-    var done = false;
-    function finish() {
-      if (done) return;
-      done = true;
-      leaf.removeEventListener("transitionend", onEnd);
-      resolve();
-    }
-    function onEnd(e) {
-      if (e.propertyName === "transform" && e.target === leaf) finish();
-    }
-    leaf.addEventListener("transitionend", onEnd);
-    setTimeout(finish, ms);
-  });
-}
-
-function commit(dir) {
-  viewIndex += dir;
-  leaf.hidden = true;
-  leaf.style.transition = "none";
-  leaf.style.transform = "none";
-  leaf.style.opacity = "1";
-  leafBack.hidden = false;
-  leafFront.replaceChildren();
-  leafBack.replaceChildren();
-  book.classList.remove("turning");
-  paint(views[viewIndex]);
-  busy = false;
-  rustle();
-}
-
-function turn(dir) {
-  if (busy || !can(dir)) return;
-  if (!motion || shapeChanges(dir)) {
-    fadeTo(viewIndex + dir);
-    return;
-  }
-  busy = true;
-  var from = beginLeaf(dir);
-  applyProgress(dir, 1, false, from);
-  waitTransition(820).then(function () { commit(dir); });
-}
-
-function fadeTo(next) {
-  busy = true;
-  book.classList.add("fade");
-  setTimeout(function () {
-    viewIndex = next;
-    paint(views[viewIndex]);
-    book.classList.remove("fade");
-    busy = false;
-  }, 180);
-}
-
-function goToId(id) {
-  if (busy) return;
-  var idx = viewForPage(id);
-  contentsEl.hidden = true;
-  contentsBtn.setAttribute("aria-expanded", "false");
-  if (idx === viewIndex) return;
-  if (Math.abs(idx - viewIndex) === 1) turn(idx > viewIndex ? 1 : -1);
-  else fadeTo(idx);
+  var next = pageIndex + dir;
+  return next >= 0 && next < pages.length;
 }
 
 function rustle() {
@@ -941,23 +777,93 @@ function rustle() {
   var Ctx = window.AudioContext || window.webkitAudioContext;
   if (!Ctx) return;
   if (!audioCtx) audioCtx = new Ctx();
-  var dur = 0.16;
+  var dur = 0.12;
   var rate = audioCtx.sampleRate;
   var buf = audioCtx.createBuffer(1, Math.floor(rate * dur), rate);
   var data = buf.getChannelData(0);
   for (var i = 0; i < data.length; i++) {
     var t = i / data.length;
-    data[i] = (Math.random() * 2 - 1) * Math.pow(1 - t, 2) * 0.22;
+    data[i] = (Math.random() * 2 - 1) * Math.pow(1 - t, 2) * 0.18;
   }
   var src = audioCtx.createBufferSource();
   src.buffer = buf;
   var filter = audioCtx.createBiquadFilter();
   filter.type = "bandpass";
-  filter.frequency.value = 1600;
+  filter.frequency.value = 1400;
   filter.Q.value = 0.7;
   src.connect(filter);
   filter.connect(audioCtx.destination);
   src.start();
+}
+
+function showUnder(dir) {
+  var page = pages[pageIndex + dir];
+  if (!page) {
+    under.replaceChildren();
+    under.style.transform = "none";
+    return;
+  }
+  under.replaceChildren(pageEl(page));
+  var width = sheet.getBoundingClientRect().width || book.getBoundingClientRect().width || 320;
+  under.style.transition = "none";
+  under.style.transform = "translateX(" + (dir > 0 ? width : -width) + "px)";
+}
+
+function finishIndex(next, token) {
+  if (token !== anim) return;
+  pageIndex = next;
+  paint();
+  rustle();
+}
+
+function slideTo(dir) {
+  if (!can(dir)) return;
+  var next = pageIndex + dir;
+  anim += 1;
+  var token = anim;
+  if (!motion) {
+    finishIndex(next, token);
+    return;
+  }
+  showUnder(dir);
+  var width = sheet.getBoundingClientRect().width || book.getBoundingClientRect().width || 320;
+  var end = dir > 0 ? -width : width;
+  var ease = "transform 320ms cubic-bezier(.2,.7,.2,1)";
+  sheet.style.transition = "none";
+  void under.offsetWidth;
+  sheet.style.transition = ease;
+  under.style.transition = ease;
+  sheet.style.transform = "translateX(" + end + "px)";
+  under.style.transform = "translateX(0px)";
+  var done = false;
+  function complete() {
+    if (done) return;
+    done = true;
+    sheet.removeEventListener("transitionend", onEnd);
+    finishIndex(next, token);
+  }
+  function onEnd(e) {
+    if (e.target === sheet && e.propertyName === "transform") complete();
+  }
+  sheet.addEventListener("transitionend", onEnd);
+  setTimeout(complete, 420);
+}
+
+function jumpTo(index) {
+  if (index < 0 || index >= pages.length || index === pageIndex) return;
+  anim += 1;
+  pageIndex = index;
+  paint();
+}
+
+function goToId(id) {
+  contentsEl.hidden = true;
+  contentsBtn.setAttribute("aria-expanded", "false");
+  var idx = 0;
+  for (var i = 0; i < pages.length; i++) if (pages[i].id === id) idx = i;
+  if (idx === pageIndex) return;
+  if (Math.abs(idx - pageIndex) === 1) slideTo(idx > pageIndex ? 1 : -1);
+  else jumpTo(idx);
 }
 
 function buildContents() {
@@ -1007,24 +913,24 @@ function onKey(e) {
   if (contentsEl.hidden === false && (e.key === "ArrowDown" || e.key === "ArrowUp")) return;
   if (e.key === "ArrowRight" || e.key === "ArrowDown" || e.key === "PageDown" || e.key === " ") {
     e.preventDefault();
-    turn(1);
+    slideTo(1);
   } else if (e.key === "ArrowLeft" || e.key === "ArrowUp" || e.key === "PageUp") {
     e.preventDefault();
-    turn(-1);
+    slideTo(-1);
   } else if (e.key === "Home") {
     e.preventDefault();
-    goToId(pages[0].id);
+    jumpTo(0);
   } else if (e.key === "End") {
     e.preventDefault();
-    goToId(pages[pages.length - 1].id);
+    jumpTo(pages.length - 1);
   }
 }
 
 book.addEventListener("pointerdown", function (e) {
-  if (busy) return;
   if (e.button !== undefined && e.button !== 0) return;
   if (e.target.closest("a, button")) return;
   e.preventDefault();
+  anim += 1;
   var rect = book.getBoundingClientRect();
   drag = {
     id: e.pointerId,
@@ -1033,93 +939,74 @@ book.addEventListener("pointerdown", function (e) {
     rect: rect,
     moved: false,
     dir: 0,
-    progress: 0,
-    from: null
+    width: rect.width
   };
+  sheet.style.transition = "none";
+  under.style.transition = "none";
   if (book.setPointerCapture) {
     try { book.setPointerCapture(e.pointerId); } catch (err) { /* ignore */ }
   }
 });
 
 book.addEventListener("pointermove", function (e) {
-  if (!drag || e.pointerId !== drag.id || busy && drag.dir === 0) return;
+  if (!drag || e.pointerId !== drag.id) return;
   var dx = e.clientX - drag.x;
   var dy = e.clientY - drag.y;
-  if (drag.fade) {
-    var fadeWidth = Math.max(120, drag.rect.width * 0.7);
-    drag.progress = Math.max(0, Math.min(1, Math.abs(dx) / fadeWidth));
-    book.style.opacity = String(1 - drag.progress * 0.65);
-    return;
-  }
-  if (!drag.moved && Math.hypot(dx, dy) < 10) return;
-  if (!drag.dir) {
-    var dir = dx < 0 ? 1 : -1;
-    if (!can(dir)) {
-      drag.moved = true;
-      drag.dir = 0;
-      return;
-    }
-    if (!motion || shapeChanges(dir)) {
-      drag.moved = true;
-      drag.dir = dir;
-      drag.fade = true;
-      drag.progress = 0;
-      return;
-    }
-    busy = true;
-    drag.dir = dir;
-    drag.from = beginLeaf(dir);
-  }
-  if (!drag.dir) {
-    drag.moved = true;
-    return;
-  }
+  if (!drag.moved && Math.hypot(dx, dy) < 8) return;
   drag.moved = true;
-  var width = Math.max(120, drag.rect.width * (views[viewIndex].single ? 0.7 : 0.45));
-  drag.progress = Math.max(0, Math.min(1, Math.abs(dx) / width));
-  applyProgress(drag.dir, drag.progress, true, drag.from);
+  if (!drag.dir) {
+    drag.dir = dx < 0 ? 1 : -1;
+    if (can(drag.dir)) showUnder(drag.dir);
+  }
+  var shown = dx;
+  if ((drag.dir > 0 && dx > 0) || (drag.dir < 0 && dx < 0)) shown = 0;
+  if (!can(drag.dir)) shown = dx * 0.12;
+  else if (drag.dir > 0) shown = Math.min(0, shown);
+  else shown = Math.max(0, shown);
+  sheet.style.transform = "translateX(" + shown + "px)";
+  if (can(drag.dir)) {
+    var underX = drag.dir > 0 ? drag.width + shown : -drag.width + shown;
+    under.style.transform = "translateX(" + underX + "px)";
+  }
 });
 
 function endDrag(e) {
   if (!drag || (e && e.pointerId !== undefined && e.pointerId !== drag.id)) return;
   var d = drag;
   drag = null;
+  var dx = (e && e.clientX !== undefined ? e.clientX : d.x) - d.x;
   if (!d.moved) {
     var localX = d.x - d.rect.left;
-    var dir = localX > d.rect.width / 2 ? 1 : -1;
-    turn(dir);
+    slideTo(localX > d.rect.width / 2 ? 1 : -1);
     return;
   }
-  if (d.fade && d.dir) {
-    book.style.opacity = "1";
-    if (d.progress > 0.32) fadeTo(viewIndex + d.dir);
+  var commit = d.dir && can(d.dir) && Math.abs(dx) > d.width * 0.22;
+  var ease = "transform 200ms ease";
+  if (!commit) {
+    anim += 1;
+    sheet.style.transition = ease;
+    under.style.transition = ease;
+    sheet.style.transform = "none";
+    under.style.transform = "translateX(" + (d.dir > 0 ? d.width : -d.width) + "px)";
+    setTimeout(function () { if (!drag) under.replaceChildren(); }, 220);
     return;
   }
-  if (!d.dir) return;
-  if (d.progress > 0.32) {
-    applyProgress(d.dir, 1, false, d.from);
-    waitTransition(820).then(function () { commit(d.dir); });
-  } else {
-    applyProgress(d.dir, 0, false, d.from);
-    waitTransition(460).then(function () {
-      leaf.hidden = true;
-      leaf.style.transform = "none";
-      leaf.style.opacity = "1";
-      leafBack.hidden = false;
-      leafFront.replaceChildren();
-      leafBack.replaceChildren();
-      book.classList.remove("turning");
-      paint(views[viewIndex]);
-      busy = false;
-    });
-  }
+  anim += 1;
+  var token = anim;
+  var next = pageIndex + d.dir;
+  var end = d.dir > 0 ? -d.width : d.width;
+  sheet.style.transition = ease;
+  under.style.transition = ease;
+  sheet.style.transform = "translateX(" + end + "px)";
+  under.style.transform = "translateX(0px)";
+  setTimeout(function () { finishIndex(next, token); }, 230);
 }
 
 book.addEventListener("pointerup", endDrag);
 book.addEventListener("pointercancel", endDrag);
 
-prevBtn.addEventListener("click", function () { turn(-1); });
-nextBtn.addEventListener("click", function () { turn(1); });
+prevBtn.addEventListener("click", function () { slideTo(-1); });
+nextBtn.addEventListener("click", function () { slideTo(1); });
 contentsBtn.addEventListener("click", function () {
   var open = contentsEl.hidden;
   contentsEl.hidden = !open;
@@ -1144,12 +1031,7 @@ soundBtn.addEventListener("click", function () {
   if (soundOn) rustle();
 });
 document.addEventListener("keydown", onKey);
-window.addEventListener("resize", function () {
-  var id = currentAnchor();
-  views = buildViews();
-  viewIndex = viewForPage(id);
-  paint(views[viewIndex]);
-});
+window.addEventListener("resize", function () { fit(); });
 
 var storedMotion = readStore("webfpv-book-motion");
 if (storedMotion === "0" || (storedMotion === null && prefersStill())) setMotion(false);
@@ -1166,28 +1048,27 @@ if (readStore("webfpv-book-sound") === "1") {
 }
 
 buildContents();
-views = buildViews();
 var start = (location.hash || "").replace("#", "");
-viewIndex = start ? viewForPage(start) : 0;
+for (var i = 0; i < pages.length; i++) if (pages[i].id === start) pageIndex = i;
+window.addEventListener("hashchange", function () {
+  var id = (location.hash || "").replace("#", "");
+  var idx = -1;
+  for (var n = 0; n < pages.length; n++) if (pages[n].id === id) idx = n;
+  if (idx >= 0 && idx !== pageIndex) jumpTo(idx);
+});
+
 book.hidden = false;
-paint(views[viewIndex]);
+paint();
 </script>
 <!--
 MAINTAINERS
 The book is this file. Chapter data is the CHAPTERS array above.
-To add a chapter, append one object and put the inked images in
-docs/assets/chapters/<id>/ as <panel>@1x.webp and <panel>@2x.webp.
-Each panel needs an id, an alt, and a transcript. A picture panel
-also needs a src. A factual balloon needs a source. Narration stays
-in balloons. It is not baked into the pictures.
-On a wide screen the right page is read first, then the left page.
-Inside a page the order is top to bottom.
-The last page keeps one link to https://webfpv.org/sim/ and an empty
-Next panel until the next chapter exists. When chapter 10 is drawn,
-that ending moves there.
-Recapture with: node tools/fly/run.js c1
-Re-ink with: node tools/ink/ink.js
-Research, raw captures, and tools stay outside docs/.
+Pictures stay in colour. Words stay in caption fields, not baked into the art.
+One page shows at a time. Next slides the page off. It does not use a 3D curl.
+To add a chapter, append one object and the pictures.
+Each panel needs an id, an alt, a caption, and a transcript.
+The last page keeps one link to https://webfpv.org/sim/.
+Colour frames: node tools/ink/color.js
 Fonts are SIL Open Font License 1.1. Comic Neue, copyright 2014 The
 Comic Neue Project Authors. Literata, copyright 2017 The Literata
 Project Authors. Licence files are in vendor/fonts/.

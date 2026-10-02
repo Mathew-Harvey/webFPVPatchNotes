@@ -1,0 +1,12 @@
+{
+  "id": "gate-cover",
+  "source": "captures/c1/debug_a1.png",
+  "extract": {
+    "left": 726,
+    "top": 482,
+    "width": 490,
+    "height": 598
+  },
+  "colour": true,
+  "note": "Colour portrait on the gate. The crash notice sits above this crop."
+}

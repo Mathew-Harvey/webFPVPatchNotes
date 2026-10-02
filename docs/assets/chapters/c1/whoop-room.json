@@ -1,0 +1,12 @@
+{
+  "id": "whoop-room",
+  "source": "captures/survey/builder-desktop.png",
+  "extract": {
+    "left": 545,
+    "top": 318,
+    "width": 300,
+    "height": 168
+  },
+  "colour": true,
+  "note": "The whoop room picture from the builder card. English sign. No mass."
+}

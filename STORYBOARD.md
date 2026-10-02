@@ -76,7 +76,7 @@ Layout: stack2.
 
 ### Slice as shipped
 
-Until later chapters are inked, the book is this chapter: the cover and three pages. Page `c1-p3` is the temporary last page. It is a calm gate, an empty panel labelled Next, and the mint FLY link to https://webfpv.org/sim/. That ending moves to chapter 10 when the later chapters exist. No calm second liftoff was captured, so `c1-p3-a` prints the opening approach again, as the invitation.
+The shipped chapter is in colour, with the origin story in caption boxes: the question, who it is for, the builder, the feel, and a last page that links to the sim. One page shows at a time. The pictures are the flight frames and the live builder, not a graphite print. Later chapters still append. The FLY link stays on the last page until chapter 10 has its own ending.
 
 Every flight frame is WCMRC Round 5, `tracks/json/trk-a75a1bc4.json`, simulator commit `cbaee3f`, angle mode, manga and scoring off. Ink keeps the mint gate. Crops are framing.
 

@@ -4,7 +4,7 @@ A public comic about [WebFPV](https://webfpv.org/sim/), the free browser FPV sim
 
 Open `docs/index.html` in a browser, or read it from GitHub Pages at https://mathew-harvey.github.io/webFPVPatchNotes/ once Pages is serving `/docs`.
 
-The pages turn with a click or a drag at the corner, the arrow keys, space, Home, End, and a swipe. On a wide screen the right page is read first, then the left page. The last page has one link, FLY, to https://webfpv.org/sim/.
+The words are on the page, in caption boxes. The pictures stay in the colours of the sim. One page shows at a time. It turns with a click, a drag, the arrow keys, space, Home, End, and a swipe. The last page has one link, FLY, to https://webfpv.org/sim/.
 
 ## Add a chapter
 
@@ -23,7 +23,7 @@ node tools/fly/run.js c1
 node tools/ink/ink.js
 ```
 
-`tools/ink` needs `sharp` (`npm install --prefix tools/ink`). The ink keeps mint on the gate and prints the rest in graphite on cream paper.
+`tools/ink` needs `sharp` (`npm install --prefix tools/ink`). `node tools/ink/color.js` writes the colour panels the book shows.
 
 ## Checks
 

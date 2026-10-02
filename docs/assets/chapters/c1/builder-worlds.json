@@ -1,0 +1,12 @@
+{
+  "id": "builder-worlds",
+  "source": "captures/survey/builder-desktop.png",
+  "extract": {
+    "left": 170,
+    "top": 155,
+    "width": 1100,
+    "height": 520
+  },
+  "colour": true,
+  "note": "The builder asking what you are building: five inch, whoop room, freestyle town. Patreon is outside this crop."
+}
