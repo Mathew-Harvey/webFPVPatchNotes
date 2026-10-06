@@ -105,6 +105,7 @@ body {
   padding: 0 12px;
   cursor: pointer;
 }
+a.btn { display: inline-flex; align-items: center; text-decoration: none; }
 .btn:hover { color: var(--cream); border-color: rgba(232, 168, 184, 0.7); }
 .btn[aria-pressed="true"] { color: var(--page-ink); background: var(--sakura); border-color: var(--sakura); }
 .btn:disabled { opacity: 0.3; cursor: default; }
@@ -501,6 +502,7 @@ svg.bubbles { z-index: 4; }
     <button type="button" class="btn" id="text-btn" aria-pressed="false">Read as text</button>
     <button type="button" class="btn wide" id="full-btn">Full screen</button>
     <button type="button" class="btn wide" id="sound-btn" aria-pressed="false">Sound</button>
+    <a class="btn wide" href="https://www.instagram.com/webfpv_org/" target="_blank" rel="noopener noreferrer">Instagram</a>
   </div>
 </header>
 <main id="stage">
@@ -531,6 +533,7 @@ svg.bubbles { z-index: 4; }
     <p>The game will keep building.</p>
     <p>Chapter 02. What's coming next?</p>
     <p><a href="https://webfpv.org/sim/">Fly WebFPV</a></p>
+    <p><a href="https://www.instagram.com/webfpv_org/">WebFPV on Instagram</a></p>
   </div>
 </noscript>
 <script src="layout.js"></script>
