@@ -48,6 +48,7 @@
         'Interview with Mat, andAgainFPV, 2 October 2026 (STORY.md)',
         'Patch notes, webfpv.org/notes, 22 August to 2 October 2026',
         'WebFPV simulator, shot through its own renderer; course WCMRC Round 5 and RaceGOW Season 5 Track 1',
+        'Release notes, 3 to 11 October 2026 (RELEASE-NOTES-WEEK-2.md), read from the code on main of the simulator, the board and the front page',
         'Commits 2f3a98c and 983521b (11 August 2026) and 17f0f76 (13 August 2026)'
       ],
       pages: [
@@ -88,6 +89,7 @@
             { k: 'letter', x: 84, y: 420, size: 96, anchor: 'start', max: 560, runs: [['FLY DECENT', 'mint']], in: 'hero' },
             { k: 'head', x: 76, y: 470, w: 520, t: 'How a browser sim got built, in the words of the pilot who built it.', in: 'hero' },
             { k: 'sub', x: 76, y: 600, w: 420, t: 'andAgainFPV', in: 'hero' },
+            { k: 'tag', x: 76, y: 680, t: 'New this week: CommunityGow', in: 'hero' },
             { k: 'tag', x: 66, y: 1002, t: 'The gate', in: 'w1' },
             { k: 'letter', x: 60, y: 1342, size: 44, anchor: 'start', max: 246, runs: [['THE QUESTION', 'mint']], in: 'w1' },
             { k: 'tag', x: 372, y: 1024, t: 'The builder', in: 'w2' },
@@ -508,6 +510,150 @@
             { k: 'note', x: 529, yb: 886, w: 390, d: '24 September', t: 'The solid world is in the physics.', in: 'n8', small: true },
             { k: 'note', x: 529, yb: 1126, w: 390, d: '26 September', t: 'Cars drive the roads. Chase a car.', in: 'n9', small: true },
             { k: 'note', x: 529, yb: 1367, w: 390, d: '2 October', t: 'Flight paths: fourteen figures, a power loop and a Matty flip among them.', in: 'n10', small: true }
+          ]
+        },
+        {
+          id: 'c1-p14b',
+          label: 'CommunityGow',
+          tone: 'paper',
+          layout: ['h', 0.12, 0, 'hd', ['h', 1 / 3, 0, ['v', 0.5, 0, 'n1', 'n2'], ['h', 0.5, 0, ['v', 0.5, 0, 'n3', 'n4'], ['v', 0.5, 0, 'n5', 'n6']]]],
+          panels: [
+            { id: 'hd', fill: 'paper', frame: 'none', alt: 'The page heading.' },
+            { id: 'n1', fill: 'ink', alt: "A black panel holding one dated note, 1 of 6." },
+            { id: 'n2', fill: 'ink', alt: "A black panel holding one dated note, 2 of 6." },
+            { id: 'n3', fill: 'ink', alt: "A black panel holding one dated note, 3 of 6." },
+            { id: 'n4', fill: 'ink', alt: "A black panel holding one dated note, 4 of 6." },
+            { id: 'n5', fill: 'ink', alt: "A black panel holding one dated note, 5 of 6." },
+            { id: 'n6', fill: 'ink', alt: "A black panel holding one dated note, 6 of 6." }
+          ],
+          words: [
+            { k: 'letter', x: 70, y: 150, size: 84, anchor: 'start', runs: [['COMMUNITYGOW', 'cream']], in: 'hd' },
+            { k: 'note', x: 64, y: 210, w: 390, d: '11 October', t: 'A club or a group of friends races a new whoop track every week, at home, at their own pace, with a YouTube link as the evidence. It lives at webfpv.org/board/CommunityGow.', in: 'n1', small: true },
+            { k: 'note', x: 529, y: 210, w: 390, d: '11 October', t: 'Name your club, press Start my community, and it is public from the first second. No account and no email. You keep one organiser link, and it is the only key to editing, so save it.', in: 'n2', small: true },
+            { k: 'note', x: 64, y: 625, w: 390, d: '11 October', t: 'A round is one track, sent from the whoop builder with Send to the community, or dropped in as a pack. It can open on a date, so next week is lined up today. Every round is also a track on the board, with a Fly it in the simulator button.', in: 'n3', small: true },
+            { k: 'note', x: 529, y: 625, w: 390, d: '11 October', t: 'Post a time with no sign in. Type it the way you say it: 34.56, 12s, 1:02.5. A YouTube link plays in place, and nothing loads from YouTube until you press Watch.', in: 'n4', small: true },
+            { k: 'note', x: 64, y: 1040, w: 390, d: '11 October', t: 'The Season table scores every round on the F1 points, 25 for first down to 1 for tenth. The organiser can mark a time Verified. Nothing is verified for you.', in: 'n5', small: true },
+            { k: 'note', x: 529, y: 1040, w: 390, d: '11 October', t: 'Invite people gives a link, a QR code and a poster for the wall. Never used on the live board by a pilot yet: it was checked with self tests and a headless browser.', in: 'n6', small: true }
+          ]
+        },
+        {
+          id: 'c1-p14b2',
+          label: 'Tunes and the guide',
+          tone: 'paper',
+          layout: ['h', 0.12, 0, 'hd', ['h', 1 / 3, 0, ['v', 0.5, 0, 'n1', 'n2'], ['h', 0.5, 0, ['v', 0.5, 0, 'n3', 'n4'], ['v', 0.5, 0, 'n5', 'n6']]]],
+          panels: [
+            { id: 'hd', fill: 'paper', frame: 'none', alt: 'The page heading.' },
+            { id: 'n1', fill: 'ink', alt: 'A black panel holding one dated note, 1 of 6.' },
+            { id: 'n2', fill: 'ink', alt: 'A black panel holding one dated note, 2 of 6.' },
+            { id: 'n3', fill: 'ink', alt: 'A black panel holding one dated note, 3 of 6.' },
+            { id: 'n4', fill: 'ink', alt: 'A black panel holding one dated note, 4 of 6.' },
+            { id: 'n5', fill: 'ink', alt: 'A black panel holding one dated note, 5 of 6.' },
+            { id: 'n6', fill: 'ink', alt: 'A black panel holding one dated note, 6 of 6.' }
+          ],
+          words: [
+            { k: 'letter', x: 70, y: 150, size: 84, anchor: 'start', runs: [['TUNES + GUIDE', 'cream']], in: 'hd' },
+            { k: 'note', x: 64, y: 210, w: 390, d: '11 October', t: 'A Tunes library. Share this tune puts the tune you fly on the board with a short code, like k7mq-2xrt-9vwd. Paste a code under Load a tune and see what is in it before anything changes.', in: 'n1', small: true },
+            { k: 'note', x: 529, y: 210, w: 390, d: '11 October', t: 'A tune holds its PIDs, rates, weight, Air grip, Motor power, pack, lens and tilt. Not your graphics, sticks, radio, flight mode, names or laps. Put mine back undoes a load.', in: 'n2', small: true },
+            { k: 'note', x: 64, y: 625, w: 390, d: '11 October', t: 'Star ratings, one to five, on tunes, tracks and maps. One rating a browser, and you can change it. Tracks has a Top rated order, and the board has a Tunes tab.', in: 'n3', small: true },
+            { k: 'note', x: 529, y: 625, w: 390, d: '11 October', t: 'A first flight guide for each kind of place: a race track, a whoop room and a freestyle world. It starts at launch, from a friend\'s Fly link as well. Add ?guide=1 to the address to see it again.', in: 'n4', small: true },
+            { k: 'note', x: 64, y: 1040, w: 390, d: '11 October', t: 'Export bundle in the whoop builder makes one zip: the track file, a plan, six pictures, the lap animation and printable build instructions.', in: 'n5', small: true },
+            { k: 'note', x: 529, y: 1040, w: 390, d: '11 October', t: 'None of this has been flown by a pilot on the live build. It was checked by scripts and a headless browser. The sliders are still opt in.', in: 'n6', small: true }
+          ]
+        },
+        {
+          id: 'c1-p14c',
+          label: 'The week, building',
+          tone: 'paper',
+          layout: ['h', 0.12, 0, 'hd', ['h', 1 / 3, 0, ['v', 0.5, 0, 'n1', 'n2'], ['h', 0.5, 0, ['v', 0.5, 0, 'n3', 'n4'], ['v', 0.5, 0, 'n5', 'n6']]]],
+          panels: [
+            { id: 'hd', fill: 'paper', frame: 'none', alt: 'The page heading.' },
+            { id: 'n1', fill: 'ink', alt: "A black panel holding one dated note, 1 of 6." },
+            { id: 'n2', fill: 'ink', alt: "A black panel holding one dated note, 2 of 6." },
+            { id: 'n3', fill: 'ink', alt: "A black panel holding one dated note, 3 of 6." },
+            { id: 'n4', fill: 'ink', alt: "A black panel holding one dated note, 4 of 6." },
+            { id: 'n5', fill: 'ink', alt: "A black panel holding one dated note, 5 of 6." },
+            { id: 'n6', fill: 'ink', alt: "A black panel holding one dated note, 6 of 6." }
+          ],
+          words: [
+            { k: 'letter', x: 70, y: 150, size: 84, anchor: 'start', runs: [['THE WEEK: BUILDING', 'cream']], in: 'hd' },
+            { k: 'note', x: 64, y: 210, w: 390, d: '4 October', t: 'Letters in the five inch builder. Any capital A to Z in pipe, with one to three gaps to fly through, each gap a gate in the order. Any gate can be made a letter and back.', in: 'n1', small: true },
+            { k: 'note', x: 529, y: 210, w: 390, d: '4 October', t: 'An Invisible gate, key I, on the five inch and the whoop. An opening you fly through and score like a gate, with nothing to hit. Any gate can drop its frame.', in: 'n2', small: true },
+            { k: 'note', x: 64, y: 625, w: 390, d: '4 October', t: 'Export animation has a Size, Standard, High or Very high, and a Setting: Black stage or Race field, with the striped turf, the ground logos and sponsors on the gate headers.', in: 'n3', small: true },
+            { k: 'note', x: 529, y: 625, w: 390, d: '4 October', t: 'Stacked gates: each opening has its own width and height, and Delete takes away one opening\'s upright stretch. The options card can be dragged by its heading.', in: 'n4', small: true },
+            { k: 'note', x: 64, y: 1040, w: 390, d: '4 October', t: 'Official tracks. The board\'s owners can mark a track Official. Anyone can fly it and post a time. Nobody else can change it or open it in the builder.', in: 'n5', small: true },
+            { k: 'note', x: 529, y: 1040, w: 390, d: '11 October', t: 'Logos and stickers in the map builder are for the board\'s owners only. Patron signs, up to three, can hang on the walls of the freestyle maps and the town.', in: 'n6', small: true }
+          ]
+        },
+        {
+          id: 'c1-p14d',
+          label: 'The week, flying',
+          tone: 'paper',
+          layout: ['h', 0.12, 0, 'hd', ['h', 1 / 3, 0, ['v', 0.5, 0, 'n1', 'n2'], ['h', 0.5, 0, ['v', 0.5, 0, 'n3', 'n4'], ['v', 0.5, 0, 'n5', 'n6']]]],
+          panels: [
+            { id: 'hd', fill: 'paper', frame: 'none', alt: 'The page heading.' },
+            { id: 'n1', fill: 'ink', alt: "A black panel holding one dated note, 1 of 6." },
+            { id: 'n2', fill: 'ink', alt: "A black panel holding one dated note, 2 of 6." },
+            { id: 'n3', fill: 'ink', alt: "A black panel holding one dated note, 3 of 6." },
+            { id: 'n4', fill: 'ink', alt: "A black panel holding one dated note, 4 of 6." },
+            { id: 'n5', fill: 'ink', alt: "A black panel holding one dated note, 5 of 6." },
+            { id: 'n6', fill: 'ink', alt: "A black panel holding one dated note, 6 of 6." }
+          ],
+          words: [
+            { k: 'letter', x: 70, y: 150, size: 84, anchor: 'start', runs: [['THE WEEK: FLYING', 'cream']], in: 'hd' },
+            { k: 'note', x: 64, y: 210, w: 390, d: '9 October', t: 'Flight feel tuning, off by default: Air grip, 50 to 150, and Motor power, 80 to 120. At 100 it is the stock quad. A tuned flight is not posted to the board. Nobody has flown the sliders on the live build.', in: 'n1', small: true },
+            { k: 'note', x: 529, y: 210, w: 390, d: '9 October', t: 'Default tune: prop wash halved, the I term limit halved, the quad 12 mm lower. A full stick yaw stop swings back 4.1 degrees, not 7.0. The owner flew it: flys good.', in: 'n2', small: true },
+            { k: 'note', x: 64, y: 625, w: 390, d: '11 October', t: 'Default rates are softer: 60 and 600, from 70 and 670. Your own rates are never moved. 319 feel tickets read twitchy most often.', in: 'n3', small: true },
+            { k: 'note', x: 529, y: 625, w: 390, d: '10 October', t: 'The whoop has its own physics: 23 g, 0702 motors on one cell, real gravity, and a hit box about two thirds of the drawn whoop. Nobody has reported flying it on the live build.', in: 'n4', small: true },
+            { k: 'note', x: 64, y: 1040, w: 390, d: '9 October', t: 'Race line, off by default. In a whoop room, dots through the next gates: close together means slow down. Next gate cue is a setting. Neither has been flown by a pilot.', in: 'n5', small: true },
+            { k: 'note', x: 529, y: 1040, w: 390, d: '11 October', t: 'Auto reset, off by default. A crash puts you back on the start line after 0.5, 1 or 2 seconds, and a radio switch can be bound to it. Checked by a script only.', in: 'n6', small: true }
+          ]
+        },
+        {
+          id: 'c1-p14e',
+          label: 'The week, looks and fixes',
+          tone: 'paper',
+          layout: ['h', 0.12, 0, 'hd', ['h', 1 / 3, 0, ['v', 0.5, 0, 'n1', 'n2'], ['h', 0.5, 0, ['v', 0.5, 0, 'n3', 'n4'], ['v', 0.5, 0, 'n5', 'n6']]]],
+          panels: [
+            { id: 'hd', fill: 'paper', frame: 'none', alt: 'The page heading.' },
+            { id: 'n1', fill: 'ink', alt: "A black panel holding one dated note, 1 of 6." },
+            { id: 'n2', fill: 'ink', alt: "A black panel holding one dated note, 2 of 6." },
+            { id: 'n3', fill: 'ink', alt: "A black panel holding one dated note, 3 of 6." },
+            { id: 'n4', fill: 'ink', alt: "A black panel holding one dated note, 4 of 6." },
+            { id: 'n5', fill: 'ink', alt: "A black panel holding one dated note, 5 of 6." },
+            { id: 'n6', fill: 'ink', alt: "A black panel holding one dated note, 6 of 6." }
+          ],
+          words: [
+            { k: 'letter', x: 70, y: 150, size: 84, anchor: 'start', runs: [['LOOKS AND FIXES', 'cream']], in: 'hd' },
+            { k: 'note', x: 64, y: 210, w: 390, d: '9 October', t: 'The Gem look replaces the comic look, which cost latency and is off on every preset. Shadows are a setting, and Medium redraws them every third frame. Nothing was measured on a real GPU.', in: 'n1', small: true },
+            { k: 'note', x: 529, y: 210, w: 390, d: '8 October', t: 'Faster loads. Shader programs link before the first frame and none link mid flight. The town\'s height lookup is about 100 times faster with identical results.', in: 'n2', small: true },
+            { k: 'note', x: 64, y: 625, w: 390, d: '7 October', t: 'The five inch quad is rebuilt as a bench built freestyle quad. Cars have plates, arches and a story, and trees are round and lumpy. Clouds are heaped.', in: 'n3', small: true },
+            { k: 'note', x: 529, y: 625, w: 390, d: '5 October', t: 'The view no longer sinks toward the grass before the quad lifts off. It was the parked camera, not the physics.', in: 'n4', small: true },
+            { k: 'note', x: 64, y: 1040, w: 390, d: '5 October', t: 'Fixed the simulator hit a fault after about 20 minutes in the air, and the false Could not post that time. Both came from the Support prompt, and both were fixed the same day.', in: 'n5', small: true },
+            { k: 'note', x: 529, y: 1040, w: 390, d: '6 October', t: 'Stick overlay on by default. About fits a phone on its side. Show FPS is a setting. Camera angle is back on Rates. On the front page a Menu button reaches every link on a phone.', in: 'n6', small: true }
+          ]
+        },
+        {
+          id: 'c1-p14f',
+          label: 'Also this week',
+          tone: 'paper',
+          layout: ['h', 0.12, 0, 'hd', ['h', 1 / 3, 0, ['v', 0.5, 0, 'n1', 'n2'], ['h', 0.5, 0, ['v', 0.5, 0, 'n3', 'n4'], ['v', 0.5, 0, 'n5', 'n6']]]],
+          panels: [
+            { id: 'hd', fill: 'paper', frame: 'none', alt: 'The page heading.' },
+            { id: 'n1', fill: 'ink', alt: 'A black panel holding one dated note, 1 of 6.' },
+            { id: 'n2', fill: 'ink', alt: 'A black panel holding one dated note, 2 of 6.' },
+            { id: 'n3', fill: 'ink', alt: 'A black panel holding one dated note, 3 of 6.' },
+            { id: 'n4', fill: 'ink', alt: 'A black panel holding one dated note, 4 of 6.' },
+            { id: 'n5', fill: 'ink', alt: 'A black panel holding one dated note, 5 of 6.' },
+            { id: 'n6', fill: 'ink', alt: 'A black panel holding one dated note, 6 of 6.' }
+          ],
+          words: [
+            { k: 'letter', x: 70, y: 150, size: 84, anchor: 'start', runs: [['ALSO THIS WEEK', 'cream']], in: 'hd' },
+            { k: 'note', x: 64, y: 210, w: 390, d: '6 October', t: 'Stick overlay, on by default: two small boxes with a dot for each stick, now for radios and gamepads as well as keys. Show FPS is a setting, and Camera angle is back on Rates.', in: 'n1', small: true },
+            { k: 'note', x: 529, y: 210, w: 390, d: '5 October', t: 'Support. About has Buy Mat a battery ($5) and an Instagram row, and a small Support prompt shows at most once a week. Settings, Advanced, Support prompts turns it off. YourFPV is a map only supporter.', in: 'n2', small: true },
+            { k: 'note', x: 64, y: 625, w: 390, d: '3 to 6 October', t: 'On webfpv.org: a link to this book, The Story, a Quad Race Lottery card for a random draw on race day, a Tip button, and a Menu button so a phone can reach every link.', in: 'n3', small: true },
+            { k: 'note', x: 529, y: 625, w: 390, d: '11 October', t: 'The rule for all of it: nothing that adds delay between stick and screen is accepted. Nothing was measured on a real GPU or a weak laptop, so the Input to screen reading on your own machine is the check that counts.', in: 'n4', small: true },
+            { k: 'note', x: 64, y: 1040, w: 390, d: '11 October', t: 'A bug sweep of the whole week fixed 24 faults. Auto reset waits through a pause, a shared tune loads at once over Your edits, and closing Send to community no longer makes a duplicate round.', in: 'n5', small: true },
+            { k: 'note', x: 529, y: 1040, w: 390, d: '11 October', t: 'Also fixed: Next gate cue Off now holds on the title and results, CommunityGow pages with the wrong round number or a 404, and a club name with a $ that broke the page title. Thirteen findings were left alone on purpose.', in: 'n6', small: true }
           ]
         },
         {

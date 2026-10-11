@@ -83,6 +83,9 @@ The notes page. Each is one line under its date. A dated line from the patch not
 | N-09 | 26 September | "Cars drive the roads. Chase a car." | Patch notes, 26 September 2026. |
 | N-10 | 2 October | "Flight paths: fourteen figures, a power loop and a Matty flip among them." | Patch notes, 2 October 2026. |
 
+
+Week two of the notes: six pages after "The notes so far", 3 to 11 October 2026. Every line is read from the code on main of the simulator, the board and the front page, as RELEASE-NOTES-WEEK-2.md sets out, and is not a quotation of webfpv.org/notes, which stops at 2 October. N-11 to N-16 are the CommunityGow page, N-17 to N-22 tunes and the guide, N-23 to N-28 building, N-29 to N-34 flying, N-35 to N-40 looks and fixes, N-41 to N-46 also this week, in page order, and "New this week: CommunityGow" on the cover.
+
 ## Pictures
 
 Every picture is the simulator, or the board or the site, drawn by its own code. Nothing is painted over. Where a picture shows a page of the live site or the board, the partners' marks and pilots' handles in it are the ones that page already prints, and nothing from it is lettered.
