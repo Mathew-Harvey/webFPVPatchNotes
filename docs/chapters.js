@@ -557,7 +557,7 @@
             { k: 'note', x: 64, y: 625, w: 390, d: '11 October', t: 'Star ratings, one to five, on tunes, tracks and maps. One rating a browser, and you can change it. Tracks has a Top rated order, and the board has a Tunes tab.', in: 'n3', small: true },
             { k: 'note', x: 529, y: 625, w: 390, d: '11 October', t: 'A first flight guide for each kind of place: a race track, a whoop room and a freestyle world. It starts at launch, from a friend\'s Fly link as well. Add ?guide=1 to the address to see it again.', in: 'n4', small: true },
             { k: 'note', x: 64, y: 1040, w: 390, d: '11 October', t: 'Export bundle in the whoop builder makes one zip: the track file, a plan, six pictures, the lap animation and printable build instructions.', in: 'n5', small: true },
-            { k: 'note', x: 529, y: 1040, w: 390, d: '11 October', t: 'None of this has been flown by a pilot on the live build. It was checked by scripts and a headless browser. The sliders are still opt in.', in: 'n6', small: true }
+            { k: 'note', x: 529, y: 1040, w: 390, d: '11 October', t: 'The Air grip and Motor power sliders stay opt in. After two tracks, or ten minutes of freestyle, a Nice flying card asks on landing if you want them. Settings has the same switch. Nobody has flown this on the live build.', in: 'n6', small: true }
           ]
         },
         {
