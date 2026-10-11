@@ -100,6 +100,8 @@ async function main() {
         window.__manga.tone(true);
       }, Boolean(shot.lines)).catch(() => {});
       let framing = null;
+      /* A shot that has to press, type or fly something first. */
+      if (shot.act) await shot.act(page, { W, H });
       if (shot.follow) {
         /* A moving subject: the camera rides with it, and the frame is
          * taken when the cars are where the shot wants them. */
@@ -128,7 +130,7 @@ async function main() {
         await rig.paperPass(page, 'shadow', shot.paper.probes, shot.paper.sun);
         await rig.snap(page, base + '.shadow.png', settle);
         await rig.paperPass(page, 'world');
-      } else if (world.path || world.url || world.ui || shot.ui) {
+      } else if (world.path || world.url || world.ui || world.hud || shot.ui || shot.page_shot) {
         await page.waitForTimeout(settle);
         await page.screenshot({ path: base + '.png', clip: clip || undefined });
       } else {

@@ -1,0 +1,20 @@
+{
+  "id": "w-tu2",
+  "treatment": "colour",
+  "from": "w-tu2",
+  "world": "simQuad",
+  "simulator": null,
+  "commit": "0a35502",
+  "frame": [
+    560,
+    860
+  ],
+  "crop": {
+    "left": 0,
+    "top": 282,
+    "width": 1120,
+    "height": 1157
+  },
+  "framing": null,
+  "clip": null
+}

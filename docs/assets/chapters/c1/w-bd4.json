@@ -1,0 +1,25 @@
+{
+  "id": "w-bd4",
+  "treatment": "colour",
+  "from": "w-bd4",
+  "world": "stackBuilder",
+  "simulator": "/src/trackbuilder/index.html",
+  "commit": "0a35502",
+  "frame": [
+    1100,
+    1250
+  ],
+  "crop": {
+    "left": 5,
+    "top": 0,
+    "width": 671,
+    "height": 1452
+  },
+  "framing": null,
+  "clip": [
+    752,
+    182,
+    340,
+    726
+  ]
+}

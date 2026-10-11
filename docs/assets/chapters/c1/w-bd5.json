@@ -1,0 +1,25 @@
+{
+  "id": "w-bd5",
+  "treatment": "colour",
+  "from": "w-bd5",
+  "world": "liveBoard",
+  "simulator": "https://webfpv.org/board",
+  "commit": "0a35502",
+  "frame": [
+    340,
+    900
+  ],
+  "crop": {
+    "left": 0,
+    "top": 39,
+    "width": 680,
+    "height": 963
+  },
+  "framing": null,
+  "clip": [
+    0,
+    56,
+    340,
+    520
+  ]
+}

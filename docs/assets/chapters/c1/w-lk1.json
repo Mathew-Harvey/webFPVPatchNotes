@@ -1,0 +1,43 @@
+{
+  "id": "w-lk1",
+  "treatment": "colour",
+  "from": "w-lk1",
+  "world": "town",
+  "simulator": null,
+  "commit": "0a35502",
+  "frame": [
+    1741,
+    1085
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1741,
+    "height": 1085
+  },
+  "framing": {
+    "cam": [
+      -40,
+      28,
+      60
+    ],
+    "look": [
+      20,
+      14,
+      0
+    ],
+    "fov": 60,
+    "roll": -5,
+    "quad": {
+      "pos": [
+        -39.26,
+        27.73,
+        59.43
+      ],
+      "yaw": -50,
+      "pitch": 28,
+      "roll": -22
+    }
+  },
+  "clip": null
+}

@@ -1,0 +1,25 @@
+{
+  "id": "w-fl3",
+  "treatment": "colour",
+  "from": "w-fl3",
+  "world": "simRates",
+  "simulator": null,
+  "commit": "0a35502",
+  "frame": [
+    1280,
+    900
+  ],
+  "crop": {
+    "left": 13,
+    "top": 0,
+    "width": 2335,
+    "height": 1700
+  },
+  "framing": null,
+  "clip": [
+    40,
+    40,
+    1180,
+    850
+  ]
+}

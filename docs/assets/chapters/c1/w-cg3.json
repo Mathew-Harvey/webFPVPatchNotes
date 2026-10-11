@@ -1,0 +1,25 @@
+{
+  "id": "w-cg3",
+  "treatment": "colour",
+  "from": "w-cg3",
+  "world": "cgBuilder",
+  "simulator": "/src/trackbuilder/index.html?class=micro&community=example-whoop-club&board=http%3A%2F%2F127.0.0.1%3A3100#cgkey=K1FRLY5Dii-Iepr2B_tArKjG",
+  "commit": "0a35502",
+  "frame": [
+    760,
+    940
+  ],
+  "crop": {
+    "left": 0,
+    "top": 2,
+    "width": 1160,
+    "height": 1416
+  },
+  "framing": null,
+  "clip": [
+    180,
+    128,
+    580,
+    710
+  ]
+}

@@ -78,7 +78,7 @@ async function readPreset(id) {
  */
 async function open(browser, world, viewport) {
   const proxy = world.fetchFromNode && process.env.HTTPS_PROXY ? { server: process.env.HTTPS_PROXY } : undefined;
-  const ctx = await browser.newContext({ viewport, deviceScaleFactor: 1, proxy });
+  const ctx = await browser.newContext({ viewport, deviceScaleFactor: world.dpr || 1, proxy });
   await routeThree(ctx);
   if (world.fetchFromNode) {
     /* A live page, fetched by the rig's own Node side, which trusts what the
@@ -92,8 +92,19 @@ async function open(browser, world, viewport) {
       }
     });
   }
+  if (world.route) {
+    /* A page served here, shown at its public address: every request under
+     * route[0] is answered from route[1], so the page's own address lines
+     * read the way a visitor sees them. */
+    const [from, to] = world.route;
+    await ctx.route((u) => u.href.startsWith(from), async (route) => {
+      const res = await route.fetch({ url: to + route.request().url().slice(from.length) });
+      await route.fulfill({ response: res });
+    });
+  }
   const page = await ctx.newPage();
   page.on('pageerror', (e) => process.stdout.write('pageerror ' + e.message + '\n'));
+  page.on('console', (m) => { if (m.text().startsWith('DBG')) process.stdout.write(m.text() + '\n'); });
   let doc = null;
   if (world.track) doc = readTrack(world.track);
   if (world.preset) doc = await readPreset(world.preset);
@@ -119,7 +130,8 @@ async function open(browser, world, viewport) {
       localStorage.setItem(key, JSON.stringify(p.doc));
     }
     if (p.freestyle) localStorage.setItem('webfpv.trackbuilder.autosave.freestyle.v1', JSON.stringify(p.freestyle));
-  }, { doc, freestyle, airframe: world.airframe, map: world.map, settings: world.settings });
+    for (const k of Object.keys(p.storage || {})) localStorage.setItem(k, typeof p.storage[k] === 'string' ? p.storage[k] : JSON.stringify(p.storage[k]));
+  }, { doc, freestyle, airframe: world.airframe, map: world.map, settings: world.settings, storage: world.storage });
   if (world.landing) {
     /* The front door, with its invitation already seen and Global Privacy
      * Control on, as its own share card script loads it (scripts/og.js). */
@@ -132,13 +144,14 @@ async function open(browser, world, viewport) {
   await page.goto(target, { waitUntil: 'domcontentloaded', timeout: 90000 });
   if (world.path || world.url) {
     await page.waitForTimeout(world.wait || 12000);
+    if (world.prep) await world.prep(page);
     return { ctx, page, doc };
   }
   await page.waitForFunction(() => window.__shellReady === true, null, { timeout: 240000 });
   if (doc) {
     await page.waitForFunction(() => { const m = window.__map && window.__map(); return m && m.ready && m.gates > 0; }, null, { timeout: 120000 });
   }
-  if (!world.ui) await page.addStyleTag({ content: '#ui{visibility:hidden !important} #loading{display:none !important}' });
+  if (!world.ui && !world.hud) await page.addStyleTag({ content: '#ui{visibility:hidden !important} #loading{display:none !important}' });
   await page.evaluate(() => {
     const T = window.__three;
     const orig = T.Object3D.prototype.lookAt;
@@ -177,6 +190,7 @@ async function open(browser, world, viewport) {
     await page.waitForTimeout(1500);
   }
   await page.waitForTimeout(800);
+  if (world.prep) await world.prep(page);
   return { ctx, page, doc };
 }
 
@@ -222,6 +236,24 @@ async function pose(page, p) {
       quad.position.set(p.quad.pos[0], p.quad.pos[1], p.quad.pos[2]);
       const d = Math.PI / 180;
       quad.quaternion.setFromEuler(new T.Euler(-(p.quad.pitch || 0) * d, (p.quad.yaw || 0) * d, -(p.quad.roll || 0) * d, 'YXZ'));
+      /* The shell also moves the model by its prediction step, in place,
+       * so the pose is put back just before every draw. */
+      window.__heldQuad = { quad, pos: quad.position.clone(), quat: quad.quaternion.clone() };
+      if (!T.WebGLRenderer.prototype.__heldPatch) {
+        T.WebGLRenderer.prototype.__heldPatch = true;
+        const render = T.WebGLRenderer.prototype.render;
+        T.WebGLRenderer.prototype.render = function (...a) {
+          const h = window.__heldQuad;
+          if (h) {
+            T.Vector3.prototype.copy.call(h.quad.position, h.pos);
+            T.Quaternion.prototype.copy.call(h.quad.quaternion, h.quat);
+            h.quad.updateMatrixWorld(true);
+          }
+          return render.apply(this, a);
+        };
+      }
+    } else {
+      window.__heldQuad = null;
     }
   }, p);
 }

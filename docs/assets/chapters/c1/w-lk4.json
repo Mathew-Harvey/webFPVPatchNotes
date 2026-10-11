@@ -1,0 +1,42 @@
+{
+  "id": "w-lk4",
+  "treatment": "colour",
+  "from": "w-lk4",
+  "world": "field",
+  "simulator": null,
+  "commit": "0a35502",
+  "frame": [
+    1074,
+    2325
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1074,
+    "height": 2325
+  },
+  "framing": {
+    "cam": [
+      15.45,
+      0.38,
+      30.75
+    ],
+    "look": [
+      16.6,
+      0.55,
+      24
+    ],
+    "fov": 55,
+    "quad": {
+      "pos": [
+        15.573,
+        0.175,
+        29.854
+      ],
+      "yaw": -6,
+      "pitch": 28,
+      "roll": 0
+    }
+  },
+  "clip": null
+}

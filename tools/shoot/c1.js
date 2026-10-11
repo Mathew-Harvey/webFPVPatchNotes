@@ -347,3 +347,8 @@ module.exports = {
   /* Pictures cut again from a frame shot for another panel. */
   reuse: []
 };
+
+/* The week of 3 to 11 October, its six pages of notes: tools/shoot/c1-week.js. */
+const week = require('./c1-week');
+Object.assign(module.exports.worlds, week.worlds);
+module.exports.shots.push(...week.shots);

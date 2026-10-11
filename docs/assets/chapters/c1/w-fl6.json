@@ -1,0 +1,20 @@
+{
+  "id": "w-fl6",
+  "treatment": "colour",
+  "from": "w-fl6",
+  "world": "padAuto",
+  "simulator": null,
+  "commit": "0a35502",
+  "frame": [
+    540,
+    1300
+  ],
+  "crop": {
+    "left": 0,
+    "top": 131,
+    "width": 1080,
+    "height": 2338
+  },
+  "framing": null,
+  "clip": null
+}

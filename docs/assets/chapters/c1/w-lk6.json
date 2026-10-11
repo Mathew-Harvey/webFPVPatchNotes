@@ -1,0 +1,25 @@
+{
+  "id": "w-lk6",
+  "treatment": "colour",
+  "from": "w-lk6",
+  "world": "frontPhone",
+  "simulator": "https://webfpv.org/",
+  "commit": "0a35502",
+  "frame": [
+    400,
+    860
+  ],
+  "crop": {
+    "left": 0,
+    "top": 183,
+    "width": 800,
+    "height": 1114
+  },
+  "framing": null,
+  "clip": [
+    0,
+    0,
+    400,
+    740
+  ]
+}

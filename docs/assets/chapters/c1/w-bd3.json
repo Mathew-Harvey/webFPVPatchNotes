@@ -1,0 +1,20 @@
+{
+  "id": "w-bd3",
+  "treatment": "colour",
+  "from": "w-bd3",
+  "world": "animate",
+  "simulator": "/src/trackbuilder/animate.html",
+  "commit": "0a35502",
+  "frame": [
+    840,
+    1024
+  ],
+  "crop": {
+    "left": 1,
+    "top": 0,
+    "width": 839,
+    "height": 1024
+  },
+  "framing": null,
+  "clip": null
+}

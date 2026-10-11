@@ -1,0 +1,20 @@
+{
+  "id": "w-tu4",
+  "treatment": "colour",
+  "from": "w-tu4",
+  "world": "guideWhoop",
+  "simulator": null,
+  "commit": "0a35502",
+  "frame": [
+    720,
+    990
+  ],
+  "crop": {
+    "left": 21,
+    "top": 0,
+    "width": 1398,
+    "height": 1980
+  },
+  "framing": null,
+  "clip": null
+}

@@ -1,0 +1,20 @@
+{
+  "id": "w-lk5",
+  "treatment": "colour",
+  "from": "w-lk5",
+  "world": "padFresh",
+  "simulator": null,
+  "commit": "0a35502",
+  "frame": [
+    420,
+    620
+  ],
+  "crop": {
+    "left": 0,
+    "top": 25,
+    "width": 840,
+    "height": 1190
+  },
+  "framing": null,
+  "clip": null
+}

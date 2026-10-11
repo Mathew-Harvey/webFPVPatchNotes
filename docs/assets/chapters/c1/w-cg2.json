@@ -1,0 +1,25 @@
+{
+  "id": "w-cg2",
+  "treatment": "colour",
+  "from": "w-cg2",
+  "world": "cgPortal",
+  "simulator": "https://webfpv.org/board/CommunityGow",
+  "commit": "0a35502",
+  "frame": [
+    430,
+    900
+  ],
+  "crop": {
+    "left": 3,
+    "top": 0,
+    "width": 855,
+    "height": 1104
+  },
+  "framing": null,
+  "clip": [
+    0,
+    150,
+    430,
+    552
+  ]
+}

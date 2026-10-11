@@ -1,0 +1,25 @@
+{
+  "id": "w-tu3",
+  "treatment": "colour",
+  "from": "w-tu3",
+  "world": "tunesTab",
+  "simulator": "https://webfpv.org/board/#tunes",
+  "commit": "0a35502",
+  "frame": [
+    1000,
+    900
+  ],
+  "crop": {
+    "left": 94,
+    "top": 0,
+    "width": 1813,
+    "height": 1320
+  },
+  "framing": null,
+  "clip": [
+    0,
+    240,
+    1000,
+    720
+  ]
+}

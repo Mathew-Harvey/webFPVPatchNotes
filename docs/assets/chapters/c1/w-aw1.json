@@ -1,0 +1,20 @@
+{
+  "id": "w-aw1",
+  "treatment": "colour",
+  "from": "w-aw1",
+  "world": "padView",
+  "simulator": null,
+  "commit": "0a35502",
+  "frame": [
+    440,
+    560
+  ],
+  "crop": {
+    "left": 0,
+    "top": 82,
+    "width": 880,
+    "height": 956
+  },
+  "framing": null,
+  "clip": null
+}

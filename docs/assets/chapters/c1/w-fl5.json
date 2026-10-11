@@ -1,0 +1,43 @@
+{
+  "id": "w-fl5",
+  "treatment": "colour",
+  "from": "w-fl5",
+  "world": "raceRoom",
+  "simulator": null,
+  "commit": "0a35502",
+  "frame": [
+    902,
+    1256
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 902,
+    "height": 1256
+  },
+  "framing": {
+    "cam": [
+      -3.9,
+      1.6,
+      -2.3
+    ],
+    "look": [
+      -5.5,
+      1,
+      -0.5
+    ],
+    "fov": 62,
+    "roll": -4,
+    "quad": {
+      "pos": [
+        -4.67,
+        1.8,
+        -1.39
+      ],
+      "yaw": 75,
+      "pitch": 25,
+      "roll": -15
+    }
+  },
+  "clip": null
+}

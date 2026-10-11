@@ -1,0 +1,20 @@
+{
+  "id": "w-aw6",
+  "treatment": "colour",
+  "from": "w-aw6",
+  "world": "padCue",
+  "simulator": null,
+  "commit": "0a35502",
+  "frame": [
+    560,
+    720
+  ],
+  "crop": {
+    "left": 0,
+    "top": 37,
+    "width": 1120,
+    "height": 1367
+  },
+  "framing": null,
+  "clip": null
+}

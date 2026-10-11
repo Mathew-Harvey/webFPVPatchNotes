@@ -1,0 +1,20 @@
+{
+  "id": "w-cg6",
+  "treatment": "colour",
+  "from": "w-cg6",
+  "world": "cgPhone",
+  "simulator": "https://webfpv.org/board/CommunityGow/example-whoop-club",
+  "commit": "0a35502",
+  "frame": [
+    430,
+    860
+  ],
+  "crop": {
+    "left": 0,
+    "top": 261,
+    "width": 860,
+    "height": 1198
+  },
+  "framing": null,
+  "clip": null
+}

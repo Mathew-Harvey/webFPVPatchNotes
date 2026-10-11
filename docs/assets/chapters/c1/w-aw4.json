@@ -1,0 +1,25 @@
+{
+  "id": "w-aw4",
+  "treatment": "colour",
+  "from": "w-aw4",
+  "world": "simRates",
+  "simulator": null,
+  "commit": "0a35502",
+  "frame": [
+    1280,
+    900
+  ],
+  "crop": {
+    "left": 0,
+    "top": 2,
+    "width": 1824,
+    "height": 1137
+  },
+  "framing": null,
+  "clip": [
+    0,
+    300,
+    912,
+    570
+  ]
+}

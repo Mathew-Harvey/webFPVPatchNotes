@@ -90,6 +90,8 @@ Week two of the notes: six pages after "The notes so far", 3 to 11 October 2026.
 
 Every picture is the simulator, or the board or the site, drawn by its own code. Nothing is painted over. Where a picture shows a page of the live site or the board, the partners' marks and pilots' handles in it are the ones that page already prints, and nothing from it is lettered.
 
+The week's CommunityGow and Tunes pictures are a board run from a checkout and seeded by `tools/shoot/seed-board.mjs`: the club, its pilots, their times and the three tunes are examples made up for the page, because the live board had no club and no tune when they were taken. The official track on the stacks page is the live board's own. Two flight pictures hold a real state on screen for the frame: the Nice flying card raised as two flown tracks raise it, and the words the reset path puts up, Auto reset. The Advanced picture is cropped above the GPU row and left of the reading beside it, because on the machine that took it both describe a software renderer.
+
 | Panel | Shot | World |
 | --- | --- | --- |
 | `c1-cover` hero | `cover-hero` | Five inch, WCMRC Round 5, on paper |
@@ -140,6 +142,42 @@ Every picture is the simulator, or the board or the site, drawn by its own code.
 | `c1-p14` n8 | `n8` | The town |
 | `c1-p14` n9 | `n9` | Hibari Yard Tandem |
 | `c1-p14` n10 | `n10` | Five inch, WCMRC Round 5 |
+| `c1-p14b` n1 | `w-cg1` | The board, example club |
+| `c1-p14b` n2 | `w-cg2` | The board, example club, phone |
+| `c1-p14b` n3 | `w-cg3` | Whoop builder, RaceGOW Season 5 Track 3 |
+| `c1-p14b-2` n1 | `w-cg4` | The board, example club, phone |
+| `c1-p14b-2` n2 | `w-cg5` | The board, example club, phone |
+| `c1-p14b-2` n3 | `w-cg6` | The board, example club, phone |
+| `c1-p14b2` n1 | `w-tu1` | Quad screen, example tune |
+| `c1-p14b2` n2 | `w-tu2` | Quad screen |
+| `c1-p14b2` n3 | `w-tu3` | The board, example tunes |
+| `c1-p14b2-2` n1 | `w-tu4` | Whoop, RaceGOW Season 5 Track 1 |
+| `c1-p14b2-2` n2 | `w-tu5` | Bundle instructions, RaceGOW Season 5 Track 3 |
+| `c1-p14b2-2` n3 | `w-tu6` | Five inch, WCMRC Round 5 |
+| `c1-p14c` n1 | `w-bd1` | Five inch, WEBFPV in letter gates |
+| `c1-p14c` n2 | `w-bd2` | Five inch, WCMRC Round 5, first gate Invisible |
+| `c1-p14c` n3 | `w-bd3` | Export animation, Race field |
+| `c1-p14c-2` n1 | `w-bd4` | Track builder, WCMRC Round 5 with a triple stack |
+| `c1-p14c-2` n2 | `w-bd5` | The board, live |
+| `c1-p14c-2` n3 | `w-bd6` | The town |
+| `c1-p14d` n1 | `w-fl1` | Five inch, WCMRC Round 5 |
+| `c1-p14d` n2 | `w-fl2` | Five inch, WCMRC Round 5 |
+| `c1-p14d` n3 | `w-fl3` | Rates screen |
+| `c1-p14d-2` n1 | `w-fl4` | Whoop, RaceGOW Season 5 Track 1 |
+| `c1-p14d-2` n2 | `w-fl5` | Whoop, RaceGOW Season 5 Track 1 |
+| `c1-p14d-2` n3 | `w-fl6` | Five inch, WCMRC Round 5 |
+| `c1-p14e` n1 | `w-lk1` | The town |
+| `c1-p14e` n2 | `w-lk2` | The town |
+| `c1-p14e` n3 | `w-lk3` | The town |
+| `c1-p14e-2` n1 | `w-lk4` | Five inch, WCMRC Round 5 |
+| `c1-p14e-2` n2 | `w-lk5` | Five inch, WCMRC Round 5 |
+| `c1-p14e-2` n3 | `w-lk6` | webfpv.org, phone |
+| `c1-p14f` n1 | `w-aw1` | Five inch, WCMRC Round 5 |
+| `c1-p14f` n2 | `w-aw2` | About screen |
+| `c1-p14f` n3 | `w-aw3` | webfpv.org |
+| `c1-p14f-2` n1 | `w-aw4` | Advanced screen |
+| `c1-p14f-2` n2 | `w-aw5` | Five inch, WCMRC Round 5 |
+| `c1-p14f-2` n3 | `w-aw6` | Five inch, WCMRC Round 5 |
 | `c1-p15` a | `p15-a` | Five inch, WCMRC Round 5 |
 
 ## What is not lettered

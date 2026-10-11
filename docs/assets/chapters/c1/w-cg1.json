@@ -1,0 +1,25 @@
+{
+  "id": "w-cg1",
+  "treatment": "colour",
+  "from": "w-cg1",
+  "world": "cgClub",
+  "simulator": "https://webfpv.org/board/CommunityGow/example-whoop-club",
+  "commit": "0a35502",
+  "frame": [
+    1280,
+    800
+  ],
+  "crop": {
+    "left": 0,
+    "top": 4,
+    "width": 2200,
+    "height": 1372
+  },
+  "framing": null,
+  "clip": [
+    90,
+    70,
+    1100,
+    690
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "id": "w-fl4",
+  "treatment": "colour",
+  "from": "w-fl4",
+  "world": "whoopRoom",
+  "simulator": null,
+  "commit": "0a35502",
+  "frame": [
+    829,
+    1174
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 829,
+    "height": 1174
+  },
+  "framing": {
+    "cam": [
+      -0.32,
+      1.08,
+      0.32
+    ],
+    "look": [
+      -0.95,
+      1.2,
+      0.955
+    ],
+    "fov": 52,
+    "roll": 4,
+    "quad": {
+      "pos": [
+        -0.95,
+        1.17,
+        0.955
+      ],
+      "yaw": -78,
+      "pitch": 18,
+      "roll": 14
+    }
+  },
+  "clip": null
+}

@@ -1,0 +1,43 @@
+{
+  "id": "w-bd6",
+  "treatment": "colour",
+  "from": "w-bd6",
+  "world": "town",
+  "simulator": null,
+  "commit": "0a35502",
+  "frame": [
+    902,
+    1256
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 902,
+    "height": 1256
+  },
+  "framing": {
+    "cam": [
+      30,
+      1,
+      76.6
+    ],
+    "look": [
+      28.3,
+      1.6,
+      82.45
+    ],
+    "fov": 56,
+    "roll": 5,
+    "quad": {
+      "pos": [
+        29.3,
+        1.7,
+        77.9
+      ],
+      "yaw": 60,
+      "pitch": 18,
+      "roll": 28
+    }
+  },
+  "clip": null
+}

@@ -1,0 +1,43 @@
+{
+  "id": "w-fl2",
+  "treatment": "colour",
+  "from": "w-fl2",
+  "world": "field",
+  "simulator": null,
+  "commit": "0a35502",
+  "frame": [
+    935,
+    966
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 935,
+    "height": 966
+  },
+  "framing": {
+    "cam": [
+      17,
+      0.7,
+      19.4
+    ],
+    "look": [
+      17.88,
+      1,
+      15
+    ],
+    "fov": 52,
+    "roll": -5,
+    "quad": {
+      "pos": [
+        17.45,
+        0.95,
+        18.2
+      ],
+      "yaw": -12,
+      "pitch": 30,
+      "roll": -18
+    }
+  },
+  "clip": null
+}
