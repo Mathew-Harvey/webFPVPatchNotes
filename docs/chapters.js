@@ -528,12 +528,36 @@
           ],
           words: [
             { k: 'letter', x: 70, y: 150, size: 84, anchor: 'start', runs: [['COMMUNITYGOW', 'cream']], in: 'hd' },
-            { k: 'note', x: 64, y: 210, w: 390, d: '9 October', t: 'A club or a group of friends races a new whoop track every week, at home, at their own pace, with a YouTube link as the evidence. It lives at webfpv.org/board/CommunityGow.', in: 'n1', small: true },
-            { k: 'note', x: 529, y: 210, w: 390, d: '9 October', t: 'Name your club, press Start my community, and it is public from the first second. No account and no email. You keep one organiser link, and it is the only key to editing, so save it.', in: 'n2', small: true },
-            { k: 'note', x: 64, y: 625, w: 390, d: '9 October', t: 'A round is one track, added from a pack made by the whoop builder. It can open on a date, so next week is lined up today. Every round is also a track on the board, with a Fly it in the simulator button.', in: 'n3', small: true },
-            { k: 'note', x: 529, y: 625, w: 390, d: '9 October', t: 'Post a time with no sign in. Type it the way you say it: 34.56, 12s, 1:02.5. A YouTube link plays in place, and nothing loads from YouTube until you press Watch.', in: 'n4', small: true },
-            { k: 'note', x: 64, y: 1040, w: 390, d: '9 October', t: 'The Season table scores every round on the F1 points, 25 for first down to 1 for tenth. The organiser can mark a time Verified. Nothing is verified for you.', in: 'n5', small: true },
-            { k: 'note', x: 529, y: 1040, w: 390, d: '9 October', t: 'Invite people gives a link, a QR code and a poster for the wall. Never used on the live board by a pilot yet. It was checked with self tests and a headless browser at phone and desktop width.', in: 'n6', small: true }
+            { k: 'note', x: 64, y: 210, w: 390, d: '11 October', t: 'A club or a group of friends races a new whoop track every week, at home, at their own pace, with a YouTube link as the evidence. It lives at webfpv.org/board/CommunityGow.', in: 'n1', small: true },
+            { k: 'note', x: 529, y: 210, w: 390, d: '11 October', t: 'Name your club, press Start my community, and it is public from the first second. No account and no email. You keep one organiser link, and it is the only key to editing, so save it.', in: 'n2', small: true },
+            { k: 'note', x: 64, y: 625, w: 390, d: '11 October', t: 'A round is one track, sent from the whoop builder with Send to the community, or dropped in as a pack. It can open on a date, so next week is lined up today. Every round is also a track on the board, with a Fly it in the simulator button.', in: 'n3', small: true },
+            { k: 'note', x: 529, y: 625, w: 390, d: '11 October', t: 'Post a time with no sign in. Type it the way you say it: 34.56, 12s, 1:02.5. A YouTube link plays in place, and nothing loads from YouTube until you press Watch.', in: 'n4', small: true },
+            { k: 'note', x: 64, y: 1040, w: 390, d: '11 October', t: 'The Season table scores every round on the F1 points, 25 for first down to 1 for tenth. The organiser can mark a time Verified. Nothing is verified for you.', in: 'n5', small: true },
+            { k: 'note', x: 529, y: 1040, w: 390, d: '11 October', t: 'Invite people gives a link, a QR code and a poster for the wall. Never used on the live board by a pilot yet: it was checked with self tests and a headless browser.', in: 'n6', small: true }
+          ]
+        },
+        {
+          id: 'c1-p14b2',
+          label: 'Tunes and the guide',
+          tone: 'paper',
+          layout: ['h', 0.12, 0, 'hd', ['h', 1 / 3, 0, ['v', 0.5, 0, 'n1', 'n2'], ['h', 0.5, 0, ['v', 0.5, 0, 'n3', 'n4'], ['v', 0.5, 0, 'n5', 'n6']]]],
+          panels: [
+            { id: 'hd', fill: 'paper', frame: 'none', alt: 'The page heading.' },
+            { id: 'n1', fill: 'ink', alt: 'A black panel holding one dated note, 1 of 6.' },
+            { id: 'n2', fill: 'ink', alt: 'A black panel holding one dated note, 2 of 6.' },
+            { id: 'n3', fill: 'ink', alt: 'A black panel holding one dated note, 3 of 6.' },
+            { id: 'n4', fill: 'ink', alt: 'A black panel holding one dated note, 4 of 6.' },
+            { id: 'n5', fill: 'ink', alt: 'A black panel holding one dated note, 5 of 6.' },
+            { id: 'n6', fill: 'ink', alt: 'A black panel holding one dated note, 6 of 6.' }
+          ],
+          words: [
+            { k: 'letter', x: 70, y: 150, size: 84, anchor: 'start', runs: [['TUNES + GUIDE', 'cream']], in: 'hd' },
+            { k: 'note', x: 64, y: 210, w: 390, d: '11 October', t: 'A Tunes library. Share this tune puts the tune you fly on the board with a short code, like k7mq-2xrt-9vwd. Paste a code under Load a tune and see what is in it before anything changes.', in: 'n1', small: true },
+            { k: 'note', x: 529, y: 210, w: 390, d: '11 October', t: 'A tune holds its PIDs, rates, weight, Air grip, Motor power, pack, lens and tilt. Not your graphics, sticks, radio, flight mode, names or laps. Put mine back undoes a load.', in: 'n2', small: true },
+            { k: 'note', x: 64, y: 625, w: 390, d: '11 October', t: 'Star ratings, one to five, on tunes, tracks and maps. One rating a browser, and you can change it. Tracks has a Top rated order, and the board has a Tunes tab.', in: 'n3', small: true },
+            { k: 'note', x: 529, y: 625, w: 390, d: '11 October', t: 'A first flight guide for each kind of place: a race track, a whoop room and a freestyle world. It starts at launch, from a friend\'s Fly link as well. Add ?guide=1 to the address to see it again.', in: 'n4', small: true },
+            { k: 'note', x: 64, y: 1040, w: 390, d: '11 October', t: 'Export bundle in the whoop builder makes one zip: the track file, a plan, six pictures, the lap animation and printable build instructions.', in: 'n5', small: true },
+            { k: 'note', x: 529, y: 1040, w: 390, d: '11 October', t: 'None of this has been flown by a pilot on the live build. It was checked by scripts and a headless browser. The sliders are still opt in.', in: 'n6', small: true }
           ]
         },
         {

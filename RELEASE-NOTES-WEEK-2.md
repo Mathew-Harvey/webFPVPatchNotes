@@ -2,7 +2,7 @@
 
 DRAFT. Written from the code on `main` of the simulator, the board and the front page, not from pull request titles. Everything here is on `main` as of the draft; anything on the `test` branches or in a draft pull request is left out. Nothing in it has been flown by anyone but the owner, and most of it has been checked only by scripts and a headless browser; each section says so where it matters.
 
-The book's version of these notes is the four pages after "The notes so far" in `docs/chapters.js`. This file is the long form, in the voice of the patch notes at webfpv.org/notes.
+The book's version of these notes is the five pages after "The notes so far" in `docs/chapters.js`. This file is the long form, in the voice of the patch notes at webfpv.org/notes.
 
 ## CommunityGow
 
@@ -20,6 +20,14 @@ A club or a group of friends races a new whoop track every week, at home, at the
 - **The organiser can** set the tagline and the rules, choose what counts as a time, require a YouTube link on every time, hide the community from the CommunityGow front page, close or reopen a round, rename or remove one, and Verify, Unverify or remove a time. A person who holds the link is the organiser, and there is no other way to change who that is.
 - **Limits.** 600 communities on the board, a rate limit on starting them, up to 12 times a pilot per round and 400 a round.
 - **Not checked by a pilot.** Nobody has used it on the live board. It was checked by the board's self tests and by a headless browser walk as an organiser, a pilot and a newcomer at phone and desktop width. A phone camera reading a printed poster has not been tried. The review of 9 October found and fixed ten rough edges in that walk, so expect more. Whether a club's track should be hideable from the simulator's Tracks grid is not decided; they are listed for now.
+
+## Tunes, ratings and the first flight guide
+
+- **Tunes library.** In the Quad room, Share this tune puts the tune you fly on the public board with a short code, like k7mq-2xrt-9vwd, and a name, an optional word about it and your pilot name. Load a tune takes a code, shows you what is in the tune before anything changes, and has Put mine back. A `?tune=` link opens the load box on a code. The board has a Tunes tab, searchable by aircraft, newest first or Top rated, each tune with its facts (rates type, whether the PIDs were adjusted) and a Load in the simulator button. You can take your own tune down, and the code stops working.
+- **What a tune holds.** The tune it starts from (or your own Betaflight dump), the PID adjustment on it, the rates, weight, Air grip, Motor power, pack, lens and tilt. It holds no graphics, sticks, radio, flight mode, names or laps, and loading one never touches those. A tune off stock on Air grip or Motor power turns Flight feel tuning on and says so, and laps flown on it stay off the public board. Loading a custom dump replaces your saved dump for that aircraft, and Put mine back restores both.
+- **Star ratings.** One to five stars on tunes, tracks and maps, one rating per browser, changeable and withdrawable (Take mine back). You cannot rate your own tune. Tracks has a Top rated order, the freestyle maps have a Maps from the board order and a Rate this map row, and the board's tabs have Top rated too. The rating is tied to a random key kept in the browser, so someone who clears their storage can vote again; the board damps the score for that.
+- **First flight guide.** One guided first flight for each kind of place, a race track, a whoop room and a freestyle world, started at launch by every door, including the board's Fly this track, the builder's Fly and a CommunityGow round, where nothing guided a pilot before. It says which key is the throttle for your stick mode and for touch and radio. On a track or in a room it speaks before the first gate, after the first and after the second and goes at the third gate or the first lap; in a freestyle world it speaks for the first 22 seconds of airtime. Each kind is spoken once per browser, and a profile that already has laps or a map in a kind is not told about it again. `?guide=1` on the address shows the guides again. Open tabs need a reload. The Next gate cue setting and the guide do not know about each other: with the cue off, the race words still say the next gate turns green. The words are a first draft, and nobody has flown it.
+- **Export bundle and Send to the community** are on the live simulator now. Export bundle, in More on the whoop builder, writes one zip made in the browser: the track file, a plan, six pictures, the lap animation and printable instructions, with the pictures optional so a weak machine can skip them. Send to the community opens from a portal's Make it in the builder link and sends the track as the next round from a strip under the bar. The builder half is checked in a headless browser only.
 
 ## New in the simulator
 
@@ -78,6 +86,5 @@ A club or a group of friends races a new whoop track every week, at home, at the
 
 ## Held back, not on main, not verified
 
-- **Not on main when this was drafted:** the builder's Send to the community and Export bundle (check at publish), the first flight guide for whoops, and anything on the `test` branches.
 - **The comic look is not live**, and the front page's gate cards and the town's picture were drawn with it. They were not drawn again after the Gem look.
 - **Never flown by a pilot on the live build:** the sliders, the race line, auto reset, next gate cue, letters, the invisible gate, the new whoop, the new models and the Gem look. The checks are scripts and a headless browser on a software renderer.
