@@ -185,7 +185,7 @@ module.exports = {
     },
     /* ---- Tunes ---- */
     {
-      id: 'w-tu1', page: 'c1-p14b2', panel: 'n1', world: 'simQuad', viewport: [560, 860], page_shot: true,
+      id: 'w-tu1', page: 'c1-p14b2', panel: 'n1', world: 'simQuad', viewport: [560, 860], clip: [0, 120, 430, 470], page_shot: true,
       act: async (page) => {
         await page.evaluate(() => window.__ui.act('tune-share'));
         await page.waitForTimeout(1500);
@@ -199,7 +199,7 @@ module.exports = {
       }
     },
     {
-      id: 'w-tu2', page: 'c1-p14b2', panel: 'n2', world: 'simQuad', viewport: [560, 860], page_shot: true,
+      id: 'w-tu2', page: 'c1-p14b2', panel: 'n2', world: 'simQuad', viewport: [560, 860], clip: [0, 140, 560, 560], page_shot: true,
       act: async (page) => {
         await page.evaluate(() => window.__ui.show('quad'));
         await page.waitForTimeout(800);

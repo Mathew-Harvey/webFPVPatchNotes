@@ -10,11 +10,16 @@
     860
   ],
   "crop": {
-    "left": 0,
-    "top": 282,
-    "width": 1120,
-    "height": 1157
+    "left": 18,
+    "top": 0,
+    "width": 1084,
+    "height": 1120
   },
   "framing": null,
-  "clip": null
+  "clip": [
+    0,
+    140,
+    560,
+    560
+  ]
 }

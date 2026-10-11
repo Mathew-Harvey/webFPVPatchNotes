@@ -561,8 +561,8 @@
           ],
           words: [
             { k: 'letter', x: 70, y: 132, size: 76, anchor: 'start', max: 860, runs: [['TUNES', 'cream']], in: 'hd' },
-            { k: 'note', x: 61, yb: 667, w: 400, d: '11 October', t: 'A Tunes library. Share this tune puts the tune you fly on the board with a short code, like k7mq-2xrt-9vwd. Paste a code under Load a tune and see what is in it before anything changes.', in: 'n1', small: true },
-            { k: 'note', x: 539, y: 198, w: 400, d: '11 October', t: 'A tune holds its PIDs, rates, weight, Air grip, Motor power, pack, lens and tilt. Not your graphics, sticks, radio, flight mode, names or laps. Put mine back undoes a load.', in: 'n2', small: true },
+            { k: 'note', x: 61, y: 198, w: 400, d: '11 October', t: 'A Tunes library. Share this tune puts the tune you fly on the board with a short code, like k7mq-2xrt-9vwd. Paste a code under Load a tune and see what is in it before anything changes.', in: 'n1', small: true },
+            { k: 'note', x: 539, yb: 642, w: 400, d: '11 October', t: 'A tune holds its PIDs, rates, weight, Air grip, Motor power, pack, lens and tilt. Not your graphics, sticks, radio, flight mode, names or laps. Put mine back undoes a load.', in: 'n2', small: true },
             { k: 'note', x: 61, y: 761, w: 400, d: '11 October', t: 'Star ratings, one to five, on tunes, tracks and maps. One rating a browser, and you can change it. Tracks has a Top rated order, and the board has a Tunes tab.', in: 'n3', small: true }
           ]
         },

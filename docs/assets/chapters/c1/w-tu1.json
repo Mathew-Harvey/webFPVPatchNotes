@@ -11,10 +11,15 @@
   ],
   "crop": {
     "left": 0,
-    "top": 252,
-    "width": 1120,
-    "height": 1217
+    "top": 3,
+    "width": 860,
+    "height": 935
   },
   "framing": null,
-  "clip": null
+  "clip": [
+    0,
+    120,
+    430,
+    470
+  ]
 }
