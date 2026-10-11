@@ -2,7 +2,7 @@
 
 DRAFT. Written from the code on `main` of the simulator, the board and the front page, not from pull request titles. Everything here is on `main` as of the draft; anything on the `test` branches or in a draft pull request is left out. Nothing in it has been flown by anyone but the owner, and most of it has been checked only by scripts and a headless browser; each section says so where it matters.
 
-The book's version of these notes is the five pages after "The notes so far" in `docs/chapters.js`. This file is the long form, in the voice of the patch notes at webfpv.org/notes.
+The book's version of these notes is the six pages after "The notes so far" in `docs/chapters.js`. This file is the long form, in the voice of the patch notes at webfpv.org/notes.
 
 ## CommunityGow
 
@@ -72,6 +72,19 @@ A club or a group of friends races a new whoop track every week, at home, at the
 - **A pinch on a phone** whose second finger landed on the builder's options card did not zoom. It does.
 - **About fits a phone on its side**, in two columns, down to 568 by 320 where it still scrolls.
 - **The stick report** carries the raw travel of every axis and button, for a DJI Controller 3 on Android where yaw shows nothing. The cause is not found.
+
+## The bug sweep
+
+On 11 October the week's code, in the simulator and on the board, was swept for faults and 24 confirmed ones were fixed. The ones a pilot could meet:
+
+- Auto reset kept its wait when you paused inside it, and takes the reset at the start of the next frame as R does, so no frame is drawn at the crash.
+- A shared tune loaded over Your edits on the same aircraft flies at once, instead of keeping the old dump until a reload. Pressing Enter in the Share dialog twice cannot publish a tune twice.
+- Closing Send to community while it is sending no longer lets a second Send make a duplicate round.
+- Next gate cue set to Off now holds on the title, the launch card and the results, not only in flight.
+- The first flight guide no longer goes back to its first line after the third gate on a short course.
+- The Weight card and the tuning card no longer read storage on every flight frame.
+- On the board: CommunityGow pages show the right round number and Close button, a trailing slash no longer 404s, a club name with a dollar sign no longer breaks the page title, the YouTube links in the video player open, the Tunes tab keeps a vote's Thanks, and text the database would refuse is cleaned or refused in both stores.
+- Thirteen findings were left alone on purpose, each written down with its reason in the project's records.
 
 ## The board and the front page
 

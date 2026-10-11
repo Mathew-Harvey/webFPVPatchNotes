@@ -633,6 +633,30 @@
           ]
         },
         {
+          id: 'c1-p14f',
+          label: 'Also this week',
+          tone: 'paper',
+          layout: ['h', 0.12, 0, 'hd', ['h', 1 / 3, 0, ['v', 0.5, 0, 'n1', 'n2'], ['h', 0.5, 0, ['v', 0.5, 0, 'n3', 'n4'], ['v', 0.5, 0, 'n5', 'n6']]]],
+          panels: [
+            { id: 'hd', fill: 'paper', frame: 'none', alt: 'The page heading.' },
+            { id: 'n1', fill: 'ink', alt: 'A black panel holding one dated note, 1 of 6.' },
+            { id: 'n2', fill: 'ink', alt: 'A black panel holding one dated note, 2 of 6.' },
+            { id: 'n3', fill: 'ink', alt: 'A black panel holding one dated note, 3 of 6.' },
+            { id: 'n4', fill: 'ink', alt: 'A black panel holding one dated note, 4 of 6.' },
+            { id: 'n5', fill: 'ink', alt: 'A black panel holding one dated note, 5 of 6.' },
+            { id: 'n6', fill: 'ink', alt: 'A black panel holding one dated note, 6 of 6.' }
+          ],
+          words: [
+            { k: 'letter', x: 70, y: 150, size: 84, anchor: 'start', runs: [['ALSO THIS WEEK', 'cream']], in: 'hd' },
+            { k: 'note', x: 64, y: 210, w: 390, d: '6 October', t: 'Stick overlay, on by default: two small boxes with a dot for each stick, now for radios and gamepads as well as keys. Show FPS is a setting, and Camera angle is back on Rates.', in: 'n1', small: true },
+            { k: 'note', x: 529, y: 210, w: 390, d: '5 October', t: 'Support. About has Buy Mat a battery ($5) and an Instagram row, and a small Support prompt shows at most once a week. Settings, Advanced, Support prompts turns it off. YourFPV is a map only supporter.', in: 'n2', small: true },
+            { k: 'note', x: 64, y: 625, w: 390, d: '3 to 6 October', t: 'On webfpv.org: a link to this book, The Story, a Quad Race Lottery card for a random draw on race day, a Tip button, and a Menu button so a phone can reach every link.', in: 'n3', small: true },
+            { k: 'note', x: 529, y: 625, w: 390, d: '11 October', t: 'The rule for all of it: nothing that adds delay between stick and screen is accepted. Nothing was measured on a real GPU or a weak laptop, so the Input to screen reading on your own machine is the check that counts.', in: 'n4', small: true },
+            { k: 'note', x: 64, y: 1040, w: 390, d: '11 October', t: 'A bug sweep of the whole week fixed 24 faults. Auto reset waits through a pause, a shared tune loads at once over Your edits, and closing Send to community no longer makes a duplicate round.', in: 'n5', small: true },
+            { k: 'note', x: 529, y: 1040, w: 390, d: '11 October', t: 'Also fixed: Next gate cue Off now holds on the title and results, CommunityGow pages with the wrong round number or a 404, and a club name with a $ that broke the page title. Thirteen findings were left alone on purpose.', in: 'n6', small: true }
+          ]
+        },
+        {
           id: 'c1-p15',
           label: 'Next',
           tone: 'paper',
