@@ -1,6 +1,6 @@
 # WebFPV, the comic
 
-A manga about [WebFPV](https://webfpv.org/sim/), the free browser FPV simulator, in the words of andAgainFPV, the pilot who built it. Chapter 1, Fly decent, is the book so far: the question, the yes, who it is for, the builder, the room that nearly stopped it, the testers, and the notes so far. A chapter is added for each release worth a story.
+A manga about [WebFPV](https://webfpv.org/sim/), the free browser FPV simulator, in the words of andAgainFPV, the pilot who built it. Chapter 1, Fly decent, is how it started: the question, the yes, who it is for, the builder, the room that nearly stopped it, the testers, and the notes so far. Chapter 2, Open house, is 3 to 20 October: the softer feel, the whoop's own physics, crashes that bounce, the board turned magazine, the windmill and the balloon chase, and Nick Burns' house with Nick in it. A chapter is added for each release worth a story.
 
 Read it at https://mathew-harvey.github.io/webFPVPatchNotes/ once GitHub Pages is serving `/docs`, or open `docs/index.html` in a browser.
 

@@ -348,7 +348,7 @@ module.exports = {
   reuse: []
 };
 
-/* The week of 3 to 11 October, its six pages of notes: tools/shoot/c1-week.js. */
-const week = require('./c1-week');
-Object.assign(module.exports.worlds, week.worlds);
-module.exports.shots.push(...week.shots);
+/* The week of 3 to 11 October had six pages of notes at the end of this
+ * chapter until 20 October, when chapter 2 told that week as a story. Their
+ * pictures stay where they are (docs/assets/chapters/c1/w-*), some of them
+ * hang in chapter 2, and tools/shoot/c1-week.js is how they were shot. */

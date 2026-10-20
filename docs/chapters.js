@@ -48,7 +48,6 @@
         'Interview with Mat, andAgainFPV, 2 October 2026 (STORY.md)',
         'Patch notes, webfpv.org/notes, 22 August to 2 October 2026',
         'WebFPV simulator, shot through its own renderer; course WCMRC Round 5 and RaceGOW Season 5 Track 1',
-        'Release notes, 3 to 11 October 2026 (RELEASE-NOTES-WEEK-2.md), read from the code on main of the simulator, the board and the front page',
         'Commits 2f3a98c and 983521b (11 August 2026) and 17f0f76 (13 August 2026)'
       ],
       pages: [
@@ -89,7 +88,7 @@
             { k: 'letter', x: 84, y: 420, size: 96, anchor: 'start', max: 560, runs: [['FLY DECENT', 'mint']], in: 'hero' },
             { k: 'head', x: 76, y: 470, w: 520, t: 'How a browser sim got built, in the words of the pilot who built it.', in: 'hero' },
             { k: 'sub', x: 76, y: 600, w: 420, t: 'andAgainFPV', in: 'hero' },
-            { k: 'tag', x: 76, y: 680, t: 'New this week: CommunityGow', in: 'hero' },
+            { k: 'tag', x: 76, y: 680, t: 'New: Chapter 02, Open house', in: 'hero' },
             { k: 'tag', x: 66, y: 1002, t: 'The gate', in: 'w1' },
             { k: 'letter', x: 60, y: 1342, size: 44, anchor: 'start', max: 246, runs: [['THE QUESTION', 'mint']], in: 'w1' },
             { k: 'tag', x: 372, y: 1024, t: 'The builder', in: 'w2' },
@@ -513,222 +512,6 @@
           ]
         },
         {
-          id: 'c1-p14b',
-          label: 'CommunityGow',
-          tone: 'paper',
-          layout: ['h', 0.1, 0, 'hd', ['h', 0.47, 0.02, 'n1', ['v', 0.5, 0.05, 'n2', 'n3']]],
-          panels: [
-            { id: 'hd', fill: 'paper', frame: 'none', alt: 'The page heading.' },
-            { id: 'n1', art: 'c1/w-cg1', alt: 'The Example Whoop Club page on the board: this week\'s round, its track plan, and the first three times.' },
-            { id: 'n2', art: 'c1/w-cg2', bleed: 'lb', alt: 'The CommunityGow page on a phone, with Your Whoop Club typed in the box that starts a new club.' },
-            { id: 'n3', art: 'c1/w-cg3', bleed: 'rb', alt: 'The whoop builder holding a RaceGOW room, with a Send to Example Whoop Club button at the top.' }
-          ],
-          words: [
-            { k: 'letter', x: 70, y: 132, size: 76, anchor: 'start', max: 860, runs: [['COMMUNITY', 'cream'], ['GOW', 'mint']], in: 'hd' },
-            { k: 'note', x: 61, yb: 679, w: 400, d: '11 October', t: 'A club or a group of friends races a new whoop track every week, at home, at their own pace, with a YouTube link as the evidence. It lives at webfpv.org/board/CommunityGow.', in: 'n1', small: true },
-            { k: 'note', x: 61, yb: 1402, w: 400, d: '11 October', t: 'Name your club, press Start my community, and it is public from the first second. No account and no email. You keep one organiser link, and it is the only key to editing, so save it.', in: 'n2', small: true },
-            { k: 'note', x: 539, yb: 1402, w: 400, d: '11 October', t: 'A round is one track, sent from the whoop builder with Send to the community, or dropped in as a pack. It can open on a date, so next week is lined up today. Every round is also a track on the board, with a Fly it in the simulator button.', in: 'n3', small: true }
-          ]
-        },
-        {
-          id: 'c1-p14b-2',
-          label: 'CommunityGow, post a time',
-          tone: 'paper',
-          layout: ['h', 0.1, 0, 'hd', ['v', 0.55, 0.04, 'n1', ['h', 0.5, -0.03, 'n2', 'n3']]],
-          panels: [
-            { id: 'hd', fill: 'paper', frame: 'none', alt: 'The page heading.' },
-            { id: 'n1', art: 'c1/w-cg4', bleed: 'lb', alt: 'The Post your time form on a phone: the name Kestrel, the time 34.56, read back as 34.560.' },
-            { id: 'n2', art: 'c1/w-cg5', bleed: 'r', alt: 'The club\'s Season tab: the points per round, and a table with Kestrel on 43 and Tofu below.' },
-            { id: 'n3', art: 'c1/w-cg6', bleed: 'rb', alt: 'Invite people to Example Whoop Club: a link and a QR code for the wall.' }
-          ],
-          words: [
-            { k: 'letter', x: 70, y: 132, size: 76, anchor: 'start', max: 860, runs: [['POST A ', 'cream'], ['TIME', 'mint']], in: 'hd' },
-            { k: 'note', x: 61, yb: 1402, w: 400, d: '11 October', t: 'Post a time with no sign in. Type it the way you say it: 34.56, 12s, 1:02.5. A YouTube link plays in place, and nothing loads from YouTube until you press Watch.', in: 'n1', small: true },
-            { k: 'note', x: 539, y: 198, w: 400, d: '11 October', t: 'The Season table scores every round on the F1 points, 25 for first down to 1 for tenth. The organiser can mark a time Verified. Nothing is verified for you.', in: 'n2', small: true },
-            { k: 'note', x: 539, yb: 1402, w: 400, d: '11 October', t: 'Invite people gives a link, a QR code and a poster for the wall. Never used on the live board by a pilot yet: it was checked with self tests and a headless browser.', in: 'n3', small: true }
-          ]
-        },
-        {
-          id: 'c1-p14b2',
-          label: 'Tunes',
-          tone: 'paper',
-          layout: ['h', 0.1, 0, 'hd', ['h', 0.44, -0.02, ['v', 0.5, -0.05, 'n1', 'n2'], 'n3']],
-          panels: [
-            { id: 'hd', fill: 'paper', frame: 'none', alt: 'The page heading.' },
-            { id: 'n1', art: 'c1/w-tu1', alt: 'The simulator\'s Shared dialog: the tune is on the board, with its short code and Copy code.' },
-            { id: 'n2', art: 'c1/w-tu2', alt: 'Share this tune: the list of what goes up with a tune, and what is never included.' },
-            { id: 'n3', art: 'c1/w-tu3', bleed: 'lrb', alt: 'The board\'s Tunes tab in Top rated order: three tune cards with stars, share codes and Load in the simulator.' }
-          ],
-          words: [
-            { k: 'letter', x: 70, y: 132, size: 76, anchor: 'start', max: 860, runs: [['TUNES', 'cream']], in: 'hd' },
-            { k: 'note', x: 61, y: 198, w: 400, d: '11 October', t: 'A Tunes library. Share this tune puts the tune you fly on the board with a short code, like k7mq-2xrt-9vwd. Paste a code under Load a tune and see what is in it before anything changes.', in: 'n1', small: true },
-            { k: 'note', x: 539, yb: 642, w: 400, d: '11 October', t: 'A tune holds its PIDs, rates, weight, Air grip, Motor power, pack, lens and tilt. Not your graphics, sticks, radio, flight mode, names or laps. Put mine back undoes a load.', in: 'n2', small: true },
-            { k: 'note', x: 61, y: 761, w: 400, d: '11 October', t: 'Star ratings, one to five, on tunes, tracks and maps. One rating a browser, and you can change it. Tracks has a Top rated order, and the board has a Tunes tab.', in: 'n3', small: true }
-          ]
-        },
-        {
-          id: 'c1-p14b2-2',
-          label: 'The guide and the bundle',
-          tone: 'paper',
-          layout: ['h', 0.1, 0, 'hd', ['v', 0.45, -0.04, ['h', 0.5, 0.03, 'n1', 'n2'], 'n3']],
-          panels: [
-            { id: 'hd', fill: 'paper', frame: 'none', alt: 'The page heading.' },
-            { id: 'n1', art: 'c1/w-tu4', bleed: 'l', alt: 'A whoop on the pad in a RaceGOW room with the first flight guide\'s words over the view.' },
-            { id: 'n2', art: 'c1/w-tu5', bleed: 'lb', alt: 'The printable build instructions from a bundle: pictures of the room\'s gates from two corners.' },
-            { id: 'n3', art: 'c1/w-tu6', bleed: 'rb', alt: 'The Nice flying card on the flight screen after two tracks, asking whether to show the tuning sliders.' }
-          ],
-          words: [
-            { k: 'letter', x: 70, y: 132, size: 76, anchor: 'start', max: 860, runs: [['GUIDE', 'cream'], [' + ', 'sakura'], ['BUNDLE', 'cream']], in: 'hd' },
-            { k: 'note', x: 61, yb: 708, w: 400, d: '11 October', t: 'A first flight guide for each kind of place: a race track, a whoop room and a freestyle world. It starts at launch, from a friend\'s Fly link as well. Add ?guide=1 to the address to see it again.', in: 'n1', small: true },
-            { k: 'note', x: 61, y: 850, w: 400, d: '11 October', t: 'Export bundle in the whoop builder makes one zip: the track file, a plan, six pictures, the lap animation and printable build instructions.', in: 'n2', small: true },
-            { k: 'note', x: 579, y: 288, w: 360, d: '11 October', t: 'The Air grip and Motor power sliders stay opt in. After two tracks, or ten minutes of freestyle, a Nice flying card asks on landing if you want them. Settings has the same switch. Nobody has flown this on the live build.', in: 'n3', small: true }
-          ]
-        },
-        {
-          id: 'c1-p14c',
-          label: 'The week, building',
-          tone: 'paper',
-          layout: ['h', 0.1, 0, 'hd', ['h', 0.47, 0.02, 'n1', ['v', 0.5, 0.05, 'n2', 'n3']]],
-          panels: [
-            { id: 'hd', fill: 'paper', frame: 'none', alt: 'The page heading.' },
-            { id: 'n1', art: 'c1/w-bd1', alt: 'A five inch quad banks into the W of WEBFPV, spelled in pipe letters standing on the race field.' },
-            { id: 'n2', art: 'c1/w-bd2', bleed: 'lb', alt: 'The race field\'s first gate made Invisible: the pads and the field, and no frame where the gate is.' },
-            { id: 'n3', art: 'c1/w-bd3', bleed: 'rb', alt: 'Export animation on the Race field setting: the striped turf, the course, a ground logo and the gates.' }
-          ],
-          words: [
-            { k: 'letter', x: 70, y: 132, size: 76, anchor: 'start', max: 860, runs: [['THE WEEK: ', 'cream'], ['BUILDING', 'amber']], in: 'hd' },
-            { k: 'note', x: 539, yb: 703, w: 400, d: '4 October', t: 'Letters in the five inch builder. Any capital A to Z in pipe, with one to three gaps to fly through, each gap a gate in the order. Any gate can be made a letter and back.', in: 'n1', small: true },
-            { k: 'note', x: 61, y: 773, w: 400, d: '4 October', t: 'An Invisible gate, key I, on the five inch and the whoop. An opening you fly through and score like a gate, with nothing to hit. Any gate can drop its frame.', in: 'n2', small: true },
-            { k: 'note', x: 539, y: 798, w: 400, d: '4 October', t: 'Export animation has a Size, Standard, High or Very high, and a Setting: Black stage or Race field, with the striped turf, the ground logos and sponsors on the gate headers.', in: 'n3', small: true }
-          ]
-        },
-        {
-          id: 'c1-p14c-2',
-          label: 'Stacks and official tracks',
-          tone: 'paper',
-          layout: ['h', 0.1, 0, 'hd', ['v', 0.55, 0.04, 'n1', ['h', 0.5, -0.03, 'n2', 'n3']]],
-          panels: [
-            { id: 'hd', fill: 'paper', frame: 'none', alt: 'The page heading.' },
-            { id: 'n1', art: 'c1/w-bd4', bleed: 'lb', alt: 'The builder\'s Each opening card for a triple stack: three openings, two set to their own sizes, and the frame\'s upright buttons.' },
-            { id: 'n2', art: 'c1/w-bd5', bleed: 'r', alt: 'The live board on a phone: WA State Champs 2026 with its Official badge, a record of 34.25 and Fly this track.' },
-            { id: 'n3', art: 'c1/w-bd6', bleed: 'rb', alt: 'A quad flies past a patron\'s sign, Quad Configurator, on a wall in the town.' }
-          ],
-          words: [
-            { k: 'letter', x: 70, y: 132, size: 76, anchor: 'start', max: 860, runs: [['STACKS', 'cream'], [' + ', 'sakura'], ['OFFICIAL', 'amber']], in: 'hd' },
-            { k: 'note', x: 61, y: 198, w: 360, d: '4 October', t: 'Stacked gates: each opening has its own width and height, and Delete takes away one opening\'s upright stretch. The options card can be dragged by its heading.', in: 'n1', small: true },
-            { k: 'note', x: 539, yb: 708, w: 400, d: '4 October', t: 'Official tracks. The board\'s owners can mark a track Official. Anyone can fly it and post a time. Nobody else can change it or open it in the builder.', in: 'n2', small: true },
-            { k: 'note', x: 562, yb: 1402, w: 400, d: '11 October', t: 'Logos and stickers in the map builder are for the board\'s owners only. Patron signs, up to three, can hang on the walls of the freestyle maps and the town.', in: 'n3', small: true }
-          ]
-        },
-        {
-          id: 'c1-p14d',
-          label: 'The week, flying',
-          tone: 'paper',
-          layout: ['h', 0.1, 0, 'hd', ['h', 0.44, -0.02, ['v', 0.5, -0.05, 'n1', 'n2'], 'n3']],
-          panels: [
-            { id: 'hd', fill: 'paper', frame: 'none', alt: 'The page heading.' },
-            { id: 'n1', art: 'c1/w-fl1', alt: 'On the pad with Flight feel tuning on: Air grip at 115 and Motor power at 105 under Weight, and the card explaining them.' },
-            { id: 'n2', art: 'c1/w-fl2', alt: 'A quad pitched down into the green first gate of the race field.' },
-            { id: 'n3', art: 'c1/w-fl3', bleed: 'lrb', alt: 'The Rates screen: a curve to 600 degrees a second, Centre sensitivity 60 and Max rate 600.' }
-          ],
-          words: [
-            { k: 'letter', x: 70, y: 132, size: 76, anchor: 'start', max: 860, runs: [['THE WEEK: ', 'cream'], ['FLYING', 'mint']], in: 'hd' },
-            { k: 'note', x: 61, y: 198, w: 400, d: '9 October', t: 'Flight feel tuning, off by default: Air grip, 50 to 150, and Motor power, 80 to 120. At 100 it is the stock quad. A tuned flight is not posted to the board. Nobody has flown the sliders on the live build.', in: 'n1', small: true },
-            { k: 'note', x: 539, yb: 642, w: 400, d: '9 October', t: 'Default tune: prop wash halved, the I term limit halved, the quad 12 mm lower. A full stick yaw stop swings back 4.1 degrees, not 7.0. The owner flew it: flys good.', in: 'n2', small: true },
-            { k: 'note', x: 61, y: 761, w: 300, d: '11 October', t: 'Default rates are softer: 60 and 600, from 70 and 670. Your own rates are never moved. 319 feel tickets read twitchy most often.', in: 'n3', small: true }
-          ]
-        },
-        {
-          id: 'c1-p14d-2',
-          label: 'The whoop and the race line',
-          tone: 'paper',
-          layout: ['h', 0.1, 0, 'hd', ['v', 0.45, -0.04, ['h', 0.5, 0.03, 'n1', 'n2'], 'n3']],
-          panels: [
-            { id: 'hd', fill: 'paper', frame: 'none', alt: 'The page heading.' },
-            { id: 'n1', art: 'c1/w-fl4', bleed: 'l', alt: 'The 65 mm whoop, white ducts and a black camera, banking past a red gate in a pink room.' },
-            { id: 'n2', art: 'c1/w-fl5', bleed: 'lb', alt: 'The Race line in a whoop room: a trail of dots over a dive, packed tight at the bottom where the whoop has to slow.' },
-            { id: 'n3', art: 'c1/w-fl6', bleed: 'rb', alt: 'The flight screen on the start pad with the words Auto reset. across the sky and the next gate ahead.' }
-          ],
-          words: [
-            { k: 'letter', x: 70, y: 132, size: 76, anchor: 'start', max: 860, runs: [['WHOOP', 'cream'], [' + ', 'sakura'], ['RACE LINE', 'mint']], in: 'hd' },
-            { k: 'note', x: 61, yb: 708, w: 400, d: '10 October', t: 'The whoop has its own physics: 23 g, 0702 motors on one cell, real gravity, and a hit box about two thirds of the drawn whoop. Nobody has reported flying it on the live build.', in: 'n1', small: true },
-            { k: 'note', x: 61, yb: 1402, w: 400, d: '9 October', t: 'Race line, off by default. In a whoop room, dots through the next gates: close together means slow down. Next gate cue is a setting. Neither has been flown by a pilot.', in: 'n2', small: true },
-            { k: 'note', x: 528, yb: 1252, w: 400, d: '11 October', t: 'Auto reset, off by default. A crash puts you back on the start line after 0.5, 1 or 2 seconds, and a radio switch can be bound to it. Checked by a script only.', in: 'n3', small: true }
-          ]
-        },
-        {
-          id: 'c1-p14e',
-          label: 'The week, looks',
-          tone: 'paper',
-          layout: ['h', 0.1, 0, 'hd', ['h', 0.47, 0.02, 'n1', ['v', 0.5, 0.05, 'n2', 'n3']]],
-          panels: [
-            { id: 'hd', fill: 'paper', frame: 'none', alt: 'The page heading.' },
-            { id: 'n1', art: 'c1/w-lk1', alt: 'The town in the Gem look from above, a quad in front of a sea of roofs, trees and a torii gate.' },
-            { id: 'n2', art: 'c1/w-lk2', bleed: 'lb', alt: 'A quad low over a town street, a parked car with its plate ahead.' },
-            { id: 'n3', art: 'c1/w-lk3', bleed: 'rb', alt: 'The rebuilt five inch quad, pink props and a black frame, beside a car with a Japanese number plate.' }
-          ],
-          words: [
-            { k: 'letter', x: 70, y: 132, size: 76, anchor: 'start', max: 860, runs: [['LOOKS ', 'cream'], ['AND ', 'sakura'], ['FIXES', 'cream']], in: 'hd' },
-            { k: 'note', x: 61, yb: 679, w: 400, d: '9 October', t: 'The Gem look replaces the comic look, which cost latency and is off on every preset. Shadows are a setting, and Medium redraws them every third frame. Nothing was measured on a real GPU.', in: 'n1', small: true },
-            { k: 'note', x: 61, y: 773, w: 400, d: '8 October', t: 'Faster loads. Shader programs link before the first frame and none link mid flight. The town\'s height lookup is about 100 times faster with identical results.', in: 'n2', small: true },
-            { k: 'note', x: 539, y: 798, w: 400, d: '7 October', t: 'The five inch quad is rebuilt as a bench built freestyle quad. Cars have plates, arches and a story, and trees are round and lumpy. Clouds are heaped.', in: 'n3', small: true }
-          ]
-        },
-        {
-          id: 'c1-p14e-2',
-          label: 'The week, fixes',
-          tone: 'paper',
-          layout: ['h', 0.1, 0, 'hd', ['v', 0.55, 0.04, 'n1', ['h', 0.5, -0.03, 'n2', 'n3']]],
-          panels: [
-            { id: 'hd', fill: 'paper', frame: 'none', alt: 'The page heading.' },
-            { id: 'n1', art: 'c1/w-lk4', bleed: 'lb', alt: 'A quad at rest on its launch ramp, facing the first gate, the horizon level.' },
-            { id: 'n2', art: 'c1/w-lk5', bleed: 'r', alt: 'The Support prompt over the Paused screen: Patreon $3 a month or a one-off $5.' },
-            { id: 'n3', art: 'c1/w-lk6', bleed: 'rb', alt: 'The front page on a phone with the Menu open: The Story, Wiki, Patch notes and every other link.' }
-          ],
-          words: [
-            { k: 'letter', x: 70, y: 132, size: 76, anchor: 'start', max: 860, runs: [['FIXES', 'cream']], in: 'hd' },
-            { k: 'note', x: 61, y: 198, w: 400, d: '5 October', t: 'The view no longer sinks toward the grass before the quad lifts off. It was the parked camera, not the physics.', in: 'n1', small: true },
-            { k: 'note', x: 606, yb: 696, w: 400, d: '5 October', t: 'Fixed the simulator hit a fault after about 20 minutes in the air, and the false Could not post that time. Both came from the Support prompt, and both were fixed the same day.', in: 'n2', small: true },
-            { k: 'note', x: 539, yb: 1402, w: 400, d: '6 October', t: 'Stick overlay on by default. About fits a phone on its side. Show FPS is a setting. Camera angle is back on Rates. On the front page a Menu button reaches every link on a phone.', in: 'n3', small: true }
-          ]
-        },
-        {
-          id: 'c1-p14f',
-          label: 'Also this week',
-          tone: 'paper',
-          layout: ['h', 0.1, 0, 'hd', ['h', 0.44, -0.02, ['v', 0.5, -0.05, 'n1', 'n2'], 'n3']],
-          panels: [
-            { id: 'hd', fill: 'paper', frame: 'none', alt: 'The page heading.' },
-            { id: 'n1', art: 'c1/w-aw1', alt: 'The flight screen\'s stick overlay: two small boxes with a dot for each stick, beside the pack voltage and the Weight slider.' },
-            { id: 'n2', art: 'c1/w-aw2', alt: 'The About screen with Buy Mat a battery ($5) picked, and Instagram below it.' },
-            { id: 'n3', art: 'c1/w-aw3', bleed: 'lrb', alt: 'The front page on a desktop: The Story, Patch notes, Quad Race Lottery, Patreon and Tip along the top.' }
-          ],
-          words: [
-            { k: 'letter', x: 70, y: 132, size: 76, anchor: 'start', max: 860, runs: [['ALSO ', 'cream'], ['THIS WEEK', 'sakura']], in: 'hd' },
-            { k: 'note', x: 61, y: 198, w: 400, d: '6 October', t: 'Stick overlay, on by default: two small boxes with a dot for each stick, now for radios and gamepads as well as keys. Show FPS is a setting, and Camera angle is back on Rates.', in: 'n1', small: true },
-            { k: 'note', x: 539, yb: 642, w: 400, d: '5 October', t: 'Support. About has Buy Mat a battery ($5) and an Instagram row, and a small Support prompt shows at most once a week. Settings, Advanced, Support prompts turns it off. YourFPV is a map only supporter.', in: 'n2', small: true },
-            { k: 'note', x: 61, yb: 1402, w: 400, d: '3 to 6 October', t: 'On webfpv.org: a link to this book, The Story, a Quad Race Lottery card for a random draw on race day, a Tip button, and a Menu button so a phone can reach every link.', in: 'n3', small: true }
-          ]
-        },
-        {
-          id: 'c1-p14f-2',
-          label: 'The rule and the sweep',
-          tone: 'paper',
-          layout: ['h', 0.1, 0, 'hd', ['h', 0.47, 0.02, 'n1', ['v', 0.5, 0.05, 'n2', 'n3']]],
-          panels: [
-            { id: 'hd', fill: 'paper', frame: 'none', alt: 'The page heading.' },
-            { id: 'n1', art: 'c1/w-aw4', alt: 'Settings, Advanced: Input to screen asks for a few key presses, with Low latency view and Predicted view on.' },
-            { id: 'n2', art: 'c1/w-aw5', bleed: 'lb', alt: 'The Paused screen: Resume, Restart run, and the rest of the run\'s menu.' },
-            { id: 'n3', art: 'c1/w-aw6', bleed: 'rb', alt: 'The next gate cue: brackets round the green gate ahead and the distance to it.' }
-          ],
-          words: [
-            { k: 'letter', x: 70, y: 132, size: 76, anchor: 'start', max: 860, runs: [['THE RULE', 'cream'], [' + ', 'sakura'], ['THE SWEEP', 'amber']], in: 'hd' },
-            { k: 'note', x: 61, yb: 679, w: 340, d: '11 October', t: 'The rule for all of it: nothing that adds delay between stick and screen is accepted. Nothing was measured on a real GPU or a weak laptop, so the Input to screen reading on your own machine is the check that counts.', in: 'n1', small: true },
-            { k: 'note', x: 61, yb: 1402, w: 400, d: '11 October', t: 'A bug sweep of the whole week fixed 24 faults. Auto reset waits through a pause, a shared tune loads at once over Your edits, and closing Send to community no longer makes a duplicate round.', in: 'n2', small: true },
-            { k: 'note', x: 526, yb: 1402, w: 400, d: '11 October', t: 'Also fixed: Next gate cue Off now holds on the title and results, CommunityGow pages with the wrong round number or a 404, and a club name with a $ that broke the page title. Thirteen findings were left alone on purpose.', in: 'n3', small: true }
-          ]
-        },
-        {
           id: 'c1-p15',
           label: 'Next',
           tone: 'paper',
@@ -744,12 +527,593 @@
               id: 'b',
               fill: 'paper',
               fx: [{ k: 'focus', at: [0.5, 0.56], r: [0.46, 0.3], n: 130, alpha: 0.7 }],
-              alt: 'An empty panel, labelled Chapter 02, with one question lettered across it: what\'s coming next? The next chapter is not drawn yet.'
+              alt: 'A paper panel, labelled Chapter 02, with its title lettered across it: Open house. The next page starts it.'
             }
           ],
           words: [
             { k: 'cap', x: 70, y: 70, w: 420, t: 'The game will keep building.', in: 'a' },
             { k: 'tag', x: 80, y: 880, t: 'Chapter 02', in: 'b' },
+            { k: 'letter', x: 500, y: 1110, size: 130, rot: -3, max: 820, runs: [['OPEN ', 'cream'], ['HOUSE', 'sakura']], in: 'b' },
+            { k: 'sub', x: 160, y: 1180, w: 680, t: 'Turn the page.', center: true, in: 'b' }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'c2',
+      n: 2,
+      title: 'Open house',
+      date: '20 October 2026',
+      sources: [
+        'Pull requests merged to main, 3 to 20 October 2026: the simulator (Mathew-Harvey/WebFPVSimulator) 53 to 97, the board (WebFPVSimulator-LeaderBoard) 13 to 27, the front page (landingpage-WebFPVSimulator-) 10 to 20',
+        'Release notes, 3 to 11 October 2026 (RELEASE-NOTES-WEEK-2.md), and 12 to 20 October 2026 (RELEASE-NOTES-WEEK-3.md)',
+        'Mat\'s own words, quoted under their date from the pull requests and the project\'s rules',
+        'WebFPV simulator, shot through its own renderer at commit 7ab233a; Nick Burns\' house, Hibari Yard, the town and RaceGOW Season 5 Track 1',
+        'The board at webfpv.org/board, Maps and Tracks, as a visitor saw it on 20 October 2026'
+      ],
+      pages: [
+        {
+          id: 'c2-cover',
+          label: 'Cover',
+          tone: 'paper',
+          layout: ['h', 0.7, 0.022, 'hero', ['v', 1 / 3, 0.03, 'w1', ['v', 0.5, -0.03, 'w2', 'w3']]],
+          panels: [
+            {
+              id: 'hero',
+              art: 'c2/cover-hero',
+              alt: 'Nick Burns\' house from the back yard: grey siding, the pergola over the patio, the red umbrella, the pool in front. A whoop flies in low toward the patio.',
+              fx: [{ k: 'focus', at: [0.62, 0.7], r: [0.3, 0.2], n: 110, off: [[56, 60, 620, 640]] }]
+            },
+            {
+              id: 'w1',
+              art: 'c2/cover-w1',
+              alt: 'A five inch quad slides along the grass on its belly, turf flying.',
+              link: 'c2-p1'
+            },
+            {
+              id: 'w2',
+              art: 'c2/cover-w2',
+              alt: 'The board as a manga magazine: Maps and Tracks lettered at the top, maps as leaning panels.',
+              link: 'c2-p11'
+            },
+            {
+              id: 'w3',
+              art: 'c2/cover-w3',
+              alt: 'Nick at his patio table under the red umbrella, waving.',
+              link: 'c2-p13'
+            }
+          ],
+          words: [
+            { k: 'tag', x: 74, y: 80, t: 'Chapter 02', in: 'hero' },
+            { k: 'letter', x: 74, y: 290, size: 176, anchor: 'start', max: 680, runs: [['WEB', 'cream'], ['FPV', 'sakura']], in: 'hero' },
+            { k: 'letter', x: 84, y: 420, size: 112, anchor: 'start', max: 640, runs: [['OPEN HOUSE', 'mint']], in: 'hero' },
+            { k: 'tag', x: 76, y: 470, t: '3 to 20 October 2026', in: 'hero' },
+            { k: 'tag', x: 66, y: 1002, t: 'The feel', in: 'w1' },
+            { k: 'letter', x: 60, y: 1342, size: 44, anchor: 'start', max: 246, runs: [['NO RESET', 'mint']], in: 'w1' },
+            { k: 'tag', x: 372, y: 1024, t: 'The board', in: 'w2' },
+            { k: 'letter', x: 352, y: 1342, size: 44, anchor: 'start', max: 270, runs: [['THE MAGAZINE', 'sakura']], in: 'w2' },
+            { k: 'tag', x: 700, y: 1044, t: 'The house', in: 'w3' },
+            { k: 'letter', x: 690, y: 1342, size: 44, anchor: 'start', max: 250, runs: [['NICK\'S', 'cream']], in: 'w3' }
+          ]
+        },
+        {
+          id: 'c2-p1',
+          label: 'Twitchy',
+          tone: 'paper',
+          layout: ['h', 0.3, 0, 'a', ['h', 0.56, 0.03, ['v', 0.52, 0.05, 'b', 'c'], 'd']],
+          panels: [
+            {
+              id: 'a',
+              fill: 'ink',
+              alt: 'A black panel, one word lettered across it: twitchy.',
+              fx: [{ k: 'focus', at: [0.5, 0.6], r: [0.42, 0.26], n: 120, colour: 'paper', alpha: 0.2 }]
+            },
+            {
+              id: 'b',
+              art: 'c2/p1-b',
+              alt: 'First person view, low over the grass, a mint gate coming up on the left.',
+              fx: [{ k: 'speed', a: 180, n: 30, clear: [0.5, 0.5, 0.26] }]
+            },
+            {
+              id: 'c',
+              art: 'c2/p1-c',
+              alt: 'On a blank page, the quad sits level in the air, in ink, its shadow in dots below.'
+            },
+            {
+              id: 'd',
+              art: 'c2/p1-d',
+              bleed: 'blr',
+              alt: 'The quad carves round a gate in a hard flat turn, the field wheeling past behind it.',
+              fx: [{ k: 'speed', a: 196, n: 40, clear: [0.5, 0.45, 0.18] }]
+            }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 560, t: 'The testers kept writing in. 319 feel tickets, and one word came up more than any other.', in: 'a' },
+            { k: 'letter', x: 520, y: 340, size: 176, rot: -5, max: 820, runs: [['TWITCHY.', 'sakura']], in: 'a' },
+            { k: 'note', x: 70, yb: 860, w: 420, d: '11 October', t: 'So the default rates went a step softer: 60 and 600, from 70 and 670. Your own rates are never moved.', in: 'b', small: true },
+            { k: 'note', x: 70, y: 975, w: 470, d: '9 October', t: 'Half the prop wash, a belly 12 mm lower, and a full yaw stop that swings back 4.1 degrees, not 7.0.', in: 'd', small: true },
+            { k: 'cap', x: 560, y: 1260, w: 380, t: 'Mat flew it: "flys good."', in: 'd' }
+          ]
+        },
+        {
+          id: 'c2-p2',
+          label: 'The whoop',
+          tone: 'paper',
+          layout: ['h', 0.44, 0, 'a', ['h', 0.48, -0.03, 'b', 'c']],
+          panels: [
+            {
+              id: 'a',
+              art: 'c2/p2-a',
+              bleed: 'tlr',
+              alt: 'A whoop room, pink walls and pipe gates, the tiny ducted whoop hanging in the middle of it.'
+            },
+            {
+              id: 'b',
+              art: 'c2/p2-b',
+              alt: 'On a blank page, the whoop, in ink: four ducts, a tiny canopy, its shadow in dots.',
+              fx: [{ k: 'focus', at: [0.62, 0.55], r: [0.2, 0.22], n: 120 }]
+            },
+            {
+              id: 'c',
+              art: 'c2/p2-c',
+              bleed: 'blr',
+              alt: 'First person view from the whoop, through the lit gate of the room, the next one close behind it.',
+              fx: [{ k: 'focus', at: [0.5, 0.52], r: [0.2, 0.18], n: 110 }]
+            }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 440, t: 'Remember the whoop, and the question? It got physics of its own.', in: 'a' },
+            { k: 'letter', x: 280, y: 860, size: 150, rot: -6, max: 440, runs: [['ONE G.', 'cream']], in: 'b' },
+            { k: 'note', x: 70, y: 905, w: 360, d: '10 October', t: 'A one cell whoop on 0702 motors, falling at one real g, in the room as built.', in: 'b', small: true },
+            { k: 'letter', x: 690, y: 1300, size: 110, rot: -5, max: 440, runs: [['BZZZT', 'mint']], in: 'c' }
+          ]
+        },
+        {
+          id: 'c2-p3',
+          label: 'No reset',
+          tone: 'paper',
+          layout: ['h', 0.26, 0, 'a', ['h', 0.48, 0.04, ['v', 0.54, -0.04, 'b', 'c'], 'd']],
+          panels: [
+            {
+              id: 'a',
+              fill: 'ink',
+              alt: 'A black panel with Mat\'s words on it.'
+            },
+            {
+              id: 'b',
+              art: 'c2/p3-b',
+              alt: 'In the town, the quad smacks nose first into a shop wall.',
+              look: 'negative',
+              fx: [{ k: 'focus', at: [0.5, 0.5], r: [0.18, 0.16], n: 150 }]
+            },
+            {
+              id: 'c',
+              art: 'c2/p3-c',
+              alt: 'The quad drifts back off the wall, level, still flying.'
+            },
+            {
+              id: 'd',
+              art: 'c2/p3-d',
+              bleed: 'blr',
+              alt: 'Low over the grass, the quad skims along on its belly, a long slide behind it.',
+              fx: [{ k: 'speed', a: 180, n: 46, clear: [0.5, 0.5, 0.18] }]
+            }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: 'Mat, 16 October', in: 'a' },
+            { k: 'cap', x: 70, y: 130, w: 860, big: true, t: '"Fix crashing to not be annoying. No reset, just dull bounce, always."', in: 'a' },
+            { k: 'letter', x: 270, y: 640, size: 130, rot: -8, max: 440, runs: [['THUD.', 'amber']], in: 'b' },
+            { k: 'cap', x: 560, y: 820, w: 370, t: 'Now a crash is a dull bounce. The quad comes off at a walking pace and you keep flying.', in: 'c' },
+            { k: 'letter', x: 640, y: 1150, size: 116, rot: -4, max: 520, runs: [['SKRRRT', 'cream']], in: 'd' },
+            { k: 'note', x: 70, yb: 1360, w: 420, d: '18 October', t: 'Touch the grass and you slide. A 12 m/s skim runs out about 10 m and eases to a stop, where it used to grab.', in: 'd', small: true }
+          ]
+        },
+        {
+          id: 'c2-p4',
+          label: 'Your switches',
+          tone: 'paper',
+          layout: ['h', 0.52, 0.03, 'a', ['v', 0.5, -0.04, 'b', 'c']],
+          panels: [
+            {
+              id: 'a',
+              art: 'c2/p4-a',
+              bleed: 'tlr',
+              alt: 'First person view over the town\'s rooftops, the street far below, wires and cherry trees.',
+              fx: [{ k: 'focus', at: [0.5, 0.5], r: [0.24, 0.2], n: 90 }]
+            },
+            {
+              id: 'b',
+              art: 'c2/p4-b',
+              alt: 'The pause menu, with the Flight mode row: Acro and Angle.'
+            },
+            {
+              id: 'c',
+              art: 'c1/w-tu6',
+              focus: [50, 88],
+              alt: 'The Nice flying card on the flight screen: would you like to help tune flight feel?'
+            }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 460, t: 'Your quad. Your switches.', in: 'a' },
+            { k: 'note', x: 70, yb: 1360, w: 380, d: '16 October', t: 'Flight mode, Acro or Angle, is back in the pause menu and Settings. Angle is Betaflight\'s own, 60 degrees.', in: 'b', small: true },
+            { k: 'note', x: 540, y: 790, w: 390, d: '11 and 17 October', t: 'After two tracks, a Nice flying card offers the feel sliders. Prop wash has its own On and Off. Off is a tuned lap, and the board tags it.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c2-p5',
+          label: 'The rule',
+          tone: 'paper',
+          layout: ['h', 0.46, 0, 'a', 'b'],
+          panels: [
+            {
+              id: 'a',
+              art: 'c2/p5-a',
+              bleed: 'tlr',
+              alt: 'First person view, dead centre on a mint gate, close enough to touch.',
+              fx: [{ k: 'focus', at: [0.5, 0.52], r: [0.22, 0.24], n: 170 }]
+            },
+            {
+              id: 'b',
+              fill: 'ink',
+              bleed: 'blr',
+              alt: 'A black panel. One word is lettered huge across it: latency. Mat\'s rule is under it.',
+              fx: [{ k: 'focus', at: [0.5, 0.3], r: [0.46, 0.2], n: 140, colour: 'paper', alpha: 0.18 }]
+            }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 420, t: 'Between the stick and the screen, nothing may wait.', in: 'a' },
+            { k: 'letter', x: 500, y: 860, size: 168, rot: -4, max: 900, runs: [['LATENCY', 'sakura']], in: 'b' },
+            { k: 'tag', x: 80, y: 960, t: 'Mat, 9 October', in: 'b' },
+            { k: 'cap', x: 80, y: 1010, w: 840, big: true, t: '"Latency is the most important thing in this project, and any change that increases latency is bad."', in: 'b' },
+            { k: 'sub', x: 80, y: 1250, w: 840, t: 'So the comic layer is off on every preset, shaders link before the first frame, and Nick casts no shadow.', tone: 'night', in: 'b' }
+          ]
+        },
+        {
+          id: 'c2-p6',
+          label: 'A track a week',
+          tone: 'paper',
+          layout: ['h', 0.46, 0.02, 'a', ['v', 0.44, 0.04, 'b', 'c']],
+          panels: [
+            {
+              id: 'a',
+              art: 'c2/p6-a',
+              bleed: 'tlr',
+              alt: 'A whoop races low through a lit gate in a whoop room, the next gate waiting across the floor.',
+              fx: [{ k: 'speed', a: 175, n: 34, clear: [0.5, 0.5, 0.2] }]
+            },
+            {
+              id: 'b',
+              art: 'c1/w-cg2',
+              focus: [50, 30],
+              alt: 'CommunityGow on a phone: name your club or group, then Start my community.'
+            },
+            {
+              id: 'c',
+              art: 'c1/w-cg6',
+              focus: [50, 40],
+              alt: 'Invite people: a link and a QR code for the club.'
+            }
+          ],
+          words: [
+            { k: 'letter', x: 70, y: 200, size: 104, rot: -4, anchor: 'start', max: 860, runs: [['A TRACK ', 'cream'], ['A WEEK', 'mint']], in: 'a' },
+            { k: 'cap', x: 70, yb: 640, w: 560, t: 'CommunityGow. A club, or a few friends, race a new whoop track every week, at home, at their own pace.', in: 'a' },
+            { k: 'note', x: 70, yb: 1360, w: 340, d: '11 October', t: 'No account and no email. A YouTube link is the evidence.', in: 'b', small: true },
+            { k: 'note', x: 520, yb: 1360, w: 400, d: '11 October', t: 'Each round is scored on F1 points, 25 for first, and the season adds them up.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c2-p7',
+          label: 'Every lap counts',
+          tone: 'paper',
+          layout: ['h', 0.46, -0.03, ['v', 0.5, 0.04, 'a', 'b'], 'c'],
+          panels: [
+            {
+              id: 'a',
+              art: 'c1/w-tu1',
+              focus: [50, 60],
+              alt: 'Shared: the tune is on the board, with a short code to send to anybody.'
+            },
+            {
+              id: 'b',
+              art: 'c1/w-tu3',
+              focus: [40, 40],
+              alt: 'The board\'s Tunes tab: tunes pilots share, each with its stars.'
+            },
+            {
+              id: 'c',
+              art: 'c2/p7-c',
+              bleed: 'blr',
+              alt: 'A track\'s page on the board: its fastest lap flown again in 3D, the quad on the recorded line with the camera chasing it.'
+            }
+          ],
+          words: [
+            { k: 'letter', x: 500, y: 150, size: 92, rot: -3, max: 860, runs: [['SHARE ', 'cream'], ['IT.', 'sakura']], in: 'a' },
+            { k: 'note', x: 70, yb: 640, w: 400, d: '11 October', t: 'A tune you like is a short code now. Paste it, see what is in it, then fly it. Stars, one to five, on tunes, tracks and maps.', in: 'a', small: true },
+            { k: 'letter', x: 500, y: 790, size: 92, rot: -3, max: 860, runs: [['EVERY LAP ', 'cream'], ['COUNTS.', 'mint']], in: 'c' },
+            { k: 'note', x: 70, yb: 1360, w: 470, d: '16 and 19 October', t: 'Arcade, practice and tuned laps post too, each with its tag. A track\'s page replays its fastest lap, flown on the line it was flown.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c2-p8',
+          label: 'Their game, bigger',
+          tone: 'paper',
+          layout: ['h', 0.36, 0.02, 'a', ['h', 0.42, -0.02, ['v', 0.5, 0.04, 'b', 'c'], 'd']],
+          panels: [
+            {
+              id: 'a',
+              art: 'c1/w-bd1',
+              focus: [50, 55],
+              bleed: 'tlr',
+              alt: 'WEBFPV spelled in pipe gates on the grass, and the quad threading the W.'
+            },
+            {
+              id: 'b',
+              art: 'c1/w-bd2',
+              focus: [50, 55],
+              alt: 'An invisible gate: only a green glow marks the opening, with nothing to hit.'
+            },
+            {
+              id: 'c',
+              art: 'c1/w-bd5',
+              alt: 'The live board on a phone: WA State Champs 2026 with its Official badge, a record of 34.25 and Fly this track.'
+            },
+            {
+              id: 'd',
+              art: 'c2/p8-d',
+              bleed: 'blr',
+              alt: 'A white tower mill on a freestyle map, its four sails turning, and the quad lining up on the gap between two of them.',
+              fx: [{ k: 'focus', at: [0.42, 0.42], r: [0.2, 0.26], n: 110 }]
+            }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 520, t: 'The builder kept growing. Any letter A to Z in pipe, each gap a gate.', in: 'a' },
+            { k: 'cap', x: 70, y: 560, w: 360, t: 'A gate with nothing to hit.', in: 'b' },
+            { k: 'cap', x: 540, y: 560, w: 380, t: 'Official tracks: anyone flies them and posts a time, and only the board\'s owners can change them.', in: 'c' },
+            { k: 'letter', x: 720, y: 1080, size: 110, rot: -6, max: 460, runs: [['WHOOSH', 'cream']], in: 'd' },
+            { k: 'note', x: 70, yb: 1360, w: 440, d: '17 October', t: 'A windmill. Its four sails turn, and they are solid: time the gap, or be knocked aside the way they turn.', in: 'd', small: true }
+          ]
+        },
+        {
+          id: 'c2-p9',
+          label: 'Balloon chase',
+          tone: 'paper',
+          layout: ['h', 0.58, 0.03, 'a', ['v', 0.52, -0.04, 'b', 'c']],
+          panels: [
+            {
+              id: 'a',
+              art: 'c2/p9-a',
+              bleed: 'tlr',
+              alt: 'A light plane banks over a freestyle map, a long string of red, pink and gold balloons streaming from its tail, and the quad chasing.',
+              fx: [{ k: 'speed', a: 200, n: 36, clear: [0.45, 0.42, 0.28] }]
+            },
+            {
+              id: 'b',
+              art: 'c2/p9-b',
+              alt: 'Close behind the plane, the balloons bobbing in a line.',
+              fx: [{ k: 'focus', at: [0.5, 0.5], r: [0.2, 0.2], n: 100 }]
+            },
+            {
+              id: 'c',
+              art: 'c2/p9-c',
+              alt: 'The Balloon chase piece in the map builder: a pink pad, a mast with a balloon on top, and the dashed ring the plane flies inside.'
+            }
+          ],
+          words: [
+            { k: 'letter', x: 230, y: 230, size: 120, rot: -10, max: 340, runs: [['POP!', 'sakura']], in: 'a' },
+            { k: 'letter', x: 470, y: 380, size: 96, rot: 6, max: 300, runs: [['POP!', 'amber']], in: 'a' },
+            { k: 'letter', x: 740, y: 260, size: 80, rot: -4, max: 260, runs: [['POP!', 'mint']], in: 'a' },
+            { k: 'cap', x: 70, yb: 800, w: 520, t: 'Balloon chase. A plane streams balloons over a freestyle map, and you get ninety seconds to pop what you can.', in: 'a' },
+            { k: 'note', x: 70, yb: 1360, w: 380, d: '17 October', t: 'Every ninth balloon is gold, and worth three.', in: 'b', small: true },
+            { k: 'note', x: 560, y: 900, w: 370, d: '17 October', t: 'It is a piece in the map builder: put it down, give it a radius, a height and a speed.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c2-p10',
+          label: 'Ninety per cent',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.02, 'a', ['v', 0.56, 0.04, 'b', 'c']],
+          panels: [
+            {
+              id: 'a',
+              art: 'c2/p10-a',
+              bleed: 'tlr',
+              focus: [70, 50],
+              alt: 'A sticker found on a wall: the callout reads 90%er, Xelo FPV, 1 of 100, with the sticker itself framed in a burst.'
+            },
+            {
+              id: 'b',
+              art: 'c2/p10-b',
+              alt: 'A skate park on the Infinity Loops map, stickers scattered over its ramps and ground.'
+            },
+            {
+              id: 'c',
+              art: 'c2/p10-c',
+              alt: 'The sticker sheet the map\'s stickers are cut from: dozens of FPV stickers on one page.'
+            }
+          ],
+          words: [
+            { k: 'letter', x: 260, y: 230, size: 150, rot: -6, max: 460, runs: [['90%', 'amber'], ['ER', 'cream']], in: 'a' },
+            { k: 'cap', x: 70, yb: 760, w: 470, t: 'Infinity Loops. A tribute map with 100 stickers to find, cut from one sheet.', in: 'a' },
+            { k: 'note', x: 70, yb: 1360, w: 440, d: '15 to 17 October', t: 'Each one calls out every time it comes back into sight. Find 90 of the 100 and the map gives you an achievement of its own.', in: 'b', small: true }
+          ]
+        },
+        {
+          id: 'c2-p11',
+          label: 'Maps and Tracks',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.02, 'a', ['v', 0.58, -0.04, 'b', 'c']],
+          panels: [
+            {
+              id: 'a',
+              art: 'c2/p11-a',
+              bleed: 'tlr',
+              alt: 'The board on a desktop, drawn as a magazine page: Maps and Tracks, the shelves as chapter panels, the official maps big at the top.'
+            },
+            {
+              id: 'b',
+              art: 'c2/p11-b',
+              alt: 'A map\'s page on the board: its picture, its named gaps, and Fly this map.'
+            },
+            {
+              id: 'c',
+              art: 'c2/p11-c',
+              alt: 'The same board on a phone, the map panels leaning.'
+            }
+          ],
+          words: [
+            { k: 'cap', x: 70, yb: 760, w: 520, t: 'The board turned into a magazine. Maps first, then five inch and whoop tracks, the official ones up top.', in: 'a' },
+            { k: 'note', x: 70, yb: 1360, w: 470, d: '19 October', t: 'Every publish draws its own picture, and all 68 tracks and 69 maps on the board have one now. A map\'s page flies its named gaps.', in: 'b', small: true }
+          ]
+        },
+        {
+          id: 'c2-p12',
+          label: 'Nick Burns\' house',
+          tone: 'paper',
+          layout: null,
+          panels: [
+            {
+              id: 'a',
+              quad: [-14, -14, 1014, -14, 1014, 1428, -14, 1428],
+              art: 'c2/p12',
+              alt: 'Nick Burns\' house from above the street: the brick front, the porch, the three car garage, and the whoop dropping in over the front lawn.',
+              fx: [{ k: 'focus', at: [0.5, 0.62], r: [0.3, 0.2], n: 160 }]
+            }
+          ],
+          words: [
+            { k: 'tag', x: 74, y: 80, t: '18 October', in: 'a' },
+            { k: 'letter', x: 500, y: 300, size: 132, max: 860, runs: [['NICK BURNS\'', 'cream']], in: 'a' },
+            { k: 'letter', x: 500, y: 430, size: 132, max: 860, runs: [['HOUSE', 'sakura']], in: 'a' },
+            { k: 'cap', x: 160, y: 1180, w: 680, big: true, t: 'A real house, three and a half times life size, so a five inch flies it the way a whoop flies the real one.', in: 'a' }
+          ]
+        },
+        {
+          id: 'c2-p13',
+          label: 'Nick',
+          tone: 'paper',
+          layout: ['h', 0.36, 0, 'a', ['h', 0.5, 0.03, ['v', 0.5, -0.05, 'b', 'c'], 'd']],
+          panels: [
+            {
+              id: 'a',
+              art: 'c2/p13-a',
+              bleed: 'tlr',
+              alt: 'Nick at his black patio table under the red umbrella, the pool behind him.'
+            },
+            {
+              id: 'b',
+              art: 'c2/p13-b',
+              alt: 'Close to Nick: he waves, and his balloon says, I appreciate your time and thanks for watching!'
+            },
+            {
+              id: 'c',
+              art: 'c2/p13-c',
+              alt: 'The whoop flies straight into Nick. His balloon shouts, Holy Catfish!',
+              fx: [{ k: 'focus', at: [0.5, 0.55], r: [0.2, 0.2], n: 150 }]
+            },
+            {
+              id: 'd',
+              art: 'c2/p13-d',
+              bleed: 'blr',
+              alt: 'Inside, Nick walks through his own house.'
+            }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 460, t: 'Nick is home. He sits at his patio table, and every so often he gets up and walks inside.', in: 'a' },
+            { k: 'cap', x: 70, yb: 860, w: 360, t: 'Fly close and he thanks you.', in: 'b' },
+            { k: 'cap', x: 540, yb: 860, w: 380, t: 'Fly into him and...', in: 'c' },
+            { k: 'cap', x: 70, yb: 1360, w: 600, t: 'He has four lines of his own: Holy Catfish! Boom Shakala! Stickers in the box! Motor post to motor post!', in: 'd' }
+          ]
+        },
+        {
+          id: 'c2-p14',
+          label: 'Every room',
+          tone: 'paper',
+          layout: ['h', 0.42, 0.02, 'a', ['h', 0.5, -0.02, ['v', 0.46, 0.04, 'b', 'c'], 'd']],
+          panels: [
+            {
+              id: 'a',
+              art: 'c2/p14-a',
+              bleed: 'tlr',
+              alt: 'First person view down the hall into the kitchen: the island, the LED cube gate on it, the breakfast room beyond.',
+              fx: [{ k: 'focus', at: [0.5, 0.55], r: [0.2, 0.2], n: 100 }]
+            },
+            {
+              id: 'b',
+              art: 'c2/p14-b',
+              alt: 'The basement workshop, blue walls and shelves full of drones.'
+            },
+            {
+              id: 'c',
+              art: 'c2/p14-c',
+              alt: 'Nick on his sofa in the front room, a speech balloon over his head.'
+            },
+            {
+              id: 'd',
+              art: 'c2/p14-d',
+              bleed: 'blr',
+              alt: 'The dining room, every chair pushed in under the table, and the whoop threading the room over it.'
+            }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 520, t: 'Every room flies. The kitchen, the stair, the basement and Nick\'s workshop.', in: 'a' },
+            { k: 'letter', x: 760, y: 820, size: 64, rot: -6, max: 330, runs: [['STICKERS', 'amber'], [' IN THE BOX!', 'cream']], in: 'c' },
+            { k: 'note', x: 70, yb: 980, w: 360, d: '19 October', t: 'Ten NB stickers, one a room, to find.', in: 'b', small: true },
+            { k: 'tag', x: 70, y: 1050, t: 'Mat, 19 October', in: 'd' },
+            { k: 'cap', x: 70, y: 1100, w: 560, t: '"Push the chairs in everywhere to clear the flight lines."', in: 'd' }
+          ]
+        },
+        {
+          id: 'c2-p15',
+          label: 'The look',
+          tone: 'paper',
+          layout: ['h', 0.48, 0.03, 'a', ['v', 0.5, -0.04, 'b', 'c']],
+          panels: [
+            {
+              id: 'a',
+              art: 'c2/p15-a',
+              bleed: 'tlr',
+              alt: 'The simulator\'s first screen, drawn as four manga panels: Five inch racing, Whoop racing, Freestyle and Builder.'
+            },
+            {
+              id: 'b',
+              art: 'c2/p15-b',
+              alt: 'A sponsor\'s logo sprayed on the grass of a race field like a pitch sponsor.'
+            },
+            {
+              id: 'c',
+              art: 'c2/p15-c',
+              alt: 'On a blank page, the quad in ink, props blurred, its shadow in dots.',
+              fx: [{ k: 'speed', a: 180, n: 26, clear: [0.5, 0.5, 0.3] }]
+            }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 480, t: 'And the game started to look like this book.', in: 'a' },
+            { k: 'note', x: 70, yb: 1360, w: 380, d: '12 October', t: 'A logo on grass is sprayed like a pitch sponsor. On a bando wall it is graffiti.', in: 'b', small: true },
+            { k: 'letter', x: 760, y: 1000, size: 76, rot: -5, max: 380, runs: [['whummm', 'cream']], in: 'c' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '17 October', t: 'The motors sound lower and muffled, like old GoPro Session 5 footage with the wind filter on.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c2-p16',
+          label: 'Next',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            {
+              id: 'a',
+              art: 'c2/p16-a',
+              bleed: 'tlr',
+              alt: 'First person view from the patio, out over the pool and the back yard, the whole map open ahead.'
+            },
+            {
+              id: 'b',
+              fill: 'paper',
+              fx: [{ k: 'focus', at: [0.5, 0.56], r: [0.46, 0.3], n: 130, alpha: 0.7 }],
+              alt: 'An empty panel, labelled Chapter 03, with one question lettered across it: what\'s coming next? The next chapter is not drawn yet.'
+            }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 420, t: 'The game will keep building.', in: 'a' },
+            { k: 'tag', x: 80, y: 880, t: 'Chapter 03', in: 'b' },
             { k: 'letter', x: 500, y: 1100, size: 96, rot: -3, max: 820, runs: [['WHAT\'S COMING ', 'cream'], ['NEXT?', 'sakura']], in: 'b' },
             { k: 'fly', x: 500, y: 1200, t: 'FLY NOW', name: 'Fly WebFPV', href: 'https://webfpv.org/sim/', in: 'b' }
           ]

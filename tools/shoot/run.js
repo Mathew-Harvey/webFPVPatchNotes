@@ -51,8 +51,19 @@ async function main() {
   const out = path.join(rig.ROOT, 'captures', chapterId);
   fs.mkdirSync(out, { recursive: true });
   const shots = spec.shots.filter((s) => !only.length || only.includes(s.id));
+  /* A frame that was not shot here: a picture made by the thread that built
+   * the feature, copied in as it is, or cut to clip. */
+  for (const s of shots.filter((x) => x.file)) {
+    const base = path.join(out, s.id);
+    const sharp = require(path.join(rig.ROOT, 'tools', 'ink', 'node_modules', 'sharp'));
+    let img = sharp(s.file);
+    if (s.clip) img = img.extract({ left: s.clip[0], top: s.clip[1], width: s.clip[2], height: s.clip[3] });
+    await img.png().toFile(base + '.png');
+    fs.writeFileSync(base + '.json', JSON.stringify({ id: s.id, chapter: chapterId, page: s.page, panel: s.panel, world: null, file: path.basename(s.file), clip: s.clip || null, note: s.note || '' }, null, 2));
+    process.stdout.write(`  ${s.id} from ${s.file}\n`);
+  }
   const groups = new Map();
-  for (const s of shots) {
+  for (const s of shots.filter((x) => !x.file)) {
     if (!groups.has(s.world)) groups.set(s.world, []);
     groups.get(s.world).push(s);
   }

@@ -1,6 +1,9 @@
 /*
  * The week of 3 to 11 October: a picture for every note on the six pages
- * after The notes so far. Most are the simulator, the builder or the board
+ * that followed The notes so far until 20 October, when chapter 2 retold
+ * the week as a story and the pages came out. The pictures stay, chapter 2
+ * hangs some of them, and this list is the record of how they were shot.
+ * Its pages are gone, so it no longer runs through tools/shoot/run.js. Most are the simulator, the builder or the board
  * as a visitor sees them, in the state the note describes, so a shot here
  * often presses, types or flies something first (`act`).
  *

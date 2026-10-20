@@ -84,7 +84,7 @@ The notes page. Each is one line under its date. A dated line from the patch not
 | N-10 | 2 October | "Flight paths: fourteen figures, a power loop and a Matty flip among them." | Patch notes, 2 October 2026. |
 
 
-Week two of the notes: six pages after "The notes so far", 3 to 11 October 2026. Every line is read from the code on main of the simulator, the board and the front page, as RELEASE-NOTES-WEEK-2.md sets out, and is not a quotation of webfpv.org/notes, which stops at 2 October. N-11 to N-16 are the CommunityGow page, N-17 to N-22 tunes and the guide, N-23 to N-28 building, N-29 to N-34 flying, N-35 to N-40 looks and fixes, N-41 to N-46 also this week, in page order, and "New this week: CommunityGow" on the cover.
+Week two of the notes was six pages after "The notes so far", 3 to 11 October 2026, from 11 to 20 October. On 20 October chapter 2 retold that week and the next as a story, and the six pages came out of chapter 1; their rows are kept below as the record, and so are their pictures, which chapter 2 hangs in places. Every line is read from the code on main of the simulator, the board and the front page, as RELEASE-NOTES-WEEK-2.md sets out, and is not a quotation of webfpv.org/notes, which stops at 2 October. N-11 to N-16 are the CommunityGow page, N-17 to N-22 tunes and the guide, N-23 to N-28 building, N-29 to N-34 flying, N-35 to N-40 looks and fixes, N-41 to N-46 also this week, in page order, and "New this week: CommunityGow" on the cover.
 
 ## Pictures
 
@@ -180,9 +180,120 @@ The week's CommunityGow and Tunes pictures are a board run from a checkout and s
 | `c1-p14f-2` n3 | `w-aw6` | Five inch, WCMRC Round 5 |
 | `c1-p15` a | `p15-a` | Five inch, WCMRC Round 5 |
 
+## Chapter 2. Open house
+
+Seventeen pages: the cover and sixteen, 3 to 20 October 2026. The owner's ask of 20 October: bring the story up to date from every pull request, as a story book and not as dry patch notes. So a page is a beat, lettered big, with at most two or three dated notes, where the week pages before it carried three notes each. Small fixes are grouped into a scene or left to the long form (RELEASE-NOTES-WEEK-2.md and RELEASE-NOTES-WEEK-3.md). Pictures are shot by `tools/shoot/c2.js` at simulator commit `7ab233a` and inked by `tools/ink/panels.js`; a few are frames from the threads that built the feature, and some are chapter 1's week pictures hung again.
+
+| Page | Beat | Lettered | Pictures |
+| --- | --- | --- | --- |
+| Cover | The book | WEBFPV, OPEN HOUSE, 3 to 20 October 2026. Three panels: The feel, NO RESET; The board, THE MAGAZINE; The house, NICK'S. Each links to its page. | Nick Burns' house from the back yard, the whoop flying in; a belly slide; the board; Nick waving. |
+| 1 | Twitchy | G-01, TWITCHY., G-02, G-03, G-04 | Black panel; low over the grass; a level hover on paper; a hard turn at a gate. |
+| 2 | The whoop | G-05, ONE G., G-06, BZZZT | The room; the whoop on paper; the gate from the whoop. |
+| 3 | No reset | G-07, THUD., G-08, SKRRRT, G-09 | Black panel; the wall hit, in negative; off the wall; the slide. |
+| 4 | Your switches | G-10, G-11, G-12 | Over the town's roofs; the pause menu; the Nice flying card (chapter 1's). |
+| 5 | The rule | G-13, LATENCY, G-14, G-15 | Through a gate; black panel. |
+| 6 | A track a week | A TRACK A WEEK, G-16, G-17, G-18 | A whoop through a lit gate; CommunityGow on a phone; the invite (chapter 1's, an example club). |
+| 7 | Every lap counts | SHARE IT., G-19, EVERY LAP COUNTS., G-20 | Shared, and the Tunes tab (chapter 1's, example tunes); a track's sheet replaying its fastest lap. |
+| 8 | Their game, bigger | G-21, G-22, G-23, WHOOSH, G-24 | WEBFPV in pipe, the invisible gate, an official track (chapter 1's); the windmill. |
+| 9 | Balloon chase | POP! three times, G-25, G-26, G-27 | The plane and its balloons; close behind it; the piece in the builder. |
+| 10 | Ninety per cent | 90%ER, G-28, G-29 | A sticker's callout; the skate plaza; the sticker sheet. |
+| 11 | Maps and Tracks | G-30, G-31 | The live board on a desk; a map's sheet; the live board on a phone. |
+| 12 | Nick Burns' house | NICK BURNS' HOUSE, G-32 | The house from over the street, full bleed. |
+| 13 | Nick | G-33, G-34, G-35, G-36 | Nick at his table; the thanks; the catfish; Nick walking in. |
+| 14 | Every room | G-37, STICKERS IN THE BOX! (Nick's line, G-36), G-38, G-39 | The kitchen from the breakfast room; the workshop; Nick on his sofa; the dining room's tucked chairs. |
+| 15 | The look | G-40, G-41, whummm, G-42 | The first screen; a sprayed logo; the quad on paper. |
+| 16 | Next | F-27, Chapter 03, F-28, FLY NOW | Out over the pool from the patio; the blank panel. |
+
+Sound effects (TWITCHY., THUD., SKRRRT, BZZZT, WHOOSH, POP!, whummm), the panel headings (A TRACK A WEEK, SHARE IT., EVERY LAP COUNTS., NICK BURNS' HOUSE, 90%ER) and the cover's panel names are SCENE or the book's own headings. Nick's balloons in the pictures are the simulator's, drawn by `src/maps/house/nickdraw.js`, not painted on. Chapter 1's last page now turns into this chapter: its panel letters OPEN HOUSE under Chapter 02, and the one link out moved to this chapter's last page.
+
+| Id | Line | Source |
+| --- | --- | --- |
+| G-01 | "The testers kept writing in. 319 feel tickets, and one word came up more than any other." | Simulator PR 57: 319 feel tickets read twitchy most often (the week two note N-31). |
+| G-02 | "So the default rates went a step softer: 60 and 600, from 70 and 670. Your own rates are never moved." | Simulator PR 57, 11 October. |
+| G-03 | "Half the prop wash, a belly 12 mm lower, and a full yaw stop that swings back 4.1 degrees, not 7.0." | Simulator PR 56, 9 October. |
+| G-04 | 'Mat flew it: "flys good."' | The owner's words on PR 56, quoted in the week two notes. |
+| G-05 | "Remember the whoop, and the question? It got physics of its own." | Simulator PR 58, 10 October; the question is chapter 1, page 11. |
+| G-06 | "A one cell whoop on 0702 motors, falling at one real g, in the room as built." | Simulator PR 58 and `configs/airframes.js`: 0702 28,000 kV, 1S, "the whoop in them falls at one real g". The mass is not lettered (What is not lettered). |
+| G-07 | '"Fix crashing to not be annoying. No reset, just dull bounce, always."' and "Mat, 16 October" | The owner's list of 16 October, quoted in simulator PR 76: "fix crashing to not be annoying no reset, just dull bounce always". Punctuation added, words his. |
+| G-08 | "Now a crash is a dull bounce. The quad comes off at a walking pace and you keep flying." | Simulator PR 76: 0.3 to 1.2 m/s, "the pilot keeps flying". |
+| G-09 | "Touch the grass and you slide. A 12 m/s skim runs out about 10 m and eases to a stop, where it used to grab." | Simulator PR 83, 18 October. |
+| G-10 | "Your quad. Your switches." | SCENE. |
+| G-11 | "Flight mode, Acro or Angle, is back in the pause menu and Settings. Angle is Betaflight's own, 60 degrees." | Simulator PR 72, 16 October: Betaflight's ANGLE_MODE, 59.9 degrees at full stick. |
+| G-12 | "After two tracks, a Nice flying card offers the feel sliders. Prop wash has its own On and Off. Off is a tuned lap, and the board tags it." | Simulator PR 65 (11 October), simulator PR 73 and board PR 20 (17 October). |
+| G-13 | "Between the stick and the screen, nothing may wait." | SCENE, the rule below in the book's words. |
+| G-14 | '"Latency is the most important thing in this project, and any change that increases latency is bad."' and "Mat, 9 October" | The owner's project rule of 9 October 2026, verbatim. |
+| G-15 | "So the comic layer is off on every preset, shaders link before the first frame, and Nick casts no shadow." | Simulator PR 54 (9 October), the faster loads of 8 October (week two note N-38), simulator PR 94 (Nick casts no shadow, to keep the draw calls flat). |
+| G-16 | "CommunityGow. A club, or a few friends, race a new whoop track every week, at home, at their own pace." | Board PR 13, 11 October; RELEASE-NOTES-WEEK-2.md. |
+| G-17 | "No account and no email. A YouTube link is the evidence." | Board PR 13. |
+| G-18 | "Each round is scored on F1 points, 25 for first, and the season adds them up." | Board PR 13: 25, 18, 15, 12, 10, 8, 6, 4, 2, 1. |
+| G-19 | "A tune you like is a short code now. Paste it, see what is in it, then fly it. Stars, one to five, on tunes, tracks and maps." | Board PR 15 and simulator PR 63, 11 October. |
+| G-20 | "Arcade, practice and tuned laps post too, each with its tag. A track's page replays its fastest lap, flown on the line it was flown." | Board PR 19 and simulator PR 71 (16 October); board PR 27 and simulator PR 93 (19 October). |
+| G-21 | "The builder kept growing. Any letter A to Z in pipe, each gap a gate." | Week two note N-23, 4 October. |
+| G-22 | "A gate with nothing to hit." | Week two note N-24, the Invisible gate, 4 October. |
+| G-23 | "Official tracks: anyone flies them and posts a time, and only the board's owners can change them." | Week two note N-27, 4 October; the board's CLAUDE.md, official tracks. |
+| G-24 | "A windmill. Its four sails turn, and they are solid: time the gap, or be knocked aside the way they turn." | Simulator PR 75, 17 October. |
+| G-25 | "Balloon chase. A plane streams balloons over a freestyle map, and you get ninety seconds to pop what you can." | Simulator PR 74, 17 October. |
+| G-26 | "Every ninth balloon is gold, and worth three." | Simulator PR 74. |
+| G-27 | "It is a piece in the map builder: put it down, give it a radius, a height and a speed." | Simulator PR 78, 17 October. |
+| G-28 | "Infinity Loops. A tribute map with 100 stickers to find, cut from one sheet." | Simulator PR 70, 15 October. |
+| G-29 | "Each one calls out every time it comes back into sight. Find 90 of the 100 and the map gives you an achievement of its own." | Simulator PR 80, 17 October. |
+| G-30 | "The board turned into a magazine. Maps first, then five inch and whoop tracks, the official ones up top." | Board PRs 21 to 24, simulator PRs 89 to 91, 19 October. |
+| G-31 | "Every publish draws its own picture, and all 68 tracks and 69 maps on the board have one now. A map's page flies its named gaps." | Simulator PR 89; the backfill of 19 October, 11:40 UTC, every track and map on the live board, no failures; board PR 27 and simulator PR 93. |
+| G-32 | "A real house, three and a half times life size, so a five inch flies it the way a whoop flies the real one." and "18 October" | Simulator PR 81 (18 October, three times), PR 92 (19 October, three and a half). |
+| G-33 | "Nick is home. He sits at his patio table, and every so often he gets up and walks inside." | Simulator PR 81. |
+| G-34 | "Fly close and he thanks you." | Simulator PR 87: within 1.5 m, "I appreciate your time and thanks for watching!" |
+| G-35 | "Fly into him and..." | Simulator PR 87: a hit, "Holy Catfish!". The picture shows the simulator's own balloon. |
+| G-36 | "He has four lines of his own: Holy Catfish! Boom Shakala! Stickers in the box! Motor post to motor post!" | Simulator PR 81, `NICK_LINES` in `src/maps/house/nick.js`. |
+| G-37 | "Every room flies. The kitchen, the stair, the basement and Nick's workshop." | Simulator PRs 81, 84 and 85. |
+| G-38 | "Ten NB stickers, one a room, to find." and "19 October" | Simulator PR 86. |
+| G-39 | '"Push the chairs in everywhere to clear the flight lines."' and "Mat, 19 October" | The owner, 19 October 13:56 UTC, quoted in simulator PR 94. Capital added, words his. |
+| G-40 | "And the game started to look like this book." | SCENE: simulator PRs 90, 96 and 97 draw the picker and the first screen as manga panels. |
+| G-41 | "A logo on grass is sprayed like a pitch sponsor. On a bando wall it is graffiti." and "12 October" | Simulator PR 68. |
+| G-42 | "The motors sound lower and muffled, like old GoPro Session 5 footage with the wind filter on." and "17 October" | Simulator PR 79. |
+
+### Chapter 2 pictures
+
+The live board pictures are webfpv.org/board as a visitor saw it on 20 October 2026, fetched by the rig's own Node side. Frames not shot by the rig are named by `file` in `tools/shoot/c2.js`, with the pull request that made them; each sidecar says which.
+
+| Panel | Shot | World |
+| --- | --- | --- |
+| `c2-cover` hero | `cover-hero` | Nick Burns' house |
+| `c2-cover` w1 | `cover-w1` | Five inch, WCMRC Round 5 |
+| `c2-cover` w2 | `cover-w2` | The live board |
+| `c2-cover` w3 | `cover-w3` | Nick Burns' house |
+| `c2-p1` b, d | `p1-b`, `p1-d` | Five inch, WCMRC Round 5 |
+| `c2-p1` c | `p1-c` | Paper, the five inch |
+| `c2-p2` a, c | `p2-a`, `p2-c` | Whoop, RaceGOW Season 5 Track 1 |
+| `c2-p2` b | `p2-b` | Paper, the whoop |
+| `c2-p3` b, c | `p3-b`, `p3-c` | The town |
+| `c2-p3` d | `p3-d` | Five inch, WCMRC Round 5 |
+| `c2-p4` a | `p4-a` | The town |
+| `c2-p4` b | `p4-b` | The pause menu |
+| `c2-p4` c | `c1/w-tu6` | Five inch, WCMRC Round 5 |
+| `c2-p5` a | `p5-a` | Five inch, WCMRC Round 5 |
+| `c2-p6` a | `p6-a` | Whoop, RaceGOW Season 5 Track 1 |
+| `c2-p6` b, c | `c1/w-cg2`, `c1/w-cg6` | The board, example club, phone |
+| `c2-p7` a, b | `c1/w-tu1`, `c1/w-tu3` | Example tunes |
+| `c2-p7` c | `p7-c` | A track's sheet, frame from board PR 27 |
+| `c2-p8` a, b | `c1/w-bd1`, `c1/w-bd2` | Five inch, letters and an invisible gate |
+| `c2-p8` c | `c1/w-bd5` | The live board, 11 October |
+| `c2-p8` d | `p8-d` | Hibari Yard Tandem with a windmill |
+| `c2-p9` a, b | `p9-a`, `p9-b` | Hibari Yard Tandem with a balloon chase |
+| `c2-p9` c | `p9-c` | The map builder, frame from PR 78 |
+| `c2-p10` a, b, c | `p10-a`, `p10-b`, `p10-c` | Infinity Loops, frames and the sheet from PRs 70 and 80 |
+| `c2-p11` a, c | `p11-a`, `p11-c` | The live board |
+| `c2-p11` b | `p11-b` | A map's sheet, frame from board PR 27 |
+| `c2-p12` a | `p12` | Nick Burns' house |
+| `c2-p13` a to d | `p13-a` to `p13-d` | Nick Burns' house |
+| `c2-p14` a to d | `p14-a` to `p14-d` | Nick Burns' house |
+| `c2-p15` a | `p15-a` | The first screen, frame from PR 97 |
+| `c2-p15` b | `p15-b` | Race field, frame from PR 68 |
+| `c2-p15` c | `p15-c` | Paper, the five inch |
+| `c2-p16` a | `p16-a` | Nick Burns' house |
+
 ## What is not lettered
 
-- A whoop mass, in grams or any other unit. Not 16 g, not 23.4 g, not 710 g on a whoop panel.
+- A whoop mass, in grams or any other unit. Not 16 g, not 23.4 g, not 710 g on a whoop panel. Chapter 2 keeps to it: its whoop page letters the gravity and the motors, not the mass.
 - 40 m/s as a lap. The title blurb and `LAP_TOP_SPEED` stay in RESEARCH.md.
 - Any commit count, and the notes' line count.
 - Patreon tiers, from either September note.
