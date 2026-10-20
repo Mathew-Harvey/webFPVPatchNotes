@@ -1,0 +1,20 @@
+{
+  "id": "p11-a",
+  "treatment": "colour",
+  "from": "p11-a",
+  "world": "boardDesk",
+  "simulator": "https://webfpv.org/board/",
+  "commit": "7ab233a",
+  "frame": [
+    1440,
+    1000
+  ],
+  "crop": {
+    "left": 101,
+    "top": 0,
+    "width": 1238,
+    "height": 1000
+  },
+  "framing": null,
+  "clip": null
+}

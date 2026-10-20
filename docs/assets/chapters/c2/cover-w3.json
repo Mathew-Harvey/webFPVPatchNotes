@@ -1,0 +1,42 @@
+{
+  "id": "cover-w3",
+  "treatment": "colour",
+  "from": "cover-w3",
+  "world": "house",
+  "simulator": null,
+  "commit": "7ab233a",
+  "frame": [
+    560,
+    707
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 560,
+    "height": 707
+  },
+  "framing": {
+    "cam": [
+      -22.2,
+      4.9,
+      -58.6
+    ],
+    "look": [
+      -27.1,
+      4.3,
+      -62.6
+    ],
+    "fov": 46,
+    "quad": {
+      "pos": [
+        -23.9,
+        3.6,
+        -60.4
+      ],
+      "yaw": 55.491477012331586,
+      "pitch": 6,
+      "roll": 0
+    }
+  },
+  "clip": null
+}

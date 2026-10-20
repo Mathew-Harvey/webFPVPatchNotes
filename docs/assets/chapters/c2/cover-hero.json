@@ -1,0 +1,42 @@
+{
+  "id": "cover-hero",
+  "treatment": "colour",
+  "from": "cover-hero",
+  "world": "house",
+  "simulator": null,
+  "commit": "7ab233a",
+  "frame": [
+    1741,
+    1804
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1741,
+    "height": 1804
+  },
+  "framing": {
+    "cam": [
+      -21,
+      9.5,
+      -104
+    ],
+    "look": [
+      -31,
+      13,
+      -52
+    ],
+    "fov": 56,
+    "quad": {
+      "pos": [
+        -23.4,
+        8.2,
+        -95.5
+      ],
+      "yaw": 169.46807211626594,
+      "pitch": 22,
+      "roll": 12
+    }
+  },
+  "clip": null
+}

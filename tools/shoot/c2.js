@@ -97,8 +97,8 @@ async function flying(page) {
 
 /* Hold Nick's clock at ms, with the camera put near where he will be first,
  * since he is moved only when he is near the camera or in view. */
-async function holdNick(page, ms, near) {
-  await rig.pose(page, { cam: near, look: NICK, fov: 60, quad: null });
+async function holdNick(page, ms, near, look) {
+  await rig.pose(page, { cam: near, look: look || NICK, fov: 60, quad: null });
   await page.evaluate((ms) => {
     window.__mapScene().traverse((o) => { if (o.name === 'nick' && o.isGroup) o.userData.holdMs = ms; });
   }, ms);
@@ -156,7 +156,7 @@ module.exports = {
     },
     {
       id: 'p16-a', page: 'c2-p16', panel: 'a', world: 'house',
-      make: () => ({ cam: [-27.5, 5.6, -57.4], look: [-24, 3.4, -100], fov: 98, quad: null })
+      make: () => ({ cam: [-25.0, 5.6, -57.4], look: [-24, 3.4, -100], fov: 98, quad: null })
     },
     {
       id: 'p13-a', page: 'c2-p13', panel: 'a', world: 'house',
@@ -205,15 +205,17 @@ module.exports = {
       act: async (page) => {
         /* 99.5 s on his clock: on the patio, walking to the back door. */
         const at = await holdNick(page, 99500, [-38, 5.6, -44]);
-        await rig.pose(page, { cam: add(at, [6.5, 5.0, -7.5]), look: add(at, [-0.5, 3.4, 1.5]), fov: 64, quad: null });
+        await rig.pose(page, { cam: add(at, [4.2, 4.6, -5.0]), look: add(at, [-0.4, 3.4, 1.2]), fov: 62, quad: null });
       }
     },
     {
       /* Nick on his sofa. */
       id: 'p14-c', page: 'c2-p14', panel: 'c', world: 'house',
       act: async (page) => {
-        const at = await holdNick(page, 222000, [-38, 6, -44]);
-        await rig.pose(page, { cam: add(at, [-3.0, 3.8, 1.4]), look: add(at, [0, 3.2, 0]), fov: 60, quad: null });
+        /* 222 s on his clock he is on the sofa, world (-46.8, -41.3), facing west. */
+        const at = [-46.83, 0.5, -41.3];
+        await holdNick(page, 222000, add(at, [-4.6, 4.8, 1.0]), add(at, [0, 3.9, 0]));
+        await rig.pose(page, { cam: add(at, [-4.6, 4.8, 1.0]), look: add(at, [0, 3.9, 0]), fov: 62, quad: null });
       }
     },
 
@@ -249,7 +251,7 @@ module.exports = {
     {
       id: 'p2-b', page: 'c2-p2', panel: 'b', world: 'room',
       paper: { probes: [[-2.6, 1.2], [-2.0, 1.0], [-3.0, 1.6]], sun: SUN_TOP },
-      make: (L, lib, ctx) => frame([-2.6, 0.9, 1.2], ctx, { az: 225, el: 18, fov: 26, span: 0.1, fill: 0.36, at: [0.22, 0.02], quad: { pos: [-2.6, 0.9, 1.2], yaw: 45, pitch: 6, roll: -4 } })
+      make: (L, lib, ctx) => frame([-2.6, 0.9, 1.2], ctx, { az: 225, el: 18, fov: 26, span: 0.1, fill: 0.18, at: [0.2, 0.05], quad: { pos: [-2.6, 0.9, 1.2], yaw: 45, pitch: 6, roll: -4 } })
     },
 
     /* ---- the room ---- */
@@ -341,7 +343,7 @@ module.exports = {
     { id: 'p10-c', page: 'c2-p10', panel: 'c', file: path.join(PF, 'infinity-loops-map', 'inputs', 'sticker-bomb-sheet.png'), note: 'The owner\'s sticker sheet the map\'s stickers are cut from.' },
     { id: 'p11-b', page: 'c2-p11', panel: 'b', file: path.join(PF, 'board-sheet-manga', 'desktop-map.png'), clip: [140, 96, 630, 512], note: 'A map\'s sheet on the board (board PR 27).' },
     { id: 'p15-a', page: 'c2-p15', panel: 'a', file: path.join(PF, 'first-screen-manga', 'nopills-desktop.png'), clip: [0, 0, 1600, 830], note: 'The first screen as manga panels (sim PRs 96 and 97).' },
-    { id: 'p15-b', page: 'c2-p15', panel: 'b', file: path.join(PF, 'sponsor-logos', 'race-field-before-after.jpg'), clip: [800, 60, 800, 330], note: 'A sponsor\'s logo sprayed on the race field\'s grass (sim PR 68).' }
+    { id: 'p15-b', page: 'c2-p15', panel: 'b', file: path.join(PF, 'sponsor-logos', 'race-field-before-after.jpg'), clip: [960, 150, 520, 300], note: 'A sponsor\'s logo sprayed on the race field\'s grass (sim PR 68).' }
   ],
   reuse: []
 };

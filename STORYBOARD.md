@@ -202,7 +202,7 @@ Seventeen pages: the cover and sixteen, 3 to 20 October 2026. The owner's ask of
 | 13 | Nick | G-33, G-34, G-35, G-36 | Nick at his table; the thanks; the catfish; Nick walking in. |
 | 14 | Every room | G-37, STICKERS IN THE BOX! (Nick's line, G-36), G-38, G-39 | The kitchen from the breakfast room; the workshop; Nick on his sofa; the dining room's tucked chairs. |
 | 15 | The look | G-40, G-41, whummm, G-42 | The first screen; a sprayed logo; the quad on paper. |
-| 16 | Next | F-27, Chapter 03, F-28, FLY NOW | Out over the pool from the patio; the blank panel. |
+| 16 | Next | F-27, Chapter 03, F-28, FLY NOW | Nick waving over the pool from the patio; the blank panel. |
 
 Sound effects (TWITCHY., THUD., SKRRRT, BZZZT, WHOOSH, POP!, whummm), the panel headings (A TRACK A WEEK, SHARE IT., EVERY LAP COUNTS., NICK BURNS' HOUSE, 90%ER) and the cover's panel names are SCENE or the book's own headings. Nick's balloons in the pictures are the simulator's, drawn by `src/maps/house/nickdraw.js`, not painted on. Chapter 1's last page now turns into this chapter: its panel letters OPEN HOUSE under Chapter 02, and the one link out moved to this chapter's last page.
 
@@ -238,7 +238,7 @@ Sound effects (TWITCHY., THUD., SKRRRT, BZZZT, WHOOSH, POP!, whummm), the panel 
 | G-28 | "Infinity Loops. A tribute map with 100 stickers to find, cut from one sheet." | Simulator PR 70, 15 October. |
 | G-29 | "Each one calls out every time it comes back into sight. Find 90 of the 100 and the map gives you an achievement of its own." | Simulator PR 80, 17 October. |
 | G-30 | "The board turned into a magazine. Maps first, then five inch and whoop tracks, the official ones up top." | Board PRs 21 to 24, simulator PRs 89 to 91, 19 October. |
-| G-31 | "Every publish draws its own picture, and all 68 tracks and 69 maps on the board have one now. A map's page flies its named gaps." | Simulator PR 89; the backfill of 19 October, 11:40 UTC, every track and map on the live board, no failures; board PR 27 and simulator PR 93. |
+| G-31 | "Every publish draws its own picture, and every track and map on the board has one now. A map's page flies its named gaps." | Simulator PR 89; the backfill of 19 October, 11:40 UTC, every track and map on the live board, no failures; board PR 27 and simulator PR 93. |
 | G-32 | "A real house, three and a half times life size, so a five inch flies it the way a whoop flies the real one." and "18 October" | Simulator PR 81 (18 October, three times), PR 92 (19 October, three and a half). |
 | G-33 | "Nick is home. He sits at his patio table, and every so often he gets up and walks inside." | Simulator PR 81. |
 | G-34 | "Fly close and he thanks you." | Simulator PR 87: within 1.5 m, "I appreciate your time and thanks for watching!" |

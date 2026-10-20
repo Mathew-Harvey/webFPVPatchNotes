@@ -1,0 +1,33 @@
+{
+  "id": "p14-b",
+  "treatment": "colour",
+  "from": "p14-b",
+  "world": "house",
+  "simulator": null,
+  "commit": "7ab233a",
+  "frame": [
+    846,
+    755
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 846,
+    "height": 755
+  },
+  "framing": {
+    "cam": [
+      -9.2,
+      -4.6,
+      -23.2
+    ],
+    "look": [
+      -13.5,
+      -6.6,
+      -46
+    ],
+    "fov": 78,
+    "quad": null
+  },
+  "clip": null
+}

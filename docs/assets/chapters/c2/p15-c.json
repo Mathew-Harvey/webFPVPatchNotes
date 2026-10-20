@@ -1,0 +1,43 @@
+{
+  "id": "p15-c",
+  "treatment": "paper",
+  "from": "p15-c",
+  "world": "field",
+  "simulator": null,
+  "commit": "7ab233a",
+  "frame": [
+    919,
+    1293
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 919,
+    "height": 1293
+  },
+  "framing": {
+    "cam": [
+      15.095890682734366,
+      0.9001299536534538,
+      11
+    ],
+    "look": [
+      21.041596898346064,
+      0.09478679844790905,
+      11
+    ],
+    "fov": 28,
+    "roll": 0,
+    "quad": {
+      "pos": [
+        17,
+        0.7,
+        11
+      ],
+      "yaw": 0,
+      "pitch": 12,
+      "roll": 0
+    }
+  },
+  "clip": null
+}

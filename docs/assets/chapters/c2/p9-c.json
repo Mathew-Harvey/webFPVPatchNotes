@@ -1,0 +1,22 @@
+{
+  "id": "p9-c",
+  "treatment": "colour",
+  "from": "p9-c",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 309,
+    "top": 0,
+    "width": 449,
+    "height": 526
+  },
+  "framing": null,
+  "clip": [
+    199,
+    142,
+    1066,
+    526
+  ]
+}

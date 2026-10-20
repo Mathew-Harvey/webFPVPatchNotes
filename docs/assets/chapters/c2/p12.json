@@ -1,0 +1,42 @@
+{
+  "id": "p12",
+  "treatment": "colour",
+  "from": "p12",
+  "world": "house",
+  "simulator": null,
+  "commit": "7ab233a",
+  "frame": [
+    1872,
+    2647
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1872,
+    "height": 2647
+  },
+  "framing": {
+    "cam": [
+      -26,
+      34,
+      34
+    ],
+    "look": [
+      -30,
+      6,
+      -30
+    ],
+    "fov": 58,
+    "quad": {
+      "pos": [
+        -28,
+        13,
+        8
+      ],
+      "yaw": 0,
+      "pitch": 28,
+      "roll": -6
+    }
+  },
+  "clip": null
+}

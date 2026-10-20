@@ -1,0 +1,33 @@
+{
+  "id": "p16-a",
+  "treatment": "colour",
+  "from": "p16-a",
+  "world": "house",
+  "simulator": null,
+  "commit": "7ab233a",
+  "frame": [
+    1872,
+    1539
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1872,
+    "height": 1539
+  },
+  "framing": {
+    "cam": [
+      -25,
+      5.6,
+      -57.4
+    ],
+    "look": [
+      -24,
+      3.4,
+      -100
+    ],
+    "fov": 98,
+    "quad": null
+  },
+  "clip": null
+}

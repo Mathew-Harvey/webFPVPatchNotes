@@ -1,0 +1,22 @@
+{
+  "id": "p10-a",
+  "treatment": "colour",
+  "from": "p10-a",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 38,
+    "top": 0,
+    "width": 644,
+    "height": 520
+  },
+  "framing": null,
+  "clip": [
+    560,
+    80,
+    720,
+    520
+  ]
+}

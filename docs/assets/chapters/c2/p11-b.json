@@ -1,0 +1,22 @@
+{
+  "id": "p11-b",
+  "treatment": "colour",
+  "from": "p11-b",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 76,
+    "top": 0,
+    "width": 479,
+    "height": 512
+  },
+  "framing": null,
+  "clip": [
+    140,
+    96,
+    630,
+    512
+  ]
+}

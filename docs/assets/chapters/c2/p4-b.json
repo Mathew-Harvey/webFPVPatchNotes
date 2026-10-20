@@ -1,0 +1,20 @@
+{
+  "id": "p4-b",
+  "treatment": "colour",
+  "from": "p4-b",
+  "world": "paused",
+  "simulator": null,
+  "commit": "7ab233a",
+  "frame": [
+    1280,
+    800
+  ],
+  "crop": {
+    "left": 697,
+    "top": 0,
+    "width": 1166,
+    "height": 1600
+  },
+  "framing": null,
+  "clip": null
+}

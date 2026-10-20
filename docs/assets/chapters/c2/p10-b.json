@@ -1,0 +1,17 @@
+{
+  "id": "p10-b",
+  "treatment": "colour",
+  "from": "p10-b",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 315,
+    "top": 0,
+    "width": 651,
+    "height": 720
+  },
+  "framing": null,
+  "clip": null
+}

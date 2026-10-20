@@ -1,0 +1,42 @@
+{
+  "id": "p8-d",
+  "treatment": "colour",
+  "from": "p8-d",
+  "world": "windyard",
+  "simulator": null,
+  "commit": "7ab233a",
+  "frame": [
+    1872,
+    976
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1872,
+    "height": 976
+  },
+  "framing": {
+    "cam": [
+      -31,
+      9.5,
+      84
+    ],
+    "look": [
+      -16.5,
+      13,
+      61
+    ],
+    "fov": 60,
+    "quad": {
+      "pos": [
+        -26.5,
+        11.5,
+        75
+      ],
+      "yaw": -36.86989764584402,
+      "pitch": 14,
+      "roll": 8
+    }
+  },
+  "clip": null
+}

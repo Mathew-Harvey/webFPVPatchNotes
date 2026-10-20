@@ -1,0 +1,22 @@
+{
+  "id": "p15-a",
+  "treatment": "colour",
+  "from": "p15-a",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 218,
+    "top": 0,
+    "width": 1164,
+    "height": 830
+  },
+  "framing": null,
+  "clip": [
+    0,
+    0,
+    1600,
+    830
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "id": "p4-a",
+  "treatment": "colour",
+  "from": "p4-a",
+  "world": "town",
+  "simulator": null,
+  "commit": "7ab233a",
+  "frame": [
+    1872,
+    1437
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1872,
+    "height": 1437
+  },
+  "framing": {
+    "cam": [
+      21.3,
+      23.5,
+      20
+    ],
+    "look": [
+      12,
+      13.5,
+      42
+    ],
+    "fov": 100,
+    "roll": 12,
+    "quad": null
+  },
+  "clip": null
+}

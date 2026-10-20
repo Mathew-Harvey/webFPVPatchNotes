@@ -1,0 +1,33 @@
+{
+  "id": "p13-a",
+  "treatment": "colour",
+  "from": "p13-a",
+  "world": "house",
+  "simulator": null,
+  "commit": "7ab233a",
+  "frame": [
+    1872,
+    945
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1872,
+    "height": 945
+  },
+  "framing": {
+    "cam": [
+      -15.5,
+      6.2,
+      -55.5
+    ],
+    "look": [
+      -27.5,
+      4,
+      -62.8
+    ],
+    "fov": 50,
+    "quad": null
+  },
+  "clip": null
+}

@@ -704,7 +704,7 @@
             { k: 'cap', x: 70, y: 130, w: 860, big: true, t: '"Fix crashing to not be annoying. No reset, just dull bounce, always."', in: 'a' },
             { k: 'letter', x: 270, y: 640, size: 130, rot: -8, max: 440, runs: [['THUD.', 'amber']], in: 'b' },
             { k: 'cap', x: 560, y: 820, w: 370, t: 'Now a crash is a dull bounce. The quad comes off at a walking pace and you keep flying.', in: 'c' },
-            { k: 'letter', x: 640, y: 1150, size: 116, rot: -4, max: 520, runs: [['SKRRRT', 'cream']], in: 'd' },
+            { k: 'letter', x: 700, y: 1310, size: 116, rot: -4, max: 520, runs: [['SKRRRT', 'cream']], in: 'd' },
             { k: 'note', x: 70, yb: 1360, w: 420, d: '18 October', t: 'Touch the grass and you slide. A 12 m/s skim runs out about 10 m and eases to a stop, where it used to grab.', in: 'd', small: true }
           ]
         },
@@ -962,7 +962,7 @@
           ],
           words: [
             { k: 'cap', x: 70, yb: 760, w: 520, t: 'The board turned into a magazine. Maps first, then five inch and whoop tracks, the official ones up top.', in: 'a' },
-            { k: 'note', x: 70, yb: 1360, w: 470, d: '19 October', t: 'Every publish draws its own picture, and all 68 tracks and 69 maps on the board have one now. A map\'s page flies its named gaps.', in: 'b', small: true }
+            { k: 'note', x: 70, yb: 1360, w: 470, d: '19 October', t: 'Every publish draws its own picture, and every track and map on the board has one now. A map\'s page flies its named gaps.', in: 'b', small: true }
           ]
         },
         {
@@ -1044,7 +1044,7 @@
             {
               id: 'c',
               art: 'c2/p14-c',
-              alt: 'Nick on his sofa in the front room, a speech balloon over his head.'
+              alt: 'Nick on the family room sofa, smiling at whoever just flew in.'
             },
             {
               id: 'd',
@@ -1088,7 +1088,7 @@
           words: [
             { k: 'cap', x: 70, y: 70, w: 480, t: 'And the game started to look like this book.', in: 'a' },
             { k: 'note', x: 70, yb: 1360, w: 380, d: '12 October', t: 'A logo on grass is sprayed like a pitch sponsor. On a bando wall it is graffiti.', in: 'b', small: true },
-            { k: 'letter', x: 760, y: 1000, size: 76, rot: -5, max: 380, runs: [['whummm', 'cream']], in: 'c' },
+            { k: 'letter', x: 760, y: 860, size: 76, rot: -5, max: 380, runs: [['whummm', 'cream']], in: 'c' },
             { k: 'note', x: 540, yb: 1360, w: 390, d: '17 October', t: 'The motors sound lower and muffled, like old GoPro Session 5 footage with the wind filter on.', in: 'c', small: true }
           ]
         },
@@ -1102,7 +1102,7 @@
               id: 'a',
               art: 'c2/p16-a',
               bleed: 'tlr',
-              alt: 'First person view from the patio, out over the pool and the back yard, the whole map open ahead.'
+              alt: 'From under the patio umbrella, Nick waves over the pool and the back yard, the whole map open ahead.'
             },
             {
               id: 'b',

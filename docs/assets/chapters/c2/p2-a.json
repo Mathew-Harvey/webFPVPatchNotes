@@ -1,0 +1,42 @@
+{
+  "id": "p2-a",
+  "treatment": "colour",
+  "from": "p2-a",
+  "world": "room",
+  "simulator": null,
+  "commit": "7ab233a",
+  "frame": [
+    1872,
+    1149
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1872,
+    "height": 1149
+  },
+  "framing": {
+    "cam": [
+      -7.8,
+      3.4,
+      5.4
+    ],
+    "look": [
+      0.4,
+      1,
+      -1
+    ],
+    "fov": 60,
+    "quad": {
+      "pos": [
+        -2.6,
+        1.6,
+        1.2
+      ],
+      "yaw": -53.74616226255521,
+      "pitch": 14,
+      "roll": -18
+    }
+  },
+  "clip": null
+}

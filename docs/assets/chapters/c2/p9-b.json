@@ -1,0 +1,20 @@
+{
+  "id": "p9-b",
+  "treatment": "colour",
+  "from": "p9-b",
+  "world": "windyard",
+  "simulator": null,
+  "commit": "7ab233a",
+  "frame": [
+    954,
+    1108
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 954,
+    "height": 1108
+  },
+  "framing": null,
+  "clip": null
+}

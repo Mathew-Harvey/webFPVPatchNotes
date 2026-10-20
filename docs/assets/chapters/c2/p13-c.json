@@ -1,0 +1,42 @@
+{
+  "id": "p13-c",
+  "treatment": "colour",
+  "from": "p13-c",
+  "world": "house",
+  "simulator": null,
+  "commit": "7ab233a",
+  "frame": [
+    934,
+    825
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 934,
+    "height": 825
+  },
+  "framing": {
+    "cam": [
+      -23.6,
+      4.8,
+      -58.4
+    ],
+    "look": [
+      -27.1,
+      4.2,
+      -62.6
+    ],
+    "fov": 50,
+    "quad": {
+      "pos": [
+        -27,
+        3.4,
+        -62.3
+      ],
+      "yaw": 41.08175113593262,
+      "pitch": 20,
+      "roll": 10
+    }
+  },
+  "clip": null
+}
