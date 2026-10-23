@@ -291,6 +291,108 @@ The live board pictures are webfpv.org/board as a visitor saw it on 20 October 2
 | `c2-p15` c | `p15-c` | Paper, the five inch |
 | `c2-p16` a | `p16-a` | Nick Burns' house |
 
+## Chapter 3. Three houses
+
+Sixteen pages: the cover and fifteen, 20 to 23 October 2026. The owner's ask of 23 October: bring the story up to date as chapter 3, a page a beat, with at most two or three dated notes on a page. Dates are Perth time (AWST), as the public notes page uses. Pictures are shot by `tools/shoot/c3.js` at simulator commit `107d942` and inked by `tools/ink/panels.js`; the owner's screenshots are `file` jobs named in the table below, and a panel waits as paper until its screenshot is in `chapter-3/` of the project files. Nothing is painted in place of one. The long form is RELEASE-NOTES-WEEK-4.md. Chapter 2's last page now turns into this chapter, the way chapter 1's turned into chapter 2, and the one link out moved to this chapter's last page.
+
+| Page | Beat | Lettered | Pictures |
+| --- | --- | --- | --- |
+| Cover | The book | WEBFPV, THREE HOUSES, 20 to 23 October 2026. Three panels: The houses, THREE HOUSES; The field, GOATS; The school, CAREER. Each links to its page. | Joshua Bardwell's house with a five inch over the drive; Heads' house with the whoop; the goats grazing; the Career card on the gate (owner's screenshot). |
+| 1 | Heads' house | H-01, HEADS' HOUSE, H-02 | Heads' house from the street, full bleed, the whoop in front of it. |
+| 2 | Heads | H-03, H-04 | His garage; Heads waving; the whoop through the garage. |
+| 3 | Under the cars | H-05, SHHHK, H-06 | Black panel; the drive at tarmac height; a parked car's side; the owner's frame under a car. |
+| 4 | Joshua Bardwell's house | H-07, JOSHUA BARDWELL'S HOUSE | The yard from above, full bleed. |
+| 5 | JB stickers | H-08, H-09, H-10 | The owner's sticker find; the porch sticker; the doghouse sticker. |
+| 6 | Goats | H-11, GOATS., H-12, H-13, BOOM SHAKALA! | Black panel; the goats grazing; the owner's frames of the goats running and a goat caught. |
+| 7 | Land on the table | H-14, H-15, H-16, H-17 | Nick at his table (chapter 2's picture); the owner's two frames of the balloons. |
+| 8 | Nick's voice | H-18, H-19, HA HA HA, H-20 | The whoop on the table; the catfish (chapter 2's picture); the whoop down on the grass. |
+| 9 | ALL! | H-21, ALL 10!, H-22, H-23 | Black panel; the owner's frame of the splash. |
+| 10 | Career | H-24, CAREER, H-25, H-26 | The owner's frame of the gate; black panel. |
+| 11 | Lift off | H-27, H-28, H-29 | The owner's frames of the briefing and a medal screen. |
+| 12 | Angle to Acro | H-30, H-31, H-32 | Black panel with the ten chapters; the owner's frames of the chapter list and the open every chapter button. |
+| 13 | weBLEEDfpv | H-33, H-34, WEBLEEDFPV, H-35, H-36 | Black panel; the owner's frames of the sign and of the board's card. |
+| 14 | Also this week | H-37, H-38, H-39, H-40 | Settings with 3D mode; the whoop on paper; Heads' house with the whoop; Heads' side fence. |
+| 15 | Next | F-27, Chapter 04, F-28, FLY NOW | Nick waving over the pool (chapter 2's picture); the blank panel. |
+
+Sound effects (SHHHK, HA HA HA, BOOM SHAKALA!), the panel headings (HEADS' HOUSE, JOSHUA BARDWELL'S HOUSE, GOATS., ALL 10!, CAREER, WEBLEEDFPV) and the cover's panel names are SCENE or the book's own headings. BOOM SHAKALA! is the clip Nick's voice plays when a goat is caught (H-13's source). The balloons in the pictures are the simulator's own. Heads' shout is never lettered, and no picture shows one: his lines in the simulator are placeholders (`HEADS_LINES`, simulator PR 105), so the rig holds the craft far from him.
+
+| Id | Line | Source |
+| --- | --- | --- |
+| H-01 | "21 October" | Simulator commit e6ed19e, on `main` with Heads' OK, 21 October 7:23am. |
+| H-02 | "The second house. Heads' place, at Nick's scale: the garage, the basement, both streets and the houses across them." | Simulator commits deb0593 (20 October, 10:03pm) and a26fa8c: a world `heads` at Nick's scale, the garage and basement from the owner's stills, both streets and the houses across them. |
+| H-03 | "Heads is home too. He walks his garage between four spots, and when the quad comes close he turns his head and waves." | Simulator PR 105, 21 October: `STOPS` has four spots, and `headsAt` turns his head to the camera and waves. |
+| H-04 | "Fly by and he shouts." | Simulator PR 105. What he shouts is not lettered. |
+| H-05 | '"You need to be able to fly under the parked cars in Heads\' yard... good spot to hide a 90% too."' and "Mat, 22 October" | The owner, 22 October, quoted in simulator PR 127. Capital and the closing stop added, words his. |
+| H-06 | "Eleven 90% patches to find. The eleventh is under the car on the drive." | Simulator PR 127: `PATCH_SPOTS` has eleven, the last "Under the car on the drive". |
+| H-07 | "The third house is outside only, life size, and flown on the five inch." and "21 October" | Simulator commit 965689f, 21 October; Joshua Bardwell's OK for his house on the simulator, commit cde1dd7. |
+| H-08 | "Twelve JB stickers round the yard: the porch, the chimney, the woodshed, the doghouse, the mailbox and more. Find one and Joshua says something." | Simulator PR 123 and commit 0720cf9, 22 October: `STICKERS` in `src/maps/bardwell/stickers.js` has twelve. |
+| H-09 | "A find plays one of eleven Joshua Bardwell clips, shuffled, and none repeats until all have played." and "22 October" | `CLIP_SETS.jb.sticker` in `src/render/clips.js` has eleven; `pickSticker` is a shuffled bag. |
+| H-10 | "Find all twelve and the screen says ALL 12!" and "22 October" | Simulator PR 118: the map's stickers go through `findStickers`, which calls `callComplete` with `ALL ${total}!`. |
+| H-11 | "Five goats graze in the field. Come within 24 m and they run." | Simulator PR 125, 22 October: five `START` points, `ALARM = 24`. |
+| H-12 | "Catch one and you hear Nick." | Simulator PR 125: the cue `goat` plays Nick Burns' "Boom Shakala!" clip. |
+| H-13 | "A catch is within 1.3 m. The goat hops, vanishes and comes back somewhere else four seconds later." and "22 October" | Simulator PR 125 and commit ded2b2a: `CATCH_R = 1.3`, `GONE_S = 4`. A goat is never solid, and the book does not say so. |
+| H-14 | "Back at Nick's. Land on his patio table while he sits there, and he reads out the flight." | Simulator PR 102, 20 October. |
+| H-15 | '"Also when you land on the outdoor table with nick sitting there, you should get nick saying:"' and "Mat, 20 October" | The owner's ask of 20 October, quoted in simulator PR 102. Colon added, words his. |
+| H-16 | "The flight time, and the battery." | Simulator PR 102: "3 oh 4 in the flight time, 3.47, 46 battery voltage." |
+| H-17 | "Then a pause, and a frown." | Simulator PR 102: a one second gap, then "Ah, not 6 7 again." with a frown. |
+| H-18 | "Nick has his voice now." | Simulator PR 123, 22 October. |
+| H-19 | 'Hit him: "Holy catfish, what\'s going on?" Land on the table: "Get it just right."' | Simulator PR 123: `CLIP_SETS.nb` cues `hit` and `landed`. |
+| H-20 | "A hard crash anywhere on his map and he laughs. Come within a metre and he picks a line of his own. Find one of his NB stickers and he says Stickers." and "22 October" | Simulator PR 123 (the crash laugh, once every 20 seconds) and commit 7d8e8e9 ("Stickers on every find, catfish only on a hit, other lines within a metre"). The sentence about every other map being silent is left out: the goats play Nick's clip on Joshua Bardwell's map. |
+| H-21 | "Find the last sticker of a map's set and the screen says so." | Simulator PR 118, 22 October. |
+| H-22 | "Every sticker found" | The splash's own sub, `callComplete` in `src/main.js`. |
+| H-23 | "Nick's ten NB stickers are ten. It shows once for each map in your browser." and "22 October" | Simulator PR 118: the stamp `#complete` is written once per map. Heads' 90% patches go through their own call, `callNinety`, so the book does not claim it for them. |
+| H-24 | "It is the first card on the gate." | Simulator PR 119, 22 October. |
+| H-25 | "Fifty lessons in ten chapters, from your first hover in Angle to a Pro Licence in Acro. Bronze, silver and gold." | Simulator PR 119: `CAREER_LESSONS = 50` in `src/ui/ui.js`, ten chapters in `src/career/curriculum.js`, medals bronze, silver and gold. |
+| H-26 | "Ten chapters, fifty lessons, medals, briefings and a coach." and "22 October" | Simulator PR 119. |
+| H-27 | "Lesson one: lift the quad off the pad, hold it between one and three metres for five seconds, then land." | `src/career/curriculum.js`, lesson 1 Lift Off, its goal. |
+| H-28 | 'The briefing: "Gently is the whole trick."' | `src/career/curriculum.js`, lesson 1 Lift Off, its step. |
+| H-29 | "Land it and the lesson gives you a medal." | Simulator PR 119: bronze is finishing. |
+| H-30 | "First Hover, Angle Mode Navigation, Switching to Acro, Big Gaps, Flips and Rolls, Segmented Flips and Rolls, Gates, Racing, Freestyle, Pro Licence." | The chapter titles in `src/career/curriculum.js`. |
+| H-31 | "Chapters open in order." | Simulator PR 119, `src/career/screens.js`. |
+| H-32 | "Already fly? One button opens every chapter." and "22 October" | `src/career/screens.js`: "I already fly: open every chapter". |
+| H-33 | "20 October" | Simulator PR 101. |
+| H-34 | "A fourth partner: weBLEEDfpv, the USA micro drone partner, from Syracuse, New York." | Simulator PR 101: a fourth partner, the USA micro drone partner, an FPV company in Syracuse, New York. |
+| H-35 | "Their sign is in the freestyle maps." | Simulator PR 101: their sign is in every built map, the town's wall and Nick's garage. |
+| H-36 | "And on the board's partners page and the front page." | Board PR 30 and front page PR 21, 20 October. |
+| H-37 | "3D mode: the motors reverse. A switch at the top of Settings, off by default." and "21 October" | Simulator PRs 106 and 107. |
+| H-38 | "The whoop is drawn from Mat's Fractal65 model." and "22 October" | Simulator PR 121. |
+| H-39 | "Nick's and Heads' houses are flown on the whoop now." and "23 October" | Simulator PR 130. |
+| H-40 | "Sponsor signs on the houses are a quarter smaller, each brand once." and "23 October" | Simulator PR 131. |
+
+### Chapter 3 pictures
+
+Frames not shot by the rig are named by `file` in `tools/shoot/c3.js`. The owner's screenshots are in `chapter-3/` of the project files; a panel with no screenshot yet is paper in `docs/chapters.js`.
+
+| Panel | Shot | World |
+| --- | --- | --- |
+| `c3-cover` hero | `cover-hero` | Joshua Bardwell's house |
+| `c3-cover` w1 | `cover-w1` | Heads' house |
+| `c3-cover` w2 | `cover-w2` | Joshua Bardwell's house, the field |
+| `c3-cover` w3 | `career-gate.png` | The owner's screenshot |
+| `c3-p1` a | `p1` | Heads' house |
+| `c3-p2` a, b, c | `p2-a`, `p2-b`, `p2-c` | Heads' house, the garage |
+| `c3-p3` b, c | `p3-b`, `p3-c` | Heads' house, the drive |
+| `c3-p3` d | `heads-under-car.png` | The owner's screenshot |
+| `c3-p4` a | `p4` | Joshua Bardwell's house |
+| `c3-p5` a | `jb-sticker-find.png` | The owner's screenshot |
+| `c3-p5` b, c | `p5-b`, `p5-c` | Joshua Bardwell's house |
+| `c3-p6` b | `p6-b` | Joshua Bardwell's house, the field |
+| `c3-p6` c, d | `goats-run.png`, `goat-catch.png` | The owner's screenshots |
+| `c3-p7` a | `c2/p13-a` | Nick Burns' house, chapter 2's picture |
+| `c3-p7` b, c | `nick-table-1.png`, `nick-table-2.png` | The owner's screenshots |
+| `c3-p8` a, c | `p8-a`, `p8-c` | Nick Burns' house |
+| `c3-p8` b | `c2/p13-c` | Nick Burns' house, chapter 2's picture |
+| `c3-p9` b | `all-splash.png` | The owner's screenshot |
+| `c3-p10` a | `career-gate.png` | The owner's screenshot |
+| `c3-p11` a, b | `career-1-1-briefing.png`, `career-medal.png` | The owner's screenshots |
+| `c3-p12` b, c | `career-chapters.png`, `career-open-all.png` | The owner's screenshots |
+| `c3-p13` b, c | `webleed-sign.png`, `webleed-board.png` | The owner's screenshots |
+| `c3-p14` a | `p14-a` | Settings, frame from PRs 106 and 107 |
+| `c3-p14` b | `p14-b` | Paper, the whoop, the RaceGOW room |
+| `c3-p14` c | `p14-c` | Heads' house |
+| `c3-p14` d | `p14-d` | Heads' side fence, frame from PR 131 |
+| `c3-p15` a | `c2/p16-a` | Nick Burns' house, chapter 2's picture |
+
 ## What is not lettered
 
 - A whoop mass, in grams or any other unit. Not 16 g, not 23.4 g, not 710 g on a whoop panel. Chapter 2 keeps to it: its whoop page letters the gravity and the motors, not the mass.
@@ -302,6 +404,7 @@ The live board pictures are webfpv.org/board as a visitor saw it on 20 October 2
 - Git authors as the credits. The credits sentence is the one in `credits.js`.
 - Kana callouts, even as decoration.
 - A ranking of any other simulator.
+- Chapter 3 leaves out: Dan judging the pilot in every RaceGOW room (his lines are written by Mat and Claude, not his own words, and the owner has not said yes), Heads' shouted lines (placeholders), the camera angle slider and the Air grip slider's new top (small), the default tunes (no picture), xWallow's name (the owner has not said to credit it), the goats being solid or crashable (they are not), the claim that every other map is silent (the goats play Nick's clip on Joshua Bardwell's map), and any claim the sources do not make.
 
 ## Self review
 

@@ -88,7 +88,7 @@
             { k: 'letter', x: 84, y: 420, size: 96, anchor: 'start', max: 560, runs: [['FLY DECENT', 'mint']], in: 'hero' },
             { k: 'head', x: 76, y: 470, w: 520, t: 'How a browser sim got built, in the words of the pilot who built it.', in: 'hero' },
             { k: 'sub', x: 76, y: 600, w: 420, t: 'andAgainFPV', in: 'hero' },
-            { k: 'tag', x: 76, y: 680, t: 'New: Chapter 02, Open house', in: 'hero' },
+            { k: 'tag', x: 76, y: 680, t: 'New: Chapter 03, Three houses', in: 'hero' },
             { k: 'tag', x: 66, y: 1002, t: 'The gate', in: 'w1' },
             { k: 'letter', x: 60, y: 1342, size: 44, anchor: 'start', max: 246, runs: [['THE QUESTION', 'mint']], in: 'w1' },
             { k: 'tag', x: 372, y: 1024, t: 'The builder', in: 'w2' },
@@ -1108,12 +1108,366 @@
               id: 'b',
               fill: 'paper',
               fx: [{ k: 'focus', at: [0.5, 0.56], r: [0.46, 0.3], n: 130, alpha: 0.7 }],
-              alt: 'An empty panel, labelled Chapter 03, with one question lettered across it: what\'s coming next? The next chapter is not drawn yet.'
+              alt: 'A paper panel, labelled Chapter 03, with its title lettered across it: Three houses. The next page starts it.'
             }
           ],
           words: [
             { k: 'cap', x: 70, y: 70, w: 420, t: 'The game will keep building.', in: 'a' },
             { k: 'tag', x: 80, y: 880, t: 'Chapter 03', in: 'b' },
+            { k: 'letter', x: 500, y: 1110, size: 130, rot: -3, max: 820, runs: [['THREE ', 'cream'], ['HOUSES', 'sakura']], in: 'b' },
+            { k: 'sub', x: 160, y: 1180, w: 680, t: 'Turn the page.', center: true, in: 'b' }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'c3',
+      n: 3,
+      title: 'Three houses',
+      date: '23 October 2026',
+      sources: [
+        'Pull requests and commits merged to main, 20 to 23 October 2026: the simulator (Mathew-Harvey/WebFPVSimulator) 98 to 134, the board (WebFPVSimulator-LeaderBoard) 28 to 34, the front page (landingpage-WebFPVSimulator-) 21 to 23',
+        'Release notes, 20 to 23 October 2026 (RELEASE-NOTES-WEEK-4.md)',
+        'Mat\'s own words, quoted under their date from the pull requests',
+        'WebFPV simulator, shot through its own renderer at commit 107d942; Heads\' house, Joshua Bardwell\'s house and Nick Burns\' house',
+        'Screenshots taken by Mat in the simulator and on the board, named in STORYBOARD.md'
+      ],
+      pages: [
+        {
+          id: 'c3-cover',
+          label: 'Cover',
+          tone: 'paper',
+          layout: ['h', 0.7, 0.022, 'hero', ['v', 1 / 3, 0.03, 'w1', ['v', 0.5, -0.03, 'w2', 'w3']]],
+          panels: [
+            {
+              id: 'hero',
+              art: 'c3/cover-hero',
+              alt: 'Joshua Bardwell\'s house from the drive: the orange roofed house among tall pines, a yellow gate on the lawn, and a five inch quad flying in over the drive.',
+              fx: [{ k: 'focus', at: [0.62, 0.7], r: [0.3, 0.2], n: 110, off: [[56, 60, 620, 640]] }]
+            },
+            {
+              id: 'w1',
+              art: 'c3/cover-w1',
+              alt: 'Heads\' house from the street, a green two storey house with a car on the drive, and a whoop flying in front of it.',
+              link: 'c3-p1'
+            },
+            {
+              id: 'w2',
+              art: 'c3/cover-w2',
+              alt: 'The field behind Joshua Bardwell\'s house, goats grazing on the grass between the pines.',
+              link: 'c3-p6'
+            },
+            {
+              id: 'w3',
+              fill: 'paper',
+              alt: 'A panel held for the Career card on the gate, with its three facts: 50 lessons, Angle to Acro, Medals.',
+              link: 'c3-p10'
+            }
+          ],
+          words: [
+            { k: 'tag', x: 74, y: 80, t: 'Chapter 03', in: 'hero' },
+            { k: 'letter', x: 74, y: 290, size: 176, anchor: 'start', max: 680, runs: [['WEB', 'cream'], ['FPV', 'sakura']], in: 'hero' },
+            { k: 'letter', x: 84, y: 420, size: 112, anchor: 'start', max: 640, runs: [['THREE HOUSES', 'mint']], in: 'hero' },
+            { k: 'tag', x: 76, y: 470, t: '20 to 23 October 2026', in: 'hero' },
+            { k: 'tag', x: 66, y: 1002, t: 'The houses', in: 'w1' },
+            { k: 'letter', x: 60, y: 1342, size: 44, anchor: 'start', max: 250, runs: [['THREE HOUSES', 'mint']], in: 'w1' },
+            { k: 'tag', x: 372, y: 1024, t: 'The field', in: 'w2' },
+            { k: 'letter', x: 352, y: 1342, size: 44, anchor: 'start', max: 270, runs: [['GOATS', 'sakura']], in: 'w2' },
+            { k: 'tag', x: 700, y: 1044, t: 'The school', in: 'w3' },
+            { k: 'letter', x: 690, y: 1342, size: 44, anchor: 'start', max: 250, runs: [['CAREER', 'cream']], in: 'w3' }
+          ]
+        },
+        {
+          id: 'c3-p1',
+          label: 'Heads\' house',
+          tone: 'paper',
+          layout: null,
+          panels: [
+            {
+              id: 'a',
+              quad: [-14, -14, 1014, -14, 1014, 1428, -14, 1428],
+              art: 'c3/p1',
+              alt: 'Heads\' house from the street: the green split level front, the garage with a car on the drive, and a whoop flying by in front of it.',
+              fx: [{ k: 'focus', at: [0.5, 0.62], r: [0.3, 0.2], n: 160 }]
+            }
+          ],
+          words: [
+            { k: 'tag', x: 74, y: 80, t: '21 October', in: 'a' },
+            { k: 'letter', x: 500, y: 300, size: 132, max: 860, runs: [['HEADS\'', 'cream']], in: 'a' },
+            { k: 'letter', x: 500, y: 430, size: 132, max: 860, runs: [['HOUSE', 'sakura']], in: 'a' },
+            { k: 'cap', x: 140, y: 1060, w: 720, big: true, t: 'The second house. Heads\' place, at Nick\'s scale: the garage, the basement, both streets and the houses across them.', in: 'a' }
+          ]
+        },
+        {
+          id: 'c3-p2',
+          label: 'Heads',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.52, -0.04, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c3/p2-a', bleed: 'tlr', alt: 'Heads\' garage, a black and white tiled floor and a wall of stickers: Heads stands by the shelf with one arm raised, waving.' },
+            { id: 'b', art: 'c3/p2-b', alt: 'Close to Heads in his garage: he raises one arm in a wave, a sticker wall behind him.' },
+            { id: 'c', art: 'c3/p2-c', bleed: 'blr', alt: 'The whoop flies across the garage past Heads, who stands by the bench.' }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 480, t: 'Heads is home too. He walks his garage between four spots, and when the quad comes close he turns his head and waves.', in: 'a' },
+            { k: 'cap', x: 560, yb: 1360, w: 380, t: 'Fly by and he shouts.', in: 'c' }
+          ]
+        },
+        {
+          id: 'c3-p3',
+          label: 'Under the cars',
+          tone: 'paper',
+          layout: ['h', 0.26, 0, 'a', ['h', 0.48, 0.04, ['v', 0.54, -0.04, 'b', 'c'], 'd']],
+          panels: [
+            { id: 'a', fill: 'ink', alt: 'A black panel with Mat\'s words on it.' },
+            { id: 'b', art: 'c3/p3-b', alt: 'At tarmac height on Heads\' drive: two parked cars, and the whoop low in the gap between them.' },
+            { id: 'c', art: 'c3/p3-c', alt: 'The side of a parked car on Heads\' drive seen from tarmac height, the whoop low beside its wheels.' },
+            { id: 'd', fill: 'paper', bleed: 'blr', alt: 'A panel held for a first person frame, low under the parked car on Heads\' drive, the 90% patch in view.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: 'Mat, 22 October', in: 'a' },
+            { k: 'cap', x: 70, y: 130, w: 860, big: true, t: '"You need to be able to fly under the parked cars in Heads\' yard... good spot to hide a 90% too."', in: 'a' },
+            { k: 'letter', x: 270, y: 640, size: 120, rot: -6, max: 440, runs: [['SHHHK', 'amber']], in: 'b' },
+            { k: 'cap', x: 560, y: 820, w: 370, t: 'Eleven 90% patches to find. The eleventh is under the car on the drive.', in: 'c' }
+          ]
+        },
+        {
+          id: 'c3-p4',
+          label: 'Joshua Bardwell\'s house',
+          tone: 'paper',
+          layout: null,
+          panels: [
+            {
+              id: 'a',
+              quad: [-14, -14, 1014, -14, 1014, 1428, -14, 1428],
+              art: 'c3/p4',
+              alt: 'Joshua Bardwell\'s house from above the drive: the orange roof among tall pines, the gravel drive and a white van, a tall tree at each side of the frame.',
+              fx: [{ k: 'focus', at: [0.5, 0.62], r: [0.3, 0.2], n: 160 }]
+            }
+          ],
+          words: [
+            { k: 'tag', x: 74, y: 80, t: '21 October', in: 'a' },
+            { k: 'letter', x: 500, y: 300, size: 124, max: 880, runs: [['JOSHUA BARDWELL\'S', 'cream']], in: 'a' },
+            { k: 'letter', x: 500, y: 430, size: 132, max: 860, runs: [['HOUSE', 'sakura']], in: 'a' },
+            { k: 'cap', x: 160, y: 1180, w: 680, big: true, t: 'The third house is outside only, life size, and flown on the five inch.', in: 'a' }
+          ]
+        },
+        {
+          id: 'c3-p5',
+          label: 'JB stickers',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', fill: 'paper', bleed: 'tlr', alt: 'A panel held for a frame of a JB sticker found on Joshua Bardwell\'s house, its callout on screen.' },
+            { id: 'b', art: 'c3/p5-b', alt: 'The porch of Joshua Bardwell\'s house, a JB sticker on the front door.' },
+            { id: 'c', art: 'c3/p5-c', bleed: 'blr', alt: 'A doghouse in the yard with a JB sticker on its front.' }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 520, t: 'Twelve JB stickers round the yard: the porch, the chimney, the woodshed, the doghouse, the mailbox and more. Find one and Joshua says something.', in: 'a' },
+            { k: 'note', x: 70, yb: 1360, w: 400, d: '22 October', t: 'A find plays one of eleven Joshua Bardwell clips, shuffled, and none repeats until all have played.', in: 'b', small: true },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '22 October', t: 'Find all twelve and the screen says ALL 12!', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c3-p6',
+          label: 'Goats',
+          tone: 'paper',
+          layout: ['h', 0.3, 0, 'a', ['h', 0.5, 0.03, ['v', 0.52, 0.05, 'b', 'c'], 'd']],
+          panels: [
+            {
+              id: 'a',
+              fill: 'ink',
+              alt: 'A black panel, one word lettered across it: goats.',
+              fx: [{ k: 'focus', at: [0.5, 0.6], r: [0.42, 0.26], n: 120, colour: 'paper', alpha: 0.2 }]
+            },
+            { id: 'b', art: 'c3/p6-b', alt: 'Goats graze in the field, a round gate among the pines behind them.' },
+            { id: 'c', fill: 'paper', alt: 'A panel held for a first person frame of the goats running from the quad across the field.' },
+            { id: 'd', fill: 'paper', bleed: 'blr', alt: 'A panel held for the moment a goat is caught: it hops.' }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 560, t: 'Five goats graze in the field. Come within 24 m and they run.', in: 'a' },
+            { k: 'letter', x: 520, y: 340, size: 176, rot: -5, max: 820, runs: [['GOATS.', 'sakura']], in: 'a' },
+            { k: 'cap', x: 70, yb: 860, w: 360, t: 'Catch one and you hear Nick.', in: 'b' },
+            { k: 'letter', x: 500, y: 1180, size: 120, rot: -4, max: 800, runs: [['BOOM SHAKALA!', 'amber']], in: 'd' },
+            { k: 'note', x: 70, yb: 1360, w: 440, d: '22 October', t: 'A catch is within 1.3 m. The goat hops, vanishes and comes back somewhere else four seconds later.', in: 'd', small: true }
+          ]
+        },
+        {
+          id: 'c3-p7',
+          label: 'Land on the table',
+          tone: 'paper',
+          layout: ['h', 0.36, 0, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            {
+              id: 'a',
+              art: 'c2/p13-a',
+              bleed: 'tlr',
+              alt: 'Nick at his black patio table under the red umbrella, the pool behind him.'
+            },
+            { id: 'b', fill: 'paper', alt: 'A panel held for a frame of the whoop landed on the patio table, Nick\'s balloon reading out the flight.' },
+            { id: 'c', fill: 'paper', bleed: 'blr', alt: 'A panel held for the second balloon, after a pause: Ah, not 6 7 again.' }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 480, t: 'Back at Nick\'s. Land on his patio table while he sits there, and he reads out the flight.', in: 'a' },
+            { k: 'tag', x: 560, y: 70, t: 'Mat, 20 October', in: 'a' },
+            { k: 'cap', x: 560, y: 120, w: 380, t: '"Also when you land on the outdoor table with nick sitting there, you should get nick saying:"', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 360, t: 'The flight time, and the battery.', in: 'b' },
+            { k: 'cap', x: 540, yb: 1360, w: 380, t: 'Then a pause, and a frown.', in: 'c' }
+          ]
+        },
+        {
+          id: 'c3-p8',
+          label: 'Nick\'s voice',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c3/p8-a', bleed: 'tlr', alt: 'Nick waves from his patio table under the red umbrella, the pool behind him, his balloon saying, I appreciate your time and thanks for watching!' },
+            {
+              id: 'b',
+              art: 'c2/p13-c',
+              alt: 'The whoop flies straight into Nick. His balloon shouts, Holy Catfish!',
+              fx: [{ k: 'focus', at: [0.5, 0.55], r: [0.2, 0.2], n: 150 }]
+            },
+            { id: 'c', art: 'c2/p14-c', bleed: 'blr', alt: 'Nick on the family room sofa, smiling at whoever just flew in.' }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 300, t: 'Nick has his voice now.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 400, t: 'Hit him: "Holy catfish, what\'s going on?" Land on the table: "Get it just right."', in: 'b' },
+            { k: 'letter', x: 770, y: 800, size: 70, rot: -5, max: 320, runs: [['HA HA HA', 'amber']], in: 'c' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '22 October', t: 'A hard crash anywhere on his map and he laughs. Come within a metre and he picks a line of his own. Find one of his NB stickers and he says Stickers.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c3-p9',
+          label: 'ALL!',
+          tone: 'paper',
+          layout: ['h', 0.4, 0, 'a', 'b'],
+          panels: [
+            {
+              id: 'a',
+              fill: 'ink',
+              alt: 'A black panel with a word lettered across it: ALL 10!',
+              fx: [{ k: 'focus', at: [0.5, 0.6], r: [0.42, 0.26], n: 120, colour: 'paper', alpha: 0.2 }]
+            },
+            { id: 'b', fill: 'paper', bleed: 'blr', alt: 'A panel held for the ALL 10! splash on Nick Burns\' house, Every sticker found.' }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 640, t: 'Find the last sticker of a map\'s set and the screen says so.', in: 'a' },
+            { k: 'letter', x: 500, y: 330, size: 190, rot: -4, max: 860, runs: [['ALL 10!', 'mint']], in: 'a' },
+            { k: 'sub', x: 160, y: 880, w: 680, t: 'Every sticker found', center: true, in: 'b' },
+            { k: 'note', x: 70, yb: 1360, w: 460, d: '22 October', t: 'Nick\'s ten NB stickers are ten. It shows once for each map in your browser.', in: 'b', small: true }
+          ]
+        },
+        {
+          id: 'c3-p10',
+          label: 'Career',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', fill: 'paper', bleed: 'tlr', alt: 'A panel held for the gate with the Career card first: 50 lessons, Angle to Acro, Medals.' },
+            {
+              id: 'b',
+              fill: 'ink',
+              alt: 'A black panel, one word lettered across it: career.',
+              fx: [{ k: 'focus', at: [0.5, 0.5], r: [0.42, 0.26], n: 120, colour: 'paper', alpha: 0.2 }]
+            }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 440, t: 'It is the first card on the gate.', in: 'a' },
+            { k: 'letter', x: 500, y: 960, size: 190, rot: -4, max: 860, runs: [['CAREER', 'sakura']], in: 'b' },
+            { k: 'cap', x: 110, y: 1130, w: 780, t: 'Fifty lessons in ten chapters, from your first hover in Angle to a Pro Licence in Acro. Bronze, silver and gold.', in: 'b' },
+            { k: 'note', x: 70, yb: 760, w: 380, d: '22 October', t: 'Ten chapters, fifty lessons, medals, briefings and a coach.', in: 'a', small: true }
+          ]
+        },
+        {
+          id: 'c3-p11',
+          label: 'Lift off',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', fill: 'paper', bleed: 'tlr', alt: 'A panel held for the briefing of the first lesson, Lift Off, with its drawing of the sticks.' },
+            { id: 'b', fill: 'paper', bleed: 'blr', alt: 'A panel held for a lesson\'s medal screen.' }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 480, t: 'Lesson one: lift the quad off the pad, hold it between one and three metres for five seconds, then land.', in: 'a' },
+            { k: 'cap', x: 70, yb: 760, w: 460, t: 'The briefing: "Gently is the whole trick."', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 440, t: 'Land it and the lesson gives you a medal.', in: 'b' }
+          ]
+        },
+        {
+          id: 'c3-p12',
+          label: 'Angle to Acro',
+          tone: 'paper',
+          layout: ['h', 0.3, 0, 'a', ['h', 0.5, 0.03, 'b', 'c']],
+          panels: [
+            { id: 'a', fill: 'ink', alt: 'A black panel with the ten chapters of the Career listed on it, in order.' },
+            { id: 'b', fill: 'paper', bleed: 'lr', alt: 'A panel held for the Career chapter list.' },
+            { id: 'c', fill: 'paper', bleed: 'blr', alt: 'A panel held for the button that reads I already fly: open every chapter.' }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 860, big: true, t: 'First Hover, Angle Mode Navigation, Switching to Acro, Big Gaps, Flips and Rolls, Segmented Flips and Rolls, Gates, Racing, Freestyle, Pro Licence.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 400, t: 'Chapters open in order.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '22 October', t: 'Already fly? One button opens every chapter.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c3-p13',
+          label: 'weBLEEDfpv',
+          tone: 'paper',
+          layout: ['h', 0.3, 0, 'a', ['h', 0.5, 0.03, 'b', 'c']],
+          panels: [
+            { id: 'a', fill: 'ink', alt: 'A black panel with a name lettered across it: weBLEEDfpv.' },
+            { id: 'b', fill: 'paper', bleed: 'lr', alt: 'A panel held for the weBLEEDfpv sign in a freestyle map.' },
+            { id: 'c', fill: 'paper', bleed: 'blr', alt: 'A panel held for the weBLEEDfpv card on the board\'s partners page.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '20 October', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 860, t: 'A fourth partner: weBLEEDfpv, the USA micro drone partner, from Syracuse, New York.', in: 'a' },
+            { k: 'letter', x: 500, y: 350, size: 110, rot: -3, max: 860, runs: [['WEBLEEDFPV', 'sakura']], in: 'a' },
+            { k: 'cap', x: 70, yb: 760, w: 440, t: 'Their sign is in the freestyle maps.', in: 'b' },
+            { k: 'cap', x: 70, yb: 1360, w: 520, t: 'And on the board\'s partners page and the front page.', in: 'c' }
+          ]
+        },
+        {
+          id: 'c3-p14',
+          label: 'Also this week',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, ['v', 0.5, 0.04, 'a', 'b'], ['v', 0.5, -0.04, 'c', 'd']],
+          panels: [
+            { id: 'a', art: 'c3/p14-a', bleed: 'tl', alt: 'The top of Settings: the first row is 3D mode, with its Off and On switch, and the stick settings below it.' },
+            { id: 'b', art: 'c3/p14-b', bleed: 'tr', alt: 'On a blank page, the whoop in ink, seen from the side and above, a duct round each prop.' },
+            { id: 'c', art: 'c3/p14-c', bleed: 'bl', alt: 'Heads\' house from the drive, a car in front of the garage, and the whoop flying past.' },
+            { id: 'd', art: 'c3/p14-d', bleed: 'br', alt: 'A sign on the white fence at the side of Heads\' yard, a swing set and a slide in front of it.' }
+          ],
+          words: [
+            { k: 'note', x: 60, yb: 690, w: 400, d: '21 October', t: '3D mode: the motors reverse. A switch at the top of Settings, off by default.', in: 'a', small: true },
+            { k: 'note', x: 540, yb: 690, w: 400, d: '22 October', t: 'The whoop is drawn from Mat\'s Fractal65 model.', in: 'b', small: true },
+            { k: 'note', x: 60, yb: 1360, w: 400, d: '23 October', t: 'Nick\'s and Heads\' houses are flown on the whoop now.', in: 'c', small: true },
+            { k: 'note', x: 540, yb: 1360, w: 400, d: '23 October', t: 'Sponsor signs on the houses are a quarter smaller, each brand once.', in: 'd', small: true }
+          ]
+        },
+        {
+          id: 'c3-p15',
+          label: 'Next',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            {
+              id: 'a',
+              art: 'c2/p16-a',
+              bleed: 'tlr',
+              alt: 'From under the patio umbrella, Nick waves over the pool and the back yard, the whole map open ahead.'
+            },
+            {
+              id: 'b',
+              fill: 'paper',
+              fx: [{ k: 'focus', at: [0.5, 0.56], r: [0.46, 0.3], n: 130, alpha: 0.7 }],
+              alt: 'An empty panel, labelled Chapter 04, with one question lettered across it: what\'s coming next? The next chapter is not drawn yet.'
+            }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 420, t: 'The game will keep building.', in: 'a' },
+            { k: 'tag', x: 80, y: 880, t: 'Chapter 04', in: 'b' },
             { k: 'letter', x: 500, y: 1100, size: 96, rot: -3, max: 820, runs: [['WHAT\'S COMING ', 'cream'], ['NEXT?', 'sakura']], in: 'b' },
             { k: 'fly', x: 500, y: 1200, t: 'FLY NOW', name: 'Fly WebFPV', href: 'https://webfpv.org/sim/', in: 'b' }
           ]
