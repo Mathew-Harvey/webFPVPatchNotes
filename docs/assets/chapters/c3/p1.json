@@ -1,0 +1,42 @@
+{
+  "id": "p1",
+  "treatment": "colour",
+  "from": "p1",
+  "world": "heads",
+  "simulator": null,
+  "commit": "107d942",
+  "frame": [
+    1872,
+    2647
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1872,
+    "height": 2647
+  },
+  "framing": {
+    "cam": [
+      34,
+      3.2,
+      36
+    ],
+    "look": [
+      34,
+      9,
+      -20
+    ],
+    "fov": 62,
+    "quad": {
+      "pos": [
+        34.55,
+        3.45,
+        33.8
+      ],
+      "yaw": -25,
+      "pitch": 20,
+      "roll": -16
+    }
+  },
+  "clip": null
+}

@@ -1,0 +1,33 @@
+{
+  "id": "p6-b",
+  "treatment": "colour",
+  "from": "p6-b",
+  "world": "bardwell",
+  "simulator": null,
+  "commit": "107d942",
+  "frame": [
+    970,
+    849
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 970,
+    "height": 849
+  },
+  "framing": {
+    "cam": [
+      22,
+      2.4,
+      -10
+    ],
+    "look": [
+      36,
+      1,
+      -27
+    ],
+    "fov": 56,
+    "quad": null
+  },
+  "clip": null
+}

@@ -1,0 +1,42 @@
+{
+  "id": "p3-c",
+  "treatment": "colour",
+  "from": "p3-c",
+  "world": "heads",
+  "simulator": null,
+  "commit": "107d942",
+  "frame": [
+    846,
+    940
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 846,
+    "height": 940
+  },
+  "framing": {
+    "cam": [
+      46,
+      0.5,
+      -14.5
+    ],
+    "look": [
+      52.3,
+      0.4,
+      -10
+    ],
+    "fov": 50,
+    "quad": {
+      "pos": [
+        48.7,
+        0.58,
+        -13
+      ],
+      "yaw": -129.80557109226524,
+      "pitch": 6,
+      "roll": 6
+    }
+  },
+  "clip": null
+}

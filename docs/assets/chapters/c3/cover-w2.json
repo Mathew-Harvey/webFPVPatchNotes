@@ -1,0 +1,33 @@
+{
+  "id": "cover-w2",
+  "treatment": "colour",
+  "from": "cover-w2",
+  "world": "bardwell",
+  "simulator": null,
+  "commit": "107d942",
+  "frame": [
+    613,
+    740
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 613,
+    "height": 740
+  },
+  "framing": {
+    "cam": [
+      30,
+      10,
+      -5
+    ],
+    "look": [
+      40,
+      3,
+      -40
+    ],
+    "fov": 70,
+    "quad": null
+  },
+  "clip": null
+}

@@ -1,0 +1,42 @@
+{
+  "id": "cover-hero",
+  "treatment": "colour",
+  "from": "cover-hero",
+  "world": "bardwell",
+  "simulator": null,
+  "commit": "107d942",
+  "frame": [
+    1741,
+    1804
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1741,
+    "height": 1804
+  },
+  "framing": {
+    "cam": [
+      -18,
+      4.8,
+      1.6
+    ],
+    "look": [
+      -19,
+      4.2,
+      -30
+    ],
+    "fov": 52,
+    "quad": {
+      "pos": [
+        -17.6,
+        4.55,
+        0
+      ],
+      "yaw": 5.5484662937180635,
+      "pitch": 20,
+      "roll": 18
+    }
+  },
+  "clip": null
+}

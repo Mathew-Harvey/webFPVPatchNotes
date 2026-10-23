@@ -1,0 +1,42 @@
+{
+  "id": "p3-b",
+  "treatment": "colour",
+  "from": "p3-b",
+  "world": "heads",
+  "simulator": null,
+  "commit": "107d942",
+  "frame": [
+    989,
+    877
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 989,
+    "height": 877
+  },
+  "framing": {
+    "cam": [
+      52.3,
+      0.5,
+      8
+    ],
+    "look": [
+      52.3,
+      0.55,
+      -8
+    ],
+    "fov": 50,
+    "quad": {
+      "pos": [
+        52,
+        0.62,
+        5.9
+      ],
+      "yaw": 0,
+      "pitch": 8,
+      "roll": 4
+    }
+  },
+  "clip": null
+}

@@ -1,0 +1,33 @@
+{
+  "id": "p5-c",
+  "treatment": "colour",
+  "from": "p5-c",
+  "world": "bardwell",
+  "simulator": null,
+  "commit": "107d942",
+  "frame": [
+    1001,
+    1308
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1001,
+    "height": 1308
+  },
+  "framing": {
+    "cam": [
+      4.6,
+      1.2,
+      3.2
+    ],
+    "look": [
+      4.2,
+      0.6,
+      0
+    ],
+    "fov": 44,
+    "quad": null
+  },
+  "clip": null
+}

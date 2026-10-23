@@ -1,0 +1,33 @@
+{
+  "id": "p4",
+  "treatment": "colour",
+  "from": "p4",
+  "world": "bardwell",
+  "simulator": null,
+  "commit": "107d942",
+  "frame": [
+    1872,
+    2647
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1872,
+    "height": 2647
+  },
+  "framing": {
+    "cam": [
+      -4,
+      15,
+      22
+    ],
+    "look": [
+      -21,
+      6,
+      -35
+    ],
+    "fov": 64,
+    "quad": null
+  },
+  "clip": null
+}

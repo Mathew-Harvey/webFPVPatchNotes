@@ -1,0 +1,22 @@
+{
+  "id": "p14-d",
+  "treatment": "colour",
+  "from": "p14-d",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 160,
+    "top": 0,
+    "width": 241,
+    "height": 320
+  },
+  "framing": null,
+  "clip": [
+    570,
+    325,
+    560,
+    320
+  ]
+}

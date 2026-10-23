@@ -1,0 +1,42 @@
+{
+  "id": "p8-a",
+  "treatment": "colour",
+  "from": "p8-a",
+  "world": "house",
+  "simulator": null,
+  "commit": "107d942",
+  "frame": [
+    1872,
+    1386
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1872,
+    "height": 1386
+  },
+  "framing": {
+    "cam": [
+      -19.5,
+      5.2,
+      -55.2
+    ],
+    "look": [
+      -26,
+      3.9,
+      -62
+    ],
+    "fov": 50,
+    "quad": {
+      "pos": [
+        -23.9,
+        3.4,
+        -60.4
+      ],
+      "yaw": 55.491477012331586,
+      "pitch": 2,
+      "roll": 0
+    }
+  },
+  "clip": null
+}

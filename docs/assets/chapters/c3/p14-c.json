@@ -1,0 +1,42 @@
+{
+  "id": "p14-c",
+  "treatment": "colour",
+  "from": "p14-c",
+  "world": "heads",
+  "simulator": null,
+  "commit": "107d942",
+  "frame": [
+    994,
+    1385
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 994,
+    "height": 1385
+  },
+  "framing": {
+    "cam": [
+      60,
+      3,
+      20
+    ],
+    "look": [
+      45,
+      8,
+      -20
+    ],
+    "fov": 58,
+    "quad": {
+      "pos": [
+        58.9,
+        3.2,
+        17.9
+      ],
+      "yaw": 28,
+      "pitch": 16,
+      "roll": 14
+    }
+  },
+  "clip": null
+}
