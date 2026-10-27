@@ -94,8 +94,7 @@ const threads = [
   { id: 'p7-c', page: 'c4-p7', panel: 'c', file: path.join(PF, 'webleed-whoop-room', 'close.jpg'), note: 'The weBLEEDfpv sign on the whoop room wall (sim PR 144).' },
   { id: 'p7-d', page: 'c4-p7', panel: 'd', file: path.join(PF, 'track-preview-overlays', 'after-track.png'), note: 'A course preview with the gate markings hidden (sim PR 146).' },
   { id: 'p9-a', page: 'c4-p9', panel: 'a', file: path.join(PF, 'dronefactory-logos', 'bardwell-house-wide.jpg'), note: 'The Drone Factory sign at Bardwell\'s (sim PR 155).' },
-  { id: 'p9-b', page: 'c4-p9', panel: 'b', file: path.join(PF, 'dronefactory-logos', 'heads-house-wide.jpg'), note: 'The Drone Factory sign at Heads\' (sim PR 155).' },
-  { id: 'p9-c', page: 'c4-p9', panel: 'c', file: path.join(PF, 'dronefactory-logos', 'nick-burns-house-close.jpg'), note: 'The Drone Factory sign at Nick\'s (sim PR 155).' }
+  { id: 'p9-b', page: 'c4-p9', panel: 'b', file: path.join(PF, 'dronefactory-logos', 'heads-house-wide.jpg'), note: 'The Drone Factory sign at Heads\' (sim PR 155).' }
 ].filter((t) => fs.existsSync(t.file));
 
 module.exports = {
@@ -142,6 +141,12 @@ module.exports = {
         const f = L.frame(14);
         return { cam: [f.p[0] - f.fwd[0] * 3, f.p[1] + 0.1, f.p[2] - f.fwd[2] * 3], look: [f.p[0] + f.fwd[0] * 3, f.p[1], f.p[2] + f.fwd[2] * 3], fov: 90, quad: null };
       }
+    },
+    {
+      /* The Drone Factory sign on the garage's east wall: supporters.js,
+       * plan (21.5, 4.7, 1.5) facing east, so world (19.25, 5.25, -37.45). */
+      id: 'p9-c', page: 'c4-p9', panel: 'c', world: 'house',
+      make: () => ({ cam: [17.5, 5.0, -35.4], look: [26.4, 5.2, -37.55], fov: 27, quad: null })
     },
     {
       id: 'p8-a', page: 'c4-p8', panel: 'a', world: 'heads',

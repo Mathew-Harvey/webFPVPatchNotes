@@ -2,16 +2,32 @@
   "id": "p9-c",
   "treatment": "colour",
   "from": "p9-c",
-  "world": null,
+  "world": "house",
   "simulator": null,
-  "commit": null,
-  "frame": null,
+  "commit": "6d74094",
+  "frame": [
+    1001,
+    1308
+  ],
   "crop": {
-    "left": 365,
+    "left": 0,
     "top": 0,
-    "width": 551,
-    "height": 720
+    "width": 1001,
+    "height": 1308
   },
-  "framing": null,
+  "framing": {
+    "cam": [
+      17.5,
+      5,
+      -35.4
+    ],
+    "look": [
+      26.4,
+      5.2,
+      -37.55
+    ],
+    "fov": 27,
+    "quad": null
+  },
   "clip": null
 }
