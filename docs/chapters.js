@@ -88,7 +88,7 @@
             { k: 'letter', x: 84, y: 420, size: 96, anchor: 'start', max: 560, runs: [['FLY DECENT', 'mint']], in: 'hero' },
             { k: 'head', x: 76, y: 470, w: 520, t: 'How a browser sim got built, in the words of the pilot who built it.', in: 'hero' },
             { k: 'sub', x: 76, y: 600, w: 420, t: 'andAgainFPV', in: 'hero' },
-            { k: 'tag', x: 76, y: 680, t: 'New: Chapter 03, Three houses', in: 'hero' },
+            { k: 'tag', x: 76, y: 680, t: 'New: Chapter 04, Other people\'s tracks', in: 'hero' },
             { k: 'tag', x: 66, y: 1002, t: 'The gate', in: 'w1' },
             { k: 'letter', x: 60, y: 1342, size: 44, anchor: 'start', max: 246, runs: [['THE QUESTION', 'mint']], in: 'w1' },
             { k: 'tag', x: 372, y: 1024, t: 'The builder', in: 'w2' },
@@ -1462,12 +1462,272 @@
               id: 'b',
               fill: 'paper',
               fx: [{ k: 'focus', at: [0.5, 0.56], r: [0.46, 0.3], n: 130, alpha: 0.7 }],
-              alt: 'An empty panel, labelled Chapter 04, with one question lettered across it: what\'s coming next? The next chapter is not drawn yet.'
+              alt: 'A paper panel, labelled Chapter 04, with its title lettered across it: Other people\'s tracks. The next page starts it.'
             }
           ],
           words: [
             { k: 'cap', x: 70, y: 70, w: 420, t: 'The game will keep building.', in: 'a' },
             { k: 'tag', x: 80, y: 880, t: 'Chapter 04', in: 'b' },
+            { k: 'letter', x: 500, y: 1110, size: 100, rot: -3, max: 820, runs: [['OTHER PEOPLE\'S ', 'cream'], ['TRACKS', 'sakura']], in: 'b' },
+            { k: 'sub', x: 160, y: 1180, w: 680, t: 'Turn the page.', center: true, in: 'b' }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'c4',
+      n: 4,
+      title: 'Other people\'s tracks',
+      date: '27 October 2026',
+      sources: [
+        'Pull requests and commits merged to main, 24 to 27 October 2026: the simulator (Mathew-Harvey/WebFPVSimulator) 135 to 155, with 156 and 157 left out',
+        'Release notes, 24 to 27 October 2026 (RELEASE-NOTES-WEEK-5.md)',
+        'Mat\'s own words, quoted under their date from the pull requests',
+        'WebFPV simulator, shot through its own renderer at commit 6d74094; Heads\' house, Nick Burns\' house and Joshua Bardwell\'s house',
+        'Screenshots taken by Mat in the simulator and on TinyLaps, named in STORYBOARD.md'
+      ],
+      pages: [
+        {
+          id: 'c4-cover',
+          label: 'Cover',
+          tone: 'paper',
+          layout: ['h', 0.7, 0.022, 'hero', ['v', 1 / 3, 0.03, 'w1', ['v', 0.5, -0.03, 'w2', 'w3']]],
+          panels: [
+            {
+              id: 'hero',
+              art: 'c4/cover-hero',
+              alt: 'Heads\' front lawn with a whoop sized pipe gate track standing on the grass in front of the green house, the white start pad and the RaceGOW6 logo painted on the lawn.',
+              fx: [{ k: 'focus', at: [0.62, 0.7], r: [0.3, 0.2], n: 110, off: [[56, 60, 620, 640]] }]
+            },
+            {
+              id: 'w1',
+              fill: 'paper',
+              alt: 'A panel held for a track from TinyLaps open in the simulator.',
+              link: 'c4-p1'
+            },
+            {
+              id: 'w2',
+              art: 'c4/cover-w2',
+              alt: 'Nick Burns\' back lawn from above, the pipe gates of a track standing on the grass between the trees.',
+              link: 'c4-p2'
+            },
+            {
+              id: 'w3',
+              art: 'c4/cover-w3',
+              alt: 'A goat in the field behind Joshua Bardwell\'s house, a round JB sticker on its flank.',
+              link: 'c4-p4'
+            }
+          ],
+          words: [
+            { k: 'tag', x: 74, y: 80, t: 'Chapter 04', in: 'hero' },
+            { k: 'letter', x: 74, y: 290, size: 176, anchor: 'start', max: 680, runs: [['WEB', 'cream'], ['FPV', 'sakura']], in: 'hero' },
+            { k: 'letter', x: 84, y: 420, size: 84, anchor: 'start', max: 640, runs: [['OTHER PEOPLE\'S TRACKS', 'mint']], in: 'hero' },
+            { k: 'tag', x: 76, y: 470, t: '24 to 27 October 2026', in: 'hero' },
+            { k: 'tag', x: 66, y: 1002, t: 'The editor', in: 'w1' },
+            { k: 'letter', x: 60, y: 1342, size: 44, anchor: 'start', max: 250, runs: [['TINYLAPS', 'mint']], in: 'w1' },
+            { k: 'tag', x: 372, y: 1024, t: 'The yards', in: 'w2' },
+            { k: 'letter', x: 352, y: 1342, size: 44, anchor: 'start', max: 270, runs: [['YARD TRACK', 'sakura']], in: 'w2' },
+            { k: 'tag', x: 700, y: 1044, t: 'The field', in: 'w3' },
+            { k: 'letter', x: 690, y: 1342, size: 44, anchor: 'start', max: 250, runs: [['ON A GOAT', 'cream']], in: 'w3' }
+          ]
+        },
+        {
+          id: 'c4-p1',
+          label: 'TinyLaps',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', fill: 'paper', bleed: 'tlr', alt: 'A panel held for the WebFPV button on the TinyLaps editor.' },
+            { id: 'b', fill: 'paper', alt: 'A panel held for a TinyLaps track flying in the simulator.' },
+            {
+              id: 'c',
+              fill: 'ink',
+              bleed: 'blr',
+              alt: 'A black panel, one word lettered across it: TinyLaps.',
+              fx: [{ k: 'focus', at: [0.5, 0.5], r: [0.42, 0.26], n: 120, colour: 'paper', alpha: 0.2 }]
+            }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '24 October', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 560, t: 'Kwayzu\'s TinyLaps is a whoop gate editor. Tracks made there now open in WebFPV, from a button on their editor and from Import.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 360, t: 'Every one goes straight to the board.', in: 'b' },
+            { k: 'letter', x: 770, y: 1000, size: 92, rot: -4, max: 330, runs: [['TINY', 'mint'], ['LAPS', 'sakura']], in: 'c' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '24 October', t: 'A track from TinyLaps draws its own thumbnail on the board, and anyone can open it there and edit a copy.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c4-p2',
+          label: 'Track 3 in the yards',
+          tone: 'paper',
+          layout: ['h', 0.26, 0, 'a', ['h', 0.48, 0.04, ['v', 0.54, -0.04, 'b', 'c'], 'd']],
+          panels: [
+            { id: 'a', fill: 'ink', alt: 'A black panel with words on it.' },
+            { id: 'b', art: 'c4/p2-b', alt: 'Heads\' front lawn, the pipe gates of a track on the grass in front of the house, and the whoop at the start.' },
+            { id: 'c', art: 'c4/p2-c', alt: 'Nick Burns\' back lawn, gates of the same track standing between the trees.' },
+            { id: 'd', art: 'c4/p2-d', bleed: 'blr', alt: 'Joshua Bardwell\'s lawn by the woodshed, the same track in a clearing among the pines, the white box painted on the grass.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '24 October', in: 'a' },
+            { k: 'cap', x: 70, y: 130, w: 860, big: true, t: 'The board\'s RaceGOW6 Track 3 stands in three yards: Heads\' front lawn, Nick\'s back lawn, and Joshua Bardwell\'s lawn by the woodshed.', in: 'a' },
+            { k: 'cap', x: 560, y: 800, w: 380, t: 'MiniFigs.me and RaceGOW6 are painted on the floor.', in: 'c' },
+            { k: 'note', x: 70, yb: 1360, w: 440, d: '24 October', t: 'Fly through the start gate and the lap clock starts. Fly away from the track and it resets.', in: 'd', small: true },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '24 October', t: 'At Bardwell\'s it is the whoop\'s 28 inch track. Land the five inch in the white box and it asks if you want to swap to the whoop.', in: 'd', small: true }
+          ]
+        },
+        {
+          id: 'c4-p3',
+          label: 'JSL',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', fill: 'paper', bleed: 'tlr', alt: 'A panel held for the JSL callout on screen after the combo.' },
+            {
+              id: 'b',
+              fill: 'ink',
+              bleed: 'blr',
+              alt: 'A black panel, one word lettered across it: JSL.',
+              fx: [{ k: 'focus', at: [0.5, 0.5], r: [0.42, 0.26], n: 120, colour: 'paper', alpha: 0.2 }]
+            }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '24 October', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 540, t: 'A new freestyle combo: a Juicy Flick, then a Slingshot, then a Laser Flip or a Power Loop, back to back.', in: 'a' },
+            { k: 'letter', x: 500, y: 1000, size: 210, rot: -4, max: 860, runs: [['JSL', 'amber']], in: 'b' },
+            { k: 'note', x: 70, yb: 1360, w: 460, d: '24 October', t: 'It is worth 650 points in the trick list.', in: 'b', small: true }
+          ]
+        },
+        {
+          id: 'c4-p4',
+          label: 'The goat',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c4/p4-a', bleed: 'tlr', alt: 'A goat in the field behind Joshua Bardwell\'s house, a round JB sticker on its flank, the pines behind it.' },
+            { id: 'b', fill: 'paper', alt: 'A panel held for the callout on screen when the twelfth sticker is found, reading On a goat.' },
+            { id: 'c', art: 'c3/p8-a', bleed: 'blr', alt: 'Nick waves from his patio table under the red umbrella, the pool behind him.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '24 October', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 540, t: 'Nobody found the twelfth JB sticker on the mailbox. Now it rides on a goat.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 360, t: 'The callout says: On a goat.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '24 October', t: 'Nick\'s crash call comes one time in four now, and it is only "Poor thing."', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c4-p5',
+          label: 'Sound',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', fill: 'paper', bleed: 'tlr', alt: 'A panel held for the Sound section of Settings, each level a slider with a number box.' },
+            {
+              id: 'b',
+              fill: 'ink',
+              bleed: 'blr',
+              alt: 'A black panel, one word lettered across it: thud.',
+              fx: [{ k: 'focus', at: [0.5, 0.5], r: [0.42, 0.26], n: 120, colour: 'paper', alpha: 0.2 }]
+            }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '24 October', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 540, t: 'Effects and Callouts have their own levels now. Every sound level in Settings is a slider with a number box.', in: 'a' },
+            { k: 'letter', x: 500, y: 960, size: 190, rot: -4, max: 860, runs: [['THUD', 'sakura']], in: 'b' },
+            { k: 'note', x: 70, yb: 1360, w: 460, d: '24 October', t: 'The crash is a low thud now, where it was a bright smack.', in: 'b', small: true }
+          ]
+        },
+        {
+          id: 'c4-p6',
+          label: 'Laps keep counting',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c4/p6-a', bleed: 'tlr', alt: 'First person in the whoop room, a lit pipe gate ahead in the pink hall.' },
+            {
+              id: 'b',
+              fill: 'ink',
+              bleed: 'blr',
+              alt: 'A black panel, one word lettered across it: tuned.',
+              fx: [{ k: 'focus', at: [0.5, 0.5], r: [0.42, 0.26], n: 120, colour: 'paper', alpha: 0.2 }]
+            }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '25 October', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 520, t: 'Change Air grip, Motor power, prop wash or Weight in the middle of a lap and the lap keeps going. It no longer voids.', in: 'a' },
+            { k: 'letter', x: 500, y: 960, size: 170, rot: -4, max: 860, runs: [['TUNED', 'mint']], in: 'b' },
+            { k: 'cap', x: 110, y: 1130, w: 780, t: 'The lap counts, and it is filed Tuned.', in: 'b' }
+          ]
+        },
+        {
+          id: 'c4-p7',
+          label: 'Also this week',
+          tone: 'paper',
+          layout: ['h', 0.26, 0, 'a', ['h', 0.5, 0.04, ['v', 0.5, -0.04, 'b', 'c'], 'd']],
+          panels: [
+            { id: 'a', art: 'c4/p7-a', bleed: 'tlr', alt: 'The Quad screen of the simulator: the Camera angle row, a slider with a number box beside it reading 70.' },
+            { id: 'b', art: 'c4/p7-b', alt: 'The screen after a landing: the quad on the ground, a heads up message above it and, along the bottom, the Weight slider with the Camera angle slider under it.' },
+            { id: 'c', art: 'c4/p7-c', alt: 'The whoop room wall, the weBLEEDfpv sign hanging on it.' },
+            { id: 'd', art: 'c4/p7-d', bleed: 'blr', alt: 'A course preview from above: two tall pipe poles on a striped field.' }
+          ],
+          words: [
+            { k: 'note', x: 60, yb: 340, w: 400, d: '24 October', t: 'The camera angle goes up to 70, with a number box beside the slider.', in: 'a', small: true },
+            { k: 'note', x: 60, yb: 900, w: 400, d: '24 October', t: 'And a camera angle slider sits on the screen you see when you have landed.', in: 'b', small: true },
+            { k: 'note', x: 540, yb: 900, w: 400, d: '24 October', t: 'weBLEEDfpv\'s sign hangs on the whoop room wall.', in: 'c', small: true },
+            { k: 'note', x: 60, yb: 1360, w: 400, d: '24 October', t: 'Gate markings are hidden in course previews.', in: 'd', small: true }
+          ]
+        },
+        {
+          id: 'c4-p8',
+          label: 'Also this week, more',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c4/p8-a', bleed: 'tlr', alt: 'Heads\' stop sign from the street, a red octagon on its post.' },
+            { id: 'b', art: 'c4/p8-b', alt: 'On a blank page, the whoop in ink, seen from the side and above, a duct round each prop.' },
+            { id: 'c', art: 'c4/p8-c', bleed: 'blr', alt: 'The whoop on the grass of Heads\' front lawn, flipped over on its back, its props pointing up.' }
+          ],
+          words: [
+            { k: 'note', x: 70, y: 70, w: 460, d: '25 October', t: 'Heads\' stop sign is solid now, so you can tap the wall on it.', in: 'a', small: true },
+            { k: 'note', x: 70, yb: 1360, w: 400, d: '24 October', t: 'Whoop track GIFs are drawn in the whoop room now, with the floor logos.', in: 'b', small: true },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '26 October', t: '3D mode: both sides of the quad count as a base.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c4-p9',
+          label: 'Drone Factory',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c4/p9-a', bleed: 'tlr', alt: 'A big white sign on two posts at Joshua Bardwell\'s house reading Drone Factory, the pines behind it.' },
+            { id: 'b', art: 'c4/p9-b', alt: 'The Drone Factory sign on the side fence of Heads\' yard.' },
+            { id: 'c', art: 'c4/p9-c', bleed: 'blr', alt: 'The Drone Factory sign on the garage wall of Nick Burns\' house.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '26 October', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 480, t: 'Drone Factory\'s sign is on Heads\' house, Joshua Bardwell\'s house and Nick Burns\' house.', in: 'a' }
+          ]
+        },
+        {
+          id: 'c4-p10',
+          label: 'Next',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            {
+              id: 'a',
+              art: 'c2/p16-a',
+              bleed: 'tlr',
+              alt: 'From under the patio umbrella, Nick waves over the pool and the back yard, the whole map open ahead.'
+            },
+            {
+              id: 'b',
+              fill: 'paper',
+              fx: [{ k: 'focus', at: [0.5, 0.56], r: [0.46, 0.3], n: 130, alpha: 0.7 }],
+              alt: 'An empty panel, labelled Chapter 05, with one question lettered across it: what\'s coming next? The next chapter is not drawn yet.'
+            }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 420, t: 'The game will keep building.', in: 'a' },
+            { k: 'tag', x: 80, y: 880, t: 'Chapter 05', in: 'b' },
             { k: 'letter', x: 500, y: 1100, size: 96, rot: -3, max: 820, runs: [['WHAT\'S COMING ', 'cream'], ['NEXT?', 'sakura']], in: 'b' },
             { k: 'fly', x: 500, y: 1200, t: 'FLY NOW', name: 'Fly WebFPV', href: 'https://webfpv.org/sim/', in: 'b' }
           ]

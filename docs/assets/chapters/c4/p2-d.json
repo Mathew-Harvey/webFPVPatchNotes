@@ -1,0 +1,33 @@
+{
+  "id": "p2-d",
+  "treatment": "colour",
+  "from": "p2-d",
+  "world": "bardwell",
+  "simulator": null,
+  "commit": "6d74094",
+  "frame": [
+    1872,
+    1090
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1872,
+    "height": 1090
+  },
+  "framing": {
+    "cam": [
+      -14,
+      4.5,
+      -48
+    ],
+    "look": [
+      -22,
+      1,
+      -56
+    ],
+    "fov": 58,
+    "quad": null
+  },
+  "clip": null
+}

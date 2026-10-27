@@ -1,0 +1,20 @@
+{
+  "id": "cover-w3",
+  "treatment": "colour",
+  "from": "cover-w3",
+  "world": "bardwell",
+  "simulator": null,
+  "commit": "6d74094",
+  "frame": [
+    560,
+    707
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 560,
+    "height": 707
+  },
+  "framing": null,
+  "clip": null
+}

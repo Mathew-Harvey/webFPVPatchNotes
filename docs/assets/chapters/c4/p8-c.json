@@ -1,0 +1,42 @@
+{
+  "id": "p8-c",
+  "treatment": "colour",
+  "from": "p8-c",
+  "world": "heads",
+  "simulator": null,
+  "commit": "6d74094",
+  "frame": [
+    1001,
+    1308
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1001,
+    "height": 1308
+  },
+  "framing": {
+    "cam": [
+      31,
+      0.4,
+      10.9
+    ],
+    "look": [
+      31.5,
+      0.12,
+      10
+    ],
+    "fov": 40,
+    "quad": {
+      "pos": [
+        31.5,
+        0.1,
+        10
+      ],
+      "yaw": 20,
+      "pitch": 0,
+      "roll": 180
+    }
+  },
+  "clip": null
+}

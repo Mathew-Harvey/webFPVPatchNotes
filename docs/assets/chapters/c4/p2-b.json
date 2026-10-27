@@ -1,0 +1,33 @@
+{
+  "id": "p2-b",
+  "treatment": "colour",
+  "from": "p2-b",
+  "world": "heads",
+  "simulator": null,
+  "commit": "6d74094",
+  "frame": [
+    989,
+    877
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 989,
+    "height": 877
+  },
+  "framing": {
+    "cam": [
+      24,
+      2.2,
+      14
+    ],
+    "look": [
+      31.5,
+      1.5,
+      -2
+    ],
+    "fov": 58,
+    "quad": null
+  },
+  "clip": null
+}

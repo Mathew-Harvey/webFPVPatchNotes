@@ -312,7 +312,7 @@ Sixteen pages: the cover and fifteen, 20 to 23 October 2026. The owner's ask of 
 | 12 | Angle to Acro | H-30, H-31, H-32 | Black panel with the ten chapters; the owner's frames of the chapter list and the open every chapter button. |
 | 13 | weBLEEDfpv | H-33, H-34, WEBLEEDFPV, H-35, H-36 | Black panel; the owner's frames of the sign and of the board's card. |
 | 14 | Also this week | H-37, H-38, H-39, H-40 | Settings with 3D mode; the whoop on paper; Heads' house with the whoop; Heads' side fence. |
-| 15 | Next | F-27, Chapter 04, F-28, FLY NOW | Nick waving over the pool (chapter 2's picture); the blank panel. |
+| 15 | Next | F-27, Chapter 04, OTHER PEOPLE'S TRACKS, Turn the page. | Nick waving over the pool (chapter 2's picture); the paper panel that leads into chapter 4. It has no link out now: FLY NOW moved to chapter 4's last page. |
 
 Sound effects (SHHHK, HA HA HA, BOOM SHAKALA!), the panel headings (HEADS' HOUSE, JOSHUA BARDWELL'S HOUSE, GOATS., ALL 10!, CAREER, WEBLEEDFPV) and the cover's panel names are SCENE or the book's own headings. BOOM SHAKALA! is the clip Nick's voice plays when a goat is caught (H-13's source). The balloons in the pictures are the simulator's own. Heads' shout is never lettered, and no picture shows one: his lines in the simulator are placeholders (`HEADS_LINES`, simulator PR 105), so the rig holds the craft far from him.
 
@@ -393,6 +393,92 @@ Frames not shot by the rig are named by `file` in `tools/shoot/c3.js`. The owner
 | `c3-p14` d | `p14-d` | Heads' side fence, frame from PR 131 |
 | `c3-p15` a | `c2/p16-a` | Nick Burns' house, chapter 2's picture |
 
+## Chapter 4. Other people's tracks
+
+Eleven pages: the cover and ten, 24 to 27 October 2026. The owner's ask of 27 October: bring the story up to date as chapter 4, TinyLaps first, then the yards, JSL, the goat, sound, laps, the small things, Drone Factory, and the last page. Dates are Perth time (AWST), as the public notes page uses, so a pull request merged late on 23 October UTC is lettered 24 October. Pictures are shot by `tools/shoot/c4.js` at simulator commit `6d74094` and inked by `tools/ink/panels.js`; the owner's screenshots are `file` jobs named in the table below, and a panel waits as paper until its screenshot is in `chapter-4/` of the project files. Nothing is painted in place of one. The long form is RELEASE-NOTES-WEEK-5.md. Chapter 3's last page now turns into this chapter, the way chapter 2's turned into chapter 3, and the one link out moved to this chapter's last page.
+
+| Page | Beat | Lettered | Pictures |
+| --- | --- | --- | --- |
+| Cover | The book | WEBFPV, OTHER PEOPLE'S TRACKS, 24 to 27 October 2026. Three panels: The editor, TINYLAPS; The yards, YARD TRACK; The field, ON A GOAT. Each links to its page. | Heads' front lawn with the track; a TinyLaps track in the simulator (owner's screenshot); Nick's back lawn with the track; the goat with the sticker. |
+| 1 | TinyLaps | J-05, J-06, J-07, TINYLAPS, J-08 | The owner's frames of their editor's button and of a track in the simulator; black panel. |
+| 2 | Track 3 in the yards | J-09, J-10, J-11, J-12, J-13 | Black panel; Heads' lawn; Nick's lawn; Bardwell's lawn. |
+| 3 | JSL | J-14, J-15, JSL, J-16 | The owner's frame of the callout; black panel. |
+| 4 | The goat | J-17, J-18, J-19, J-20 | The goat with the sticker; the owner's frame of the callout; Nick at his table (chapter 3's picture). |
+| 5 | Sound | J-21, J-22, THUD, J-23 | The owner's frame of the sliders; black panel. |
+| 6 | Laps keep counting | J-24, J-25, TUNED, J-26 | A lit gate in the whoop room; black panel. |
+| 7 | Also this week | J-27, J-28, J-29, J-30 | The Quad screen at 70 (frame from PR 135); the landed screen (frame from PR 136); the whoop room sign (frame from PR 144); a course preview (frame from PR 146). |
+| 8 | Also this week, more | J-31, J-32, J-33 | Heads' stop sign; the whoop on paper; the whoop on its back on Heads' lawn. |
+| 9 | Drone Factory | J-34, J-35 | The three signs: Bardwell's, Heads' and Nick's (frames from PR 155). |
+| 10 | Next | F-27, Chapter 05, WHAT'S COMING NEXT?, FLY NOW | Nick waving over the pool (chapter 2's picture); the blank panel. |
+
+The sound effects and panel headings (TINYLAPS, YARD TRACK, ON A GOAT, JSL, THUD, TUNED) and the cover's panel names are SCENE or the book's own headings. THUD is the word for the crash cue J-23 describes. JSL and TUNED are the names the simulator uses. The balloons and callouts in the pictures are the simulator's own.
+
+| Id | Line | Source |
+| --- | --- | --- |
+| J-01 | "24 to 27 October 2026" | The span the owner gave for this chapter. Simulator PR 135 merged 23 October 23:29 UTC, which is 24 October in Perth. |
+| J-02 | "Chapter 04" and "OTHER PEOPLE'S TRACKS" | The book's own title for the chapter, chosen from the owner's example titles. |
+| J-03 | "The editor", "The yards", "The field" and their panel words | The book's own headings for the cover panels, as in chapter 3. |
+| J-04 | "New: Chapter 04, Other people's tracks" | The cover of chapter 1, as chapter 3's PR did for "Three houses". |
+| J-05 | "24 October" (page 1) | Simulator PR 148, merged 24 October 14:42 Perth. |
+| J-06 | "Kwayzu's TinyLaps is a whoop gate editor. Tracks made there now open in WebFPV, from a button on their editor and from Import." | Simulator PR 148: the importer reads a TinyLaps `whoop-gate-editor` export, the link comes from a button on their editor, and the builder's Import recognises their files. The owner's brief of 27 October says Kwayzu has agreed to be named. |
+| J-07 | "Every one goes straight to the board." | Simulator PR 148, the owner's rule of 24 October 06:28 UTC: before the flight the track is published to the board. |
+| J-08 | "A track from TinyLaps draws its own thumbnail on the board, and anyone can open it there and edit a copy." and "24 October" | Simulator PR 150 (the publishing tab draws the share card and thumbnail while parked) and PR 148 (the edit key is not kept, so anyone opens it from the board with Edit and publishes a copy). |
+| J-09 | "24 October" (page 2) | Simulator PR 147, merged 24 October 12:37 Perth. |
+| J-10 | "The board's RaceGOW6 Track 3 stands in three yards: Heads' front lawn, Nick's back lawn, and Joshua Bardwell's lawn by the woodshed." | Simulator PR 147: trk-85c74ecc, in Heads' front yard, Nick's back yard and Bardwell's lawn north east of the woodshed. |
+| J-11 | "MiniFigs.me and RaceGOW6 are painted on the floor." | Simulator commit 9120524: the floor logos are the track's own MiniFigs.me and RaceGOW6 only, the owner's word of 24 October. PR 147's first text named the partners; the commit replaced them. |
+| J-12 | "Fly through the start gate and the lap clock starts. Fly away from the track and it resets." and "24 October" | Simulator PR 147, Timing. |
+| J-13 | "At Bardwell's it is the whoop's 28 inch track. Land the five inch in the white box and it asks if you want to swap to the whoop." and "24 October" | Simulator PR 147: at whoop room scale there, the whoop's 28 inch track; a five inch landed in the painted white box asks "Swap to the whoop?". |
+| J-14 | "24 October" (page 3) | Simulator PR 139, merged 24 October 07:59 Perth. |
+| J-15 | "A new freestyle combo: a Juicy Flick, then a Slingshot, then a Laser Flip or a Power Loop, back to back." | Simulator PR 139. |
+| J-16 | "It is worth 650 points in the trick list." and "24 October" | Simulator PR 139 and `EXTRA_TRICKS` in `src/game/tricks.js`: JSL, 650 points. The tier is not lettered. |
+| J-17 | "24 October" (page 4) | Simulator PR 140, merged 24 October 08:21 Perth. |
+| J-18 | "Nobody found the twelfth JB sticker on the mailbox. Now it rides on a goat." | Simulator PR 140: the twelfth sticker was on the mailbox at the road and nobody found it; it now sits on a goat's flank. |
+| J-19 | "The callout says: On a goat." | Simulator PR 140 and `GOAT_STICKER.name` in `src/maps/bardwell/stickers.js`: "On a goat". |
+| J-20 | "Nick's crash call comes one time in four now, and it is only "Poor thing."" and "24 October" | Simulator PR 138: a hard crash plays the call one time in four, and the clip is cut to "Poor thing." The PR itself says a listen is still owed. |
+| J-21 | "24 October" (page 5) | Simulator PR 137, merged 24 October 08:34 Perth. |
+| J-22 | "Effects and Callouts have their own levels now. Every sound level in Settings is a slider with a number box." | Simulator PR 137: two new levels, and Volume, Motors, Wind, Music, Effects and Callouts are drag sliders with a number box. |
+| J-23 | "The crash is a low thud now, where it was a bright smack." and "24 October" | Simulator PR 142, "Crash sound: bass thud, not a smack". |
+| J-24 | "25 October" (page 6) | Simulator PR 151, merged 25 October 08:09 Perth. |
+| J-25 | "Change Air grip, Motor power, prop wash or Weight in the middle of a lap and the lap keeps going. It no longer voids." | Simulator PR 151. |
+| J-26 | "The lap counts, and it is filed Tuned." | Simulator PR 151: a change inside a running lap marks it mixed, and it is filed Tuned. |
+| J-27 | "The camera angle goes up to 70, with a number box beside the slider." and "24 October" | Simulator PR 135, merged 24 October 07:29 Perth. |
+| J-28 | "And a camera angle slider sits on the screen you see when you have landed." and "24 October" | Simulator PR 136. |
+| J-29 | "weBLEEDfpv's sign hangs on the whoop room wall." and "24 October" | Simulator PR 144. |
+| J-30 | "Gate markings are hidden in course previews." and "24 October" | Simulator PR 146. |
+| J-31 | "Heads' stop sign is solid now, so you can tap the wall on it." and "25 October" | Simulator PR 152, merged 25 October 08:28 Perth. The owner's ask was to wall tap it. |
+| J-32 | "Whoop track GIFs are drawn in the whoop room now, with the floor logos." and "24 October" | Simulator PR 145. |
+| J-33 | "3D mode: both sides of the quad count as a base." and "26 October" | Simulator PR 154, merged 26 October 09:19 Perth. |
+| J-34 | "26 October" (page 9) | Simulator PR 155, merged 26 October 23:11 Perth. |
+| J-35 | "Drone Factory's sign is on Heads' house, Joshua Bardwell's house and Nick Burns' house." | Simulator PR 155: Heads' house, Bardwell's house and Nick's house only, named as the roster names it (`src/partners/roster.js`, slug `dronefactory`, name "Drone Factory"). Nothing more is said about them. |
+
+### Chapter 4 pictures
+
+Frames not shot by the rig are named by `file` in `tools/shoot/c4.js`. The owner's screenshots are in `chapter-4/` of the project files; a panel with no screenshot yet is paper in `docs/chapters.js`. When this chapter was first drafted `chapter-4/` did not exist, so five panels are paper and the PR is a draft.
+
+| Panel | Shot | World |
+| --- | --- | --- |
+| `c4-cover` hero | `cover-hero` | Heads' front lawn |
+| `c4-cover` w1 | `tinylaps-in-sim.png` | The owner's screenshot (paper until it arrives) |
+| `c4-cover` w2 | `cover-w2` | Nick Burns' back lawn |
+| `c4-cover` w3 | `cover-w3` | The goat with the sticker |
+| `c4-p1` a, b | `tinylaps-editor.png`, `tinylaps-in-sim.png` | The owner's screenshots (paper until they arrive) |
+| `c4-p2` b, c, d | `p2-b`, `p2-c`, `p2-d` | Heads', Nick's and Bardwell's lawns |
+| `c4-p3` a | `jsl-callout.png` | The owner's screenshot (paper until it arrives) |
+| `c4-p4` a | `p4-a` | The goat with the sticker |
+| `c4-p4` b | `goat-sticker-find.png` | The owner's screenshot (paper until it arrives) |
+| `c4-p4` c | `c3/p8-a` | Nick Burns' house, chapter 3's picture |
+| `c4-p5` a | `sound-sliders.png` | The owner's screenshot (paper until it arrives) |
+| `c4-p6` a | `p6-a` | The whoop room, a lit gate |
+| `c4-p7` a | `p7-a` | Quad screen, frame from PR 135 (`camera-angle/`) |
+| `c4-p7` b | `p7-b` | Landed screen, frame from PR 136 (`camera-angle/`) |
+| `c4-p7` c | `p7-c` | Whoop room sign, frame from PR 144 (`webleed-whoop-room/`) |
+| `c4-p7` d | `p7-d` | Course preview, frame from PR 146 (`track-preview-overlays/`) |
+| `c4-p8` a | `p8-a` | Heads' stop sign |
+| `c4-p8` b | `p8-b` | Paper, the whoop, the RaceGOW room |
+| `c4-p8` c | `p8-c` | The whoop on its back, Heads' lawn |
+| `c4-p9` a, b, c | `p9-a`, `p9-b`, `p9-c` | The signs, frames from PR 155 (`dronefactory-logos/`) |
+| `c4-p10` a | `c2/p16-a` | Nick Burns' house, chapter 2's picture |
+
 ## What is not lettered
 
 - A whoop mass, in grams or any other unit. Not 16 g, not 23.4 g, not 710 g on a whoop panel. Chapter 2 keeps to it: its whoop page letters the gravity and the motors, not the mass.
@@ -405,6 +491,7 @@ Frames not shot by the rig are named by `file` in `tools/shoot/c3.js`. The owner
 - Kana callouts, even as decoration.
 - A ranking of any other simulator.
 - Chapter 3 leaves out: Dan judging the pilot in every RaceGOW room (his lines are written by Mat and Claude, not his own words, and the owner has not said yes), Heads' shouted lines (placeholders), the camera angle slider and the Air grip slider's new top (small), the default tunes (no picture), xWallow's name (the owner has not said to credit it), the goats being solid or crashable (they are not), the claim that every other map is silent (the goats play Nick's clip on Joshua Bardwell's map), and any claim the sources do not make.
+- Chapter 4 leaves out: multiplayer rooms, the front screen's Fly solo or Multiplayer choice and the pilot builder (simulator PRs 153, 156 and 157, and the multiplayer commits), which are behind `?mp=1` and not public yet; anything for the Steam edition (board PRs 36 and 37); the board's `?ref=` tag count (board PR 40); the board's concurrent flyers history (board PR 38), which is an API and which no page shows; Heads' and Dan's lines in the simulator (placeholders); the JSL trick's tier; the prices, tiers and amounts of any plan; any claim about speed, delay or smoothness, including the pull requests' own latency notes; anything about Betaflight.
 
 ## Self review
 

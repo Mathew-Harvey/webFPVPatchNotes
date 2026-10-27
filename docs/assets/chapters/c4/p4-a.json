@@ -1,0 +1,20 @@
+{
+  "id": "p4-a",
+  "treatment": "colour",
+  "from": "p4-a",
+  "world": "bardwell",
+  "simulator": null,
+  "commit": "6d74094",
+  "frame": [
+    1872,
+    1386
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1872,
+    "height": 1386
+  },
+  "framing": null,
+  "clip": null
+}

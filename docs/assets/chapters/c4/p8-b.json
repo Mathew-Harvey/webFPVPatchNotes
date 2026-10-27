@@ -1,0 +1,42 @@
+{
+  "id": "p8-b",
+  "treatment": "paper",
+  "from": "p8-b",
+  "world": "room",
+  "simulator": null,
+  "commit": "6d74094",
+  "frame": [
+    936,
+    1312
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 936,
+    "height": 1312
+  },
+  "framing": {
+    "cam": [
+      -3.3,
+      1.28,
+      1.95
+    ],
+    "look": [
+      -2.6,
+      0.9,
+      1.2
+    ],
+    "fov": 24,
+    "quad": {
+      "pos": [
+        -2.6,
+        0.9,
+        1.2
+      ],
+      "yaw": 45,
+      "pitch": 8,
+      "roll": -4
+    }
+  },
+  "clip": null
+}

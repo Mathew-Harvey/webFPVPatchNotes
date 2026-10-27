@@ -1,0 +1,33 @@
+{
+  "id": "cover-hero",
+  "treatment": "colour",
+  "from": "cover-hero",
+  "world": "heads",
+  "simulator": null,
+  "commit": "6d74094",
+  "frame": [
+    1741,
+    1804
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1741,
+    "height": 1804
+  },
+  "framing": {
+    "cam": [
+      31.5,
+      3.2,
+      16
+    ],
+    "look": [
+      31.5,
+      2,
+      -2
+    ],
+    "fov": 62,
+    "quad": null
+  },
+  "clip": null
+}

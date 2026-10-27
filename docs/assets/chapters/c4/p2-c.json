@@ -1,0 +1,33 @@
+{
+  "id": "p2-c",
+  "treatment": "colour",
+  "from": "p2-c",
+  "world": "house",
+  "simulator": null,
+  "commit": "6d74094",
+  "frame": [
+    846,
+    940
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 846,
+    "height": 940
+  },
+  "framing": {
+    "cam": [
+      0,
+      3.2,
+      -108
+    ],
+    "look": [
+      7,
+      1.5,
+      -91
+    ],
+    "fov": 58,
+    "quad": null
+  },
+  "clip": null
+}
