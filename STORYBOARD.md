@@ -409,7 +409,7 @@ Eleven pages: the cover and ten, 24 to 27 October 2026. The owner's ask of 27 Oc
 | 7 | Also this week | J-27, J-28, J-29, J-30 | The Quad screen at 70 (frame from PR 135); the landed screen (frame from PR 136); the whoop room sign (frame from PR 144); a course preview (frame from PR 146). |
 | 8 | Also this week, more | J-31, J-32, J-33 | Heads' stop sign; the whoop on paper; the whoop on its back on Heads' lawn. |
 | 9 | Drone Factory | J-34, J-35 | The three signs: Bardwell's, Heads' and Nick's (frames from PR 155). |
-| 10 | Next | F-27, Chapter 05, WHAT'S COMING NEXT?, FLY NOW | Nick waving over the pool (chapter 2's picture); the blank panel. |
+| 10 | Next | F-27, Chapter 05, ROOMS AND MINI GAMES, Turn the page. | Nick waving over the pool (chapter 2's picture); the paper panel that leads into chapter 5. It has no link out now: FLY NOW moved to chapter 5's last page. |
 
 The sound effects and panel headings (TINYLAPS, YARD TRACK, ON A GOAT, JSL, THUD, TUNED) and the cover's panel names are SCENE or the book's own headings. THUD is the word for the crash cue J-23 describes. JSL and TUNED are the names the simulator uses. The balloons and callouts in the pictures are the simulator's own.
 
@@ -479,6 +479,69 @@ Frames not shot by the rig are named by `file` in `tools/shoot/c4.js`. The owner
 | `c4-p9` a, b, c | `p9-a`, `p9-b`, `p9-c` | The signs, frames from PR 155 (`dronefactory-logos/`) |
 | `c4-p10` a | `c2/p16-a` | Nick Burns' house, chapter 2's picture |
 
+## Chapter 5. Rooms and mini games
+
+Fourteen pages: the cover and thirteen, 27 and 28 October 2026. The owner's ask of 28 October: "update the patch notes the comic book with all the new mini games and features". Dates are Perth time (AWST). Every picture is a frame the simulator drew, made by the thread that built the feature and kept in the project's shared folder; each is a `file` job in `tools/shoot/c5.js` and is inked by `tools/ink/panels.js`, so nothing is painted and no panel is held as paper. The long form is RELEASE-NOTES-WEEK-6.md. Chapter 4's last page now turns into this chapter and the one link out moved to this chapter's last page.
+
+| Page | Beat | Lettered | Pictures |
+| --- | --- | --- | --- |
+| Cover | The book | WEBFPV, ROOMS AND MINI GAMES, 27 and 28 October 2026. Panels: The mini game, DRIFT; The town, SUNNYFIELD; The room, TOGETHER. | Goat street; a drift train; Sunnyfield's main street; the overview camera. |
+| 1 | Fly together | K-03, K-04, K-05 | Front screen; multiplayer screen; three pilots in a room. |
+| 2 | Your pilot | K-06, K-07, K-08 | Builder face tab; twelve pilots; gear tab. |
+| 3 | Race and watch | K-09, K-10, K-11 | Standings; countdown; riding along. |
+| 4 | Overview camera | K-12, K-13, K-14 | Overview; clean feed; the New: overview card. |
+| 5 | Change the map | K-15, K-16 | The vote; the Follow question. |
+| 6 | 90%er goats | K-17, K-18, K-19 | Goats with logos; a car and goats; goats close. |
+| 7 | Herd them home | K-20, K-21 | The map from above; goats on a drive. |
+| 8 | Drift Matsuri | K-22, K-23, K-24 | Lanterns; a car from the front; the festival ground. |
+| 9 | The take | K-25, K-26 | The take card; filming from the side. |
+| 10 | Sunnyfield | K-27, K-28, K-29 | Water tower; the dump; the town from above. |
+| 11 | Thomas More's Shop | K-30, K-31 | Two frames of the shop floor. |
+| 12 | Also | K-32, K-33, K-34 | Two props in view frames. |
+| 13 | Next | K-35 | The circuit from above; the blank panel and FLY NOW. |
+
+| Id | Line | Source |
+| --- | --- | --- |
+| K-01 | "Chapter 05" and "ROOMS AND MINI GAMES" | The book's own title for the chapter. The ask: "update the patch notes the comic book with all the new mini games and features" (owner, 28 October 11:49 UTC). |
+| K-02 | "27 and 28 October 2026" | The span of the pull requests below, in Perth time. |
+| K-03 | "Fly together is open to everybody. Host a room, pick one in the Rooms tab, or join with a code or a link." | Simulator PR 153; commit bde7163 "Rooms: on for everybody" (27 October), the owner's word "yes make multi player for everyone". |
+| K-04 | "Nobody is matched with strangers, and a solo flight is never entered." | The room rules in PR 153: no matchmaking, a solo flight is never entered. |
+| K-05 | "Pilots talk with quick lines and waves. Typed chat only exists in a private room, if its host turns it on." | PR 153: preset quick lines and waves, typed chat only in a private room whose host turns it on. |
+| K-06 | "Make your pilot like a trading card: face, hair, eyes, gear and quad. Hover a part to try it on." | PR 156: the pilot builder, tabs Face, Hair, Eyes, Gear, Quad, try on by hover. |
+| K-07 | "Random, Undo and Reset are on the card." | PR 156. |
+| K-08 | "More hair and glasses came after, and tattoos on a Marks tab." | PR 157. The names of the real people it is based on are not lettered. |
+| K-09 | "Rooms can race. Everyone waits in the pit and presses Ready, the room counts down to GO, and standings and results follow." | PR 153: racing with a pit, Ready, a GO countdown, standings and results. |
+| K-10 | "Share a room link and the preview shows the host's pilot on the map." | PR 158: room link pictures on social media showing the host's pilot with the map. |
+| K-11 | "Press V to ride along behind another pilot." | PR 158: watching another pilot from behind their quad with V. |
+| K-12 | "A new camera over the whole room. Press O and every pilot is on the field with a trail behind." | PR 175 (commit 1b224e4): the overview camera, O key, trails. |
+| K-13 | "H gives a clean feed with no panels. R is the whole field and F rides behind a pilot." | PR 175: keys H, R and F. |
+| K-14 | "The question mark opens the keys." | PR 175: ? keys sheet. |
+| K-15 | "The host can move the room to another map. Everyone votes, then the room goes or stays." | PR 162 (commit 3b5642e, 27 October): Change map, Move the room here, Go and Stay. |
+| K-16 | "When a pilot takes a different map the room asks across the screen: follow, or stay." | PR 165 (commit 4bb2e92, 28 October): the Follow question across the middle of the screen with Follow and Stay. |
+| K-17 | "A new whoop map: 90%er goat herding. Heads' house and the street around it, and a goat for every 90%er sticker." | PR 167 (commit ed2b544, 28 October). |
+| K-18 | "Cars drive the streets. The goats step out of their way." | PR 167, commit 120e853. |
+| K-19 | "Fly low and they run. The pause menu has a row to let them out again." | PR 167: goats flee a low whoop; the pause menu row "let them out again". |
+| K-20 | "Herd them into Heads' garage. A box under the score counts the goats home and the clock since the first one ran." | PR 167. |
+| K-21 | "Every goat home gets a callout with its logo. All of them home is the big finish." | PR 167. |
+| K-22 | "A mini game. Drift Matsuri is a festival circuit under cherry trees, and you are the camera." | PR 170 (commit 43c4acb, 28 October). |
+| K-23 | "Film the drift battles for a minute." | PR 170, the in-sim line "You are the camera. Film the drift battles for a minute." |
+| K-24 | "There are seven drift cars on the circuit." | PR 170. |
+| K-25 | "A shot scores on frame, close and steady. Two cars together, or a whole train, in the picture score more." | PR 170: scoring and the tandem and train multipliers. The multipliers are not lettered. |
+| K-26 | "Your take is graded from S to D, and your best take is kept in your browser." | PR 170. |
+| K-27 | "A new map: Sunnyfield, a cartoon American town of our own. ..." | PR 172 (commit 77e7e26, 28 October): Main Street with a clock tower and church belfry, water tower, dump. |
+| K-28 | "There is a donut shop with a giant donut, a hedge tunnel, a plank bridge over a gorge and a skate park." | PR 172. |
+| K-29 | "The town has twelve named gaps to find." | PR 172: twelve named gaps. |
+| K-30 | "Thomas More's Shop is a whoop map now, built from his own flights." | PR 161 (commit fb02bcb, 27 October) and 56f7c4d: rebuilt from his own whoop flight. |
+| K-31 | "It is on the board with the other official maps." | Official 2026-10-27, from the project notes. |
+| K-32 | "Your own props are in the FPV view now, and the quad throws a shadow in the sun. A Props and shadow row in Settings turns either off." | PR 164 (commit a8d84d8): props in the FPV view, the quad's sun shadow, the Props and shadow row. |
+| K-33 | "Field of view sits beside Camera angle in Settings and Rates." | PR 163 (commit ca36471, 27 October). |
+| K-34 | "On a keyboard the sticks ramp steadily from cruise to full while a key is held." | PR 174 (commit 3aabc62, 28 October). |
+| K-35 | "Chapter 06", "WHAT'S COMING NEXT?", "The game will keep building." | As chapter 4's last page did (F-27, F-28). |
+
+### Chapter 5 pictures
+
+All `file` jobs from the project's shared folder, named with their pull request in the `note` of each sidecar in `captures/c5/`. Used: `multiplayer/shots/showcase`, `multiplayer/shots/2026-10-26-final`, `multiplayer/overview-cam`, `multiplayer/map-vote`, `goat-herding`, `drift-matsuri`, `sunnyfield`, `props-in-view`, and the simulator-drawn frames in `tcmore-warehouse/shots-v2`. Not used: the photographs and stills of real places beside them.
+
 ## What is not lettered
 
 - A whoop mass, in grams or any other unit. Not 16 g, not 23.4 g, not 710 g on a whoop panel. Chapter 2 keeps to it: its whoop page letters the gravity and the motors, not the mass.
@@ -492,6 +555,7 @@ Frames not shot by the rig are named by `file` in `tools/shoot/c4.js`. The owner
 - A ranking of any other simulator.
 - Chapter 3 leaves out: Dan judging the pilot in every RaceGOW room (his lines are written by Mat and Claude, not his own words, and the owner has not said yes), Heads' shouted lines (placeholders), the camera angle slider and the Air grip slider's new top (small), the default tunes (no picture), xWallow's name (the owner has not said to credit it), the goats being solid or crashable (they are not), the claim that every other map is silent (the goats play Nick's clip on Joshua Bardwell's map), and any claim the sources do not make.
 - Chapter 4 leaves out: multiplayer rooms, the front screen's Fly solo or Multiplayer choice and the pilot builder (simulator PRs 153, 156 and 157, and the multiplayer commits), which are behind `?mp=1` and not public yet; anything for the Steam edition (board PRs 36 and 37); the board's `?ref=` tag count (board PR 40); the board's concurrent flyers history (board PR 38), which is an API and which no page shows; Heads' and Dan's lines in the simulator (placeholders); the JSL trick's tier; the prices, tiers and amounts of any plan; any claim about speed, delay or smoothness, including the pull requests' own latency notes; anything about Betaflight.
+- Chapter 5 leaves out: the quad picker (PR 173) and the career skill tree (PR 171), which are open drafts and not on `main`; anything for the Steam edition; any claim about speed, delay or smoothness, including the pull requests' own latency notes and the town drawing less on Low; the multipliers and score numbers of Drift Matsuri; counts, scale and sizes of any map; the Sunnyfield plant's board of days without a mishap, and any word that names another show or town; the names of the real people behind the pilot builder's parts, and the photographs and stills of real places and people; typed chat in a public room; Betaflight.
 
 ## Self review
 

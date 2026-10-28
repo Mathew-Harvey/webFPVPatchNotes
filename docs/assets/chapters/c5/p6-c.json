@@ -1,0 +1,17 @@
+{
+  "id": "p6-c",
+  "treatment": "colour",
+  "from": "p6-c",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 86,
+    "top": 0,
+    "width": 1108,
+    "height": 1448
+  },
+  "framing": null,
+  "clip": null
+}

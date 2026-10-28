@@ -1,0 +1,17 @@
+{
+  "id": "p12-b",
+  "treatment": "colour",
+  "from": "p12-b",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 133,
+    "top": 0,
+    "width": 364,
+    "height": 510
+  },
+  "framing": null,
+  "clip": null
+}

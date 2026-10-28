@@ -1,0 +1,17 @@
+{
+  "id": "p2-a",
+  "treatment": "colour",
+  "from": "p2-a",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 231,
+    "top": 0,
+    "width": 1459,
+    "height": 1080
+  },
+  "framing": null,
+  "clip": null
+}

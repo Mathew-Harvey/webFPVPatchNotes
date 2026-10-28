@@ -88,7 +88,7 @@
             { k: 'letter', x: 84, y: 420, size: 96, anchor: 'start', max: 560, runs: [['FLY DECENT', 'mint']], in: 'hero' },
             { k: 'head', x: 76, y: 470, w: 520, t: 'How a browser sim got built, in the words of the pilot who built it.', in: 'hero' },
             { k: 'sub', x: 76, y: 600, w: 420, t: 'andAgainFPV', in: 'hero' },
-            { k: 'tag', x: 76, y: 680, t: 'New: Chapter 04, Other people\'s tracks', in: 'hero' },
+            { k: 'tag', x: 76, y: 680, t: 'New: Chapter 05, Rooms and mini games', in: 'hero' },
             { k: 'tag', x: 66, y: 1002, t: 'The gate', in: 'w1' },
             { k: 'letter', x: 60, y: 1342, size: 44, anchor: 'start', max: 246, runs: [['THE QUESTION', 'mint']], in: 'w1' },
             { k: 'tag', x: 372, y: 1024, t: 'The builder', in: 'w2' },
@@ -1722,12 +1722,267 @@
               id: 'b',
               fill: 'paper',
               fx: [{ k: 'focus', at: [0.5, 0.56], r: [0.46, 0.3], n: 130, alpha: 0.7 }],
-              alt: 'An empty panel, labelled Chapter 05, with one question lettered across it: what\'s coming next? The next chapter is not drawn yet.'
+              alt: 'The next chapter\'s title page: Chapter 05, Rooms and mini games, with the words Turn the page.'
             }
           ],
           words: [
             { k: 'cap', x: 70, y: 70, w: 420, t: 'The game will keep building.', in: 'a' },
             { k: 'tag', x: 80, y: 880, t: 'Chapter 05', in: 'b' },
+            { k: 'letter', x: 500, y: 1050, size: 92, rot: -3, max: 820, runs: [['ROOMS AND ', 'cream'], ['MINI GAMES', 'sakura']], in: 'b' },
+            { k: 'sub', x: 160, y: 1190, w: 680, t: 'Turn the page.', center: true, in: 'b' }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'c5',
+      n: 5,
+      title: 'Rooms and mini games',
+      date: '28 October 2026',
+      sources: [
+        'Pull requests and commits merged to main, 26 to 28 October 2026: the simulator (Mathew-Harvey/WebFPVSimulator) 153 to 176, with 171 and 173 left out because they are not on main',
+        'Release notes, 26 to 28 October 2026 (RELEASE-NOTES-WEEK-6.md)',
+        'Frames drawn by the simulator and kept by the threads that built each feature, named in STORYBOARD.md'
+      ],
+      pages: [
+        {
+          id: 'c5-cover',
+          label: 'Cover',
+          tone: 'paper',
+          layout: ['h', 0.7, 0.022, 'hero', ['v', 1 / 3, 0.03, 'w1', ['v', 0.5, -0.03, 'w2', 'w3']]],
+          panels: [
+            { id: 'hero', art: 'c5/cover-hero', alt: 'A street of the goat map from a low whoop, goats on the road and the houses of the neighbourhood behind them.' },
+            { id: 'w1', art: 'c5/cover-w1', alt: 'Two drift cars side by side in a cloud of smoke on the festival circuit, the cherry trees behind them.', link: 'c5-p8' },
+            { id: 'w2', art: 'c5/cover-w2', alt: 'The main street of Sunnyfield, a giant donut on a roof, the shop fronts and a car ahead.', link: 'c5-p10' },
+            { id: 'w3', art: 'c5/cover-w3', alt: 'The overview camera over a room: the whole field from above, a coloured trail behind each pilot.', link: 'c5-p1' }
+          ],
+          words: [
+            { k: 'tag', x: 74, y: 80, t: 'Chapter 05', in: 'hero' },
+            { k: 'letter', x: 74, y: 290, size: 176, anchor: 'start', max: 680, runs: [['WEB', 'cream'], ['FPV', 'sakura']], in: 'hero' },
+            { k: 'letter', x: 84, y: 410, size: 72, anchor: 'start', max: 700, runs: [['ROOMS AND MINI GAMES', 'mint']], in: 'hero' },
+            { k: 'tag', x: 76, y: 470, t: '27 and 28 October 2026', in: 'hero' },
+            { k: 'tag', x: 66, y: 1002, t: 'The mini game', in: 'w1' },
+            { k: 'letter', x: 60, y: 1342, size: 44, anchor: 'start', max: 270, runs: [['DRIFT', 'mint']], in: 'w1' },
+            { k: 'tag', x: 372, y: 1024, t: 'The town', in: 'w2' },
+            { k: 'letter', x: 352, y: 1342, size: 44, anchor: 'start', max: 270, runs: [['SUNNYFIELD', 'sakura']], in: 'w2' },
+            { k: 'tag', x: 700, y: 1044, t: 'The room', in: 'w3' },
+            { k: 'letter', x: 690, y: 1342, size: 44, anchor: 'start', max: 250, runs: [['TOGETHER', 'cream']], in: 'w3' }
+          ]
+        },
+        {
+          id: 'c5-p1',
+          label: 'Fly together',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c5/p1-a', bleed: 'tlr', alt: 'The front screen of WebFPV with two big choices, Fly solo and Multiplayer.' },
+            { id: 'b', art: 'c5/p1-b', alt: 'The multiplayer screen: Host a room, Find a room, Join with a code and a pilot card.' },
+            { id: 'c', art: 'c5/p1-c', bleed: 'blr', alt: 'Three pilots in a room over Joshua Bardwell\'s house, their names over their quads and a list of pilots at the top right.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '27 October', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 540, t: 'Fly together is open to everybody. Host a room, pick one in the Rooms tab, or join with a code or a link.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 380, t: 'Nobody is matched with strangers, and a solo flight is never entered.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '27 October', t: 'Pilots talk with quick lines and waves. Typed chat only exists in a private room, if its host turns it on.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c5-p2',
+          label: 'Your pilot',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c5/p2-a', bleed: 'tlr', alt: 'The Make your pilot screen: a trading card with a smiling pilot with blonde hair buns, and the tabs Face, Hair, Eyes, Gear and Quad.' },
+            { id: 'b', art: 'c5/p2-b', alt: 'Twelve random pilots on trading cards, each with different hair, face and colours.' },
+            { id: 'c', art: 'c5/p2-c', bleed: 'blr', alt: 'The Gear tab of the pilot builder, the pilot\'s card beside rows of gear to try on.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '27 October', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 440, t: 'Make your pilot like a trading card: face, hair, eyes, gear and quad. Hover a part to try it on.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 380, t: 'Random, Undo and Reset are on the card.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '27 October', t: 'More hair and glasses came after, and tattoos on a Marks tab.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c5-p3',
+          label: 'Race and watch',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c5/p3-a', bleed: 'tlr', alt: 'A room mid race: a list of pilots in order with their laps and gaps at the top right.' },
+            { id: 'b', art: 'c5/p3-b', alt: 'The room at the start of a race, the throttle prompt over the trees and a pilot list.' },
+            { id: 'c', art: 'c5/p3-c', bleed: 'blr', alt: 'Riding along behind another pilot\'s quad, a small panel at the bottom naming the pilot being watched.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '27 October', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 480, t: 'Rooms can race. Everyone waits in the pit and presses Ready, the room counts down to GO, and standings and results follow.', in: 'a' },
+            { k: 'note', x: 70, yb: 1360, w: 400, d: '27 October', t: 'Share a room link and the preview shows the host\'s pilot on the map.', in: 'b', small: true },
+            { k: 'cap', x: 540, yb: 1360, w: 380, t: 'Press V to ride along behind another pilot.', in: 'c' }
+          ]
+        },
+        {
+          id: 'c5-p4',
+          label: 'Overview camera',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c5/p4-a', bleed: 'tlr', alt: 'The overview camera: the whole field from above with a race table, each pilot a labelled marker with a coloured trail.' },
+            { id: 'b', art: 'c5/p4-b', alt: 'The overview with the clean feed: the field and the trails with no panels.' },
+            { id: 'c', art: 'c5/p4-c', bleed: 'blr', alt: 'The room with a yellow New: overview card at the top left announcing the new camera.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '28 October', in: 'a' },
+            { k: 'cap', x: 70, yb: 560, w: 440, t: 'A new camera over the whole room. Press O and every pilot is on the field with a trail behind.', in: 'a' },
+            { k: 'note', x: 70, yb: 1360, w: 400, d: '28 October', t: 'H gives a clean feed with no panels. R is the whole field and F rides behind a pilot.', in: 'b', small: true },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '28 October', t: 'The question mark opens the keys.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c5-p5',
+          label: 'Change the map',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c5/p5-a', bleed: 'tlr', alt: 'The room asked to move to The town: a card with Call it off for the host and a tally of votes.' },
+            { id: 'b', art: 'c5/p5-b', bleed: 'blr', alt: 'A paper panel across the middle of the screen asking Follow Kite Runner? with a Follow and a Stay button.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '27 October', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 440, t: 'The host can move the room to another map. Everyone votes, then the room goes or stays.', in: 'a' },
+            { k: 'tag', x: 70, y: 780, t: '28 October', in: 'b' },
+            { k: 'cap', x: 70, yb: 1360, w: 440, t: 'When a pilot takes a different map the room asks across the screen: follow, or stay.', in: 'b' }
+          ]
+        },
+        {
+          id: 'c5-p6',
+          label: '90%er goats',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c5/p6-a', bleed: 'tlr', alt: 'Goats in the street of the goat map, each with a logo on its flank.' },
+            { id: 'b', art: 'c5/p6-b', alt: 'A car on a street with goats stepping out of its way, the houses behind.' },
+            { id: 'c', art: 'c5/p6-c', bleed: 'blr', alt: 'Goats close up on a lawn, the logo on each flank.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '28 October', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 520, t: 'A new whoop map: 90%er goat herding. Heads\' house and the street around it, and a goat for every 90%er sticker.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 380, t: 'Cars drive the streets. The goats step out of their way.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '28 October', t: 'Fly low and they run. The pause menu has a row to let them out again.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c5-p7',
+          label: 'Herd them home',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c5/p7-a', bleed: 'tlr', alt: 'The goat map from above: six streets of houses, a park with a pond, and the road past Heads\' house.' },
+            { id: 'b', art: 'c5/p7-b', bleed: 'blr', alt: 'Goats on a driveway, a small box under the score counting the goats home.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '28 October', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 480, t: 'Herd them into Heads\' garage. A box under the score counts the goats home and the clock since the first one ran.', in: 'a' },
+            { k: 'note', x: 70, yb: 1360, w: 440, d: '28 October', t: 'Every goat home gets a callout with its logo. All of them home is the big finish.', in: 'b', small: true }
+          ]
+        },
+        {
+          id: 'c5-p8',
+          label: 'Drift Matsuri',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c5/p8-a', bleed: 'tlr', alt: 'A bridge of red lanterns over a grandstand on the festival circuit, cherry trees on either side.' },
+            { id: 'b', art: 'c5/p8-b', alt: 'A drift car seen from in front through a green viewfinder frame.' },
+            { id: 'c', art: 'c5/p8-c', bleed: 'blr', alt: 'The festival ground beside the track, rows of coloured flags behind a red and white kerb.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '28 October', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 520, t: 'A mini game. Drift Matsuri is a festival circuit under cherry trees, and you are the camera.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 380, t: 'Film the drift battles for a minute.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '28 October', t: 'There are seven drift cars on the circuit.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c5-p9',
+          label: 'The take',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c5/p9-a', bleed: 'tlr', alt: 'A take card over the track: a score of 532 with a list of marks for frame, close and steady.' },
+            { id: 'b', art: 'c5/p9-b', bleed: 'blr', alt: 'A drift car filmed from the side, a green frame around it and a smoke cloud behind it.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '28 October', in: 'a' },
+            { k: 'cap', x: 70, y: 780, w: 440, t: 'A shot scores on frame, close and steady. Two cars together, or a whole train, in the picture score more.', in: 'a' },
+            { k: 'note', x: 70, yb: 1360, w: 460, d: '28 October', t: 'Your take is graded from S to D, and your best take is kept in your browser.', in: 'b', small: true }
+          ]
+        },
+        {
+          id: 'c5-p10',
+          label: 'Sunnyfield',
+          tone: 'paper',
+          layout: ['h', 0.26, 0, 'a', ['h', 0.5, 0.04, ['v', 0.5, -0.04, 'b', 'c'], 'd']],
+          panels: [
+            { id: 'a', fill: 'ink', alt: 'A black panel with words on it.' },
+            { id: 'b', art: 'c5/p10-b', alt: 'A tall water tower with the name of the town on its tank, power lines and a road beside it.' },
+            { id: 'c', art: 'c5/p10-c', alt: 'The dump: a yellow bulldozer on a hill of earth, smoke rising behind.' },
+            { id: 'd', art: 'c5/p10-d', bleed: 'blr', alt: 'Sunnyfield from above: a power plant with cooling towers, a park with a pond, and the streets of houses.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '28 October', in: 'a' },
+            { k: 'cap', x: 70, y: 130, w: 860, big: true, t: 'A new map: Sunnyfield, a cartoon American town of our own. Fly through the clock tower and the church belfry, round the water tower, and over the dump.', in: 'a' },
+            { k: 'note', x: 540, yb: 900, w: 400, d: '28 October', t: 'There is a donut shop with a giant donut, a hedge tunnel, a plank bridge over a gorge and a skate park.', in: 'c', small: true },
+            { k: 'note', x: 70, yb: 1360, w: 440, d: '28 October', t: 'The town has twelve named gaps to find.', in: 'd', small: true }
+          ]
+        },
+        {
+          id: 'c5-p11',
+          label: 'Thomas More\'s Shop',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c5/p11-a', bleed: 'tlr', alt: 'The floor of a workshop from a whoop at the start: a long bench, pillars, racking and strip lights, drawn in flat colour with heavy outlines.' },
+            { id: 'b', art: 'c5/p11-b', bleed: 'blr', alt: 'The workshop from the south west, a table in front and racking behind.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '27 October', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 440, t: 'Thomas More\'s Shop is a whoop map now, built from his own flights.', in: 'a' },
+            { k: 'note', x: 70, yb: 1360, w: 440, d: '27 October', t: 'It is on the board with the other official maps.', in: 'b', small: true }
+          ]
+        },
+        {
+          id: 'c5-p12',
+          label: 'Also',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c5/p12-a', bleed: 'tlr', alt: 'The quad low over a lawn seen from the quad, its props at the edge of the frame and its shadow on the grass.' },
+            { id: 'b', art: 'c5/p12-b', bleed: 'blr', alt: 'A prop at the left edge of the first person view.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '28 October', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 460, t: 'Your own props are in the FPV view now, and the quad throws a shadow in the sun. A Props and shadow row in Settings turns either off.', in: 'a' },
+            { k: 'note', x: 70, yb: 1360, w: 400, d: '27 October', t: 'Field of view sits beside Camera angle in Settings and Rates.', in: 'b', small: true },
+            { k: 'note', x: 540, yb: 1360, w: 400, d: '28 October', t: 'On a keyboard the sticks ramp steadily from cruise to full while a key is held.', in: 'b', small: true }
+          ]
+        },
+        {
+          id: 'c5-p13',
+          label: 'Next',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c5/p13-a', bleed: 'tlr', alt: 'The Drift Matsuri circuit from above, a ribbon of road through the cherry trees.' },
+            {
+              id: 'b',
+              fill: 'paper',
+              fx: [{ k: 'focus', at: [0.5, 0.56], r: [0.46, 0.3], n: 130, alpha: 0.7 }],
+              alt: 'An empty panel, labelled Chapter 06, with one question lettered across it: what\'s coming next? The next chapter is not drawn yet.'
+            }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 420, t: 'The game will keep building.', in: 'a' },
+            { k: 'tag', x: 80, y: 880, t: 'Chapter 06', in: 'b' },
             { k: 'letter', x: 500, y: 1100, size: 96, rot: -3, max: 820, runs: [['WHAT\'S COMING ', 'cream'], ['NEXT?', 'sakura']], in: 'b' },
             { k: 'fly', x: 500, y: 1200, t: 'FLY NOW', name: 'Fly WebFPV', href: 'https://webfpv.org/sim/', in: 'b' }
           ]

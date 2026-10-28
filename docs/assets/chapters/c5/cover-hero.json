@@ -1,0 +1,17 @@
+{
+  "id": "cover-hero",
+  "treatment": "colour",
+  "from": "cover-hero",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 293,
+    "top": 0,
+    "width": 695,
+    "height": 720
+  },
+  "framing": null,
+  "clip": null
+}

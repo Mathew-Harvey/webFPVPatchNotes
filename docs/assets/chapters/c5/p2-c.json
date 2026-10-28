@@ -1,0 +1,17 @@
+{
+  "id": "p2-c",
+  "treatment": "colour",
+  "from": "p2-c",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 547,
+    "top": 0,
+    "width": 826,
+    "height": 1080
+  },
+  "framing": null,
+  "clip": null
+}
