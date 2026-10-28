@@ -1,0 +1,22 @@
+{
+  "id": "sound-sliders",
+  "treatment": "colour",
+  "from": "sound-sliders",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 53,
+    "top": 0,
+    "width": 535,
+    "height": 440
+  },
+  "framing": null,
+  "clip": [
+    330,
+    380,
+    640,
+    440
+  ]
+}

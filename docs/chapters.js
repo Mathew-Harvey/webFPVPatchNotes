@@ -1501,8 +1501,8 @@
             },
             {
               id: 'w1',
-              fill: 'paper',
-              alt: 'A panel held for a track from TinyLaps open in the simulator.',
+              art: 'c4/cover-w1',
+              alt: 'A track imported from TinyLaps on the start pad in the whoop room: a lit green gate stands ahead in the pink hall.',
               link: 'c4-p1'
             },
             {
@@ -1537,8 +1537,8 @@
           tone: 'paper',
           layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
           panels: [
-            { id: 'a', fill: 'paper', bleed: 'tlr', alt: 'A panel held for the WebFPV button on the TinyLaps editor.' },
-            { id: 'b', fill: 'paper', alt: 'A panel held for a TinyLaps track flying in the simulator.' },
+            { id: 'a', art: 'c4/tinylaps-editor', bleed: 'tlr', alt: 'A TinyLaps track opened in the track builder, seen from above as a numbered line through its gates.' },
+            { id: 'b', art: 'c4/tinylaps-in-sim', alt: 'The same track in the simulator, on the start pad, a lit green gate ahead in the whoop room.' },
             {
               id: 'c',
               fill: 'ink',
@@ -1580,7 +1580,7 @@
           tone: 'paper',
           layout: ['h', 0.56, 0.03, 'a', 'b'],
           panels: [
-            { id: 'a', fill: 'paper', bleed: 'tlr', alt: 'A panel held for the JSL callout on screen after the combo.' },
+            { id: 'a', art: 'c4/jsl-callout', bleed: 'tlr', alt: 'A quad upside down in mid air over the town, the middle of a freestyle combo.' },
             {
               id: 'b',
               fill: 'ink',
@@ -1603,13 +1603,13 @@
           layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
           panels: [
             { id: 'a', art: 'c4/p4-a', bleed: 'tlr', alt: 'A goat in the field behind Joshua Bardwell\'s house, a round JB sticker on its flank, the pines behind it.' },
-            { id: 'b', fill: 'paper', alt: 'A panel held for the callout on screen when the twelfth sticker is found, reading On a goat.' },
+            { id: 'b', art: 'c4/goat-sticker-find', alt: 'Close to the goat: a round JB sticker on its flank.' },
             { id: 'c', art: 'c3/p8-a', bleed: 'blr', alt: 'Nick waves from his patio table under the red umbrella, the pool behind him.' }
           ],
           words: [
             { k: 'tag', x: 70, y: 70, t: '24 October', in: 'a' },
             { k: 'cap', x: 70, y: 120, w: 540, t: 'Nobody found the twelfth JB sticker on the mailbox. Now it rides on a goat.', in: 'a' },
-            { k: 'cap', x: 70, yb: 1360, w: 360, t: 'The callout says: On a goat.', in: 'b' },
+            { k: 'cap', x: 70, yb: 1360, w: 360, t: 'Find it and the callout says: On a goat.', in: 'b' },
             { k: 'note', x: 540, yb: 1360, w: 390, d: '24 October', t: 'Nick\'s crash call comes one time in four now, and it is only "Poor thing."', in: 'c', small: true }
           ]
         },
@@ -1619,7 +1619,7 @@
           tone: 'paper',
           layout: ['h', 0.56, 0.03, 'a', 'b'],
           panels: [
-            { id: 'a', fill: 'paper', bleed: 'tlr', alt: 'A panel held for the Sound section of Settings, each level a slider with a number box.' },
+            { id: 'a', art: 'c4/sound-sliders', bleed: 'tlr', alt: 'The Sound section of Settings: Sound, Volume, Motors, Wind, Music, Effects and Callouts, each a slider with a number box.' },
             {
               id: 'b',
               fill: 'ink',
@@ -1630,7 +1630,7 @@
           ],
           words: [
             { k: 'tag', x: 70, y: 70, t: '24 October', in: 'a' },
-            { k: 'cap', x: 70, y: 120, w: 540, t: 'Effects and Callouts have their own levels now. Every sound level in Settings is a slider with a number box.', in: 'a' },
+            { k: 'cap', x: 70, yb: 770, w: 540, t: 'Effects and Callouts have their own levels now. Every sound level in Settings is a slider with a number box.', in: 'a' },
             { k: 'letter', x: 500, y: 960, size: 190, rot: -4, max: 860, runs: [['THUD', 'sakura']], in: 'b' },
             { k: 'note', x: 70, yb: 1360, w: 460, d: '24 October', t: 'The crash is a low thud now, where it was a bright smack.', in: 'b', small: true }
           ]

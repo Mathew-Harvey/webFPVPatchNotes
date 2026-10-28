@@ -1,0 +1,42 @@
+{
+  "id": "jsl-callout",
+  "treatment": "colour",
+  "from": "jsl-callout",
+  "world": "town",
+  "simulator": null,
+  "commit": "6d74094",
+  "frame": [
+    1872,
+    1539
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1872,
+    "height": 1539
+  },
+  "framing": {
+    "cam": [
+      2.96,
+      19.6,
+      -55.06
+    ],
+    "look": [
+      3.66,
+      19.150000000000002,
+      -56.96
+    ],
+    "fov": 34,
+    "quad": {
+      "pos": [
+        3.66,
+        19.150000000000002,
+        -56.96
+      ],
+      "yaw": 25,
+      "pitch": 20,
+      "roll": 165
+    }
+  },
+  "clip": null
+}

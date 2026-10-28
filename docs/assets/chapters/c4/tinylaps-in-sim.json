@@ -1,0 +1,17 @@
+{
+  "id": "tinylaps-in-sim",
+  "treatment": "colour",
+  "from": "tinylaps-in-sim",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 479,
+    "top": 0,
+    "width": 642,
+    "height": 900
+  },
+  "framing": null,
+  "clip": null
+}

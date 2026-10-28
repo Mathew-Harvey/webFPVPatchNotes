@@ -73,7 +73,17 @@ function goatShot(side, dist, up, fov) {
   };
 }
 
-/* The screenshots Mat supplies: id, page, panel, what it shows. */
+/* The screenshots Mat supplies: id, page, panel, what it shows. Until one
+ * arrives its panel is not left empty: a frame made by the thread that
+ * built the feature stands in (`fallback`, a file in the shared folder), or
+ * the rig shoots the scene (a shot of the same id below). Both are the
+ * simulator's own pictures. Mat's file wins as soon as it is in
+ * chapter-4/. */
+const FALLBACK = {
+  'tinylaps-editor': { file: path.join(PF, 'tinylaps-import', 'racegow-6-3-builder.jpg'), note: 'A TinyLaps track imported into the track builder (sim PR 148).' },
+  'tinylaps-in-sim': { file: path.join(PF, 'tinylaps-import', 'racegow-6-3-start-pad.jpg'), note: 'A TinyLaps track on the start pad in the simulator (sim PR 148).' },
+  'sound-sliders': { file: path.join(PF, 'sound-sliders', 'menu-sound-sliders.png'), clip: [330, 380, 640, 440], note: 'The Sound section of Settings, the sliders of sim PR 137.' }
+};
 const SUPPLIED = [
   ['tinylaps-editor', 'c4-p1', 'a', 'The WebFPV button on the TinyLaps editor'],
   ['tinylaps-in-sim', 'c4-p1', 'b', 'A TinyLaps track flying in the simulator'],
@@ -82,9 +92,13 @@ const SUPPLIED = [
   ['sound-sliders', 'c4-p5', 'a', 'The Sound section of Settings, each level a slider with a number box']
 ].map(([id, page, panel, note]) => ({ id, page, panel, file: path.join(CH4, id + '.png'), note }));
 const missing = SUPPLIED.filter((s) => !fs.existsSync(s.file)).map((s) => s.id);
+const have = SUPPLIED.filter((s) => fs.existsSync(s.file));
+const stand = SUPPLIED.filter((s) => !fs.existsSync(s.file) && FALLBACK[s.id] && fs.existsSync(FALLBACK[s.id].file))
+  .map((s) => Object.assign({}, s, FALLBACK[s.id]));
+const rigged = (id) => !fs.existsSync(path.join(CH4, id + '.png'));
 /* The cover's first panel is the TinyLaps track in the simulator again. */
-const coverTL = { id: 'cover-w1', page: 'c4-cover', panel: 'w1', file: path.join(CH4, 'tinylaps-in-sim.png'), note: 'A TinyLaps track flying in the simulator, the cover\'s first panel.' };
-if (!fs.existsSync(coverTL.file)) missing.push('cover-w1 (tinylaps-in-sim.png)');
+const coverTL = Object.assign({ id: 'cover-w1', page: 'c4-cover', panel: 'w1', note: 'A TinyLaps track in the simulator, the cover\'s first panel.' },
+  fs.existsSync(path.join(CH4, 'tinylaps-in-sim.png')) ? { file: path.join(CH4, 'tinylaps-in-sim.png') } : { file: FALLBACK['tinylaps-in-sim'].file });
 
 /* Frames made by the threads that built a feature, kept in the shared
  * folder, as chapters 2 and 3 did. */
@@ -104,6 +118,7 @@ module.exports = {
     heads: { map: 'heads', settings: Object.assign({}, RETURNING, { map: 'heads' }) },
     house: { map: 'house', settings: Object.assign({}, RETURNING, { map: 'house' }) },
     bardwell: { map: 'bardwell', airframe: '5inch', settings: Object.assign({}, RETURNING, { map: 'bardwell', airframe: '5inch' }) },
+    town: { map: 'city', settings: Object.assign({}, RETURNING, { map: 'city', freestyleScoring: 'off' }) },
     room: { preset: 'racegow5-track1', airframe: 'whoop65', settings: { airframe: 'whoop65' } }
   },
   shots: [
@@ -136,6 +151,22 @@ module.exports = {
       act: goatShot([-0.5, 0.86], 3.4, 0.9, 52)
     },
     {
+      /* The JSL stands in for its callout: the quad mid combo, inverted,
+       * over the town's street. Only until the owner's screenshot arrives. */
+      id: 'jsl-callout', page: 'c4-p3', panel: 'a', world: 'town', keep: rigged('jsl-callout'),
+      make: () => {
+        const cam0 = [2.96, 19.6, -55.06];
+        const q = [cam0[0] + 0.7, cam0[1] - 0.45, cam0[2] - 1.9];
+        return { cam: cam0, look: q, fov: 34, quad: { pos: q, yaw: 25, pitch: 20, roll: 165 } };
+      }
+    },
+    {
+      /* The goat close, the sticker filling the frame, for the callout's
+       * panel until the owner's screenshot arrives. */
+      id: 'goat-sticker-find', page: 'c4-p4', panel: 'b', world: 'bardwell', keep: rigged('goat-sticker-find'),
+      act: goatShot([-0.5, 0.86], 2.4, 0.7, 42)
+    },
+    {
       id: 'p6-a', page: 'c4-p6', panel: 'a', world: 'room',
       make: (L, lib) => {
         const f = L.frame(14);
@@ -164,6 +195,6 @@ module.exports = {
       id: 'p8-c', page: 'c4-p8', panel: 'c', world: 'heads',
       make: () => ({ cam: [31.0, 0.4, 10.9], look: [31.5, 0.12, 10], fov: 40, quad: { pos: [31.5, 0.1, 10], yaw: 20, pitch: 0, roll: 180 } })
     }
-  ].concat(SUPPLIED.filter((s) => fs.existsSync(s.file)), fs.existsSync(coverTL.file) ? [coverTL] : [], threads),
+  ].filter((x) => x.keep !== false).concat(have, stand, [coverTL], threads),
   reuse: []
 };

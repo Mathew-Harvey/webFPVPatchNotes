@@ -395,7 +395,7 @@ Frames not shot by the rig are named by `file` in `tools/shoot/c3.js`. The owner
 
 ## Chapter 4. Other people's tracks
 
-Eleven pages: the cover and ten, 24 to 27 October 2026. The owner's ask of 27 October: bring the story up to date as chapter 4, TinyLaps first, then the yards, JSL, the goat, sound, laps, the small things, Drone Factory, and the last page. Dates are Perth time (AWST), as the public notes page uses, so a pull request merged late on 23 October UTC is lettered 24 October. Pictures are shot by `tools/shoot/c4.js` at simulator commit `6d74094` and inked by `tools/ink/panels.js`; the owner's screenshots are `file` jobs named in the table below, and a panel waits as paper until its screenshot is in `chapter-4/` of the project files. Nothing is painted in place of one. The long form is RELEASE-NOTES-WEEK-5.md. Chapter 3's last page now turns into this chapter, the way chapter 2's turned into chapter 3, and the one link out moved to this chapter's last page.
+Eleven pages: the cover and ten, 24 to 27 October 2026. The owner's ask of 27 October: bring the story up to date as chapter 4, TinyLaps first, then the yards, JSL, the goat, sound, laps, the small things, Drone Factory, and the last page. Dates are Perth time (AWST), as the public notes page uses, so a pull request merged late on 23 October UTC is lettered 24 October. Pictures are shot by `tools/shoot/c4.js` at simulator commit `6d74094` and inked by `tools/ink/panels.js`; the owner's screenshots are `file` jobs named in the table below, and a panel holds a stand-in simulator frame until its screenshot is in `chapter-4/` of the project files (see Chapter 4 pictures). Nothing is painted. The long form is RELEASE-NOTES-WEEK-5.md. Chapter 3's last page now turns into this chapter, the way chapter 2's turned into chapter 3, and the one link out moved to this chapter's last page.
 
 | Page | Beat | Lettered | Pictures |
 | --- | --- | --- | --- |
@@ -453,21 +453,21 @@ The sound effects and panel headings (TINYLAPS, YARD TRACK, ON A GOAT, JSL, THUD
 
 ### Chapter 4 pictures
 
-Frames not shot by the rig are named by `file` in `tools/shoot/c4.js`. The owner's screenshots are in `chapter-4/` of the project files; a panel with no screenshot yet is paper in `docs/chapters.js`. When this chapter was first drafted `chapter-4/` did not exist, so five panels are paper and the PR is a draft.
+Frames not shot by the rig are named by `file` in `tools/shoot/c4.js`. The owner's screenshots are in `chapter-4/` of the project files; a panel with no screenshot yet is paper in `docs/chapters.js`. `chapter-4/` did not exist when this chapter was first drafted, and the five panels were held as paper. On 28 October the owner saw the empty middle of the book, so each of them now holds a real simulator frame until the owner's own screenshot arrives (`FALLBACK` and the rig shots in `tools/shoot/c4.js`; the owner's file wins as soon as it is in `chapter-4/`). Nothing is painted.
 
 | Panel | Shot | World |
 | --- | --- | --- |
 | `c4-cover` hero | `cover-hero` | Heads' front lawn |
-| `c4-cover` w1 | `tinylaps-in-sim.png` | The owner's screenshot (paper until it arrives) |
+| `c4-cover` w1 | `cover-w1` | A TinyLaps track on the start pad, frame from PR 148 (`tinylaps-import/`); the owner's `tinylaps-in-sim.png` replaces it |
 | `c4-cover` w2 | `cover-w2` | Nick Burns' back lawn |
 | `c4-cover` w3 | `cover-w3` | The goat with the sticker |
-| `c4-p1` a, b | `tinylaps-editor.png`, `tinylaps-in-sim.png` | The owner's screenshots (paper until they arrive) |
+| `c4-p1` a, b | `tinylaps-editor`, `tinylaps-in-sim` | A TinyLaps track in the builder and on the start pad, frames from PR 148; the owner's screenshots replace them |
 | `c4-p2` b, c, d | `p2-b`, `p2-c`, `p2-d` | Heads', Nick's and Bardwell's lawns |
-| `c4-p3` a | `jsl-callout.png` | The owner's screenshot (paper until it arrives) |
+| `c4-p3` a | `jsl-callout` | The rig: a quad upside down over the town; the owner's callout screenshot replaces it |
 | `c4-p4` a | `p4-a` | The goat with the sticker |
-| `c4-p4` b | `goat-sticker-find.png` | The owner's screenshot (paper until it arrives) |
+| `c4-p4` b | `goat-sticker-find` | The rig: the sticker close on the goat; the owner's screenshot replaces it |
 | `c4-p4` c | `c3/p8-a` | Nick Burns' house, chapter 3's picture |
-| `c4-p5` a | `sound-sliders.png` | The owner's screenshot (paper until it arrives) |
+| `c4-p5` a | `sound-sliders` | The Sound section of Settings, frame from PR 137 (`sound-sliders/`); the owner's screenshot replaces it |
 | `c4-p6` a | `p6-a` | The whoop room, a lit gate |
 | `c4-p7` a | `p7-a` | Quad screen, frame from PR 135 (`camera-angle/`) |
 | `c4-p7` b | `p7-b` | Landed screen, frame from PR 136 (`camera-angle/`) |

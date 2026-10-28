@@ -1,0 +1,17 @@
+{
+  "id": "tinylaps-editor",
+  "treatment": "colour",
+  "from": "tinylaps-editor",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 192,
+    "top": 0,
+    "width": 1216,
+    "height": 900
+  },
+  "framing": null,
+  "clip": null
+}

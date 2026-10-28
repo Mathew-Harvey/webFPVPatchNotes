@@ -1,0 +1,20 @@
+{
+  "id": "goat-sticker-find",
+  "treatment": "colour",
+  "from": "goat-sticker-find",
+  "world": "bardwell",
+  "simulator": null,
+  "commit": "6d74094",
+  "frame": [
+    936,
+    1312
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 936,
+    "height": 1312
+  },
+  "framing": null,
+  "clip": null
+}
