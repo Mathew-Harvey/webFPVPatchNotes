@@ -12,7 +12,7 @@ THe project started as curiosity, could i compile betaflight and put in in a vir
 
 ## 2
 
-first it was for me, i wanted to sim that was super easy to fly in , for my kids and for me, then i realised that most school kids have no money and usualyl can't install stuff on their computers, so they have no sim to fly in. Then i wanted it to be accessable for all the people that could not buy a velocidrone or what not.
+first it was for me, i wanted to sim that was super easy to fly in , for my kids and for me, then i realised that most school kids have no money and usualyl can't install stuff on their computers, so they have no sim to fly in. Then i wanted it to be accessable for all the people that could not buy a paid sim or what not.
 
 ## 3
 
@@ -48,7 +48,7 @@ the book lives in webFPVPatchNotes. I don't really want people forking it and sp
 
 ## How the book uses this
 
-Origin is curiosity, not a product brief. The day it flew decent, it became a project. It was for Mat first, and for flying at home. Then it was for people who cannot install a sim and cannot buy one. The name VelociDrone is his, said as the sim people could not buy. The comic does not rank it, score it, or say it flies worse.
+Origin is curiosity, not a product brief. The day it flew decent, it became a project. It was for Mat first, and for flying at home. Then it was for people who cannot install a sim and cannot buy one. His words are "a paid sim", said of the sim people could not buy. The comic does not rank it, score it, or say it flies worse.
 
 The school is not named. Children are not drawn. The sentence about school kids is motive, told in words, not a picture of a classroom.
 

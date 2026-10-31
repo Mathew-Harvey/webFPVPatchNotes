@@ -328,7 +328,7 @@
           ],
           words: [
             { k: 'cap', x: 70, y: 70, w: 620, t: 'Then I realised that most school kids have no money, and usually can\'t install stuff on their computers, so they have no sim to fly in.', in: 'a' },
-            { k: 'cap', x: 70, y: 560, w: 560, t: 'Then I wanted it to be accessible for all the people that could not buy a VelociDrone, or what not.', in: 'b' },
+            { k: 'cap', x: 70, y: 560, w: 560, t: 'Then I wanted it to be accessible for all the people that could not buy a paid sim, or what not.', in: 'b' },
             { k: 'letter', x: 500, y: 1160, size: 76, rot: -3, runs: [['FREE. NO INSTALL.', 'mint']], in: 'c' },
             { k: 'letter', x: 500, y: 1250, size: 76, rot: -3, runs: [['NO ACCOUNT.', 'mint']], in: 'c' },
             { k: 'sub', x: 160, y: 1300, w: 680, t: 'A tab, and the controller already on your desk.', tone: 'night', center: true, in: 'c' }

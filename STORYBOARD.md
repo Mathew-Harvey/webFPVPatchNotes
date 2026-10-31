@@ -4,7 +4,7 @@ Date: 2 October 2026. Voice is Mat, first person, plain. The interview is in STO
 
 Chapter 1 is the whole origin, told once: the question, the yes, who it is for, the builder, the feel that nearly stopped it, the testers, the line, the notes so far, and a last page that points at the sim and leaves the next chapter blank on purpose (STORY.md, How the book uses this). Later chapters are one release, or one chunk of features, each (STORY.md section 5).
 
-Flight is from the goggles or from a camera beside the quad. No face. No children. No classroom. No school name. VelociDrone is named only as his words for a sim people could not buy, and is not ranked.
+Flight is from the goggles or from a camera beside the quad. No face. No children. No classroom. No school name. No other sim is named: his words are "a paid sim", and nothing is ranked.
 
 ## The look
 
@@ -50,7 +50,7 @@ Sound effects (VRRRM, FSHOOM, KRAK!, WHUMMM) and "Too fast." are SCENE: the mome
 | F-09 | "I wanted a sim that was super easy to fly in." | STORY.md section 2. |
 | F-10 | "For my kids, and for me." | STORY.md section 2. Words only. No child is drawn. |
 | F-11 | "Then I realised that most school kids have no money, and usually can't install stuff on their computers, so they have no sim to fly in." | STORY.md section 2. No school name, no classroom. |
-| F-12 | "Then I wanted it to be accessible for all the people that could not buy a VelociDrone, or what not." | STORY.md section 2. His noun, not a ranking. |
+| F-12 | "Then I wanted it to be accessible for all the people that could not buy a paid sim, or what not." | STORY.md section 2. His noun, not a ranking. |
 | F-13 | "FREE. NO INSTALL. NO ACCOUNT." | webfpv.org, live 2 October 2026: "Free &#183; no install &#183; no account". |
 | F-14 | "A tab, and the controller already on your desk." | webfpv.org, live 2 October 2026, the same sentence. |
 | F-15 | "The part I'm proudest of is the map and track building system." | STORY.md section 4. |
