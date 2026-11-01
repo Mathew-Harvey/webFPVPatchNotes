@@ -2030,8 +2030,8 @@
           panels: [
             { id: 'a', fill: 'ink', alt: 'A black panel with words on it.' },
             { id: 'b', art: 'c6/p1-b', alt: 'Momiji Pass: a red bridge carries the road over a gorge, autumn trees all round.' },
-            { id: 'c', art: 'c6/p1-c', alt: 'Kodama Onsen: an old building through the trunks of a cedar forest.' },
-            { id: 'd', art: 'c6/p1-d', bleed: 'blr', alt: 'Raicho Ridge from the air: a snowy peak, the slopes below it and a lake in the valley.' }
+            { id: 'c', art: 'c6/p1-c', alt: 'Kodama Onsen: the quad in front of an old two storey inn, tall cedars round it.' },
+            { id: 'd', art: 'c6/p1-d', bleed: 'blr', alt: 'Raicho Ridge from the air: rocky slopes and forest falling away to a lake in the valley.' }
           ],
           words: [
             { k: 'tag', x: 70, y: 70, t: '31 October', in: 'a' },
@@ -2065,13 +2065,13 @@
           layout: ['h', 0.5, 0.03, ['v', 0.5, -0.04, 'a', 'b'], ['v', 0.5, 0.04, 'c', 'd']],
           panels: [
             { id: 'a', art: 'c6/p3-a', bleed: 'tl', alt: 'Kumoi Towers: the quad beside a tall tower, looking up into a blue sky.' },
-            { id: 'b', art: 'c6/p3-b', bleed: 'tr', alt: 'Ekimae Drift from the air: the expressway, the station roofs and a brick railway viaduct.' },
-            { id: 'c', art: 'c6/p3-c', bleed: 'bl', alt: 'Tsukimi Danchi: the quad over a railway viaduct, blocks of flats beside it.' },
+            { id: 'b', art: 'c6/p3-b', bleed: 'tr', alt: 'Ekimae Drift: the quad and a yellow drift car on the street under the railway bridge, shops and flats round it.' },
+            { id: 'c', art: 'c6/p3-c', bleed: 'bl', alt: 'Tsukimi Danchi: the quad over the grass by an old block of flats, the railway viaduct beside it.' },
             { id: 'd', art: 'c6/p3-d', bleed: 'br', alt: 'Hinode Park: the quad over a pond and a lawn, cherry trees and houses round the park.' }
           ],
           words: [
             { k: 'cap', x: 60, y: 60, w: 400, t: 'Kumoi Towers. A tower city to dive, right from the very top.', in: 'a' },
-            { k: 'cap', x: 540, y: 60, w: 400, t: 'Ekimae Drift. A street drift event round a station, under the expressway and the tracks.', in: 'b' },
+            { k: 'cap', x: 540, y: 60, w: 400, t: 'Ekimae Drift. A street drift event round a station. Chase the cars under the tracks.', in: 'b' },
             { k: 'cap', x: 60, yb: 1360, w: 400, t: 'Tsukimi Danchi. An abandoned housing estate in the city, a viaduct right beside it.', in: 'c' },
             { k: 'cap', x: 540, yb: 1360, w: 400, t: 'Hinode Park. A city park at golden hour.', in: 'd' }
           ]
@@ -2099,16 +2099,16 @@
           tone: 'paper',
           layout: ['h', 0.5, 0.03, ['v', 0.5, -0.04, 'a', 'b'], ['v', 0.5, 0.04, 'c', 'd']],
           panels: [
-            { id: 'a', art: 'c6/p5-a', bleed: 'tl', alt: 'Hayate Circuit: the quad over the pit lane, the garages and a grandstand.' },
-            { id: 'b', art: 'c6/p5-b', bleed: 'tr', alt: 'Tanada RX: the quad over a corner of the circuit, kerbs and trees round it.' },
-            { id: 'c', art: 'c6/p5-c', bleed: 'bl', alt: 'Bakuon Dome from the air: a big stadium, its roof open over the floor, the car park round it.' },
-            { id: 'd', art: 'c6/p5-d', bleed: 'br', alt: 'Shiroyama FMX: a dirt show arena between two grandstands, the castle keep beyond it.' }
+            { id: 'a', art: 'c6/p5-a', bleed: 'tl', alt: 'Hayate Circuit: the quad over the pit straight, GT cars coming down it, the pit building and a grandstand.' },
+            { id: 'b', art: 'c6/p5-b', bleed: 'tr', alt: 'Tanada RX: the quad low over the track among rally cars, a grandstand behind.' },
+            { id: 'c', art: 'c6/p5-c', bleed: 'bl', alt: 'Bakuon Dome: the quad over the dirt floor, monster trucks round it, a jump and old buses, the stands under the roof.' },
+            { id: 'd', art: 'c6/p5-d', bleed: 'br', alt: 'Shiroyama FMX: the quad beside a rider on the dirt, the kickers and riders in the air, the castle keep beyond.' }
           ],
           words: [
             { k: 'cap', x: 60, y: 60, w: 400, t: 'Hayate Circuit. GT cars lap it flat out. Thread the pit garages.', in: 'a' },
-            { k: 'cap', x: 540, y: 60, w: 400, t: 'Tanada RX. Rallycross on tarmac and gravel, six cars racing.', in: 'b' },
+            { k: 'cap', x: 540, y: 60, w: 400, t: 'Tanada RX. Rallycross on tarmac and gravel, the cars racing door to door.', in: 'b' },
             { k: 'cap', x: 60, yb: 1360, w: 400, t: 'Bakuon Dome. A dirt floored stadium with monster trucks inside.', in: 'c' },
-            { k: 'cap', x: 540, yb: 1360, w: 400, t: 'Shiroyama FMX. Riders flip off the kickers in a castle park.', in: 'd' }
+            { k: 'cap', x: 540, yb: 1360, w: 400, t: 'Shiroyama FMX. Riders jump the kickers in a castle park.', in: 'd' }
           ]
         },
         {
@@ -2117,14 +2117,14 @@
           tone: 'paper',
           layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
           panels: [
-            { id: 'a', art: 'c6/p6-a', bleed: 'tlr', alt: 'Hotaru Valley from the air: rice paddies, farmhouses, a harbour and a red torii standing in the sea.' },
-            { id: 'b', art: 'c6/p6-b', alt: 'Kazahana Plain: the quad over an avenue of trees, hot air balloons in the sky.' },
+            { id: 'a', art: 'c6/p6-a', bleed: 'tlr', alt: 'Hotaru Valley: the quad by a red torii standing in the sea, the harbour, farmhouses and rice paddies beyond.' },
+            { id: 'b', art: 'c6/p6-b', alt: 'Kazahana Plain: the quad over an avenue of autumn trees, fields beyond.' },
             { id: 'c', art: 'c6/p6-c', bleed: 'blr', alt: 'Tonbo Fest: the quad over a row of food stalls and parked cars by the river.' }
           ],
           words: [
             { k: 'tag', x: 70, y: 70, t: '31 October', in: 'a' },
             { k: 'cap', x: 70, y: 120, w: 480, t: 'Hotaru Valley. Rice paddies, farmhouses, and a torii standing in the sea.', in: 'a' },
-            { k: 'cap', x: 70, yb: 1360, w: 380, t: 'Kazahana Plain. Climb the balloon meet, then cruise the avenue.', in: 'b' },
+            { k: 'cap', x: 70, yb: 1360, w: 380, t: 'Kazahana Plain. A wide plain in autumn. Cruise the avenue of trees.', in: 'b' },
             { k: 'note', x: 540, yb: 1360, w: 390, d: '31 October', t: 'Tonbo Fest. A drone racing festival on the river ground. Sixteen gates in one lap.', in: 'c', small: true }
           ]
         },
@@ -2134,12 +2134,12 @@
           tone: 'paper',
           layout: ['h', 0.56, 0.03, 'a', 'b'],
           panels: [
-            { id: 'a', art: 'c6/p7-a', bleed: 'tlr', alt: 'Hoshino Shoji: the sales floor from a whoop, desks, blue chairs and shelves of files.' },
+            { id: 'a', art: 'c6/p7-a', bleed: 'tlr', alt: 'Hoshino Shoji: the whoop low over the sales floor, rows of desks and the office beyond.' },
             { id: 'b', art: 'c6/p7-b', bleed: 'blr', alt: 'Kirigaoka Sanatorium: a long three storey building on a hill, a clock tower in the middle.' }
           ],
           words: [
             { k: 'tag', x: 70, y: 70, t: '31 October', in: 'a' },
-            { k: 'cap', x: 70, y: 120, w: 460, t: 'Hoshino Shoji. A trading company after hours, flown on a whoop. Desks, a boardroom, and an empty lift shaft top to bottom.', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 460, t: 'Hoshino Shoji. A trading company after hours, flown on a whoop. Thread the desks on the sales floor.', in: 'a' },
             { k: 'note', x: 70, yb: 1360, w: 460, d: '31 October', t: 'Kirigaoka Sanatorium. Abandoned on a hill. Fly the long corridor and thread the clock tower.', in: 'b', small: true }
           ]
         },
