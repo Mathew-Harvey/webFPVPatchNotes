@@ -1956,8 +1956,8 @@
           tone: 'paper',
           layout: ['h', 0.56, 0.03, 'a', 'b'],
           panels: [
-            { id: 'a', art: 'c5/p12-a', bleed: 'tlr', alt: 'The quad low over a lawn seen from the quad, its props at the edge of the frame and its shadow on the grass.' },
-            { id: 'b', art: 'c5/p12-b', bleed: 'blr', alt: 'A prop at the left edge of the first person view.' }
+            { id: 'a', art: 'c5/p12-a', bleed: 'tlr', alt: 'The first person view over a fenced field, a prop tip at the left edge, the stick overlay showing the pitch stick part way forward.' },
+            { id: 'b', art: 'c5/p12-b', bleed: 'blr', alt: 'The Camera rows on the Quad screen: Camera angle 30, Field of view 85 degrees vertical, Props and shadow Both.' }
           ],
           words: [
             { k: 'tag', x: 70, y: 70, t: '28 October', in: 'a' },
