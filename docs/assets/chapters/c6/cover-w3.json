@@ -1,0 +1,17 @@
+{
+  "id": "cover-w3",
+  "treatment": "colour",
+  "from": "cover-w3",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 298,
+    "top": 0,
+    "width": 845,
+    "height": 1066
+  },
+  "framing": null,
+  "clip": null
+}

@@ -1977,12 +1977,189 @@
               id: 'b',
               fill: 'paper',
               fx: [{ k: 'focus', at: [0.5, 0.56], r: [0.46, 0.3], n: 130, alpha: 0.7 }],
-              alt: 'An empty panel, labelled Chapter 06, with one question lettered across it: what\'s coming next? The next chapter is not drawn yet.'
+              alt: 'An empty panel, labelled Chapter 06, with one question lettered across it: what\'s coming next?'
             }
           ],
           words: [
             { k: 'cap', x: 70, y: 70, w: 420, t: 'The game will keep building.', in: 'a' },
             { k: 'tag', x: 80, y: 880, t: 'Chapter 06', in: 'b' },
+            { k: 'letter', x: 500, y: 1100, size: 96, rot: -3, max: 820, runs: [['WHAT\'S COMING ', 'cream'], ['NEXT?', 'sakura']], in: 'b' }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'c6',
+      n: 6,
+      title: 'Twenty two new maps',
+      date: '31 October 2026',
+      sources: [
+        'Commits merged to main on 31 October 2026 in the simulator (Mathew-Harvey/WebFPVSimulator), and its map list, src/maps/registry.js, at b285dc5',
+        'Frames drawn by the simulator at b285dc5 for this chapter, listed in tools/shoot/c6.js'
+      ],
+      pages: [
+        {
+          id: 'c6-cover',
+          label: 'Cover',
+          tone: 'paper',
+          layout: ['h', 0.7, 0.022, 'hero', ['v', 1 / 3, 0.03, 'w1', ['v', 0.5, -0.03, 'w2', 'w3']]],
+          panels: [
+            { id: 'hero', art: 'c6/cover-hero', alt: 'Kamome Wharf at dusk: the quad flying past the red port tower, a crane and a big orange sky.' },
+            { id: 'w1', art: 'c6/cover-w1', alt: 'Momiji Pass: the quad over a mountain road through autumn trees.', link: 'c6-p1' },
+            { id: 'w2', art: 'c6/cover-w2', alt: 'Hyoura Island: the quad low over floes of drift ice.', link: 'c6-p2' },
+            { id: 'w3', art: 'c6/cover-w3', alt: 'Kumoi Towers: the face of a tower, rows of windows, the street below.', link: 'c6-p3' }
+          ],
+          words: [
+            { k: 'tag', x: 74, y: 80, t: 'Chapter 06', in: 'hero' },
+            { k: 'letter', x: 74, y: 290, size: 176, anchor: 'start', max: 680, runs: [['WEB', 'cream'], ['FPV', 'sakura']], in: 'hero' },
+            { k: 'letter', x: 84, y: 410, size: 72, anchor: 'start', max: 700, runs: [['TWENTY TWO NEW MAPS', 'mint']], in: 'hero' },
+            { k: 'tag', x: 76, y: 470, t: '31 October 2026', in: 'hero' },
+            { k: 'tag', x: 66, y: 1002, t: 'The pass', in: 'w1' },
+            { k: 'letter', x: 60, y: 1342, size: 44, anchor: 'start', max: 270, runs: [['MOMIJI', 'mint']], in: 'w1' },
+            { k: 'tag', x: 372, y: 1024, t: 'The ice', in: 'w2' },
+            { k: 'letter', x: 352, y: 1342, size: 44, anchor: 'start', max: 270, runs: [['HYOURA', 'sakura']], in: 'w2' },
+            { k: 'tag', x: 700, y: 1044, t: 'The towers', in: 'w3' },
+            { k: 'letter', x: 690, y: 1342, size: 44, anchor: 'start', max: 250, runs: [['KUMOI', 'cream']], in: 'w3' }
+          ]
+        },
+        {
+          id: 'c6-p1',
+          label: 'Mountains',
+          tone: 'paper',
+          layout: ['h', 0.26, 0, 'a', ['h', 0.5, 0.04, ['v', 0.5, -0.04, 'b', 'c'], 'd']],
+          panels: [
+            { id: 'a', fill: 'ink', alt: 'A black panel with words on it.' },
+            { id: 'b', art: 'c6/p1-b', alt: 'Momiji Pass: a red bridge carries the road over a gorge, autumn trees all round.' },
+            { id: 'c', art: 'c6/p1-c', alt: 'Kodama Onsen: an old building through the trunks of a cedar forest.' },
+            { id: 'd', art: 'c6/p1-d', bleed: 'blr', alt: 'Raicho Ridge from the air: a snowy peak, the slopes below it and a lake in the valley.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '31 October', in: 'a' },
+            { k: 'cap', x: 70, y: 130, w: 860, big: true, t: 'Twenty two new maps landed in one go, all in the town\'s manga look. Here they are, one by one.', in: 'a' },
+            { k: 'cap', x: 60, yb: 900, w: 300, t: 'Momiji Pass. Autumn hairpins and a red bridge.', in: 'b' },
+            { k: 'cap', x: 540, yb: 900, w: 300, t: 'Kodama Onsen. An old inn in the cedars.', in: 'c' },
+            { k: 'note', x: 70, yb: 1360, w: 460, d: '31 October', t: 'Raicho Ridge. A high ridge in the Japanese Alps. Dive the south face and drop to the lake.', in: 'd', small: true }
+          ]
+        },
+        {
+          id: 'c6-p2',
+          label: 'The coast',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c6/p2-a', bleed: 'tlr', alt: 'Kazesuna Dunes: the quad over a big slope of sand, the sea and its sand fences beyond.' },
+            { id: 'b', art: 'c6/p2-b', alt: 'Shiokaze Point from the sea: hotel blocks along a rock island, sea stacks in the water.' },
+            { id: 'c', art: 'c6/p2-c', bleed: 'blr', alt: 'Hyoura Island: a snowy island and its harbour, floes of ice in the sea.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '31 October', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 480, t: 'Kazesuna Dunes. A dune coast on the Sea of Japan. Surf the big ridge, then race twelve bamboo gates to the sea and back.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 380, t: 'Shiokaze Point. A resort on a rock island, closed for years. Strafe the hotel balconies.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '31 October', t: 'Hyoura Island. A winter island in the drift ice. Skim the floes.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c6-p3',
+          label: 'The city',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, ['v', 0.5, -0.04, 'a', 'b'], ['v', 0.5, 0.04, 'c', 'd']],
+          panels: [
+            { id: 'a', art: 'c6/p3-a', bleed: 'tl', alt: 'Kumoi Towers: the quad beside a tall tower, looking up into a blue sky.' },
+            { id: 'b', art: 'c6/p3-b', bleed: 'tr', alt: 'Ekimae Drift from the air: the expressway, the station roofs and a brick railway viaduct.' },
+            { id: 'c', art: 'c6/p3-c', bleed: 'bl', alt: 'Tsukimi Danchi: the quad over a railway viaduct, blocks of flats beside it.' },
+            { id: 'd', art: 'c6/p3-d', bleed: 'br', alt: 'Hinode Park: the quad over a pond and a lawn, cherry trees and houses round the park.' }
+          ],
+          words: [
+            { k: 'cap', x: 60, y: 60, w: 400, t: 'Kumoi Towers. A tower city to dive, right from the very top.', in: 'a' },
+            { k: 'cap', x: 540, y: 60, w: 400, t: 'Ekimae Drift. A street drift event round a station, under the expressway and the tracks.', in: 'b' },
+            { k: 'cap', x: 60, yb: 1360, w: 400, t: 'Tsukimi Danchi. An abandoned housing estate in the city, a viaduct right beside it.', in: 'c' },
+            { k: 'cap', x: 540, yb: 1360, w: 400, t: 'Hinode Park. A city park at golden hour.', in: 'd' }
+          ]
+        },
+        {
+          id: 'c6-p4',
+          label: 'Port and works',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c6/p4-a', bleed: 'tlr', alt: 'Kamome Wharf at dusk: rows of stacked containers, a yellow crane, ship to shore cranes and the red port tower.' },
+            { id: 'b', art: 'c6/p4-b', alt: 'Hamakaze Works: a red and white stack, pipe racks and white gas spheres.' },
+            { id: 'c', art: 'c6/p4-c', bleed: 'blr', alt: 'Kazami Airfield from the air: a long strip, a big hangar and fields in a valley.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '31 October', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 480, t: 'Kamome Wharf. A container terminal. Canyons of boxes, the big cranes and the port tower.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 380, t: 'Hamakaze Works. The stack, the pipe racks and the gas spheres.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '31 October', t: 'Kazami Airfield. A grass strip in a mountain valley. Fly the hangar front to back.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c6-p5',
+          label: 'Motorsport',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, ['v', 0.5, -0.04, 'a', 'b'], ['v', 0.5, 0.04, 'c', 'd']],
+          panels: [
+            { id: 'a', art: 'c6/p5-a', bleed: 'tl', alt: 'Hayate Circuit: the quad over the pit lane, the garages and a grandstand.' },
+            { id: 'b', art: 'c6/p5-b', bleed: 'tr', alt: 'Tanada RX: the quad over a corner of the circuit, kerbs and trees round it.' },
+            { id: 'c', art: 'c6/p5-c', bleed: 'bl', alt: 'Bakuon Dome from the air: a big stadium, its roof open over the floor, the car park round it.' },
+            { id: 'd', art: 'c6/p5-d', bleed: 'br', alt: 'Shiroyama FMX: a dirt show arena between two grandstands, the castle keep beyond it.' }
+          ],
+          words: [
+            { k: 'cap', x: 60, y: 60, w: 400, t: 'Hayate Circuit. GT cars lap it flat out. Thread the pit garages.', in: 'a' },
+            { k: 'cap', x: 540, y: 60, w: 400, t: 'Tanada RX. Rallycross on tarmac and gravel, six cars racing.', in: 'b' },
+            { k: 'cap', x: 60, yb: 1360, w: 400, t: 'Bakuon Dome. A dirt floored stadium with monster trucks inside.', in: 'c' },
+            { k: 'cap', x: 540, yb: 1360, w: 400, t: 'Shiroyama FMX. Riders flip off the kickers in a castle park.', in: 'd' }
+          ]
+        },
+        {
+          id: 'c6-p6',
+          label: 'Countryside',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c6/p6-a', bleed: 'tlr', alt: 'Hotaru Valley from the air: rice paddies, farmhouses, a harbour and a red torii standing in the sea.' },
+            { id: 'b', art: 'c6/p6-b', alt: 'Kazahana Plain: the quad over an avenue of trees, hot air balloons in the sky.' },
+            { id: 'c', art: 'c6/p6-c', bleed: 'blr', alt: 'Tonbo Fest: the quad over a row of food stalls and parked cars by the river.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '31 October', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 480, t: 'Hotaru Valley. Rice paddies, farmhouses, and a torii standing in the sea.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 380, t: 'Kazahana Plain. Climb the balloon meet, then cruise the avenue.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '31 October', t: 'Tonbo Fest. A drone racing festival on the river ground. Sixteen gates in one lap.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c6-p7',
+          label: 'Indoors and ruins',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c6/p7-a', bleed: 'tlr', alt: 'Hoshino Shoji: the sales floor from a whoop, desks, blue chairs and shelves of files.' },
+            { id: 'b', art: 'c6/p7-b', bleed: 'blr', alt: 'Kirigaoka Sanatorium: a long three storey building on a hill, a clock tower in the middle.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '31 October', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 460, t: 'Hoshino Shoji. A trading company after hours, flown on a whoop. Desks, a boardroom, and an empty lift shaft top to bottom.', in: 'a' },
+            { k: 'note', x: 70, yb: 1360, w: 460, d: '31 October', t: 'Kirigaoka Sanatorium. Abandoned on a hill. Fly the long corridor and thread the clock tower.', in: 'b', small: true }
+          ]
+        },
+        {
+          id: 'c6-p8',
+          label: 'Next',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c6/p8-a', bleed: 'tlr', alt: 'Momiji Pass from above: the road winding up through the autumn forest.' },
+            {
+              id: 'b',
+              fill: 'paper',
+              fx: [{ k: 'focus', at: [0.5, 0.56], r: [0.46, 0.3], n: 130, alpha: 0.7 }],
+              alt: 'A panel labelled Chapter 07, with one question lettered across it: what\'s coming next?'
+            }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 420, t: 'Twenty two maps in one night. Pick one and go for a fly.', in: 'a' },
+            { k: 'tag', x: 80, y: 880, t: 'Chapter 07', in: 'b' },
             { k: 'letter', x: 500, y: 1100, size: 96, rot: -3, max: 820, runs: [['WHAT\'S COMING ', 'cream'], ['NEXT?', 'sakura']], in: 'b' },
             { k: 'fly', x: 500, y: 1200, t: 'FLY NOW', name: 'Fly WebFPV', href: 'https://webfpv.org/sim/', in: 'b' }
           ]
