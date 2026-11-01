@@ -1159,8 +1159,8 @@
             },
             {
               id: 'w3',
-              fill: 'paper',
-              alt: 'A panel held for the Career card on the gate, with its three facts: 50 lessons, Angle to Acro, Medals.',
+              art: 'c3/cover-w3',
+              alt: 'The picture on the gate\'s Career card: a field, a yellow ring and a low sun.',
               link: 'c3-p10'
             }
           ],
@@ -1281,8 +1281,8 @@
               fx: [{ k: 'focus', at: [0.5, 0.6], r: [0.42, 0.26], n: 120, colour: 'paper', alpha: 0.2 }]
             },
             { id: 'b', art: 'c3/p6-b', alt: 'Goats graze in the field, a round gate among the pines behind them.' },
-            { id: 'c', fill: 'paper', alt: 'A panel held for a first person frame of the goats running from the quad across the field.' },
-            { id: 'd', fill: 'paper', bleed: 'blr', alt: 'A panel held for the moment a goat is caught: it hops.' }
+            { id: 'c', art: 'c3/goats-run', alt: 'Two goats run across the field from the quad, a round gate between them.' },
+            { id: 'd', art: 'c3/goat-catch', bleed: 'blr', alt: 'A caught goat hops high off the grass, the pines and a round gate behind it.' }
           ],
           words: [
             { k: 'cap', x: 70, y: 70, w: 560, t: 'Five goats graze in the field. Come within 24 m and they run.', in: 'a' },
@@ -1304,8 +1304,8 @@
               bleed: 'tlr',
               alt: 'Nick at his black patio table under the red umbrella, the pool behind him.'
             },
-            { id: 'b', fill: 'paper', alt: 'A panel held for a frame of the whoop landed on the patio table, Nick\'s balloon reading out the flight.' },
-            { id: 'c', fill: 'paper', bleed: 'blr', alt: 'A panel held for the second balloon, after a pause: Ah, not 6 7 again.' }
+            { id: 'b', art: 'c3/nick-table-1', alt: 'The whoop landed on the patio table, Nick smiling in his balloon: 3 oh 4 in the flight time, 3.47, 46 battery voltage.' },
+            { id: 'c', art: 'c3/nick-table-2', bleed: 'blr', alt: 'Nick at the table again, frowning in his balloon: Ah, not 6 7 again.' }
           ],
           words: [
             { k: 'cap', x: 70, y: 70, w: 480, t: 'Back at Nick\'s. Land on his patio table while he sits there, and he reads out the flight.', in: 'a' },

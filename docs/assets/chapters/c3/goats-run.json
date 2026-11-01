@@ -1,0 +1,17 @@
+{
+  "id": "goats-run",
+  "treatment": "colour",
+  "from": "goats-run",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 4,
+    "top": 0,
+    "width": 833,
+    "height": 840
+  },
+  "framing": null,
+  "clip": null
+}

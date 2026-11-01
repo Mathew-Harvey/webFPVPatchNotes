@@ -1,0 +1,17 @@
+{
+  "id": "goat-catch",
+  "treatment": "colour",
+  "from": "goat-catch",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 0,
+    "top": 1,
+    "width": 1238,
+    "height": 646
+  },
+  "framing": null,
+  "clip": null
+}

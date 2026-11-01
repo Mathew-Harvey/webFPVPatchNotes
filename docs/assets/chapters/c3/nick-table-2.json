@@ -1,0 +1,17 @@
+{
+  "id": "nick-table-2",
+  "treatment": "colour",
+  "from": "nick-table-2",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 8,
+    "top": 0,
+    "width": 378,
+    "height": 626
+  },
+  "framing": null,
+  "clip": null
+}
