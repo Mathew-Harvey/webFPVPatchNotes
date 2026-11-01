@@ -1,0 +1,17 @@
+{
+  "id": "jb-sticker-find",
+  "treatment": "colour",
+  "from": "jb-sticker-find",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1440,
+    "height": 1066
+  },
+  "framing": null,
+  "clip": null
+}

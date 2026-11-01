@@ -1,0 +1,17 @@
+{
+  "id": "career-medal",
+  "treatment": "colour",
+  "from": "career-medal",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1024,
+    "height": 674
+  },
+  "framing": null,
+  "clip": null
+}

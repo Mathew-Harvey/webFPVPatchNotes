@@ -1,0 +1,17 @@
+{
+  "id": "all-splash",
+  "treatment": "colour",
+  "from": "all-splash",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1280,
+    "height": 1066
+  },
+  "framing": null,
+  "clip": null
+}

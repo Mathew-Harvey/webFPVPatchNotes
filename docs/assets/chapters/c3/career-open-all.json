@@ -1,0 +1,17 @@
+{
+  "id": "career-open-all",
+  "treatment": "colour",
+  "from": "career-open-all",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1019,
+    "height": 532
+  },
+  "framing": null,
+  "clip": null
+}

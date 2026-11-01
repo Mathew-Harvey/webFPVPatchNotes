@@ -1,0 +1,17 @@
+{
+  "id": "webleed-sign",
+  "treatment": "colour",
+  "from": "webleed-sign",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 0,
+    "top": 1,
+    "width": 1280,
+    "height": 623
+  },
+  "framing": null,
+  "clip": null
+}

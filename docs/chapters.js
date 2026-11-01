@@ -1258,7 +1258,7 @@
           tone: 'paper',
           layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
           panels: [
-            { id: 'a', fill: 'paper', bleed: 'tlr', alt: 'A panel held for a frame of a JB sticker found on Joshua Bardwell\'s house, its callout on screen.' },
+            { id: 'a', art: 'c3/jb-sticker-find', bleed: 'tlr', alt: 'The quad on the porch, a sticker found, the Stickers callout on screen: On the porch, 1 of 12.' },
             { id: 'b', art: 'c3/p5-b', alt: 'The porch of Joshua Bardwell\'s house, a JB sticker on the front door.' },
             { id: 'c', art: 'c3/p5-c', bleed: 'blr', alt: 'A doghouse in the yard with a JB sticker on its front.' }
           ],
@@ -1349,7 +1349,7 @@
               alt: 'A black panel with a word lettered across it: ALL 10!',
               fx: [{ k: 'focus', at: [0.5, 0.6], r: [0.42, 0.26], n: 120, colour: 'paper', alpha: 0.2 }]
             },
-            { id: 'b', fill: 'paper', bleed: 'blr', alt: 'A panel held for the ALL 10! splash on Nick Burns\' house, Every sticker found.' }
+            { id: 'b', art: 'c3/all-splash', bleed: 'blr', alt: 'The ALL 10! splash over the kitchen island sticker: Every sticker found.' }
           ],
           words: [
             { k: 'cap', x: 70, y: 70, w: 640, t: 'Find the last sticker of a map\'s set and the screen says so.', in: 'a' },
@@ -1364,7 +1364,7 @@
           tone: 'paper',
           layout: ['h', 0.56, 0.03, 'a', 'b'],
           panels: [
-            { id: 'a', fill: 'paper', bleed: 'tlr', alt: 'A panel held for the gate with the Career card first: 50 lessons, Angle to Acro, Medals.' },
+            { id: 'a', art: 'c3/career-gate', bleed: 'tlr', alt: 'The gate, the Career card first, beside Five Inch Racing and Whoop Racing.' },
             {
               id: 'b',
               fill: 'ink',
@@ -1385,8 +1385,8 @@
           tone: 'paper',
           layout: ['h', 0.56, 0.03, 'a', 'b'],
           panels: [
-            { id: 'a', fill: 'paper', bleed: 'tlr', alt: 'A panel held for the briefing of the first lesson, Lift Off, with its drawing of the sticks.' },
-            { id: 'b', fill: 'paper', bleed: 'blr', alt: 'A panel held for a lesson\'s medal screen.' }
+            { id: 'a', art: 'c3/career-1-1-briefing', bleed: 'tlr', alt: 'The briefing of Lesson 1.1, Lift Off, with its drawing of the sticks and its medal times.' },
+            { id: 'b', art: 'c3/career-medal', bleed: 'blr', alt: 'The medal screen of Lesson 1.1: Complete, Gold, 0:12.6.' }
           ],
           words: [
             { k: 'cap', x: 70, y: 70, w: 480, t: 'Lesson one: lift the quad off the pad, hold it between one and three metres for five seconds, then land.', in: 'a' },
@@ -1401,8 +1401,8 @@
           layout: ['h', 0.3, 0, 'a', ['h', 0.5, 0.03, 'b', 'c']],
           panels: [
             { id: 'a', fill: 'ink', alt: 'A black panel with the ten chapters of the Career listed on it, in order.' },
-            { id: 'b', fill: 'paper', bleed: 'lr', alt: 'A panel held for the Career chapter list.' },
-            { id: 'c', fill: 'paper', bleed: 'blr', alt: 'A panel held for the button that reads I already fly: open every chapter.' }
+            { id: 'b', art: 'c3/career-chapters', bleed: 'lr', alt: 'The Career screen, its chapters along the top from First Hover, the five lessons of the first below.' },
+            { id: 'c', art: 'c3/career-open-all', bleed: 'blr', alt: 'The foot of the Career screen, the button that reads I already fly: open every chapter.' }
           ],
           words: [
             { k: 'cap', x: 70, y: 70, w: 860, big: true, t: 'First Hover, Angle Mode Navigation, Switching to Acro, Big Gaps, Flips and Rolls, Segmented Flips and Rolls, Gates, Racing, Freestyle, Pro Licence.', in: 'a' },
@@ -1417,8 +1417,8 @@
           layout: ['h', 0.3, 0, 'a', ['h', 0.5, 0.03, 'b', 'c']],
           panels: [
             { id: 'a', fill: 'ink', alt: 'A black panel with a name lettered across it: weBLEEDfpv.' },
-            { id: 'b', fill: 'paper', bleed: 'lr', alt: 'A panel held for the weBLEEDfpv sign in a freestyle map.' },
-            { id: 'c', fill: 'paper', bleed: 'blr', alt: 'A panel held for the weBLEEDfpv card on the board\'s partners page.' }
+            { id: 'b', art: 'c3/webleed-sign', bleed: 'lr', alt: 'The weBLEEDfpv sign on its stand in a freestyle map, a goat grazing behind.' },
+            { id: 'c', art: 'c3/webleed-board', bleed: 'blr', alt: 'The weBLEEDfpv card on the board\'s partners page: Official USA micro drone partner.' }
           ],
           words: [
             { k: 'tag', x: 70, y: 70, t: '20 October', in: 'a' },

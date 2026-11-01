@@ -1,0 +1,17 @@
+{
+  "id": "career-chapters",
+  "treatment": "colour",
+  "from": "career-chapters",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1440,
+    "height": 701
+  },
+  "framing": null,
+  "clip": null
+}

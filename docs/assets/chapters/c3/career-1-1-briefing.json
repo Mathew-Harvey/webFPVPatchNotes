@@ -1,0 +1,17 @@
+{
+  "id": "career-1-1-briefing",
+  "treatment": "colour",
+  "from": "career-1-1-briefing",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1024,
+    "height": 842
+  },
+  "framing": null,
+  "clip": null
+}
