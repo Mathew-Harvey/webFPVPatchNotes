@@ -1,0 +1,20 @@
+{
+  "id": "p6-b",
+  "treatment": "colour",
+  "from": "p6-b",
+  "world": "moto",
+  "simulator": "/index.html?map=moto&craft=5inch&fly=1",
+  "commit": "883f799",
+  "frame": [
+    936,
+    1312
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 936,
+    "height": 1312
+  },
+  "framing": null,
+  "clip": null
+}

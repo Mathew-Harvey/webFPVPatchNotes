@@ -1,0 +1,20 @@
+{
+  "id": "cover-w3",
+  "treatment": "colour",
+  "from": "cover-w3",
+  "world": "moto",
+  "simulator": "/index.html?map=moto&craft=5inch&fly=1",
+  "commit": "883f7994",
+  "frame": [
+    560,
+    707
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 560,
+    "height": 707
+  },
+  "framing": null,
+  "clip": null
+}

@@ -542,6 +542,62 @@ Fourteen pages: the cover and thirteen, 27 and 28 October 2026. The owner's ask 
 
 All `file` jobs from the project's shared folder, named with their pull request in the `note` of each sidecar in `captures/c5/`. Used: `multiplayer/shots/showcase`, `multiplayer/shots/2026-10-26-final`, `multiplayer/overview-cam`, `multiplayer/map-vote`, `goat-herding`, `drift-matsuri`, `sunnyfield`, `props-in-view`, and the simulator-drawn frames in `tcmore-warehouse/shots-v2`. Not used: the photographs and stills of real places beside them.
 
+## Chapter 7. Game night
+
+Eleven pages: the cover and ten, 28 to 30 October 2026. The owner's ask of 1 November: add Chapter 7 for what reached the simulator's `main` after chapter 5, up to the end of 30 October, and "really work to improve the quality of the comic". Dates are Perth time (AWST) as the notes give them. Chapter 6 (Twenty two new maps) is on `main` already; its page table and FACTS were never written into this file, so its letter, L, is left free and this chapter takes M. Every picture is a frame the simulator drew, from a checkout at 883f799; see Chapter 7 pictures.
+
+| Page | Beat | Lettered | Pictures |
+| --- | --- | --- | --- |
+| Cover | The book | WEBFPV, GAME NIGHT, 28 to 30 October 2026. Panels: The ribbons, SNIP; The ball, GOAL; The track, MX. | A dogfight; a ribbon streaming; Quad Ball after a goal; the Ridgeline MX start straight. |
+| 1 | Dogfight | M-04, M-05, M-06, M-07 | A dogfight; the POP card; the phone's GUN and MISSILE. |
+| 2 | Ribbon cutting | M-08, M-09, M-10 | Three frames of ribbons streaming. |
+| 3 | More games | M-11, M-12, M-13, M-14 | Goat herding with bots, two frames; Drift Matsuri with bots; the Mini games page. |
+| 4 | Two small things | M-15, M-16 | A goat in the street; the Konex Drone logo on its own. |
+| 5 | Quad Ball | M-17, M-18, M-19 | The goal burst; the kickoff count; up the pitch. |
+| 6 | Ridgeline MX | M-20, M-21, M-22 | The start straight; the bikes; the take card. |
+| 7 | Career | M-23, M-24, M-25 | The skill tree; a lesson in the shop; the Paint Shop. |
+| 8 | Quad picker | M-26, M-27 | The picker for the town; a whoop in the town. |
+| 9 | Also | M-28, M-29, M-30 | Sunnyfield's gardens and streets; the take card. |
+| 10 | Next | M-31 | The town from above; the blank panel and FLY NOW. |
+
+| Id | Line | Source |
+| --- | --- | --- |
+| M-01 | "Chapter 07" and "GAME NIGHT" | The book's own title for the chapter. The cover tag on Chapter 1 reads "New: Chapter 07, Game night". |
+| M-02 | "28 to 30 October 2026" | The span of the pull requests and commits below, in Perth time. |
+| M-03 | "SNIP", "GOAL", "MX" and the three panel tags | The game's own words for a cut ribbon (SNIP!, simulator PR 180) and a goal (GOAL!, PR 184), and the map's initials (PR 185). |
+| M-04 | "Dogfight. Guns, missiles and bots, on any map, alone or in a room." | Simulator PR 179 (on `main` on 29 October with PR 180 and the bug hunt, PR 181): guns, missiles, bots, the arena picker on any map, and its room version (commit 28f2165). |
+| M-05 | "Get popped and you are straight back in." | PR 179: a hit pilot is popped and put back in the air after a short wait (the card says BACK IN). |
+| M-06 | "On a phone, GUN and MISSILE sit beside the right thumb plate." | Commit cb4bacc (29 October): "GUN and MISSILE beside the right thumb plate, not on it". |
+| M-07 | "Up to seven bots, rookie to ace, and each has its own habits. Missiles can be dodged. In a room the host fills the roster with bots." | PR 179: bots none to seven, skills rookie, pilot and ace, seven personalities, missiles that lose a target outside their seeker cone; commit 28f2165 and commit a9e5f58 (Fill the roster). |
+| M-08 | "Ribbon cutting. Every quad trails a ribbon. Cut the others and keep yours. The last pilot with a ribbon wins." | PR 180 (landed on `main` inside the dogfight's merge, 29 October): the owner's ask of 04:04Z. |
+| M-09 | "Alone against bots, on any map." | PR 180, solo with bots on any map. |
+| M-10 | "Or in a room, with the host's bots in the empty seats." | PR 180: rooms, and the host's bots flying in seats. |
+| M-11 | "Goat herding with bots. Push the goats home. Most goats wins the round." | Commit 3e2c46c (29 October): "Goat herding with bots: a round, most goats wins". |
+| M-12 | "In a room there is one herd for everybody, and the host's bots join in." | Commits 0231461 and 0967468 (29 October): goat herding in a room, the host's herd, with the host's bots. |
+| M-13 | "Drift Matsuri with bots. Everyone films the cars, and the best reel wins." | Commits e9d5b0c, 0967468 and 7edea00 (29 October): best reel wins, solo and in rooms. |
+| M-14 | "Every game sits on the Mini games page. A bug hunt over all of them went in too." | The Mini games page (commit fb469d7, 29 October); PR 181, the mini games bug hunt. |
+| M-15 | "Patron goats. Every patron adds one more goat to the goat herding map." | PR 182. Nothing about tiers, names or amounts is lettered, and no plate is read in any picture: main's list still holds three made up EXAMPLE entries. |
+| M-16 | "Konex Drone. A small Konex Drone logo is hidden in every map. Some are in hard to reach spots." | PR 183 (29 October). The name is spelled as the simulator's partner roster spells it. No map frame shows a logo and nothing says where one is. |
+| M-17 | "Quad Ball. Rocket League with quads. Pink against mint, and the ball goes in their goal." | PR 184 (on `main` 30 October): the owner's ask of 29 October, "rocket league but with quads". |
+| M-18 | "One against one up to three against three, with bots or in a room." | PR 184: matches from 1v1 to 3v3 alone with bots and in rooms with bots. |
+| M-19 | "The arena has stands, a crowd and a cage of light. Goals set off fireworks." | PR 184: the arena art passes (commits 70a863f, 7e99887) and the goal fireworks (commit 4d90d80). |
+| M-20 | "Ridgeline MX. A motocross track on the Mini games page. Fly the camera behind the pack and film it for a minute." | PR 185 (30 October): a motocross chase cam mini game on the Mini games page, modelled on Drift Matsuri. |
+| M-21 | "Ten bikes in three packs. They whip, scrub, lean and throw roost." | PR 185: ten bikes in three packs; whip, scrub, lean and roost. |
+| M-22 | "A finish arch, bunting, marshal huts and advertising boards line the start straight. Best reel wins." | Commits 9477fa8 (finish arch, bunting, marshal huts) and 90de503 (advertising boards); PR 185 (best reel wins). No board's lettering is read. |
+| M-23 | "The career is a skill tree now. Fly the trunk to the Rookie Licence, then grow Race or Freestyle." | PR 171 (28 October): the tree, the trunk of four lessons ending in the Rookie Licence, then Race and Freestyle. |
+| M-24 | "73 lessons in 18 parts. Many of them are flown in the real maps." | PR 171 and its PROGRESS entry: 73 lessons in 18 parts, lessons in the houses, the shop, the town, the drift map and board maps and tracks. |
+| M-25 | "Finish a part to earn a livery for your quad. Your career title shows beside your name in a room." | PR 171: every part flown all the way through earns a livery (18 and the house paint); the title is sent to a room and printed beside the handle. |
+| M-26 | "Pick your quad. Fly the five inch or the whoop on any freestyle world. The page says which one the map was built for." | PR 173 (28 October) and commit 0f57f60: the picker, Recommended on the map's quad, and the manga page before every map. |
+| M-27 | "A sweep afterwards made sure everything follows the quad you pick: your props, your chase view and the other pilots in a room." | PR 178 (28 October): props in view, the ghost, the room's quads and the chase rig follow the world scale. |
+| M-28 | "Sunnyfield is set dressed. Window boxes, patio sets, grills, bins and bikes." | PR 177 (28 October): the dressing on every house and shop. |
+| M-29 | "The take card goes when you tap it. Its labels follow the map." | Commit 6722107 (30 October): tap to dismiss, map specific labels. |
+| M-30 | "A craft wedged at the foot of a wall is set down." | Commit d431970 (29 October), bug ticket 6c405527. |
+| M-31 | "Bots, ribbons, a ball and a dirt track in three days. Pick a game and go for a fly.", "Chapter 08", "THE GAME WILL KEEP BUILDING.", "FLY NOW" | Dogfight and ribbons with bots, a ball and a motocross track are PRs 179, 180, 184 and 185 over 28 to 30 October. The last page is as chapters 4 and 5 ended (F-27, F-28, K-35): the one link out, to https://webfpv.org/sim/. Chapter 6's last page now leads into this one and carries no link. |
+
+### Chapter 7 pictures
+
+Rig frames, from the simulator at 883f799 served from a checkout and run through `tools/shoot/c7.js`: the page is booted into the mini game on its own map, the bots fly, and the camera is put beside a bot with the simulator's own camera override. The goat frames (3-a, 4-a) and the goat table (3-b) are the lower half of the goat thread's frames (`goat-herding/polish`, `mini-games/shots`, PR 167 and commit 3e2c46c), because the rig could not frame a herd. The Quad Ball frames came from the simulator's own `scripts/ball-check.js --shots`, the career lesson from the career thread's frames (`career-skill-tree/build-2`, PR 171) and the Ridgeline start straight from the motocross thread's (`moto-chase/pass3`, PR 185); those are `file` jobs, and every sidecar in `captures/c7/` names its pull request. Three pictures are changed only by what is hidden or cut in the frame, never painted: the Mini games page (3-d) is cut to its left two columns and has its tag chips and the store chip hidden, because one card's thumbnail carries a name the book never letters; the picker (8-a) is cut above the line that names the tune; no frame shows a hidden Konex Drone logo. The Konex Drone panel is the logo file the simulator serves, by itself. The take card and the picker are the simulator's own pages.
+
 ## What is not lettered
 
 - A whoop mass, in grams or any other unit. Not 16 g, not 23.4 g, not 710 g on a whoop panel. Chapter 2 keeps to it: its whoop page letters the gravity and the motors, not the mass.
@@ -556,6 +612,7 @@ All `file` jobs from the project's shared folder, named with their pull request 
 - Chapter 3 leaves out: Dan judging the pilot in every RaceGOW room (his lines are written by Mat and Claude, not his own words, and the owner has not said yes), Heads' shouted lines (placeholders), the camera angle slider and the Air grip slider's new top (small), the default tunes (no picture), xWallow's name (the owner has not said to credit it), the goats being solid or crashable (they are not), the claim that every other map is silent (the goats play Nick's clip on Joshua Bardwell's map), and any claim the sources do not make.
 - Chapter 4 leaves out: multiplayer rooms, the front screen's Fly solo or Multiplayer choice and the pilot builder (simulator PRs 153, 156 and 157, and the multiplayer commits), which are behind `?mp=1` and not public yet; anything for the Steam edition (board PRs 36 and 37); the board's `?ref=` tag count (board PR 40); the board's concurrent flyers history (board PR 38), which is an API and which no page shows; Heads' and Dan's lines in the simulator (placeholders); the JSL trick's tier; the prices, tiers and amounts of any plan; any claim about speed, delay or smoothness, including the pull requests' own latency notes; anything about Betaflight.
 - Chapter 5 leaves out: the quad picker (PR 173) and the career skill tree (PR 171), which are open drafts and not on `main`; anything for the Steam edition; any claim about speed, delay or smoothness, including the pull requests' own latency notes and the town drawing less on Low; the multipliers and score numbers of Drift Matsuri; counts, scale and sizes of any map; the Sunnyfield plant's board of days without a mishap, and any word that names another show or town; the names of the real people behind the pilot builder's parts, and the photographs and stills of real places and people; typed chat in a public room; Betaflight.
+- Chapter 7 leaves out: anything for the Steam edition; the deploy's minify and the town's lower quality buckets (commit 8c008d7, which is internal); every latency, speed, delay or smoothness claim, including the pull requests' own latency notes and the arena's entries in PROGRESS.md; Patreon names, tiers and amounts, with the patron goats (PR 182) lettered only as one more goat for each patron; where any hidden Konex Drone logo hangs, and the logo challenge and prizes it belongs to; every brand on the Ridgeline MX boards; the bots' names as anything but names on the screen; Quad Ball's quick match and its door (30 October, after the owner's word on matchmaking, still to be settled in the board's CLAUDE.md), its ball spin and cushioned touches, and everything merged on 31 October and 1 November (Chapter 6's maps, the bug board fixes, the thumb stick size, the title page's Fly solo and Multiplayer, Quad Ball's rematch vote). Heads' and Dan's lines are placeholders and are not quoted.
 
 ## Self review
 

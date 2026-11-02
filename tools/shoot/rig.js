@@ -78,7 +78,7 @@ async function readPreset(id) {
  */
 async function open(browser, world, viewport) {
   const proxy = world.fetchFromNode && process.env.HTTPS_PROXY ? { server: process.env.HTTPS_PROXY } : undefined;
-  const ctx = await browser.newContext({ viewport, deviceScaleFactor: world.dpr || 1, proxy });
+  const ctx = await browser.newContext({ viewport, deviceScaleFactor: world.dpr || 1, proxy, hasTouch: Boolean(world.touch), isMobile: Boolean(world.touch) });
   await routeThree(ctx);
   if (world.fetchFromNode) {
     /* A live page, fetched by the rig's own Node side, which trusts what the

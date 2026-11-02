@@ -1,0 +1,20 @@
+{
+  "id": "p1-c",
+  "treatment": "colour",
+  "from": "p1-c",
+  "world": "phone",
+  "simulator": "/index.html?map=city&craft=5inch&fly=1",
+  "commit": "883f799",
+  "frame": [
+    844,
+    390
+  ],
+  "crop": {
+    "left": 239,
+    "top": 0,
+    "width": 366,
+    "height": 390
+  },
+  "framing": null,
+  "clip": null
+}

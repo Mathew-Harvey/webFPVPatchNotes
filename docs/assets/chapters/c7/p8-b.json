@@ -1,0 +1,20 @@
+{
+  "id": "p8-b",
+  "treatment": "colour",
+  "from": "p8-b",
+  "world": "whoopcity",
+  "simulator": "/index.html?map=city&craft=whoop&fly=1",
+  "commit": "883f799",
+  "frame": [
+    1872,
+    1232
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1872,
+    "height": 1232
+  },
+  "framing": null,
+  "clip": null
+}

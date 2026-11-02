@@ -1,0 +1,20 @@
+{
+  "id": "p10-a",
+  "treatment": "colour",
+  "from": "p10-a",
+  "world": "df",
+  "simulator": "/index.html?map=city&craft=5inch&fly=1",
+  "commit": "883f7994",
+  "frame": [
+    1872,
+    1539
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1872,
+    "height": 1539
+  },
+  "framing": null,
+  "clip": null
+}

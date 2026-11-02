@@ -88,7 +88,7 @@
             { k: 'letter', x: 84, y: 420, size: 96, anchor: 'start', max: 560, runs: [['FLY DECENT', 'mint']], in: 'hero' },
             { k: 'head', x: 76, y: 470, w: 520, t: 'How a browser sim got built, in the words of the pilot who built it.', in: 'hero' },
             { k: 'sub', x: 76, y: 600, w: 420, t: 'andAgainFPV', in: 'hero' },
-            { k: 'tag', x: 76, y: 680, t: 'New: Chapter 05, Rooms and mini games', in: 'hero' },
+            { k: 'tag', x: 76, y: 680, t: 'New: Chapter 07, Game night', in: 'hero' },
             { k: 'tag', x: 66, y: 1002, t: 'The gate', in: 'w1' },
             { k: 'letter', x: 60, y: 1342, size: 44, anchor: 'start', max: 246, runs: [['THE QUESTION', 'mint']], in: 'w1' },
             { k: 'tag', x: 372, y: 1024, t: 'The builder', in: 'w2' },
@@ -2154,14 +2154,225 @@
               id: 'b',
               fill: 'paper',
               fx: [{ k: 'focus', at: [0.5, 0.56], r: [0.46, 0.3], n: 130, alpha: 0.7 }],
-              alt: 'A panel labelled Chapter 07, with one question lettered across it: what\'s coming next?'
+              alt: 'A panel labelled Chapter 07, with the next chapter\'s title lettered across it: game night.'
             }
           ],
           words: [
-            { k: 'cap', x: 70, y: 70, w: 420, t: 'Twenty two maps in one night. Pick one and go for a fly.', in: 'a' },
+            { k: 'cap', x: 70, y: 70, w: 420, t: 'Twenty two maps in one night. Pick one and go for a fly. Then the games come out.', in: 'a' },
             { k: 'tag', x: 80, y: 880, t: 'Chapter 07', in: 'b' },
-            { k: 'letter', x: 500, y: 1100, size: 96, rot: -3, max: 820, runs: [['WHAT\'S COMING ', 'cream'], ['NEXT?', 'sakura']], in: 'b' },
-            { k: 'fly', x: 500, y: 1200, t: 'FLY NOW', name: 'Fly WebFPV', href: 'https://webfpv.org/sim/', in: 'b' }
+            { k: 'letter', x: 500, y: 1100, size: 96, rot: -3, max: 820, runs: [['NEXT: ', 'cream'], ['GAME NIGHT', 'sakura']], in: 'b' }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'c7',
+      n: 7,
+      title: 'Game night',
+      date: '30 October 2026',
+      sources: [
+        'Commits merged to main in the simulator (Mathew-Harvey/WebFPVSimulator) from 28 to 30 October 2026: pull requests 171, 173, 177 to 185 and the commits named in STORYBOARD.md',
+        'Frames drawn by the simulator at 883f799 for this chapter, listed in tools/shoot/c7.js'
+      ],
+      pages: [
+        {
+          id: 'c7-cover',
+          label: 'Cover',
+          tone: 'paper',
+          layout: ['h', 0.7, 0.022, 'hero', ['v', 1 / 3, 0.03, 'w1', ['v', 0.5, -0.03, 'w2', 'w3']]],
+          panels: [
+            { id: 'hero', art: 'c7/cover-hero', alt: 'A dogfight in the town: a street between houses seen from the pilot\'s quad, bot quads named over the rooftops, the health, gun and missile bars at the left.' },
+            { id: 'w1', art: 'c7/cover-w1', alt: 'Ribbon cutting in the town: a street seen from a quad, a ribbon trailing along the road, a line that says Ribbons out, and the count of cuts and ribbons left.', link: 'c7-p2' },
+            { id: 'w2', art: 'c7/cover-w2', alt: 'Quad Ball: GOAL! lettered across the arena from the pilot\'s view, the stands full of fans on both sides.', link: 'c7-p5' },
+            { id: 'w3', art: 'c7/cover-w3', alt: 'Ridgeline MX: a brown dirt jump right under the camera with the track and pine trees beyond, the film recording marks round the edge of the picture.', link: 'c7-p6' }
+          ],
+          words: [
+            { k: 'tag', x: 74, y: 80, t: 'Chapter 07', in: 'hero' },
+            { k: 'letter', x: 74, y: 290, size: 176, anchor: 'start', max: 680, runs: [['WEB', 'cream'], ['FPV', 'sakura']], in: 'hero' },
+            { k: 'letter', x: 84, y: 410, size: 104, anchor: 'start', max: 640, runs: [['GAME NIGHT', 'mint']], in: 'hero' },
+            { k: 'tag', x: 76, y: 470, t: '28 to 30 October 2026', in: 'hero' },
+            { k: 'tag', x: 66, y: 1002, t: 'The ribbons', in: 'w1' },
+            { k: 'letter', x: 60, y: 1342, size: 44, anchor: 'start', max: 270, runs: [['SNIP', 'mint']], in: 'w1' },
+            { k: 'tag', x: 372, y: 1024, t: 'The ball', in: 'w2' },
+            { k: 'letter', x: 352, y: 1342, size: 44, anchor: 'start', max: 270, runs: [['GOAL', 'sakura']], in: 'w2' },
+            { k: 'tag', x: 700, y: 1044, t: 'The track', in: 'w3' },
+            { k: 'letter', x: 690, y: 1342, size: 44, anchor: 'start', max: 250, runs: [['MX', 'cream']], in: 'w3' }
+          ]
+        },
+        {
+          id: 'c7-p1',
+          label: 'Dogfight',
+          tone: 'paper',
+          layout: ['h', 0.26, 0, 'a', ['h', 0.5, 0.04, ['v', 0.5, -0.04, 'b', 'c'], 'd']],
+          panels: [
+            { id: 'a', fill: 'ink', alt: 'A black panel with words on it.' },
+            { id: 'b', art: 'c7/p1-b', alt: 'POP! lettered across the screen in a comic burst, with a line under it saying MOCHI got you with the gun and a count that says Back in 3.' },
+            { id: 'c', art: 'c7/p1-c', alt: 'A phone held sideways in flight, with two round buttons, GUN and MISSILE, beside the right thumb.' },
+            { id: 'd', art: 'c7/p1-d', bleed: 'blr', alt: 'A dogfight over the town from above the rooftops: bot quads with names over them, and the health, gun and missile bars at the left.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '29 October', in: 'a' },
+            { k: 'cap', x: 70, y: 130, w: 860, big: true, t: 'Dogfight. Guns, missiles and bots, on any map, alone or in a room.', in: 'a' },
+            { k: 'cap', x: 60, yb: 900, w: 300, t: 'Get popped and you are straight back in.', in: 'b' },
+            { k: 'cap', x: 540, yb: 900, w: 300, t: 'On a phone, GUN and MISSILE sit beside the right thumb plate.', in: 'c' },
+            { k: 'note', x: 70, yb: 1360, w: 500, d: '29 October', t: 'Up to seven bots, rookie to ace, and each has its own habits. Missiles can be dodged. In a room the host fills the roster with bots.', in: 'd', small: true }
+          ]
+        },
+        {
+          id: 'c7-p2',
+          label: 'Ribbon cutting',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c7/p2-a', bleed: 'tlr', alt: 'Ribbon cutting over the town: a street between rooftops, name tags over the other quads, a red ribbon laid across the road ahead.' },
+            { id: 'b', art: 'c7/p2-b', alt: 'The ribbon game\'s screen in flight: a count of ribbons left, the clock, a name tag over each quad and a ribbon curling down toward the rooftops.' },
+            { id: 'c', art: 'c7/p2-c', bleed: 'blr', alt: 'A street seen from above in the ribbon game, a red and white ribbon laid across the road beside a bus.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '29 October', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 500, t: 'Ribbon cutting. Every quad trails a ribbon. Cut the others and keep yours. The last pilot with a ribbon wins.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 380, t: 'Alone against bots, on any map.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '29 October', t: 'Or in a room, with the host\'s bots in the empty seats.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c7-p3',
+          label: 'More games',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, ['v', 0.5, -0.04, 'a', 'b'], ['v', 0.5, 0.04, 'c', 'd']],
+          panels: [
+            { id: 'a', art: 'c7/p3-a', bleed: 'tl', alt: 'Goat herding: a knot of goats trotting along a street past a house, each with a picture on its side.' },
+            { id: 'b', art: 'c7/p3-b', bleed: 'tr', alt: 'The goat herding table at the end of a round: GIZMO WINS, with each pilot and the goats they got home.' },
+            { id: 'c', art: 'c7/p3-c', bleed: 'bl', alt: 'Drift Matsuri: a blue drift car sliding round a corner in a cloud of white smoke, the pits and the cherry trees beyond, the film recording marks round the edge of the picture.' },
+            { id: 'd', art: 'c7/p3-d', bleed: 'br', alt: 'The Mini games page: picture cards for Dogfight, Ribbon cutting, Drift Matsuri and Quad Ball, each with a line of rules and tags for bots and friends.' }
+          ],
+          words: [
+            { k: 'cap', x: 60, y: 60, w: 400, t: 'Goat herding with bots. Push the goats home. Most goats wins the round.', in: 'a' },
+            { k: 'cap', x: 540, y: 60, w: 400, t: 'A round ends with a table. In a room there is one herd for everybody, and the host\'s bots join in.', in: 'b' },
+            { k: 'cap', x: 60, yb: 1360, w: 400, t: 'Drift Matsuri with bots. Everyone films the cars, and the best reel wins.', in: 'c' },
+            { k: 'cap', x: 540, yb: 1360, w: 400, t: 'Every game sits on the Mini games page. A bug hunt over all of them went in too.', in: 'd' }
+          ]
+        },
+        {
+          id: 'c7-p4',
+          label: 'Two small things',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c7/p4-a', bleed: 'tlr', alt: 'Goats grazing on a lawn in front of a house on the goat herding map.' },
+            { id: 'b', art: 'c7/p4-b', bleed: 'blr', alt: 'The Konex Drone logo.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '29 October', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 460, t: 'Patron goats. Every patron adds one more goat to the goat herding map.', in: 'a' },
+            { k: 'note', x: 70, yb: 1360, w: 460, d: '29 October', t: 'Konex Drone. A small Konex Drone logo is hidden in every map. Some are in hard to reach spots.', in: 'b', small: true }
+          ]
+        },
+        {
+          id: 'c7-p5',
+          label: 'Quad Ball',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c7/p5-a', bleed: 'tlr', alt: 'Quad Ball: GOAL! lettered across the arena, the score and clock at the top, the stands full of fans.' },
+            { id: 'b', art: 'c7/p5-b', alt: 'Quad Ball kickoff: a countdown over the pitch, the stands on both sides.' },
+            { id: 'c', art: 'c7/p5-c', bleed: 'blr', alt: 'Quad Ball: a countdown of 1 over the pitch, the other quads and the ball at the far end, the stands on both sides.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '30 October', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 500, t: 'Quad Ball. Rocket League with quads. Pink against mint, and the ball goes in their goal.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 380, t: 'One against one up to three against three, with bots or in a room.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '30 October', t: 'The arena has stands, a crowd and a cage of light. Goals set off fireworks.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c7-p6',
+          label: 'Ridgeline MX',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c7/p6-a', bleed: 'tlr', alt: 'Ridgeline MX: a dirt start straight with a chequered arch at the far end and pine trees either side.' },
+            { id: 'b', art: 'c7/p6-b', alt: 'Ridgeline MX: a rider in green on a red dirt bike on a wooden ramp, dust flying.' },
+            { id: 'c', art: 'c7/p6-c', bleed: 'blr', alt: 'The take card after a run on Ridgeline MX, with a line that says tap for another take.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '30 October', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 500, t: 'Ridgeline MX. A motocross track on the Mini games page. Fly the camera behind the pack and film it for a minute.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 380, t: 'Ten bikes in three packs. They whip, scrub, lean and throw roost.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '30 October', t: 'A finish arch, bunting, marshal huts and advertising boards line the start straight. Best reel wins.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c7-p7',
+          label: 'Career',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c7/p7-a', bleed: 'tlr', alt: 'The career skill tree: a trunk of lessons that splits into Race and Freestyle branches, each part a card.' },
+            { id: 'b', art: 'c7/p7-b', alt: 'A career lesson briefing: SHOP DOORS in big letters over a picture of the shop, a guide\'s speech bubble, and boxes for the job, the sticks and the stars.' },
+            { id: 'c', art: 'c7/p7-c', bleed: 'blr', alt: 'The Paint Shop: a quad and a grid of liveries to pick from.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '28 October', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 500, t: 'The career is a skill tree now. Fly the trunk to the Rookie Licence, then grow Race or Freestyle.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 380, t: '73 lessons in 18 parts. Many of them are flown in the real maps.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '28 October', t: 'Finish a part to earn a livery for your quad. Your career title shows beside your name in a room.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c7-p8',
+          label: 'Quad picker',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c7/p8-a', bleed: 'tlr', alt: 'The quad picker page for the town: a five inch and a whoop side by side, the five inch marked Recommended.' },
+            { id: 'b', art: 'c7/p8-b', bleed: 'blr', alt: 'A street of the town from a whoop\'s own camera, low between the houses, power lines overhead.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '28 October', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 460, t: 'Pick your quad. Fly the five inch or the whoop on any freestyle world. The page says which one the map was built for.', in: 'a' },
+            { k: 'note', x: 70, yb: 1360, w: 460, d: '28 October', t: 'A sweep afterwards made sure everything follows the quad you pick: your props, your chase view and the other pilots in a room.', in: 'b', small: true }
+          ]
+        },
+        {
+          id: 'c7-p9',
+          label: 'Also',
+          tone: 'paper',
+          layout: ['h', 0.26, 0, 'a', ['h', 0.5, 0.04, ['v', 0.5, -0.04, 'b', 'c'], 'd']],
+          panels: [
+            { id: 'a', fill: 'ink', alt: 'A black panel with words on it.' },
+            { id: 'b', art: 'c7/p9-b', alt: 'Sunnyfield: back gardens behind two houses, a trampoline, fences, shrubs and flowers.' },
+            { id: 'c', art: 'c7/p9-c', alt: 'The take card on Drift Matsuri after a take, graded D, with its lines and a button that says tap for another take.' },
+            { id: 'd', art: 'c7/p9-d', bleed: 'blr', alt: 'Sunnyfield from above: rows of house yards with small pools, play sets, beds and trees, fences between them.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: 'Also, 28 to 30 October', in: 'a' },
+            { k: 'cap', x: 70, y: 130, w: 860, big: true, t: 'Smaller things went in too.', in: 'a' },
+            { k: 'cap', x: 60, yb: 900, w: 300, t: 'Sunnyfield is set dressed. Window boxes, patio sets, grills, bins and bikes.', in: 'b' },
+            { k: 'cap', x: 540, yb: 900, w: 300, t: 'The take card goes when you tap it. Its labels follow the map.', in: 'c' },
+            { k: 'note', x: 70, yb: 1360, w: 500, d: '29 October', t: 'A craft wedged at the foot of a wall is set down.', in: 'd', small: true }
+          ]
+        },
+        {
+          id: 'c7-p10',
+          label: 'Next',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c7/p10-a', bleed: 'tlr', alt: 'The town from above in the evening light, tiled rooftops and trees, with name tags floating over the quads flying across it.' },
+            {
+              id: 'b',
+              fill: 'paper',
+              fx: [{ k: 'focus', at: [0.5, 0.56], r: [0.46, 0.3], n: 130, alpha: 0.7 }],
+              alt: 'A panel labelled Chapter 08, with one line lettered across it: the game will keep building.'
+            }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 420, t: 'Bots, ribbons, a ball and a dirt track in three days. Pick a game and go for a fly.', in: 'a' },
+            { k: 'tag', x: 80, y: 860, t: 'Chapter 08', in: 'b' },
+            { k: 'letter', x: 500, y: 1010, size: 84, rot: -3, max: 820, runs: [['THE GAME WILL ', 'cream']], in: 'b' },
+            { k: 'letter', x: 500, y: 1110, size: 84, rot: -3, max: 820, runs: [['KEEP BUILDING.', 'sakura']], in: 'b' },
+            { k: 'fly', x: 500, y: 1220, t: 'FLY NOW', name: 'Fly WebFPV', href: 'https://webfpv.org/sim/', in: 'b' }
           ]
         }
       ]

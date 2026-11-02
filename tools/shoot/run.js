@@ -133,7 +133,10 @@ async function main() {
         await rig.pose(page, framing);
       }
       const base = path.join(out, shot.id);
-      const clip = shot.clip ? { x: shot.clip[0], y: shot.clip[1], width: shot.clip[2], height: shot.clip[3] } : null;
+      /* A clip may be a function of the page, for a frame whose crop depends
+       * on where the page laid something out. */
+      const clipBox = typeof shot.clip === 'function' ? await shot.clip(page) : shot.clip;
+      const clip = clipBox ? { x: clipBox[0], y: clipBox[1], width: clipBox[2], height: clipBox[3] } : null;
       const settle = shot.settle || 1600;
       if (shot.paper) {
         await rig.paperPass(page, 'matte', shot.paper.probes, shot.paper.sun);
@@ -158,7 +161,7 @@ async function main() {
         commit,
         frame: [W, H],
         framing,
-        clip: shot.clip || null,
+        clip: clipBox || null,
         paper: Boolean(shot.paper),
         note: shot.note || ''
       };

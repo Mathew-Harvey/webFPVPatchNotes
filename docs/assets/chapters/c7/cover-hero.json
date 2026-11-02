@@ -1,0 +1,20 @@
+{
+  "id": "cover-hero",
+  "treatment": "colour",
+  "from": "cover-hero",
+  "world": "df",
+  "simulator": "/index.html?map=city&craft=5inch&fly=1",
+  "commit": "883f799",
+  "frame": [
+    1741,
+    1804
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1741,
+    "height": 1804
+  },
+  "framing": null,
+  "clip": null
+}

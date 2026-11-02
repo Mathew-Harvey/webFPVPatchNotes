@@ -1,0 +1,20 @@
+{
+  "id": "cover-w1",
+  "treatment": "colour",
+  "from": "cover-w1",
+  "world": "rb",
+  "simulator": "/index.html?map=city&craft=5inch&fly=1",
+  "commit": "883f799",
+  "frame": [
+    604,
+    781
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 604,
+    "height": 781
+  },
+  "framing": null,
+  "clip": null
+}

@@ -1,0 +1,25 @@
+{
+  "id": "p3-d",
+  "treatment": "colour",
+  "from": "p3-d",
+  "world": "title",
+  "simulator": "/index.html",
+  "commit": "883f7994",
+  "frame": [
+    995,
+    1296
+  ],
+  "crop": {
+    "left": 0,
+    "top": 119,
+    "width": 640,
+    "height": 833
+  },
+  "framing": null,
+  "clip": [
+    30,
+    180,
+    640,
+    1070
+  ]
+}

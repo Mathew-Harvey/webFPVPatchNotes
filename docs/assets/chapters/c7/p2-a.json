@@ -1,0 +1,20 @@
+{
+  "id": "p2-a",
+  "treatment": "colour",
+  "from": "p2-a",
+  "world": "rb",
+  "simulator": "/index.html?map=city&craft=5inch&fly=1",
+  "commit": "883f799",
+  "frame": [
+    1872,
+    1386
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1872,
+    "height": 1386
+  },
+  "framing": null,
+  "clip": null
+}

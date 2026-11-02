@@ -1,0 +1,20 @@
+{
+  "id": "p3-c",
+  "treatment": "colour",
+  "from": "p3-c",
+  "world": "drift",
+  "simulator": "/index.html?map=drift&craft=5inch&fly=1",
+  "commit": "883f799",
+  "frame": [
+    984,
+    1385
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 984,
+    "height": 1385
+  },
+  "framing": null,
+  "clip": null
+}
