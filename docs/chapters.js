@@ -88,7 +88,7 @@
             { k: 'letter', x: 84, y: 420, size: 96, anchor: 'start', max: 560, runs: [['FLY DECENT', 'mint']], in: 'hero' },
             { k: 'head', x: 76, y: 470, w: 520, t: 'How a browser sim got built, in the words of the pilot who built it.', in: 'hero' },
             { k: 'sub', x: 76, y: 600, w: 420, t: 'andAgainFPV', in: 'hero' },
-            { k: 'tag', x: 76, y: 680, t: 'New: Chapter 07, Game night', in: 'hero' },
+            { k: 'tag', x: 76, y: 680, t: 'New: Chapter 08, Two new worlds', in: 'hero' },
             { k: 'tag', x: 66, y: 1002, t: 'The gate', in: 'w1' },
             { k: 'letter', x: 60, y: 1342, size: 44, anchor: 'start', max: 246, runs: [['THE QUESTION', 'mint']], in: 'w1' },
             { k: 'tag', x: 372, y: 1024, t: 'The builder', in: 'w2' },
@@ -2364,12 +2364,195 @@
               id: 'b',
               fill: 'paper',
               fx: [{ k: 'focus', at: [0.5, 0.56], r: [0.46, 0.3], n: 130, alpha: 0.7 }],
-              alt: 'A panel labelled Chapter 08, with one line lettered across it: the game will keep building.'
+              alt: 'A paper panel, labelled Chapter 08, with its title lettered across it: Two new worlds. The next page starts it.'
             }
           ],
           words: [
             { k: 'cap', x: 70, y: 70, w: 420, t: 'Bots, ribbons, a ball and a dirt track in three days. Pick a game and go for a fly.', in: 'a' },
             { k: 'tag', x: 80, y: 860, t: 'Chapter 08', in: 'b' },
+            { k: 'letter', x: 500, y: 1110, size: 100, rot: -3, max: 820, runs: [['TWO NEW ', 'cream'], ['WORLDS', 'sakura']], in: 'b' },
+            { k: 'sub', x: 160, y: 1180, w: 680, t: 'Turn the page.', center: true, in: 'b' }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'c8',
+      n: 8,
+      title: 'Two new worlds',
+      date: '3 November 2026',
+      sources: [
+        'Pull requests merged to main in the simulator (Mathew-Harvey/WebFPVSimulator) from 1 to 3 November 2026: 208 to 217, 219 and 220, with the board pull requests 63, 64, 66 and 67 and the front page commit f415510 (Mathew-Harvey/landingpage-WebFPVSimulator-)',
+        'Frames drawn by the simulator at f23ce7f for this chapter, listed in tools/shoot/c8.js'
+      ],
+      pages: [
+        {
+          id: 'c8-cover',
+          label: 'Cover',
+          tone: 'paper',
+          layout: ['h', 0.7, 0.022, 'hero', ['v', 1 / 3, 0.03, 'w1', ['v', 0.5, -0.03, 'w2', 'w3']]],
+          panels: [
+            { id: 'hero', art: 'c8/cover-hero', alt: 'Hanabi Sound at dusk: the main stage lit up at the far end of a field, the crowd packed in front of it, and an orange sky behind.' },
+            { id: 'w1', art: 'c8/cover-w1', alt: 'Yumeboshi Land: a roller coaster track climbing past a castle and looping over a lake.', link: 'c8-p2' },
+            { id: 'w2', art: 'c8/cover-w2', alt: 'A Quad Ball results card with three buttons, Rematch, Fly on and Leave, over the arena stands.', link: 'c8-p3' },
+            { id: 'w3', art: 'c8/cover-w3', alt: 'A phone held sideways in flight, with two round thumb sticks on the glass.', link: 'c8-p5' }
+          ],
+          words: [
+            { k: 'tag', x: 74, y: 80, t: 'Chapter 08', in: 'hero' },
+            { k: 'letter', x: 74, y: 290, size: 176, anchor: 'start', max: 680, runs: [['WEB', 'cream'], ['FPV', 'sakura']], in: 'hero' },
+            { k: 'letter', x: 84, y: 410, size: 76, anchor: 'start', max: 640, runs: [['TWO NEW WORLDS', 'mint']], in: 'hero' },
+            { k: 'tag', x: 76, y: 470, t: '1 to 3 November 2026', in: 'hero' },
+            { k: 'tag', x: 66, y: 1002, t: 'The coaster', in: 'w1' },
+            { k: 'letter', x: 60, y: 1342, size: 44, anchor: 'start', max: 270, runs: [['WHOOSH', 'mint']], in: 'w1' },
+            { k: 'tag', x: 372, y: 1024, t: 'The room', in: 'w2' },
+            { k: 'letter', x: 352, y: 1342, size: 44, anchor: 'start', max: 270, runs: [['AGAIN', 'sakura']], in: 'w2' },
+            { k: 'tag', x: 700, y: 1044, t: 'The phone', in: 'w3' },
+            { k: 'letter', x: 690, y: 1342, size: 44, anchor: 'start', max: 250, runs: [['THUMB', 'cream']], in: 'w3' }
+          ]
+        },
+        {
+          id: 'c8-p1',
+          label: 'Hanabi Sound',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c8/p1-a', bleed: 'tlr', alt: 'Hanabi Sound at dusk: the pilot low over the crowd, the main stage ahead with its screens lit and its roof of lights.' },
+            { id: 'b', art: 'c8/p1-b', alt: 'Hanabi Sound after dark: fireworks bursting over the field and lasers fanning out across the sky.' },
+            { id: 'c', art: 'c8/p1-c', bleed: 'blr', alt: 'Hanabi Sound: the ferris wheel at the edge of the grounds against the dusk sky.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '3 November', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 500, t: 'Hanabi Sound. A dance festival at dusk. A main stage, a crowd at the barrier, and fireworks over the field.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 380, t: 'Lasers fan out across the sky and the crowd jumps to the beat.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '3 November', t: 'There is a ferris wheel, bars, food trucks and a sound desk in its tent. Named gaps to thread include one under the decks and one through the big wheel.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c8-p2',
+          label: 'Yumeboshi Land',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c8/p2-a', bleed: 'tlr', alt: 'Yumeboshi Land: a roller coaster track on tall teal columns, a loop in the distance, a lake and a castle.' },
+            { id: 'b', art: 'c8/p2-b', alt: 'Yumeboshi Land: the hub of the park, a carousel with a red roof, the castle and the big wheel.' },
+            { id: 'c', art: 'c8/p2-c', bleed: 'blr', alt: 'Yumeboshi Land: the rides in the middle of the park, a big wheel and a carousel under a golden sky.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '3 November', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 500, t: 'Yumeboshi Land. A theme park with a roller coaster to fly. A chain lift, a drop, a loop, a helix and a tunnel through the dragon mountain.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 380, t: 'A gate, a main street of shops, a hub with a carousel, a castle and a lake with swan boats.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '3 November', t: 'The big wheel, the carousel, the drop tower and the other rides move, and they are solid where they are drawn. A train runs the coaster.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c8-p3',
+          label: 'Quad Ball rooms',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c8/p3-a', bleed: 'tlr', alt: 'A Quad Ball room before the kickoff: a countdown number over the pilot\'s pad, the score and a clock at the top, and the room card at the right.' },
+            { id: 'b', art: 'c8/p3-b', alt: 'The Quad Ball results card: the winners, a table of the four pilots and three buttons, Rematch, Fly on and Leave.' },
+            { id: 'c', art: 'c8/p3-c', bleed: 'blr', alt: 'The Quad Ball results card after one Rematch: the line under the buttons says one of two needed.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '1 November', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 500, t: 'Quad Ball rooms got fixed up. The match clock runs, and each pilot starts at their own team\'s end.', in: 'a' },
+            { k: 'note', x: 70, y: 330, w: 500, d: '1 November', t: 'Every mini game now asks how you want to play: with bots, make a game or join with a code.', in: 'a', small: true },
+            { k: 'cap', x: 70, yb: 1360, w: 380, t: 'When a match ends everybody gets Rematch, Fly on or Leave.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '1 November', t: 'More than half the pilots asking starts the next match. A pilot who leaves keeps a bot in their seat, and a pilot left alone gets a bot to play.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c8-p4',
+          label: 'Sound',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c8/p4-a', bleed: 'tlr', alt: 'A quad sitting on its start pad at dusk with the festival stage glowing behind it, just before take off.' },
+            {
+              id: 'b',
+              fill: 'paper',
+              fx: [{ k: 'focus', at: [0.5, 0.56], r: [0.46, 0.3], n: 130, alpha: 0.7 }],
+              alt: 'A paper panel with one sound lettered across it: THOCK.'
+            }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '2 November', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 460, t: 'The sounds got softer. Cues are rounder, clicks and crashes start slower with less top end, and the wind is a steadier, lower hush.', in: 'a' },
+            { k: 'letter', x: 500, y: 1030, size: 150, rot: -4, max: 820, runs: [['THOCK', 'sakura']], in: 'b' },
+            { k: 'cap', x: 160, y: 1130, w: 680, t: 'Landing and take off are a deep thock now, and the motors have more body.', center: true, in: 'b' }
+          ]
+        },
+        {
+          id: 'c8-p5',
+          label: 'Phone play',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c8/p5-a', bleed: 'tlr', alt: 'The Settings page on a phone held sideways, with the Thumb stick size row set to Large.' },
+            { id: 'b', art: 'c8/p5-b', bleed: 'blr', alt: 'A dogfight on a phone held sideways: two large round thumb sticks and the GUN and MISSILE buttons beside the right one.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '1 and 2 November', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 500, t: 'Thumb stick size. On a touchscreen, pick Small, Normal or Large sticks. Bigger sticks are easier to hit and give your thumb more room.', in: 'a' },
+            { k: 'note', x: 70, yb: 1360, w: 520, d: '2 November', t: 'In the mini games the GUN and MISSILE buttons follow the stick size. On the ground they fade away, and in the air they come back.', in: 'b', small: true }
+          ]
+        },
+        {
+          id: 'c8-p6',
+          label: 'The manga look',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, ['v', 0.5, -0.04, 'a', 'b'], ['v', 0.5, 0.04, 'c', 'd']],
+          panels: [
+            { id: 'a', art: 'c8/p6-a', bleed: 'tl', alt: 'Cedar Forest: layered conifers drawn with pointed layers and ink lines, and inked tufts of grass on the lawn.' },
+            { id: 'b', art: 'c8/p6-b', bleed: 'tr', alt: 'Hyoura Island: a sea drawn as inked swell in cold blues beside a snowy shore.' },
+            { id: 'c', art: 'c8/p6-c', bleed: 'bl', alt: 'Momiji Pass: the car park the pilot starts in, worn asphalt with repair patches and a darker fresh aisle.' },
+            { id: 'd', art: 'c8/p6-d', bleed: 'br', alt: 'Hayate Circuit: the pit roof with seams across it and a walkway with a yellow safety line.' }
+          ],
+          words: [
+            { k: 'cap', x: 60, y: 60, w: 400, t: 'The new maps got a manga pass. Conifers are drawn as layers of points and the grass is inked in tufts.', in: 'a' },
+            { k: 'cap', x: 540, y: 60, w: 400, t: 'Hyoura Island has an inked sea. Shiokaze Point\'s cliffs show rock seams.', in: 'b' },
+            { k: 'cap', x: 60, yb: 1360, w: 400, t: 'Momiji Pass. The car park is worn asphalt with repair patches.', in: 'c' },
+            { k: 'cap', x: 540, yb: 1360, w: 400, t: 'Hayate Circuit. The pit roof has seams, a walkway and its name painted on.', in: 'd' }
+          ]
+        },
+        {
+          id: 'c8-p7',
+          label: 'Also',
+          tone: 'paper',
+          layout: ['h', 0.26, 0, 'a', ['h', 0.5, 0.04, ['v', 0.5, -0.04, 'b', 'c'], 'd']],
+          panels: [
+            { id: 'a', fill: 'ink', alt: 'A black panel with words on it.' },
+            { id: 'b', art: 'c8/p7-b', alt: 'The title cover of the game with two choices, Fly solo and Multiplayer.' },
+            { id: 'c', art: 'c8/p7-c', alt: 'The board\'s Maps page: a grid of picture cards, one for each world.' },
+            { id: 'd', art: 'c8/p7-d', bleed: 'blr', alt: 'The partner row on the front page of webfpv.org, with the Konex Drone mark among the partners.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: 'Also, 1 to 3 November', in: 'a' },
+            { k: 'cap', x: 70, y: 130, w: 860, big: true, t: 'Smaller things went in too.', in: 'a' },
+            { k: 'note', x: 70, y: 235, w: 860, d: '1 November', t: 'A fly note pass on the new maps made what is drawn solid, so a gap you can see is a gap you can fly.', in: 'a', small: true },
+            { k: 'cap', x: 60, yb: 900, w: 300, t: 'The title cover asks one thing: Fly solo or Multiplayer. Mini games moved under Fly solo.', in: 'b' },
+            { k: 'cap', x: 540, yb: 900, w: 300, t: 'The board\'s Maps page takes its worlds from the simulator\'s own list.', in: 'c' },
+            { k: 'note', x: 60, yb: 1360, w: 330, d: '1 November', t: 'Konex Drone is on the front page as our Spanish partner.', in: 'd', small: true }
+          ]
+        },
+        {
+          id: 'c8-p8',
+          label: 'Next',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c8/p8-a', bleed: 'tlr', alt: 'Yumeboshi Land from above in golden light: the coaster, the lake, the castle and the big wheel.' },
+            {
+              id: 'b',
+              fill: 'paper',
+              fx: [{ k: 'focus', at: [0.5, 0.56], r: [0.46, 0.3], n: 130, alpha: 0.7 }],
+              alt: 'A panel labelled Chapter 09, with one line lettered across it: the game will keep building.'
+            }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 420, t: 'A festival at dusk and a theme park with a roller coaster. Pick one and go for a fly.', in: 'a' },
+            { k: 'tag', x: 80, y: 860, t: 'Chapter 09', in: 'b' },
             { k: 'letter', x: 500, y: 1010, size: 84, rot: -3, max: 820, runs: [['THE GAME WILL ', 'cream']], in: 'b' },
             { k: 'letter', x: 500, y: 1110, size: 84, rot: -3, max: 820, runs: [['KEEP BUILDING.', 'sakura']], in: 'b' },
             { k: 'fly', x: 500, y: 1220, t: 'FLY NOW', name: 'Fly WebFPV', href: 'https://webfpv.org/sim/', in: 'b' }
@@ -2377,6 +2560,7 @@
         }
       ]
     }
+
   ];
 
   root.CHAPTERS = CHAPTERS;

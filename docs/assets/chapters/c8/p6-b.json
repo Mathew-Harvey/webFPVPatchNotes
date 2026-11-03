@@ -1,0 +1,20 @@
+{
+  "id": "p6-b",
+  "treatment": "colour",
+  "from": "p6-b",
+  "world": "arctic",
+  "simulator": "/index.html?map=arctic&craft=5inch&fly=1",
+  "commit": "f23ce7f",
+  "frame": [
+    994,
+    1385
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 994,
+    "height": 1385
+  },
+  "framing": null,
+  "clip": null
+}

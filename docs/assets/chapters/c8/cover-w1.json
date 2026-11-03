@@ -1,0 +1,20 @@
+{
+  "id": "cover-w1",
+  "treatment": "colour",
+  "from": "cover-w1",
+  "world": "yume",
+  "simulator": "/index.html?map=yume&craft=5inch&fly=1",
+  "commit": "f23ce7f",
+  "frame": [
+    604,
+    781
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 604,
+    "height": 781
+  },
+  "framing": null,
+  "clip": null
+}

@@ -1,0 +1,20 @@
+{
+  "id": "cover-w3",
+  "treatment": "colour",
+  "from": "cover-w3",
+  "world": "phoneFree",
+  "simulator": "/index.html?map=city&craft=5inch&fly=1",
+  "commit": "f23ce7f",
+  "frame": [
+    844,
+    390
+  ],
+  "crop": {
+    "left": 268,
+    "top": 0,
+    "width": 309,
+    "height": 390
+  },
+  "framing": null,
+  "clip": null
+}

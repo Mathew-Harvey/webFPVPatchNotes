@@ -1,0 +1,20 @@
+{
+  "id": "p8-a",
+  "treatment": "colour",
+  "from": "p8-a",
+  "world": "yume",
+  "simulator": "/index.html?map=yume&craft=5inch&fly=1",
+  "commit": "f23ce7f",
+  "frame": [
+    1872,
+    1539
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1872,
+    "height": 1539
+  },
+  "framing": null,
+  "clip": null
+}

@@ -1,0 +1,20 @@
+{
+  "id": "p6-d",
+  "treatment": "colour",
+  "from": "p6-d",
+  "world": "hayate",
+  "simulator": "/index.html?map=hayate&craft=5inch&fly=1",
+  "commit": "f23ce7f",
+  "frame": [
+    995,
+    1296
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 995,
+    "height": 1296
+  },
+  "framing": null,
+  "clip": null
+}

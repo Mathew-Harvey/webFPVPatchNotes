@@ -1,0 +1,20 @@
+{
+  "id": "cover-hero",
+  "treatment": "colour",
+  "from": "cover-hero",
+  "world": "concert",
+  "simulator": "/index.html?map=concert&craft=5inch&fly=1",
+  "commit": "f23ce7f",
+  "frame": [
+    1741,
+    1804
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1741,
+    "height": 1804
+  },
+  "framing": null,
+  "clip": null
+}

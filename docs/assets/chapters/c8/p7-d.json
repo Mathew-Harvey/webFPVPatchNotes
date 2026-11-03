@@ -1,0 +1,17 @@
+{
+  "id": "p7-d",
+  "treatment": "colour",
+  "from": "p7-d",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 0,
+    "top": 24,
+    "width": 370,
+    "height": 208
+  },
+  "framing": null,
+  "clip": null
+}

@@ -47,7 +47,7 @@ async function main() {
   const only = args.slice(1).filter((a) => !a.startsWith('--'));
   const scale = Number(flags.scale || 1);
   const spec = require(path.join(__dirname, chapterId + '.js'));
-  const chapter = CHAPTERS.find((c) => c.id === chapterId);
+  const chapter = CHAPTERS.find((c) => c.id === chapterId) || { pages: [] };
   const out = path.join(rig.ROOT, 'captures', chapterId);
   fs.mkdirSync(out, { recursive: true });
   const shots = spec.shots.filter((s) => !only.length || only.includes(s.id));

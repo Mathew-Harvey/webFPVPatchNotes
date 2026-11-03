@@ -1,0 +1,20 @@
+{
+  "id": "p6-c",
+  "treatment": "colour",
+  "from": "p6-c",
+  "world": "touge",
+  "simulator": "/index.html?map=touge&craft=5inch&fly=1",
+  "commit": "f23ce7f",
+  "frame": [
+    984,
+    1385
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 984,
+    "height": 1385
+  },
+  "framing": null,
+  "clip": null
+}

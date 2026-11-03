@@ -1,0 +1,20 @@
+{
+  "id": "p6-a",
+  "treatment": "colour",
+  "from": "p6-a",
+  "world": "cedar",
+  "simulator": "/index.html?map=cedar&craft=5inch&fly=1",
+  "commit": "f23ce7f",
+  "frame": [
+    984,
+    1307
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 984,
+    "height": 1307
+  },
+  "framing": null,
+  "clip": null
+}
