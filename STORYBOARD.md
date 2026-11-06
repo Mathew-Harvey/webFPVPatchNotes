@@ -662,7 +662,7 @@ Eleven pages: the cover and ten, 3 to 5 November 2026. The owner's ask of 6 Nove
 | 5 | Track of the week | O-15, O-16, O-17 | The Fly solo page; the board's top three ghosts; the Reset to row. |
 | 6 | Fisheye | O-18, O-19 | The town through the fisheye; the Fisheye row. |
 | 7 | Your handle | O-20, O-21 | The pilot editor's Tag tab; the handle lettered. |
-| 8 | 369DRONE | O-22, O-23 | The sign and its FOUND card; the front page's Supporters block. |
+| 8 | 369DRONE | O-22, O-23 | The FOUND card over the back fence; the front page's Supporters block. |
 | 9 | Also | O-24, O-25, O-26, O-27, O-28 | Hanabi Sound and Yumeboshi Land after their cartoon passes. |
 | 10 | Next | O-29 | The night track from above; the blank panel, Chapter 10 and FLY NOW. |
 
