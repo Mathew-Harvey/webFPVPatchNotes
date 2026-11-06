@@ -1,0 +1,20 @@
+{
+  "id": "p2-b",
+  "treatment": "colour",
+  "from": "p2-b",
+  "world": "house",
+  "simulator": "/index.html?map=house&craft=5inch&fly=1",
+  "commit": "013cd22",
+  "frame": [
+    936,
+    1312
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 936,
+    "height": 1312
+  },
+  "framing": null,
+  "clip": null
+}

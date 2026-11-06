@@ -1,0 +1,20 @@
+{
+  "id": "cover-w2",
+  "treatment": "colour",
+  "from": "cover-w2",
+  "world": "solo",
+  "simulator": "/index.html",
+  "commit": "013cd22",
+  "frame": [
+    613,
+    740
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 613,
+    "height": 740
+  },
+  "framing": null,
+  "clip": null
+}

@@ -1,0 +1,25 @@
+{
+  "id": "p5-c",
+  "treatment": "colour",
+  "from": "p5-c",
+  "world": "gateReset",
+  "simulator": "/index.html?map=custom",
+  "commit": "013cd22",
+  "frame": [
+    700,
+    852
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 652,
+    "height": 852
+  },
+  "framing": null,
+  "clip": [
+    0,
+    64,
+    700,
+    852
+  ]
+}

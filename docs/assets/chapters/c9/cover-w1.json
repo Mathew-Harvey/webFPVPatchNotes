@@ -1,0 +1,20 @@
+{
+  "id": "cover-w1",
+  "treatment": "colour",
+  "from": "cover-w1",
+  "world": "shop",
+  "simulator": "/index.html?map=warehouse&craft=5inch&fly=1",
+  "commit": "013cd22",
+  "frame": [
+    604,
+    781
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 604,
+    "height": 781
+  },
+  "framing": null,
+  "clip": null
+}

@@ -1,0 +1,17 @@
+{
+  "id": "p8-a",
+  "treatment": "colour",
+  "from": "p8-a",
+  "world": null,
+  "simulator": null,
+  "commit": null,
+  "frame": null,
+  "crop": {
+    "left": 631,
+    "top": 0,
+    "width": 649,
+    "height": 720
+  },
+  "framing": null,
+  "clip": null
+}

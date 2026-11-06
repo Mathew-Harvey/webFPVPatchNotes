@@ -1,0 +1,20 @@
+{
+  "id": "p10-a",
+  "treatment": "colour",
+  "from": "p10-a",
+  "world": "night",
+  "simulator": "/index.html?map=custom",
+  "commit": "013cd22",
+  "frame": [
+    1872,
+    1539
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1872,
+    "height": 1539
+  },
+  "framing": null,
+  "clip": null
+}

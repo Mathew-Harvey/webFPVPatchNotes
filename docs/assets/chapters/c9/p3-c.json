@@ -1,0 +1,20 @@
+{
+  "id": "p3-c",
+  "treatment": "colour",
+  "from": "p3-c",
+  "world": "day",
+  "simulator": "/index.html?map=custom",
+  "commit": "013cd22",
+  "frame": [
+    1001,
+    1308
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1001,
+    "height": 1308
+  },
+  "framing": null,
+  "clip": null
+}

@@ -1,0 +1,20 @@
+{
+  "id": "p9-c",
+  "treatment": "colour",
+  "from": "p9-c",
+  "world": "yume",
+  "simulator": "/index.html?map=yume&craft=5inch&fly=1",
+  "commit": "013cd22",
+  "frame": [
+    985,
+    1661
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 985,
+    "height": 1661
+  },
+  "framing": null,
+  "clip": null
+}

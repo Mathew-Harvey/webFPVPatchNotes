@@ -44,8 +44,8 @@ const QUIET = '.bug-chip, .osd-air, .osd-air-hint, .tune-invite, .support-prompt
 function boot(map, wait) {
   return async (page) => {
     await page.addStyleTag({ content: QUIET });
-    await page.waitForFunction(() => window.__shellReady === true, null, { timeout: 300000 });
-    await page.waitForFunction((m) => { const x = window.__map && window.__map(); return x && x.ready && x.id === m; }, map, { timeout: 300000 });
+    await page.waitForFunction(() => window.__shellReady === true, null, { timeout: 600000, polling: 1000 });
+    await page.waitForFunction((m) => { const x = window.__map && window.__map(); return x && x.ready && x.id === m; }, map, { timeout: 600000, polling: 1000 });
     await page.waitForFunction(() => { const d = document.querySelector('.name-dialog'); return Boolean(d && !d.hidden && document.querySelector('.qp-page')); }, null, { timeout: 90000 });
     await sleep(500);
     await page.keyboard.press('Enter');
@@ -118,7 +118,7 @@ const overGates = (o, ms) => async (page) => {
 };
 
 /* The pause menu's Settings, scrolled to one row by its label. */
-const settingsRow = (label) => async (page) => {
+const settingsRow = (label, cursor = true) => async (page) => {
   const flying = await page.evaluate(() => window.__ui.screen === 'flight');
   if (flying) {
     await page.evaluate(() => { window.__ui.root.style.visibility = ''; window.__ui.act('pause'); window.__ui.show('paused'); });
@@ -152,14 +152,14 @@ const settingsRow = (label) => async (page) => {
   if (!found) throw new Error('no Settings row ' + label);
   /* The menu's own cursor on the row, so the note beside or under the
    * list is that row's. A pointer hover does not take in a headless page. */
-  await page.evaluate((l) => {
+  await page.evaluate(([l, c]) => {
     const re = new RegExp('^' + l + '$', 'i');
     const i = window.__ui.items().findIndex((x) => x && re.test(x.label || ''));
-    if (i >= 0) window.__ui.setCursor(i);
+    if (i >= 0 && c) window.__ui.setCursor(i);
     /* The flying chip names the track, and the chapter tracks' names are
      * not lettered. */
-    for (const e of document.querySelectorAll('*')) if (e.children.length === 0 && /^Flying$/.test((e.textContent || '').trim())) (e.parentElement || e).style.visibility = 'hidden';
-  }, label);
+    for (const e of document.querySelectorAll('*')) if (e.children.length === 0 && /^Flying$/.test((e.textContent || '').trim()) && e.parentElement && /Chapter/.test(e.parentElement.textContent) && e.parentElement.textContent.length < 80) e.parentElement.style.visibility = 'hidden';
+  }, [label, cursor]);
   await sleep(800);
   await page.evaluate(look, label);
   await sleep(1200);
@@ -193,7 +193,7 @@ const race = (key, file, time) => [key, {
 }];
 
 const worlds = Object.fromEntries([
-  world('shop', 'warehouse'),
+  world('shop', 'warehouse', { settings: Object.assign({ graphics: 'low' }, GUIDES) }),
   world('house', 'house', { settings: Object.assign({ graphics: 'low' }, GUIDES) }),
   world('concert', 'concert', { settings: Object.assign({ graphics: 'low' }, GUIDES) }),
   world('yume', 'yume', { settings: Object.assign({ graphics: 'low' }, GUIDES) }),
@@ -244,8 +244,12 @@ const throughStart = (afterMs) => async (page) => {
     const a = V(g.x - g.az.x * 6, g.y + 1.0, g.z - g.az.z * 6);
     const b = V(g.x + g.az.x * 10, g.y + 1.0, g.z + g.az.z * 10);
     const hd = Math.atan2(g.az.x, g.az.z);
-    await window.__settle(a, hd, 1.2);
-    await window.__fly(window.__ramp(a, b, 3.0, 6), { heading: hd, extraMs: 1200 });
+    /* A slow frame can miss the gate's pass; fly it again until the lap
+     * starts. */
+    for (let k = 0; k < 4 && window.__race().lapStartMs == null; k += 1) {
+      await window.__settle(a, hd, 1.2);
+      await window.__fly(window.__ramp(a, b, 3.0, 6), { heading: hd, extraMs: 1200 });
+    }
     return 1;
   });
   console.log('DBG lap ' + JSON.stringify(await page.evaluate(() => { const r = window.__race(); return { start: r.lapStartMs, next: r.next, g0: r.gates[0], g1: r.gates[1], screen: window.__ui.screen, craft: window.__craftState && window.__craftState(), top: window.__ghost().extrasVisible }; })));
@@ -284,7 +288,8 @@ const throughStart = (afterMs) => async (page) => {
         }
       }
       if (spot) p = [spot.c[0], spot.c[1], spot.c[2]];
-      const back = 3.2 + (spot ? spot.r * 1.6 : 0);
+      const back = 3.5 + (spot ? spot.r * 0.8 : 0);
+      const side = 0.6;
       if (last) {
         const dx = p[0] - last[0];
         const dz = p[2] - last[2];
@@ -295,7 +300,7 @@ const throughStart = (afterMs) => async (page) => {
       const n = Math.hypot(dir[0], dir[2]) || 1;
       const fx = dir[0] / n;
       const fz = dir[2] / n;
-      window.__setCam(p[0] - fx * back + fz * 0.8, p[1] + 0.9, p[2] - fz * back - fx * 0.8, p[0] + fx * 8, p[1] - 0.3, p[2] + fz * 8);
+      window.__setCam(p[0] - fx * back + fz * side, p[1] + 2.6, p[2] - fz * back - fx * side, p[0] + fx * 2, p[1] - 0.4, p[2] + fz * 2);
       requestAnimationFrame(ride);
     };
     ride();
@@ -324,18 +329,18 @@ const jobs = [
   ['p3-c', 'c9-p3', 'c', 'day', overGates({ up: 3, back: -25, side: 8, toward: 1.6, lookUp: 3 }), 'A chapter track\'s tower and dive gate (sim PR 221).'],
   /* 4 night */
   ['p4-a', 'c9-p4', 'a', 'night', overGates({ up: 2.5, back: -8, side: -3, toward: 1.1, lookUp: 2 }), 'The same track at night (sim PRs 222 and 226).'],
-  ['p4-b', 'c9-p4', 'b', 'menus', settingsRow('Race time'), 'The Race time row in Settings (sim PR 226).', { viewport: [960, 632] }],
+  ['p4-b', 'c9-p4', 'b', 'menus', settingsRow('Race time', false), 'The Race time row in Settings (sim PR 226).', { viewport: [960, 632] }],
   /* 5 track of the week */
   ['p5-a', 'c9-p5', 'a', 'solo', async () => { await sleep(500); }, 'The Fly solo page with the Track of the week card, read from the live board (sim e241a8a, board PR 78).'],
   ['p5-b', 'c9-p5', 'b', 'ghosts', throughStart(1500), 'Ghost: Board top 3 on the week\'s track, a moment after the start gate (sim e241a8a).'],
-  ['p5-c', 'c9-p5', 'c', 'gateReset', settingsRow('Reset to'), 'The Reset to row in Settings, set to Last gate (sim e241a8a).', { viewport: [700, 916] }],
+  ['p5-c', 'c9-p5', 'c', 'gateReset', settingsRow('Reset to'), 'The Reset to row in Settings, set to Last gate (sim e241a8a).', { viewport: [700, 916], clip: [0, 64, 700, 852], focus: [0, 0.5] }],
   /* 6 fisheye */
   ['p6-a', 'c9-p6', 'a', 'lens', async (page) => { await page.evaluate(() => { window.__ui.root.style.visibility = 'hidden'; }); await sleep(3000); }, 'The town with Fisheye on Strong (sim PR 236).'],
   ['p6-b', 'c9-p6', 'b', 'menus', settingsRow('Fisheye'), 'The Fisheye row in Settings (sim PR 236).', { viewport: [960, 632] }],
   /* 7 handle */
   ['p7-a', 'c9-p7', 'a', null, f('room-names', 'tag-tab.png'), 'The pilot editor\'s Tag tab, drawn by the feature\'s thread from the real page at 1280 by 720 (sim PR 231, board PR 73).'],
   /* 8 369DRONE */
-  ['p8-a', 'c9-p8', 'a', null, f('369drone', 'found-panel-heads.png'), 'The 369DRONE sign on a back fence and the FOUND card, from the real find fired in a headless flight by the feature\'s thread (sim PR 237).'],
+  ['p8-a', 'c9-p8', 'a', null, f('369drone', 'found-panel-heads.png'), 'The 369DRONE sign on a back fence and the FOUND card, from the real find fired in a headless flight by the feature\'s thread (sim PR 237). Cut to the FOUND card side.', { focus: [1, 0.5] }],
   ['p8-b', 'c9-p8', 'b', null, f('chapter-9', 'frames', 'landing-supporters.png'), 'The front page\'s Supporters block, from the front page\'s checkout at bc17462 (landing commit 076836f).'],
   /* 9 also */
   ['p9-b', 'c9-p9', 'b', 'concert', cam([-30, 12, 8], [66, 13, 0], 3500), 'Hanabi Sound after its cartoon pass (sim PR 224).'],

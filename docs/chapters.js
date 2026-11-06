@@ -2600,9 +2600,9 @@
           tone: 'paper',
           layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
           panels: [
-            { id: 'a', art: 'c9/p1-a', bleed: 'tlr', alt: 'Thomas More\'s Shop: a red floored corridor behind the racking, big black boards stood along the wall and a white washroom box at the far end.' },
+            { id: 'a', art: 'c9/p1-a', bleed: 'tlr', alt: 'Thomas More\'s Shop: a red floored corridor beside the racking, dark framed boards along the wall and a door at the far end.' },
             { id: 'b', art: 'c9/p1-b', alt: 'The print room seen from over its wall: red floor, black printers along the far wall, framed prints opposite and the office beside it.' },
-            { id: 'c', art: 'c9/p1-c', bleed: 'blr', alt: 'The far corner of the workshop: full racking, plywood stacks and the wide doorway into the machine room.' }
+            { id: 'c', art: 'c9/p1-c', bleed: 'blr', alt: 'The workshop under its roof beams: benches and white boxes on the floor, orange racking, slatted shelves and a door through to the next room.' }
           ],
           words: [
             { k: 'tag', x: 70, y: 70, t: '4 November', in: 'a' },
@@ -2667,14 +2667,14 @@
           layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
           panels: [
             { id: 'a', art: 'c9/p5-a', bleed: 'tlr', alt: 'The Fly solo page with its cards, one of them Track of the week, naming the track and who leads it.' },
-            { id: 'b', art: 'c9/p5-b', alt: 'The week\'s track in flight: three ghost laps from the board just ahead past a gate, each tagged with its pilot\'s name and lap time.' },
+            { id: 'b', art: 'c9/p5-b', alt: 'A race track in flight: three ghost laps from the board flying on past the gates, each tagged with its pilot\'s name and lap time.' },
             { id: 'c', art: 'c9/p5-c', bleed: 'blr', alt: 'The Settings page with the Reset to row set to Last gate.' }
           ],
           words: [
             { k: 'tag', x: 70, y: 70, t: '5 November', in: 'a' },
             { k: 'cap', x: 70, y: 120, w: 520, t: 'Track of the week. Fly solo has a card for one official track each week. The best lap by Monday wins the week.', in: 'a' },
             { k: 'cap', x: 70, yb: 1360, w: 380, t: 'Ghost: Board top 3 flies the three fastest laps on the board with you at once. With the ghost off, every gate reads your gap to your best lap.', in: 'b' },
-            { k: 'note', x: 540, yb: 1360, w: 390, d: '5 November', t: 'Reset to: Last gate puts you back just past the last gate you flew through. A knock on a prop alone now arms auto reset, unless you climb out upright.', in: 'c', small: true }
+            { k: 'note', x: 540, y: 840, w: 390, d: '5 November', t: 'Reset to: Last gate puts you back just past the last gate you flew through. A knock on a prop alone now arms auto reset, unless you climb out upright.', in: 'c', small: true }
           ]
         },
         {
@@ -2719,7 +2719,7 @@
           tone: 'paper',
           layout: ['h', 0.77, 0.03, 'a', 'b'],
           panels: [
-            { id: 'a', art: 'c9/p8-a', bleed: 'tlr', alt: 'A 369DRONE sign on a back fence in a house map, and the game\'s FOUND card for it at the side of the screen.' },
+            { id: 'a', art: 'c9/p8-a', bleed: 'tlr', alt: 'The game\'s FOUND card for the 369DRONE sign, over the back fence of a house map where the sign was found.' },
             { id: 'b', art: 'c9/p8-b', bleed: 'blr', alt: 'The Supporters block in the footer of webfpv.org: YourFPV and 369DRONE side by side.' }
           ],
           words: [
