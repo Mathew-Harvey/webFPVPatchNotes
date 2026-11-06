@@ -129,7 +129,7 @@ const settingsRow = (label) => async (page) => {
     await page.evaluate(() => { window.__ui.root.style.visibility = ''; window.__ui.show('pilot'); });
   }
   await sleep(1500);
-  const found = await page.evaluate((l) => {
+  const look = (l) => {
     const re = new RegExp('^' + l + '$', 'i');
     const own = (x) => [...x.childNodes].filter((n) => n.nodeType === 3).map((n) => n.textContent).join('').trim();
     const e = [...document.querySelectorAll('*')].find((x) => re.test(own(x)));
@@ -138,10 +138,30 @@ const settingsRow = (label) => async (page) => {
     if (!e) return null;
     const r = e.getBoundingClientRect();
     return [r.x + r.width / 2, r.y + r.height / 2];
-  }, label);
+  };
+  let found = await page.evaluate(look, label);
+  if (found) { await sleep(800); found = await page.evaluate(look, label); }
+  if (!found) {
+    /* The race rows (Reset to among them) are on the Quad room, which the
+     * pause menu's Settings does not open. */
+    await page.evaluate(() => { window.__ui.show('quad'); });
+    await sleep(1500);
+    found = await page.evaluate(look, label);
+    if (found) { await sleep(800); found = await page.evaluate(look, label); }
+  }
   if (!found) throw new Error('no Settings row ' + label);
-  /* The pointer over the row, so the note under the list is that row's. */
-  await page.mouse.move(found[0], found[1]);
+  /* The menu's own cursor on the row, so the note beside or under the
+   * list is that row's. A pointer hover does not take in a headless page. */
+  await page.evaluate((l) => {
+    const re = new RegExp('^' + l + '$', 'i');
+    const i = window.__ui.items().findIndex((x) => x && re.test(x.label || ''));
+    if (i >= 0) window.__ui.setCursor(i);
+    /* The flying chip names the track, and the chapter tracks' names are
+     * not lettered. */
+    for (const e of document.querySelectorAll('*')) if (e.children.length === 0 && /^Flying$/.test((e.textContent || '').trim())) (e.parentElement || e).style.visibility = 'hidden';
+  }, label);
+  await sleep(800);
+  await page.evaluate(look, label);
   await sleep(1200);
 };
 
@@ -237,9 +257,34 @@ const throughStart = (afterMs) => async (page) => {
     window.__ui.root.style.visibility = 'hidden';
     let last = null;
     let dir = [0, 0, -1];
+    /* The three ghosts are rigs built alike, so the chased ghost's group,
+     * found by its position, gives the shape to find the other two by. The
+     * camera aims at the middle of those in the air and backs off with
+     * their spread, so all three laps stay in the frame. */
+    let root = window.__mapScene();
+    while (root.parent) root = root.parent;
+    const sig = (o) => o.children.map((c) => c.type + c.children.length).join(',');
+    const g0 = window.__ghost().position;
+    let mainRig = null;
+    root.traverse((o) => { if (!mainRig && o.children.length && o.position.distanceTo({ x: g0[0], y: g0[1], z: g0[2] }) < 1e-6) mainRig = o; });
+    const rigs = [];
+    if (mainRig) { const k = sig(mainRig); root.traverse((o) => { if (o.children.length && sig(o) === k) rigs.push(o); }); }
+    const near = () => rigs.filter((o) => o.visible).map((o) => { const w = o.getWorldPosition(o.position.clone()); return [w.x, w.y, w.z]; });
+    let spot = null;
+    let frame = 0;
     const ride = () => {
       const g = window.__ghost();
-      const p = g.position;
+      let p = g.position;
+      if (frame++ % 6 === 0) {
+        const t = near();
+        if (t.length) {
+          const c = t.reduce((a, q) => [a[0] + q[0] / t.length, a[1] + q[1] / t.length, a[2] + q[2] / t.length], [0, 0, 0]);
+          const r = Math.max(...t.map((q) => Math.hypot(q[0] - c[0], q[2] - c[2])));
+          spot = { c, r };
+        }
+      }
+      if (spot) p = [spot.c[0], spot.c[1], spot.c[2]];
+      const back = 3.2 + (spot ? spot.r * 1.6 : 0);
       if (last) {
         const dx = p[0] - last[0];
         const dz = p[2] - last[2];
@@ -250,11 +295,12 @@ const throughStart = (afterMs) => async (page) => {
       const n = Math.hypot(dir[0], dir[2]) || 1;
       const fx = dir[0] / n;
       const fz = dir[2] / n;
-      window.__setCam(p[0] - fx * 3.2 + fz * 0.8, p[1] + 0.9, p[2] - fz * 3.2 - fx * 0.8, p[0] + fx * 8, p[1] - 0.3, p[2] + fz * 8);
+      window.__setCam(p[0] - fx * back + fz * 0.8, p[1] + 0.9, p[2] - fz * back - fx * 0.8, p[0] + fx * 8, p[1] - 0.3, p[2] + fz * 8);
       requestAnimationFrame(ride);
     };
     ride();
-  });
+    return rigs.length;
+  }).then((n) => console.log('DBG rigs ' + n));
   await sleep(1500);
 };
 
