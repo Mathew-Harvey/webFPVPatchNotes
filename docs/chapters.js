@@ -88,7 +88,7 @@
             { k: 'letter', x: 84, y: 420, size: 96, anchor: 'start', max: 560, runs: [['FLY DECENT', 'mint']], in: 'hero' },
             { k: 'head', x: 76, y: 470, w: 520, t: 'How a browser sim got built, in the words of the pilot who built it.', in: 'hero' },
             { k: 'sub', x: 76, y: 600, w: 420, t: 'andAgainFPV', in: 'hero' },
-            { k: 'tag', x: 76, y: 680, t: 'New: Chapter 08, Two new worlds', in: 'hero' },
+            { k: 'tag', x: 76, y: 680, t: 'New: Chapter 09, Track of the week', in: 'hero' },
             { k: 'tag', x: 66, y: 1002, t: 'The gate', in: 'w1' },
             { k: 'letter', x: 60, y: 1342, size: 44, anchor: 'start', max: 246, runs: [['THE QUESTION', 'mint']], in: 'w1' },
             { k: 'tag', x: 372, y: 1024, t: 'The builder', in: 'w2' },
@@ -2264,7 +2264,7 @@
           ],
           words: [
             { k: 'tag', x: 70, y: 70, t: '29 October', in: 'a' },
-            { k: 'cap', x: 70, y: 120, w: 460, t: 'Patron goats. Every patron adds one more goat to the goat herding map.', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 460, t: 'Patron goats are coming. A goat with your name on it in the goat herding map.', in: 'a' },
             { k: 'note', x: 70, yb: 1360, w: 460, d: '29 October', t: 'Konex Drone. A small Konex Drone logo is hidden in every map. Some are in hard to reach spots.', in: 'b', small: true }
           ]
         },
@@ -2547,12 +2547,223 @@
               id: 'b',
               fill: 'paper',
               fx: [{ k: 'focus', at: [0.5, 0.56], r: [0.46, 0.3], n: 130, alpha: 0.7 }],
-              alt: 'A panel labelled Chapter 09, with one line lettered across it: the game will keep building.'
+              alt: 'A paper panel, labelled Chapter 09, with its title lettered across it: Track of the week. The next page starts it.'
             }
           ],
           words: [
             { k: 'cap', x: 70, y: 70, w: 420, t: 'A festival at dusk and a theme park with a roller coaster. Pick one and go for a fly.', in: 'a' },
             { k: 'tag', x: 80, y: 860, t: 'Chapter 09', in: 'b' },
+            { k: 'letter', x: 500, y: 1010, size: 96, rot: -3, max: 820, runs: [['TRACK OF ', 'cream']], in: 'b' },
+            { k: 'letter', x: 500, y: 1110, size: 96, rot: -3, max: 820, runs: [['THE WEEK', 'sakura']], in: 'b' },
+            { k: 'sub', x: 160, y: 1180, w: 680, t: 'Turn the page.', center: true, in: 'b' }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'c9',
+      n: 9,
+      title: 'Track of the week',
+      date: '6 November 2026',
+      sources: [
+        'Pull requests merged to main in the simulator (Mathew-Harvey/WebFPVSimulator) from 3 to 5 November 2026: 221 to 238, with the board pull requests 68 to 78 and the front page commit 076836f (Mathew-Harvey/landingpage-WebFPVSimulator-)',
+        'Frames drawn by the simulator at 013cd22 for this chapter, listed in tools/shoot/c9.js'
+      ],
+      pages: [
+        {
+          id: 'c9-cover',
+          label: 'Cover',
+          tone: 'paper',
+          layout: ['h', 0.7, 0.022, 'hero', ['v', 1 / 3, 0.03, 'w1', ['v', 0.5, -0.03, 'w2', 'w3']]],
+          panels: [
+            { id: 'hero', art: 'c9/cover-hero', alt: 'A five inch race at night: gates outlined in pink LED strip under a navy sky, the start gate in mint, the field dark around them.' },
+            { id: 'w1', art: 'c9/cover-w1', alt: 'Thomas More\'s Shop: the print room behind the grey door, red floored, printers along one wall and prints pinned up on the other.', link: 'c9-p1' },
+            { id: 'w2', art: 'c9/cover-w2', alt: 'The Fly solo page with a Track of the week card among the others.', link: 'c9-p5' },
+            { id: 'w3', art: 'c9/cover-w3', alt: 'The town seen through a strong fisheye lens, the rooftops bending toward the edges.', link: 'c9-p6' }
+          ],
+          words: [
+            { k: 'tag', x: 74, y: 80, t: 'Chapter 09', in: 'hero' },
+            { k: 'letter', x: 74, y: 290, size: 176, anchor: 'start', max: 680, runs: [['WEB', 'cream'], ['FPV', 'sakura']], in: 'hero' },
+            { k: 'letter', x: 84, y: 400, size: 64, anchor: 'start', max: 680, runs: [['TRACK OF THE WEEK', 'mint']], in: 'hero' },
+            { k: 'tag', x: 76, y: 470, t: '3 to 5 November 2026', in: 'hero' },
+            { k: 'tag', x: 66, y: 1002, t: 'The shop', in: 'w1' },
+            { k: 'letter', x: 60, y: 1342, size: 44, anchor: 'start', max: 270, runs: [['REBUILT', 'mint']], in: 'w1' },
+            { k: 'tag', x: 372, y: 1024, t: 'The week', in: 'w2' },
+            { k: 'letter', x: 352, y: 1342, size: 44, anchor: 'start', max: 270, runs: [['TOP 3', 'sakura']], in: 'w2' },
+            { k: 'tag', x: 700, y: 1044, t: 'The lens', in: 'w3' },
+            { k: 'letter', x: 690, y: 1342, size: 44, anchor: 'start', max: 250, runs: [['FISHEYE', 'cream']], in: 'w3' }
+          ]
+        },
+        {
+          id: 'c9-p1',
+          label: 'Thomas More\'s Shop',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c9/p1-a', bleed: 'tlr', alt: 'Thomas More\'s Shop: a red floored corridor behind the racking, big black boards stood along the wall and a white washroom box at the far end.' },
+            { id: 'b', art: 'c9/p1-b', alt: 'The print room seen from over its wall: red floor, black printers along the far wall, framed prints opposite and the office beside it.' },
+            { id: 'c', art: 'c9/p1-c', bleed: 'blr', alt: 'The far corner of the workshop: full racking, plywood stacks and the wide doorway into the machine room.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '4 November', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 520, t: 'Thomas More\'s Shop was laid out again from the real building\'s photos and flights. A new floor plan, a white block of rooms, and a red corridor behind the racking.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 380, t: 'Behind the grey door is the print room. It has no ceiling, so you can climb over the walls and look down into it.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '4 November', t: 'The paint shop has its one door, the racking is full, and two plain booths stand on the floor to fly through. A sweep made sure no wall can be flown through.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c9-p2',
+          label: 'An FPV VIP\'s house',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c9/p2-a', bleed: 'tlr', alt: 'The back yard of a house map: the pavilion\'s long roof over its bar in the corner by the garage, the tall fence behind it, a red brown maple, the pergola and the pool.' },
+            { id: 'b', art: 'c9/p2-b', alt: 'Inside the house: the family room, a wall of wood built ins with shelves either side of the chimney breast, and a grey sectional on a blue rug.' },
+            { id: 'c', art: 'c9/p2-c', bleed: 'blr', alt: 'The house from over the back yard: the pavilion and its bar, the maple, the pool, and the neighbours\' houses over the fences.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '4 and 5 November', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 520, t: 'An FPV VIP\'s house was rebuilt from two real flights through it. The ground floor, the basement, and a back yard with a tall fence and a pavilion in the corner.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 380, t: 'Then the inside: the family room\'s wood built ins, a grey sectional, and a guest room downstairs with a second door.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '5 November', t: 'Then the outside: two maples, the houses next door and over the back fence, and the upstairs windows where the flights show them.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c9-p3',
+          label: 'Five inch racing',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c9/p3-a', bleed: 'tlr', alt: 'A five inch race track by day: gates with race orange headers and chequers, and yellow and orange flags across the grass.' },
+            { id: 'b', art: 'c9/p3-b', alt: 'The pilots\' corner behind the start pads: a pop up shade over the timing table and a chainlink net between it and the pads.' },
+            { id: 'c', art: 'c9/p3-c', bleed: 'blr', alt: 'One of the six new tracks: a stack of two gates at the side of the field, a flag mast beside it.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '3 November', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 520, t: 'Five inch racing got a pass. Gates and flags are printed race orange and yellow, so they read across the field.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 380, t: 'Behind the start pads is a pilots\' corner: a shade, the timing table and a net, all solid.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '3 November', t: 'Six new tracks are in the builder\'s list, with slaloms, spirals, split S, loops and dives. On the board a five inch track\'s sheet has a race pack and a setup sheet to print.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c9-p4',
+          label: 'Night races',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c9/p4-a', bleed: 'tlr', alt: 'A night race from the pads: gates outlined in pink LED strip, the start gate in mint, flag masts lit amber against the dark trees.' },
+            { id: 'b', art: 'c9/p4-b', bleed: 'blr', alt: 'The Settings page with the Race time row: Track, Day and Night.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '3 November', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 500, t: 'Night races. In the builder a five inch track can be set to Night. It is flown under a moon and stars, with every gate outlined in LED strip.', in: 'a' },
+            { k: 'note', x: 70, yb: 1360, w: 520, d: '3 November', t: 'Race time in Settings flies any five inch track by day or at night, or at the time its builder picked. The six new tracks are on the board too, so your laps on them go up.', in: 'b', small: true }
+          ]
+        },
+        {
+          id: 'c9-p5',
+          label: 'Track of the week',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c9/p5-a', bleed: 'tlr', alt: 'The Fly solo page with its cards, one of them Track of the week, naming the track and who leads it.' },
+            { id: 'b', art: 'c9/p5-b', alt: 'The week\'s track in flight: three ghost laps from the board just ahead past a gate, each tagged with its pilot\'s name and lap time.' },
+            { id: 'c', art: 'c9/p5-c', bleed: 'blr', alt: 'The Settings page with the Reset to row set to Last gate.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '5 November', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 520, t: 'Track of the week. Fly solo has a card for one official track each week. The best lap by Monday wins the week.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 380, t: 'Ghost: Board top 3 flies the three fastest laps on the board with you at once. With the ghost off, every gate reads your gap to your best lap.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '5 November', t: 'Reset to: Last gate puts you back just past the last gate you flew through. A knock on a prop alone now arms auto reset, unless you climb out upright.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c9-p6',
+          label: 'Fisheye',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c9/p6-a', bleed: 'tlr', alt: 'The town through the pilot\'s camera with Fisheye on Strong: the street in the middle large, the rooftops bending in at the edges.' },
+            { id: 'b', art: 'c9/p6-b', bleed: 'blr', alt: 'The Settings page with the Fisheye row under Field of view: Off, Slight, Medium and Strong.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '5 November', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 500, t: 'Fisheye. A row under Field of view bends the picture the way a real FPV lens does: Off, Slight, Medium or Strong.', in: 'a' },
+            { k: 'note', x: 70, yb: 1360, w: 520, d: '5 November', t: 'It is off until you pick it, and only your own camera bends. The career\'s target marker and the mini game markers bend with it.', in: 'b', small: true }
+          ]
+        },
+        {
+          id: 'c9-p7',
+          label: 'Your handle',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c9/p7-a', bleed: 'tlr', alt: 'The pilot editor\'s Tag tab: a made up handle, Echo Koi 61, with minus, plus and Shuffle buttons over two lists of words.' },
+            {
+              id: 'b',
+              fill: 'paper',
+              fx: [{ k: 'focus', at: [0.5, 0.5], r: [0.46, 0.3], n: 130, alpha: 0.7 }],
+              alt: 'A paper panel with a handle lettered across it: ECHO KOI 61.'
+            }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '4 November', in: 'a' },
+            { k: 'cap', x: 70, y: 600, w: 520, t: 'Rooms. Pick your own made up handle on the pilot editor\'s Tag tab: a first word, a second word and a number.', in: 'a' },
+            { k: 'letter', x: 500, y: 1040, size: 120, rot: -4, max: 820, runs: [['ECHO KOI ', 'cream'], ['61', 'sakura']], in: 'b' },
+            { k: 'cap', x: 160, y: 1130, w: 680, t: 'Listed, school safe and streamer rooms still never show a typed name, so every handle comes from the lists.', center: true, in: 'b' }
+          ]
+        },
+        {
+          id: 'c9-p8',
+          label: '369DRONE',
+          tone: 'paper',
+          layout: ['h', 0.77, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c9/p8-a', bleed: 'tlr', alt: 'A 369DRONE sign on a back fence in a house map, and the game\'s FOUND card for it at the side of the screen.' },
+            { id: 'b', art: 'c9/p8-b', bleed: 'blr', alt: 'The Supporters block in the footer of webfpv.org: YourFPV and 369DRONE side by side.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '5 November', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 500, t: '369DRONE, a Japanese FPV brand, is supporting WebFPV. Its sign is in the freestyle maps to find, and a find gets its FOUND card.', in: 'a' },
+            { k: 'note', x: 70, yb: 1000, w: 520, d: '5 November', t: 'On the front page it sits in the Supporters block in the footer, beside YourFPV.', in: 'a', small: true }
+          ]
+        },
+        {
+          id: 'c9-p9',
+          label: 'Also',
+          tone: 'paper',
+          layout: ['h', 0.36, 0, 'a', ['v', 0.5, -0.04, 'b', 'c']],
+          panels: [
+            { id: 'a', fill: 'ink', alt: 'A black panel with words on it.' },
+            { id: 'b', art: 'c9/p9-b', bleed: 'bl', alt: 'Hanabi Sound after its cartoon pass: the stage and the crowd in flat bright colours.' },
+            { id: 'c', art: 'c9/p9-c', bleed: 'br', alt: 'Yumeboshi Land after its cartoon pass: the castle and the big wheel in flat bright colours.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: 'Also, 3 and 4 November', in: 'a' },
+            { k: 'cap', x: 70, y: 130, w: 860, big: true, t: 'Smaller things went in too.', in: 'a' },
+            { k: 'note', x: 70, y: 235, w: 860, d: '4 November', t: 'On the newer Chrome for Android, yaw from a radio no longer goes missing.', in: 'a', small: true },
+            { k: 'note', x: 70, y: 345, w: 860, d: '3 November', t: 'The pilots\' corner net no longer streaks, and its canopy is solid where it is drawn.', in: 'a', small: true },
+            { k: 'cap', x: 60, yb: 1360, w: 380, t: 'Hanabi Sound got more cartoon: a rounder crowd, round trees and pods on the big wheel.', in: 'b' },
+            { k: 'cap', x: 540, yb: 1360, w: 380, t: 'So did Yumeboshi Land: its own trees, striped awnings and a round topped castle arch.', in: 'c' }
+          ]
+        },
+        {
+          id: 'c9-p10',
+          label: 'Next',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c9/p10-a', bleed: 'tlr', alt: 'A night race track from above: lit gates in a loop across the dark field, the pilots\' corner by the pads.' },
+            {
+              id: 'b',
+              fill: 'paper',
+              fx: [{ k: 'focus', at: [0.5, 0.56], r: [0.46, 0.3], n: 130, alpha: 0.7 }],
+              alt: 'A panel labelled Chapter 10, with one line lettered across it: the game will keep building.'
+            }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 440, t: 'Two places rebuilt, races at night and a new track every week. Pick one and go for a fly.', in: 'a' },
+            { k: 'tag', x: 80, y: 860, t: 'Chapter 10', in: 'b' },
             { k: 'letter', x: 500, y: 1010, size: 84, rot: -3, max: 820, runs: [['THE GAME WILL ', 'cream']], in: 'b' },
             { k: 'letter', x: 500, y: 1110, size: 84, rot: -3, max: 820, runs: [['KEEP BUILDING.', 'sakura']], in: 'b' },
             { k: 'fly', x: 500, y: 1220, t: 'FLY NOW', name: 'Fly WebFPV', href: 'https://webfpv.org/sim/', in: 'b' }
