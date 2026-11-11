@@ -1,0 +1,20 @@
+{
+  "id": "p9-b",
+  "treatment": "colour",
+  "from": "p9-b",
+  "world": "chooser",
+  "simulator": "/src/trackbuilder/index.html",
+  "commit": "62b0df7",
+  "frame": [
+    820,
+    700
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 534,
+    "height": 700
+  },
+  "framing": null,
+  "clip": null
+}

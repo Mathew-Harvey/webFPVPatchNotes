@@ -1,0 +1,20 @@
+{
+  "id": "p2-a",
+  "treatment": "colour",
+  "from": "p2-a",
+  "world": "round",
+  "simulator": "/index.html?map=school&craft=whoop65&fly=1",
+  "commit": "62b0df7",
+  "frame": [
+    1872,
+    1386
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1872,
+    "height": 1386
+  },
+  "framing": null,
+  "clip": null
+}

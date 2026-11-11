@@ -1,0 +1,20 @@
+{
+  "id": "cover-w1",
+  "treatment": "colour",
+  "from": "cover-w1",
+  "world": "school",
+  "simulator": "/index.html?map=school&craft=whoop65&fly=1",
+  "commit": "62b0df7",
+  "frame": [
+    604,
+    781
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 604,
+    "height": 781
+  },
+  "framing": null,
+  "clip": null
+}

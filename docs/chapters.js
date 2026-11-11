@@ -88,7 +88,7 @@
             { k: 'letter', x: 84, y: 420, size: 96, anchor: 'start', max: 560, runs: [['FLY DECENT', 'mint']], in: 'hero' },
             { k: 'head', x: 76, y: 470, w: 520, t: 'How a browser sim got built, in the words of the pilot who built it.', in: 'hero' },
             { k: 'sub', x: 76, y: 600, w: 420, t: 'andAgainFPV', in: 'hero' },
-            { k: 'tag', x: 76, y: 680, t: 'New: Chapter 09, Track of the week', in: 'hero' },
+            { k: 'tag', x: 76, y: 680, t: 'New: Chapter 10, Infected', in: 'hero' },
             { k: 'tag', x: 66, y: 1002, t: 'The gate', in: 'w1' },
             { k: 'letter', x: 60, y: 1342, size: 44, anchor: 'start', max: 246, runs: [['THE QUESTION', 'mint']], in: 'w1' },
             { k: 'tag', x: 372, y: 1024, t: 'The builder', in: 'w2' },
@@ -2710,7 +2710,7 @@
             { k: 'tag', x: 70, y: 70, t: '4 November', in: 'a' },
             { k: 'cap', x: 70, y: 600, w: 520, t: 'Rooms. Pick your own made up handle on the pilot editor\'s Tag tab: a first word, a second word and a number.', in: 'a' },
             { k: 'letter', x: 500, y: 1040, size: 120, rot: -4, max: 820, runs: [['ECHO KOI ', 'cream'], ['61', 'sakura']], in: 'b' },
-            { k: 'cap', x: 160, y: 1130, w: 680, t: 'Listed, school safe and streamer rooms still never show a typed name, so every handle comes from the lists.', center: true, in: 'b' }
+            { k: 'cap', x: 160, y: 1130, w: 680, t: 'School safe rooms only ever show a made up handle, so every handle there comes from the lists.', center: true, in: 'b' }
           ]
         },
         {
@@ -2758,12 +2758,229 @@
               id: 'b',
               fill: 'paper',
               fx: [{ k: 'focus', at: [0.5, 0.56], r: [0.46, 0.3], n: 130, alpha: 0.7 }],
-              alt: 'A panel labelled Chapter 10, with one line lettered across it: the game will keep building.'
+              alt: 'A paper panel, labelled Chapter 10, with its title lettered across it: Infected. The next page starts it.'
             }
           ],
           words: [
             { k: 'cap', x: 70, y: 70, w: 440, t: 'Two places rebuilt, races at night and a new track every week. Pick one and go for a fly.', in: 'a' },
             { k: 'tag', x: 80, y: 860, t: 'Chapter 10', in: 'b' },
+            { k: 'letter', x: 500, y: 1060, size: 150, rot: -3, max: 820, runs: [['INFECTED', 'mint']], in: 'b' },
+            { k: 'sub', x: 160, y: 1180, w: 680, t: 'Turn the page.', center: true, in: 'b' }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'c10',
+      n: 10,
+      title: 'Infected',
+      date: '10 November 2026',
+      sources: [
+        'Commits merged to main in the simulator (Mathew-Harvey/WebFPVSimulator) from 6 to 10 November 2026, after Chapter 9: 37c5d95 to 044f490, listed in STORYBOARD.md',
+        'Frames drawn by the simulator at 62b0df7 for this chapter, listed in tools/shoot/c10.js'
+      ],
+      pages: [
+        {
+          id: 'c10-cover',
+          label: 'Cover',
+          tone: 'paper',
+          layout: ['h', 0.7, 0.022, 'hero', ['v', 1 / 3, 0.03, 'w1', ['v', 0.5, -0.03, 'w2', 'w3']]],
+          panels: [
+            { id: 'hero', art: 'c10/cover-hero', alt: 'A school hallway seen from a whoop: a clean pilot close up in a white ring, and a green ringed infected pilot further down the hall, each with its name tag.' },
+            { id: 'w1', art: 'c10/cover-w1', alt: 'The first floor hallway of a school in the manga look, doors and windows down both walls.', link: 'c10-p1' },
+            { id: 'w2', art: 'c10/cover-w2', alt: 'The pilot card that meets a pilot before hosting a room: a drawn pilot with a cap, a name field and three buttons.', link: 'c10-p4' },
+            { id: 'w3', art: 'c10/cover-w3', alt: 'The track builder\'s card for a flag, with the rows Round it, How far and How.', link: 'c10-p5' }
+          ],
+          words: [
+            { k: 'tag', x: 74, y: 80, t: 'Chapter 10', in: 'hero' },
+            { k: 'letter', x: 74, y: 290, size: 176, anchor: 'start', max: 680, runs: [['WEB', 'cream'], ['FPV', 'sakura']], in: 'hero' },
+            { k: 'letter', x: 84, y: 400, size: 64, anchor: 'start', max: 680, runs: [['INFECTED', 'mint']], in: 'hero' },
+            { k: 'tag', x: 76, y: 470, t: '6 to 10 November 2026', in: 'hero' },
+            { k: 'tag', x: 66, y: 1002, t: 'The school', in: 'w1' },
+            { k: 'letter', x: 60, y: 1342, size: 44, anchor: 'start', max: 270, runs: [['MIDORI', 'mint']], in: 'w1' },
+            { k: 'tag', x: 372, y: 1024, t: 'The name', in: 'w2' },
+            { k: 'letter', x: 352, y: 1342, size: 44, anchor: 'start', max: 270, runs: [['YOUR OWN', 'sakura']], in: 'w2' },
+            { k: 'tag', x: 700, y: 1044, t: 'The flag', in: 'w3' },
+            { k: 'letter', x: 690, y: 1342, size: 44, anchor: 'start', max: 250, runs: [['SPIRAL UP', 'cream']], in: 'w3' }
+          ]
+        },
+        {
+          id: 'c10-p1',
+          label: 'Midori Gakuen',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c10/p1-a', bleed: 'tlr', alt: 'The school\'s ground floor hallway from one end: doors and windows along both walls, and posters on the wall, one of them a no flying sign.' },
+            { id: 'b', art: 'c10/p1-b', alt: 'The science lab with its glass tank on a green base, desks round it and the hallway windows behind.' },
+            { id: 'c', art: 'c10/p1-c', bleed: 'blr', alt: 'The mouth of the book lift in the corner of the science lab, a narrow shaft in the wall just wider than a whoop.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '8 November', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 520, t: 'Midori Gakuen is an original school: two floors in the manga look, at the size of the houses, flown on a whoop.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 380, t: 'A hallway runs down each floor, with classrooms, a science lab, a library, a lunch room and a nurse\'s room off it. Every room has two ways out.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '8 November', t: 'Four vents and a book lift are the tight ways through. Some windows into the hallway are open and some are glass.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c10-p2',
+          label: 'Infected',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c10/p2-a', bleed: 'tlr', alt: 'A flight view in the school with the round\'s call, RUN!, across the top of the screen and a line under it saying who is infected and when they get out.' },
+            { id: 'b', art: 'c10/p2-b', alt: 'The first infected pilot, green, waiting inside the science lab\'s glass tank while the head start runs.' },
+            { id: 'c', art: 'c10/p2-c', bleed: 'blr', alt: 'The last clean pilot, ringed in gold, flying past a classroom window, with the HUD telling the pilot to catch it.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '8 November', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 520, t: 'Infected is the seventh mini game, played in the school. One pilot starts infected, held in the science lab\'s glass tank through the head start.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 380, t: 'Everyone else is white. A tag needs line of sight, and a tagged pilot turns green and joins the hunt.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '8 November', t: 'The last clean pilot is gold. Chains and close shaves count, and a match is three rounds.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c10-p3',
+          label: 'Bots and friends',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c10/p3-a', bleed: 'tlr', alt: 'The Infected waiting room: seats for the pilots and the bots, each bot with a skill, and a Play button.' },
+            { id: 'b', art: 'c10/p3-b', alt: 'The Mini games page with the Infected card among the others.' },
+            { id: 'c', art: 'c10/p3-c', bleed: 'blr', alt: 'A clean pilot in a white ring flying away up the first floor hallway, a green ringed infected pilot close behind it.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '8 and 9 November', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 520, t: 'The waiting room seats up to fifteen bots, each at easy, medium or hard. A room plays it too, with friends and bots in any seat.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 380, t: 'Infected has its own card on the Mini games page. On High the school is plain cel shade and ink, with no dots.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '9 November', t: 'After the first flights: R and auto reset keep the round and put you back on your pad. The pads are solid mats, and the bots lean into turns and floor it when chased.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c10-p4',
+          label: 'Your own name',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c10/p4-a', bleed: 'tlr', alt: 'The pilot editor\'s name field, with the help line under it that says other pilots see a typed name in rooms and that school safe rooms use a made up one.' },
+            {
+              id: 'b',
+              fill: 'paper',
+              fx: [{ k: 'focus', at: [0.5, 0.5], r: [0.46, 0.3], n: 130, alpha: 0.7 }],
+              alt: 'A paper panel with the words YOUR NAME lettered across it.'
+            }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '8 November', in: 'a' },
+            { k: 'cap', x: 70, y: 600, w: 520, t: 'Rooms: your own name. Type a name on the pilot editor and other pilots see it in every room except a school safe one, which only ever shows a made up handle.', in: 'a' },
+            { k: 'letter', x: 500, y: 1040, size: 120, rot: -4, max: 820, runs: [['YOUR ', 'cream'], ['NAME', 'sakura']], in: 'b' },
+            { k: 'cap', x: 160, y: 1130, w: 680, t: 'A name with a rude word in it gets a made up one, and the host can give any pilot a made up name for the rest of the room.', center: true, in: 'b' }
+          ]
+        },
+        {
+          id: 'c10-p5',
+          label: 'Track builder flags',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c10/p5-a', bleed: 'tlr', alt: 'The track builder with a flag selected: its card has the rows Round it, How far and How, with Spiral down, Spiral up and Flat.' },
+            { id: 'b', art: 'c10/p5-b', alt: 'The builder\'s card for a flagged gate, with Round the flag and the Flag mast field.' },
+            { id: 'c', art: 'c10/p5-c', bleed: 'blr', alt: 'The builder\'s animation export dialog with its View row: Like the plan, Behind the start and Three quarter.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '9 November', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 520, t: 'Track builder. A flag, a cone or a pole has every way round it on its card: Round it, How far and How, with Spiral up beside Spiral down and Flat.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 380, t: 'A flagged gate has the same rows and a Flag mast field. Left or Right on a gate with no flag puts one on that upright.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '9 November', t: 'The animation export draws the flags on the gates and has a View row: Like the plan, Behind the start or Three quarter.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c10-p6',
+          label: 'Controls',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c10/p6-a', bleed: 'tlr', alt: 'The Settings page scrolled to two rows, Stick deadzone and Gamepad throttle, each with its choices.' },
+            { id: 'b', fill: 'ink', alt: 'A black panel with three notes on it.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '6 November', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 520, t: 'Settings has two new rows for a gamepad. Stick deadzone is Auto, Small, Medium or Large. Gamepad throttle is Upper half, Whole stick or Right trigger.', in: 'a' },
+            { k: 'note', x: 70, y: 860, w: 860, d: '6 November', t: '3D mode takes two presses to turn on and never comes on from a stick nudge, and a banner in flight says when it is on. Check sticks has a button for each channel: press it, then push the stick you want.', in: 'b', small: true },
+            { k: 'note', x: 70, y: 1090, w: 860, d: '7 November', t: 'A radio the browser lists with no axes is named, with the setting that makes its sticks show: USB joystick mode Classic on an EdgeTX radio.', in: 'b', small: true }
+          ]
+        },
+        {
+          id: 'c10-p7',
+          label: 'Results',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c10/p7-a', bleed: 'tlr', alt: 'The results page as a page of a magazine: paper, a stamp for the board rank, and the best lap gate by gate in a strip.' },
+            { id: 'b', art: 'c10/p7-b', alt: 'The same results page on a phone held upright, the stamps and the lap rows fitted above the menu.' },
+            { id: 'c', art: 'c10/p7-c', bleed: 'blr', alt: 'The results page\'s rows: Fly again, Next track and a row that chases a named pilot\'s lap.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '6 November', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 520, t: 'The results are a page of the magazine: paper, stamps for a board rank or a new best, and your best lap gate by gate, with the gate that cost you most marked.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 380, t: 'On a phone the page fits between the bars. Next track is the second row, and it names the track.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '6 November', t: 'Chase NAME offers the nearest quicker lap on the board as a ghost, by name and gap. Ahead of every lap, it offers the record.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c10-p8',
+          label: 'First lessons',
+          tone: 'paper',
+          layout: ['h', 0.34, 0.03, 'a', ['h', 0.5, 0.03, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c10/p8-a', bleed: 'tlr', alt: 'A first lesson in flight with the plainer display: no pack volts, height words, mode word or sliders.' },
+            { id: 'b', art: 'c10/p8-b', alt: 'A whoop on the pad before its first takeoff, the stick plate small and low on the screen.' },
+            { id: 'c', art: 'c10/p8-c', bleed: 'blr', alt: 'The career\'s briefing on a phone held sideways, with the Fly row along the foot of the page.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '6 and 7 November', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 520, t: 'The first lessons are plainer. Before the Rookie Licence the display leaves out the pack volts, the height words, the mode word and the sliders.', in: 'a' },
+            { k: 'cap', x: 70, yb: 905, w: 520, t: 'On the pad, before the first takeoff, the sticks sit smaller and lower on one ink plate. Climb too high and the coach asks you to come down, then points the way back.', in: 'b' },
+            { k: 'note', x: 70, yb: 1350, w: 520, d: '7 November', t: 'Career on a phone has Fly on the first view, and the key bar goes away while a finger is the hands.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c10-p9',
+          label: 'Also',
+          tone: 'paper',
+          layout: ['h', 0.5, 0, 'a', ['v', 0.5, -0.04, 'b', 'c']],
+          panels: [
+            { id: 'a', fill: 'ink', alt: 'A black panel with words on it.' },
+            { id: 'b', art: 'c10/p9-b', bleed: 'bl', alt: 'The builder\'s What are you building? chooser as a manga page, a quad on each card.' },
+            { id: 'c', art: 'c10/p9-c', bleed: 'br', alt: 'A flight in the school with the Show FPS overlay up in the corner: GPU, memory, CPU and RAM rows and a frame time graph.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: 'Also, 6 to 9 November', in: 'a' },
+            { k: 'cap', x: 70, y: 130, w: 860, big: true, t: 'Smaller things went in too.', in: 'a' },
+            { k: 'note', x: 70, y: 235, w: 860, d: '9 November', t: 'Every mini game\'s pause menu is built the same way: Resume, Restart, Change and Leave in the game\'s own word, then Settings, and a way out that says Back to Mini games.', in: 'a', small: true },
+            { k: 'note', x: 70, y: 380, w: 860, d: '7 November', t: 'The whoop builder has floating gates with no legs to the floor, and decor gates that are built and solid but left out of the race. Poles, flags and cones can be decor too.', in: 'a', small: true },
+            { k: 'note', x: 70, y: 525, w: 860, d: '7 November', t: 'Dogfight opens on Bakuon Dome and ribbon cutting on Kazami Airfield, each with a Recommended stamp on the arena picker.', in: 'a', small: true },
+            { k: 'note', x: 70, y: 645, w: 860, d: '6 November', t: 'Polyrhythmic Build joined the flight music.', in: 'a', small: true },
+            { k: 'cap', x: 60, yb: 1360, w: 380, t: 'The builder\'s chooser, the loading screen and the flight buttons are paper and ink now.', in: 'b' },
+            { k: 'cap', x: 540, yb: 1360, w: 380, t: 'Show FPS is laid out like a hardware monitor\'s overlay, with GPU, memory, CPU and a frame time graph. It is off until you turn it on.', in: 'c' }
+          ]
+        },
+        {
+          id: 'c10-p10',
+          label: 'Next',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c10/p10-a', bleed: 'tlr', alt: 'The art room on the school\'s first floor: long tables under a row of windows, an easel and a plaster bust at the far end.' },
+            {
+              id: 'b',
+              fill: 'paper',
+              fx: [{ k: 'focus', at: [0.5, 0.56], r: [0.46, 0.3], n: 130, alpha: 0.7 }],
+              alt: 'A panel labelled Chapter 11, with one line lettered across it: the game will keep building.'
+            }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 440, t: 'A school to play tag in, your own name in a room and a flag to spiral up. Pick one and go for a fly.', in: 'a' },
+            { k: 'tag', x: 80, y: 860, t: 'Chapter 11', in: 'b' },
             { k: 'letter', x: 500, y: 1010, size: 84, rot: -3, max: 820, runs: [['THE GAME WILL ', 'cream']], in: 'b' },
             { k: 'letter', x: 500, y: 1110, size: 84, rot: -3, max: 820, runs: [['KEEP BUILDING.', 'sakura']], in: 'b' },
             { k: 'fly', x: 500, y: 1220, t: 'FLY NOW', name: 'Fly WebFPV', href: 'https://webfpv.org/sim/', in: 'b' }

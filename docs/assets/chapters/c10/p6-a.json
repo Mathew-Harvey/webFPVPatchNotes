@@ -1,0 +1,20 @@
+{
+  "id": "p6-a",
+  "treatment": "colour",
+  "from": "p6-a",
+  "world": "title",
+  "simulator": "/index.html",
+  "commit": "62b0df7",
+  "frame": [
+    960,
+    700
+  ],
+  "crop": {
+    "left": 55,
+    "top": 0,
+    "width": 851,
+    "height": 700
+  },
+  "framing": null,
+  "clip": null
+}

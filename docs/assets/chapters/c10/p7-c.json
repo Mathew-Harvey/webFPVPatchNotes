@@ -1,0 +1,20 @@
+{
+  "id": "p7-c",
+  "treatment": "colour",
+  "from": "p7-c",
+  "world": "results",
+  "simulator": "/index.html",
+  "commit": "62b0df7",
+  "frame": [
+    640,
+    860
+  ],
+  "crop": {
+    "left": 0,
+    "top": 12,
+    "width": 640,
+    "height": 836
+  },
+  "framing": null,
+  "clip": null
+}

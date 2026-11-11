@@ -1,0 +1,25 @@
+{
+  "id": "cover-w3",
+  "treatment": "colour",
+  "from": "cover-w3",
+  "world": "builder",
+  "simulator": "/src/trackbuilder/index.html?class=full",
+  "commit": "62b0df7",
+  "frame": [
+    1280,
+    800
+  ],
+  "crop": {
+    "left": 0,
+    "top": 121,
+    "width": 300,
+    "height": 379
+  },
+  "framing": null,
+  "clip": [
+    772,
+    140,
+    300,
+    620
+  ]
+}

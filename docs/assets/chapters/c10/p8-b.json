@@ -1,0 +1,25 @@
+{
+  "id": "p8-b",
+  "treatment": "colour",
+  "from": "p8-b",
+  "world": "career",
+  "simulator": "/index.html",
+  "commit": "62b0df7",
+  "frame": [
+    1280,
+    720
+  ],
+  "crop": {
+    "left": 34,
+    "top": 0,
+    "width": 452,
+    "height": 250
+  },
+  "framing": null,
+  "clip": [
+    380,
+    470,
+    520,
+    250
+  ]
+}

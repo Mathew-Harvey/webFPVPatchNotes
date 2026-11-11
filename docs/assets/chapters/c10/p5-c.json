@@ -1,0 +1,25 @@
+{
+  "id": "p5-c",
+  "treatment": "colour",
+  "from": "p5-c",
+  "world": "builder",
+  "simulator": "/src/trackbuilder/index.html?class=full",
+  "commit": "62b0df7",
+  "frame": [
+    1280,
+    800
+  ],
+  "crop": {
+    "left": 155,
+    "top": 0,
+    "width": 321,
+    "height": 420
+  },
+  "framing": null,
+  "clip": [
+    330,
+    190,
+    630,
+    420
+  ]
+}
