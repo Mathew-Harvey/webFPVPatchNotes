@@ -1,0 +1,21 @@
+{
+  "id": "p6-a",
+  "treatment": "colour",
+  "from": "p6-a",
+  "world": "goats",
+  "simulator": "/index.html?map=goats&craft=whoop65&fly=1",
+  "commit": "d2a28553",
+  "frame": [
+    1280,
+    720
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 876,
+    "height": 720
+  },
+  "framing": null,
+  "clip": null,
+  "note": "Goat herding in flight, out of the garage, with the arrow card under the score; the card's line and the coach line name the garage after an FPV VIP and are hidden (sim dd6bfb7)."
+}

@@ -1,0 +1,21 @@
+{
+  "id": "cover-w1",
+  "treatment": "colour",
+  "from": "cover-w1",
+  "world": "title",
+  "simulator": "/index.html",
+  "commit": "d2a28553",
+  "frame": [
+    1280,
+    720
+  ],
+  "crop": {
+    "left": 362,
+    "top": 0,
+    "width": 556,
+    "height": 720
+  },
+  "framing": null,
+  "clip": null,
+  "note": "The Settings row Realistic physics, cut to the row (sim 971e369)."
+}

@@ -1,0 +1,21 @@
+{
+  "id": "p4-b",
+  "treatment": "colour",
+  "from": "p4-b",
+  "world": "title",
+  "simulator": "/index.html",
+  "commit": "d2a28553",
+  "frame": [
+    1280,
+    720
+  ],
+  "crop": {
+    "left": 154,
+    "top": 0,
+    "width": 973,
+    "height": 720
+  },
+  "framing": null,
+  "clip": null,
+  "note": "The freestyle picker, the chosen map's caption led by its quad and Change (sim 27a7aad)."
+}

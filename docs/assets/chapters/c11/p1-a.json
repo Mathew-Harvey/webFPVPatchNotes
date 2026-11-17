@@ -1,0 +1,21 @@
+{
+  "id": "p1-a",
+  "treatment": "colour",
+  "from": "p1-a",
+  "world": "title",
+  "simulator": "/index.html",
+  "commit": "d2a28553",
+  "frame": [
+    1280,
+    560
+  ],
+  "crop": {
+    "left": 103,
+    "top": 0,
+    "width": 1074,
+    "height": 560
+  },
+  "framing": null,
+  "clip": null,
+  "note": "The Settings row Realistic physics on the five inch (sim 971e369, d6da8d6)."
+}

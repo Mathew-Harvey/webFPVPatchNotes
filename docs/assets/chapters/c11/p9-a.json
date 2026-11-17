@@ -1,0 +1,21 @@
+{
+  "id": "p9-a",
+  "treatment": "colour",
+  "from": "p9-a",
+  "world": "shop",
+  "simulator": "/index.html?map=warehouse&craft=whoop65&fly=1",
+  "commit": "d2a28553",
+  "frame": [
+    936,
+    770
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 936,
+    "height": 770
+  },
+  "framing": null,
+  "clip": null,
+  "note": "The workshop floor from over the start, looking north (sim 2cae556)."
+}

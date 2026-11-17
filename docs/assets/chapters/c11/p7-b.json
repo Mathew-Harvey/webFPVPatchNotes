@@ -1,0 +1,21 @@
+{
+  "id": "p7-b",
+  "treatment": "colour",
+  "from": "p7-b",
+  "world": "high",
+  "simulator": "/index.html?map=concert&craft=5inch&fly=1",
+  "commit": "d2a28553",
+  "frame": [
+    1872,
+    1232
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1872,
+    "height": 1232
+  },
+  "framing": null,
+  "clip": null,
+  "note": "Hanabi Sound at dusk on the High preset (sim cbeef2c, ebec766, 340d897)."
+}

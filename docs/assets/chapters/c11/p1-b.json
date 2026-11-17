@@ -1,0 +1,26 @@
+{
+  "id": "p1-b",
+  "treatment": "colour",
+  "from": "p1-b",
+  "world": "told",
+  "simulator": "/index.html",
+  "commit": "d2a28553",
+  "frame": [
+    960,
+    700
+  ],
+  "crop": {
+    "left": 0,
+    "top": 43,
+    "width": 548,
+    "height": 303
+  },
+  "framing": null,
+  "clip": [
+    206,
+    155.625,
+    548,
+    388.75
+  ],
+  "note": "The card in front of the first Fly on a five inch with Realistic physics on, cut to the card (sim d6da8d6)."
+}
