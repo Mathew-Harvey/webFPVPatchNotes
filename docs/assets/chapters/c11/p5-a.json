@@ -1,0 +1,21 @@
+{
+  "id": "p5-a",
+  "treatment": "colour",
+  "from": "p5-a",
+  "world": "title",
+  "simulator": "/index.html",
+  "commit": "d2a28553",
+  "frame": [
+    1280,
+    720
+  ],
+  "crop": {
+    "left": 154,
+    "top": 0,
+    "width": 973,
+    "height": 720
+  },
+  "framing": null,
+  "clip": null,
+  "note": "Multiplayer's first page: what to fly together (sim 27a7aad)."
+}

@@ -1,0 +1,21 @@
+{
+  "id": "p3-b",
+  "treatment": "colour",
+  "from": "p3-b",
+  "world": "shop",
+  "simulator": "/index.html?map=warehouse&craft=whoop65&fly=1",
+  "commit": "d2a28553",
+  "frame": [
+    936,
+    565
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 936,
+    "height": 565
+  },
+  "framing": null,
+  "clip": null,
+  "note": "Thomas on a walk between his stops at the south end of the workshop (sim 6d71b8b)."
+}

@@ -1,0 +1,21 @@
+{
+  "id": "p5-b",
+  "treatment": "colour",
+  "from": "p5-b",
+  "world": "title",
+  "simulator": "/index.html",
+  "commit": "d2a28553",
+  "frame": [
+    1280,
+    720
+  ],
+  "crop": {
+    "left": 766,
+    "top": 0,
+    "width": 514,
+    "height": 720
+  },
+  "framing": null,
+  "clip": null,
+  "note": "The drawn cover with Fly solo, Multiplayer and Mini games (sim 6f4d68b)."
+}

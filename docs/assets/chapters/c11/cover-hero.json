@@ -1,0 +1,21 @@
+{
+  "id": "cover-hero",
+  "treatment": "colour",
+  "from": "cover-hero",
+  "world": "shop",
+  "simulator": "/index.html?map=warehouse&craft=whoop65&fly=1",
+  "commit": "d2a28553",
+  "frame": [
+    870,
+    901
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 870,
+    "height": 901
+  },
+  "framing": null,
+  "clip": null,
+  "note": "Thomas at one of his stops, turned to the camera (sim 6d71b8b)."
+}

@@ -14,7 +14,7 @@
  *
  * The gate with a sponsor's mark is an official five inch track off the
  * public board, copied into tools/shoot/tracks/ as the board served it on
- * 17 November 2026, opened in the track builder's 3D view. Its name is not
+ * 17 November 2026, flown in the world from its own start. Its name is not
  * lettered, and neither is any sponsor's.
  *
  * This file is part of the WebFPV comic. Copyright 2026 Mathew Harvey
@@ -57,7 +57,7 @@ const hideChips = async (page) => {
     for (const e of document.querySelectorAll('*')) {
       if (e.children.length) continue;
       const t = (e.textContent || '').trim();
-      if (/steam|wishlist|patreon|paypal|^chapter \d+$|90%\s*er/i.test(t)) { const h = e.closest('a, button, .gp-sticker, .gate-card-tag') || e; h.style.visibility = 'hidden'; }
+      if (/steam|wishlist|patreon|paypal|^chapter \d+$/i.test(t)) { const h = e.closest('a, button, .gp-sticker, .gate-card-tag') || e; h.style.visibility = 'hidden'; }
       /* Words on the screen that name an FPV VIP (the goat herding card
        * names the garage after one) are hidden, and nothing else of them. */
       else if (/nick|heads|bardwell/i.test(t) && !e.closest('.wp-card')) e.style.visibility = 'hidden';
@@ -224,12 +224,6 @@ const worlds = Object.fromEntries([
     await page.waitForFunction(() => window.__ui.screen === 'flight', null, { timeout: 120000, polling: 500 });
     await sleep(1500);
   } }),
-  world('builder', { path: '/src/trackbuilder/index.html?class=full', track: GATE_TRACK, wait: 3000, settings: {}, storage: {}, prep: async (page) => {
-    await page.waitForFunction(() => Boolean(window.trackBuilder && window.trackBuilder.doc), null, { timeout: 120000, polling: 500 });
-    await page.waitForFunction(() => window.trackBuilder.mode === '3d' && Boolean(window.trackBuilder.view3d && window.trackBuilder.view3d.renderer), null, { timeout: 120000, polling: 500 }).catch(() => {});
-    await sleep(6000);
-    await hideChips(page);
-  } })
 ]);
 
 const jobs = [
@@ -268,7 +262,7 @@ const jobs = [
     await page.waitForFunction(() => window.__ui.gatePageNow() === 'cover', null, { timeout: 30000, polling: 300 });
     await hideChips(page);
     await sleep(2500);
-  }, 'The drawn cover with Fly solo, Multiplayer and Mini games (sim 6f4d68b).', { viewport: [1280, 720] }],
+  }, 'The drawn cover with Fly solo, Multiplayer and Mini games (sim 6f4d68b).', { viewport: [1280, 720] , focus: [0.95, 0.5] }],
   ['p4-b', 'c11-p4', 'b', 'title', async (page) => {
     await page.evaluate(() => { const u = window.__ui; u.show('title'); u.turnGate('cover'); u.act('gate-solo'); u.act('way-freestyle-5inch'); });
     await page.waitForFunction(() => window.__ui.screen === 'freestyle' && Boolean(document.querySelector('.wp-quad')), null, { timeout: 60000, polling: 500 });
@@ -293,13 +287,13 @@ const jobs = [
       const a = k[1] * Math.PI / 180; const dx = Math.cos(a); const dz = Math.sin(a);
       window.__placeCraft(p.x + dx * k[0], p.y + k[2], p.z + dz * k[0]);
       window.__goatCam = [p.x + dx * (k[0] + k[3]), p.y + k[2] + k[4], p.z + dz * (k[0] + k[3]), p.x, p.y + 0.5, p.z];
-    }, (process.env.GOAT_AT || '30,0,1.2,4,1.5').split(',').map(Number));
+    }, (process.env.GOAT_AT || '30,90,1.2,4,1.5').split(',').map(Number));
     await sleep(1500);
     await page.evaluate(() => { window.__ui.root.style.visibility = ''; window.__setCam(...window.__goatCam); });
     await hideChips(page);
     await sleep(2500);
     await hideChips(page);
-  }, 'Goat herding in flight, out of the garage, with the arrow card under the score; the card\'s line and the coach line name the garage after an FPV VIP and are hidden (sim dd6bfb7).', { viewport: [1280, 720], settle: 300 }],
+  }, 'Goat herding in flight, out of the garage, with the arrow card under the score; the card\'s line and the coach line name the garage after an FPV VIP and are hidden (sim dd6bfb7).', { viewport: [1280, 720], settle: 300 , focus: [0, 0.5] }],
   ['cover-w3', 'c11-cover', 'w3', 'goats', async (page) => { await hideChips(page); await sleep(300); }, 'The goat herding score and card, cut to them (sim dd6bfb7).', { viewport: [1280, 720], settle: 300, clip: (page) => page.evaluate(() => {
     const a = document.querySelector('.goat-aim').getBoundingClientRect(); const p = 24;
     return [0, Math.max(0, a.y - 190), Math.min(innerWidth, a.right + p), a.height + 190 + p];
@@ -312,8 +306,8 @@ const jobs = [
       window.__setCam(p.x, p.y + up, p.z, q.x, q.y + up * 0.6, q.z);
     }, GATE_CAM);
     await sleep(3000);
-  }, 'A five inch gate in the builder\'s 3D view with a sponsor\'s mark on its approach face (sim ae0b538). The track is an official one off the public board.', { viewport: [1280, 900] }],
-  ['p7-b', 'c11-p7', 'b', 'high', fromCraft(-3, 2.5, 30, 3), 'A map at dusk on the High preset (sim cbeef2c, 340d897).'],
+  }, 'Five inch gates in the world, a sponsor\'s mark on each approach face, the camera over the racing line just after the start (sim ae0b538). The track is an official one off the public board, renamed.', { viewport: [1280, 900] }],
+  ['p7-b', 'c11-p7', 'b', 'high', fromCraft(-3, 2.5, 30, 3), 'Hanabi Sound at dusk on the High preset (sim cbeef2c, ebec766, 340d897).'],
   ['p8-b', 'c11-p8', 'b', 'ekimae', async (page) => {
     await page.evaluate(() => { window.__ui.root.style.visibility = 'hidden'; });
     await page.evaluate(async (o) => {
@@ -324,7 +318,7 @@ const jobs = [
       let dx = b.b[0] - b.a[0]; let dz = b.b[2] - b.a[2]; const n = Math.hypot(dx, dz); dx /= n; dz /= n;
       const px = -dz * o[1]; const pz = dx * o[1];
       window.__setCam(mx + px * o[2] - dx * o[3], o[4], mz + pz * o[2] - dz * o[3], mx + dx * 3, 0.4, mz + dz * 3);
-    }, (process.env.BARRIER_CAM || '10,1,2.2,4,1.1').split(',').map(Number));
+    }, (process.env.BARRIER_CAM || '300,1,2.5,5,1.3').split(',').map(Number));
     await sleep(3000);
   }, 'Ekimae\'s barriers on the ground (sim a562bb6).']
 ].map(([id, page, panel, w, how, note, extra]) => Object.assign({ id, page, panel, note }, typeof how === 'string' ? { file: how, world: null } : { world: w, act: how }, extra || {}));

@@ -1,0 +1,26 @@
+{
+  "id": "cover-w3",
+  "treatment": "colour",
+  "from": "cover-w3",
+  "world": "goats",
+  "simulator": "/index.html?map=goats&craft=whoop65&fly=1",
+  "commit": "d2a28553",
+  "frame": [
+    1280,
+    720
+  ],
+  "crop": {
+    "left": 76,
+    "top": 0,
+    "width": 205,
+    "height": 259
+  },
+  "framing": null,
+  "clip": [
+    0,
+    148.390625,
+    357.34375,
+    259.4375
+  ],
+  "note": "The goat herding score and card, cut to them (sim dd6bfb7)."
+}

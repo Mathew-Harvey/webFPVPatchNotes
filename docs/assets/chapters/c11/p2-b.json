@@ -1,0 +1,21 @@
+{
+  "id": "p2-b",
+  "treatment": "colour",
+  "from": "p2-b",
+  "world": "shop",
+  "simulator": "/index.html?map=warehouse&craft=whoop65&fly=1",
+  "commit": "d2a28553",
+  "frame": [
+    468,
+    656
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 468,
+    "height": 656
+  },
+  "framing": null,
+  "clip": null,
+  "note": "The office area's corridor, looking east (sim 578bb14)."
+}

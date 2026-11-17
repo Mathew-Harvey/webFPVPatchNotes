@@ -1,0 +1,21 @@
+{
+  "id": "p7-a",
+  "treatment": "colour",
+  "from": "p7-a",
+  "world": "gates",
+  "simulator": "/index.html?map=custom&craft=5inch&fly=1",
+  "commit": "d2a28553",
+  "frame": [
+    1280,
+    900
+  ],
+  "crop": {
+    "left": 93,
+    "top": 0,
+    "width": 1095,
+    "height": 900
+  },
+  "framing": null,
+  "clip": null,
+  "note": "Five inch gates in the world, a sponsor's mark on each approach face, the camera over the racing line just after the start (sim ae0b538). The track is an official one off the public board, renamed."
+}

@@ -1,0 +1,21 @@
+{
+  "id": "p8-b",
+  "treatment": "colour",
+  "from": "p8-b",
+  "world": "ekimae",
+  "simulator": "/index.html?map=ekimae&craft=5inch&fly=1",
+  "commit": "d2a28553",
+  "frame": [
+    1872,
+    1079
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 1872,
+    "height": 1079
+  },
+  "framing": null,
+  "clip": null,
+  "note": "Ekimae's barriers on the ground (sim a562bb6)."
+}

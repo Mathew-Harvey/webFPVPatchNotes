@@ -3005,10 +3005,10 @@
           tone: 'paper',
           layout: ['h', 0.7, 0.022, 'hero', ['v', 1 / 3, 0.03, 'w1', ['v', 0.5, -0.03, 'w2', 'w3']]],
           panels: [
-            { id: 'hero', art: 'c11/cover-hero', alt: 'Inside a woodworking shop, seen from a whoop: a man in a cap and work clothes stands among the benches and turns to look at the camera.' },
+            { id: 'hero', art: 'c11/cover-hero', alt: 'Inside a woodworking shop, seen from a whoop: a bearded man in black work clothes stands among the benches, turned to look at the camera.' },
             { id: 'w1', art: 'c11/cover-w1', alt: 'The Settings row Realistic physics, switched on, with its note.', link: 'c11-p1' },
             { id: 'w2', art: 'c11/cover-w2', alt: 'The pause menu\'s Quad row: a whoop and a five inch drawn side by side, one of them chosen.', link: 'c11-p4' },
-            { id: 'w3', art: 'c11/cover-w3', alt: 'The goat herding card under the goat score: an arrow and how far the goats have to go.', link: 'c11-p6' }
+            { id: 'w3', art: 'c11/cover-w3', alt: 'The goat herding card under the goat score: an arrow and how far away the garage is.', link: 'c11-p6' }
           ],
           words: [
             { k: 'tag', x: 74, y: 80, t: 'Chapter 11', in: 'hero' },
@@ -3036,9 +3036,9 @@
           words: [
             { k: 'tag', x: 70, y: 70, t: '14 November', in: 'a' },
             { k: 'cap', x: 70, y: 120, w: 520, t: 'Realistic physics is a new switch in Settings, under Pilot. On, the quad flies at its true weight in real gravity, turns more freely, and its pack sags on a punch.', in: 'a' },
-            { k: 'cap', x: 70, yb: 905, w: 520, t: 'It is now the five inch\'s default, and the whoop\'s stays off. Before your first Fly a card says what changed and that it is experimental, with a button to go back to the old feel.', in: 'b' },
-            { k: 'note', x: 70, y: 980, w: 860, d: '14 November', t: 'Its turning, motor lag and pack sag are set from flight logs of two of andAgainFPV\'s own quads.', in: 'c', small: true },
-            { k: 'note', x: 70, y: 1140, w: 860, d: '15 November', t: 'On the keys, the rest throttle hovers on Realistic physics at every weight, and keeps hovering as the pack runs down.', in: 'c', small: true }
+            { k: 'note', x: 70, y: 950, w: 860, d: '14 November', t: 'It is now the five inch\'s default, and the whoop\'s stays off. Before your first Fly a card says what changed and that it is experimental, with a button to go back to the old feel.', in: 'c', small: true },
+            { k: 'note', x: 70, y: 1090, w: 860, d: '14 November', t: 'Its turning, its motors and its pack are matched to flight logs of two of andAgainFPV\'s own quads.', in: 'c', small: true },
+            { k: 'note', x: 70, y: 1200, w: 860, d: '15 November', t: 'On the keys, the rest throttle hovers on Realistic physics at every weight, and keeps hovering as the pack runs down.', in: 'c', small: true }
           ]
         },
         {
@@ -3065,7 +3065,7 @@
           tone: 'paper',
           layout: ['h', 0.6, 0.03, 'a', 'b'],
           panels: [
-            { id: 'a', art: 'c11/p3-a', bleed: 'tlr', alt: 'Thomas in his shop, a man in a cap and work clothes, both hands up, calling out to the whoop in a speech balloon.' },
+            { id: 'a', art: 'c11/p3-a', bleed: 'tlr', alt: 'Thomas in his shop, a bearded man in black, one hand up, calling out to the whoop in a speech balloon.' },
             { id: 'b', art: 'c11/p3-b', bleed: 'blr', alt: 'Further off, Thomas walks between the benches at the south end of the workshop.' }
           ],
           words: [
@@ -3087,7 +3087,7 @@
             { k: 'tag', x: 70, y: 70, t: '11 November', in: 'a' },
             { k: 'cap', x: 70, y: 120, w: 520, t: 'On a freestyle map or in a mini game, the pause has a Quad row: the whoop and the five inch as pictures, the one you fly hovering. Press the other to swap.', in: 'a' },
             { k: 'note', x: 70, yb: 660, w: 520, d: '11 November', t: 'In a room the host\'s press changes the room\'s quad, and everyone else sees which one it is.', in: 'a', small: true },
-            { k: 'cap', x: 70, yb: 1360, w: 520, t: 'The map picker shows the quad the map will fly, hovering, with a Change button beside it.', in: 'b' }
+            { k: 'cap', x: 70, yb: 1360, w: 520, t: 'The map picker shows the quad the map will fly, hovering, with a button beside it to change it.', in: 'b' }
           ]
         },
         {
@@ -3113,12 +3113,12 @@
           tone: 'paper',
           layout: ['h', 0.56, 0.03, 'a', 'b'],
           panels: [
-            { id: 'a', art: 'c11/p6-a', bleed: 'tlr', alt: 'Goat herding in flight, the goat score at the left and under it a card with an arrow and how far away the goats have to go.' },
+            { id: 'a', art: 'c11/p6-a', bleed: 'tlr', alt: 'Goat herding in flight, out in the street facing the open garage: the goat score at the left and under it a card with an arrow and how far away the garage is.' },
             { id: 'b', fill: 'ink', bleed: 'blr', alt: 'A black panel with three notes on it.' }
           ],
           words: [
             { k: 'tag', x: 70, y: 70, t: '12 November', in: 'a' },
-            { k: 'cap', x: 70, y: 600, w: 520, t: 'Goat herding has an arrow and a card that always say where the goats go, and how far it is.', in: 'a' },
+            { k: 'cap', x: 420, y: 600, w: 500, t: 'Goat herding has an arrow and a card that always say where the goats go, and how far it is.', in: 'a' },
             { k: 'note', x: 70, y: 860, w: 860, d: '12 November', t: 'Dogfight\'s gun and missile can be bound to a switch or a button on your radio.', in: 'b', small: true },
             { k: 'note', x: 70, y: 1010, w: 860, d: '14 November', t: 'In a Dogfight room, POP! shows only for a pilot who was popped.', in: 'b', small: true },
             { k: 'note', x: 70, y: 1160, w: 860, d: '11 November', t: 'Infected\'s room flies the whoop, and the drift smoke is partly see through.', in: 'b', small: true }
@@ -3130,8 +3130,8 @@
           tone: 'paper',
           layout: ['h', 0.56, 0.03, 'a', 'b'],
           panels: [
-            { id: 'a', art: 'c11/p7-a', bleed: 'tlr', alt: 'A five inch race gate in the track builder\'s view, a sponsor\'s mark printed on the face the pilot flies toward.' },
-            { id: 'b', art: 'c11/p7-b', bleed: 'blr', alt: 'A map on the High preset, in the manga look with its ink lines.' }
+            { id: 'a', art: 'c11/p7-a', bleed: 'tlr', alt: 'Five inch race gates on a grass field, a sponsor\'s mark printed on the face of each gate that the pilot flies toward.' },
+            { id: 'b', art: 'c11/p7-b', bleed: 'blr', alt: 'A festival ground at dusk on the High preset: the stage lit up at the far end, fireworks over it and lamps along the field.' }
           ],
           words: [
             { k: 'tag', x: 70, y: 70, t: '15 November', in: 'a' },
@@ -3146,7 +3146,7 @@
           layout: ['h', 0.62, 0.03, 'a', 'b'],
           panels: [
             { id: 'a', fill: 'ink', alt: 'A black panel with words on it.' },
-            { id: 'b', art: 'c11/p8-b', bleed: 'blr', alt: 'A street on Ekimae with its barriers, each block standing square on the ground.' }
+            { id: 'b', art: 'c11/p8-b', bleed: 'blr', alt: 'A road on Ekimae lined with concrete barriers, each block standing square on the ground.' }
           ],
           words: [
             { k: 'tag', x: 70, y: 70, t: 'Also, 10 to 16 November', in: 'a' },

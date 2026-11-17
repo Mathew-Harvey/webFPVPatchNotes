@@ -1,0 +1,21 @@
+{
+  "id": "p2-c",
+  "treatment": "colour",
+  "from": "p2-c",
+  "world": "shop",
+  "simulator": "/index.html?map=warehouse&craft=whoop65&fly=1",
+  "commit": "d2a28553",
+  "frame": [
+    501,
+    655
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 501,
+    "height": 655
+  },
+  "framing": null,
+  "clip": null,
+  "note": "The dive slot behind the teal racking (sim dde9b91)."
+}

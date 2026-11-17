@@ -1,0 +1,21 @@
+{
+  "id": "p2-a",
+  "treatment": "colour",
+  "from": "p2-a",
+  "world": "shop",
+  "simulator": "/index.html?map=warehouse&craft=whoop65&fly=1",
+  "commit": "d2a28553",
+  "frame": [
+    936,
+    693
+  ],
+  "crop": {
+    "left": 0,
+    "top": 0,
+    "width": 936,
+    "height": 693
+  },
+  "framing": null,
+  "clip": null,
+  "note": "The two rows of tubes over the barani doorway, from the crate aisle (sim dde9b91)."
+}

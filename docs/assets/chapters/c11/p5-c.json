@@ -1,0 +1,21 @@
+{
+  "id": "p5-c",
+  "treatment": "colour",
+  "from": "p5-c",
+  "world": "town",
+  "simulator": "/index.html?map=city&craft=5inch&fly=1",
+  "commit": "d2a28553",
+  "frame": [
+    1280,
+    720
+  ],
+  "crop": {
+    "left": 365,
+    "top": 0,
+    "width": 551,
+    "height": 720
+  },
+  "framing": null,
+  "clip": null,
+  "note": "The town's pause with Change map (sim b1f0c9a)."
+}
