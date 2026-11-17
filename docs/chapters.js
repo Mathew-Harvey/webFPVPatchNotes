@@ -88,7 +88,7 @@
             { k: 'letter', x: 84, y: 420, size: 96, anchor: 'start', max: 560, runs: [['FLY DECENT', 'mint']], in: 'hero' },
             { k: 'head', x: 76, y: 470, w: 520, t: 'How a browser sim got built, in the words of the pilot who built it.', in: 'hero' },
             { k: 'sub', x: 76, y: 600, w: 420, t: 'andAgainFPV', in: 'hero' },
-            { k: 'tag', x: 76, y: 680, t: 'New: Chapter 10, Infected', in: 'hero' },
+            { k: 'tag', x: 76, y: 680, t: 'New: Chapter 11, Thomas walks the shop', in: 'hero' },
             { k: 'tag', x: 66, y: 1002, t: 'The gate', in: 'w1' },
             { k: 'letter', x: 60, y: 1342, size: 44, anchor: 'start', max: 246, runs: [['THE QUESTION', 'mint']], in: 'w1' },
             { k: 'tag', x: 372, y: 1024, t: 'The builder', in: 'w2' },
@@ -2975,12 +2975,207 @@
               id: 'b',
               fill: 'paper',
               fx: [{ k: 'focus', at: [0.5, 0.56], r: [0.46, 0.3], n: 130, alpha: 0.7 }],
-              alt: 'A panel labelled Chapter 11, with one line lettered across it: the game will keep building.'
+              alt: 'A paper panel, labelled Chapter 11, with its title lettered across it: Thomas walks the shop. The next page starts it.'
             }
           ],
           words: [
             { k: 'cap', x: 70, y: 70, w: 440, t: 'A school to play tag in, your own name in a room and a flag to spiral up. Pick one and go for a fly.', in: 'a' },
             { k: 'tag', x: 80, y: 860, t: 'Chapter 11', in: 'b' },
+            { k: 'letter', x: 500, y: 1010, size: 104, rot: -3, max: 820, runs: [['THOMAS WALKS', 'mint']], in: 'b' },
+            { k: 'letter', x: 500, y: 1120, size: 104, rot: -3, max: 820, runs: [['THE SHOP', 'mint']], in: 'b' },
+            { k: 'sub', x: 160, y: 1200, w: 680, t: 'Turn the page.', center: true, in: 'b' }
+          ]
+        }
+      ]
+    },
+    {
+      id: 'c11',
+      n: 11,
+      title: 'Thomas walks the shop',
+      date: '17 November 2026',
+      sources: [
+        'Commits merged to main in the simulator (Mathew-Harvey/WebFPVSimulator) from 10 to 17 November 2026, after Chapter 10: 044f490 to d2a2855, listed in STORYBOARD.md',
+        'Thomas More\'s photos and markup of his shop, 15 and 16 November 2026, as the simulator\'s commits record them',
+        'Frames drawn by the simulator at d2a2855 for this chapter, listed in tools/shoot/c11.js'
+      ],
+      pages: [
+        {
+          id: 'c11-cover',
+          label: 'Cover',
+          tone: 'paper',
+          layout: ['h', 0.7, 0.022, 'hero', ['v', 1 / 3, 0.03, 'w1', ['v', 0.5, -0.03, 'w2', 'w3']]],
+          panels: [
+            { id: 'hero', art: 'c11/cover-hero', alt: 'Inside a woodworking shop, seen from a whoop: a man in a cap and work clothes stands among the benches and turns to look at the camera.' },
+            { id: 'w1', art: 'c11/cover-w1', alt: 'The Settings row Realistic physics, switched on, with its note.', link: 'c11-p1' },
+            { id: 'w2', art: 'c11/cover-w2', alt: 'The pause menu\'s Quad row: a whoop and a five inch drawn side by side, one of them chosen.', link: 'c11-p4' },
+            { id: 'w3', art: 'c11/cover-w3', alt: 'The goat herding card under the goat score: an arrow and how far the goats have to go.', link: 'c11-p6' }
+          ],
+          words: [
+            { k: 'tag', x: 74, y: 80, t: 'Chapter 11', in: 'hero' },
+            { k: 'letter', x: 74, y: 290, size: 176, anchor: 'start', max: 680, runs: [['WEB', 'cream'], ['FPV', 'sakura']], in: 'hero' },
+            { k: 'letter', x: 84, y: 400, size: 64, anchor: 'start', max: 760, runs: [['THOMAS WALKS THE SHOP', 'mint']], in: 'hero' },
+            { k: 'tag', x: 76, y: 470, t: '10 to 17 November 2026', in: 'hero' },
+            { k: 'tag', x: 66, y: 1002, t: 'The physics', in: 'w1' },
+            { k: 'letter', x: 60, y: 1342, size: 44, anchor: 'start', max: 270, runs: [['REALISTIC', 'mint']], in: 'w1' },
+            { k: 'tag', x: 372, y: 1024, t: 'The quad', in: 'w2' },
+            { k: 'letter', x: 352, y: 1342, size: 44, anchor: 'start', max: 270, runs: [['YOUR QUAD', 'sakura']], in: 'w2' },
+            { k: 'tag', x: 700, y: 1044, t: 'The goats', in: 'w3' },
+            { k: 'letter', x: 690, y: 1342, size: 44, anchor: 'start', max: 250, runs: [['THIS WAY', 'cream']], in: 'w3' }
+          ]
+        },
+        {
+          id: 'c11-p1',
+          label: 'Realistic physics',
+          tone: 'paper',
+          layout: ['h', 0.34, 0.03, 'a', ['h', 0.5, 0.03, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c11/p1-a', bleed: 'tlr', alt: 'The Settings page at the Realistic physics row, switched on for the five inch, its note under it.' },
+            { id: 'b', art: 'c11/p1-b', alt: 'A card in front of the first Fly: Realistic physics is on, what changed, and two buttons, Got it, fly and Use the old feel.' },
+            { id: 'c', fill: 'ink', bleed: 'blr', alt: 'A black panel with two notes on it.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '14 November', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 520, t: 'Realistic physics is a new switch in Settings, under Pilot. On, the quad flies at its true weight in real gravity, turns more freely, and its pack sags on a punch.', in: 'a' },
+            { k: 'cap', x: 70, yb: 905, w: 520, t: 'It is now the five inch\'s default, and the whoop\'s stays off. Before your first Fly a card says what changed and that it is experimental, with a button to go back to the old feel.', in: 'b' },
+            { k: 'note', x: 70, y: 980, w: 860, d: '14 November', t: 'Its turning, motor lag and pack sag are set from flight logs of two of andAgainFPV\'s own quads.', in: 'c', small: true },
+            { k: 'note', x: 70, y: 1140, w: 860, d: '15 November', t: 'On the keys, the rest throttle hovers on Realistic physics at every weight, and keeps hovering as the pack runs down.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c11-p2',
+          label: 'Thomas More\'s Shop',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c11/p2-a', bleed: 'tlr', alt: 'Two rows of square tubes laid over a wood lined doorway in the shop\'s racking, open at the near end and dark inside.' },
+            { id: 'b', art: 'c11/p2-b', alt: 'A corridor in the shop\'s office area, white walls and doors off it on both sides.' },
+            { id: 'c', art: 'c11/p2-c', bleed: 'blr', alt: 'A narrow slot between the teal racking and the office wall, just wide enough to dive a whoop into.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '15 and 16 November', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 520, t: 'Thomas More\'s Shop again, closer to the real thing. Thomas sent photos and marked up the plan, and the shop was rebuilt from them.', in: 'a' },
+            { k: 'note', x: 70, yb: 660, w: 520, d: '16 November', t: 'The barani doorway is the wood lined opening in the racking, and the rolls over it are two rows of open tubes to fly through.', in: 'a', small: true },
+            { k: 'cap', x: 70, yb: 1360, w: 380, t: 'The offices behind the flat wall are rooms you can fly: a corridor, reception, offices and a meeting room.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '16 November', t: 'The paint shop turned to run east, the Digital Department lines up with it, and there is a slot to dive into behind the teal racking.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c11-p3',
+          label: 'Thomas',
+          tone: 'paper',
+          layout: ['h', 0.6, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c11/p3-a', bleed: 'tlr', alt: 'Thomas in his shop, a man in a cap and work clothes, both hands up, calling out to the whoop in a speech balloon.' },
+            { id: 'b', art: 'c11/p3-b', bleed: 'blr', alt: 'Further off, Thomas walks between the benches at the south end of the workshop.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '17 November', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 520, t: 'And Thomas himself walks his shop. He turns to a camera that comes near, and calls out when you fly close.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 520, t: 'His walk keeps to the south end of the workshop, round where you start.', in: 'b' }
+          ]
+        },
+        {
+          id: 'c11-p4',
+          label: 'Your quad',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c11/p4-a', bleed: 'tlr', alt: 'The pause menu on a freestyle map, its Quad row drawn as two pictures, the whoop and the five inch, the one being flown chosen.' },
+            { id: 'b', art: 'c11/p4-b', bleed: 'blr', alt: 'The freestyle map picker, the chosen map\'s caption led by the quad it will fly, drawn and named, with a Change button beside it.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '11 November', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 520, t: 'On a freestyle map or in a mini game, the pause has a Quad row: the whoop and the five inch as pictures, the one you fly hovering. Press the other to swap.', in: 'a' },
+            { k: 'note', x: 70, yb: 660, w: 520, d: '11 November', t: 'In a room the host\'s press changes the room\'s quad, and everyone else sees which one it is.', in: 'a', small: true },
+            { k: 'cap', x: 70, yb: 1360, w: 520, t: 'The map picker shows the quad the map will fly, hovering, with a Change button beside it.', in: 'b' }
+          ]
+        },
+        {
+          id: 'c11-p5',
+          label: 'The front door',
+          tone: 'paper',
+          layout: ['h', 0.5, 0.03, 'a', ['v', 0.5, -0.05, 'b', 'c']],
+          panels: [
+            { id: 'a', art: 'c11/p5-a', bleed: 'tlr', alt: 'The Multiplayer page asking what to fly together, four panels: Five inch racing, Whoop racing, Freestyle and Mini games.' },
+            { id: 'b', art: 'c11/p5-b', alt: 'The drawn cover of the game with three panels: Fly solo, Multiplayer and Mini games.' },
+            { id: 'c', art: 'c11/p5-c', bleed: 'blr', alt: 'The pause menu on a freestyle map with its Change map row.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '11 November', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 520, t: 'Multiplayer asks first: five inch racing, whoop racing, freestyle or mini games. Then Host, Find or a code, and hosting opens that way\'s maps.', in: 'a' },
+            { k: 'cap', x: 70, yb: 1360, w: 380, t: 'Quit to title lands on the drawn cover again, and Mini games is back on it as a third panel.', in: 'b' },
+            { k: 'note', x: 540, yb: 1360, w: 390, d: '11 and 14 November', t: 'Pause and Results have Change map, or Change track in a race. Back from Tracks or Maps is Fly solo, and Settings from the pause comes back to Settings.', in: 'c', small: true }
+          ]
+        },
+        {
+          id: 'c11-p6',
+          label: 'Mini games',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c11/p6-a', bleed: 'tlr', alt: 'Goat herding in flight, the goat score at the left and under it a card with an arrow and how far away the goats have to go.' },
+            { id: 'b', fill: 'ink', bleed: 'blr', alt: 'A black panel with three notes on it.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '12 November', in: 'a' },
+            { k: 'cap', x: 70, y: 600, w: 520, t: 'Goat herding has an arrow and a card that always say where the goats go, and how far it is.', in: 'a' },
+            { k: 'note', x: 70, y: 860, w: 860, d: '12 November', t: 'Dogfight\'s gun and missile can be bound to a switch or a button on your radio.', in: 'b', small: true },
+            { k: 'note', x: 70, y: 1010, w: 860, d: '14 November', t: 'In a Dogfight room, POP! shows only for a pilot who was popped.', in: 'b', small: true },
+            { k: 'note', x: 70, y: 1160, w: 860, d: '11 November', t: 'Infected\'s room flies the whoop, and the drift smoke is partly see through.', in: 'b', small: true }
+          ]
+        },
+        {
+          id: 'c11-p7',
+          label: 'Gates and the look',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c11/p7-a', bleed: 'tlr', alt: 'A five inch race gate in the track builder\'s view, a sponsor\'s mark printed on the face the pilot flies toward.' },
+            { id: 'b', art: 'c11/p7-b', bleed: 'blr', alt: 'A map on the High preset, in the manga look with its ink lines.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: '15 November', in: 'a' },
+            { k: 'cap', x: 70, y: 120, w: 520, t: 'A sponsor\'s mark on a five inch gate is printed on the face you fly toward. The back wears the same racing dress without it, and a gate flown both ways keeps it on both.', in: 'a' },
+            { k: 'note', x: 70, yb: 1360, w: 600, d: '10 November', t: 'High alone gets light wrap, lamp glow at dusk and a soft contact shade. The outline is back to its normal weight on Medium and High, and the pen thins with distance.', in: 'b', small: true }
+          ]
+        },
+        {
+          id: 'c11-p8',
+          label: 'Also',
+          tone: 'paper',
+          layout: ['h', 0.62, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', fill: 'ink', alt: 'A black panel with words on it.' },
+            { id: 'b', art: 'c11/p8-b', bleed: 'blr', alt: 'A street on Ekimae with its barriers, each block standing square on the ground.' }
+          ],
+          words: [
+            { k: 'tag', x: 70, y: 70, t: 'Also, 10 to 16 November', in: 'a' },
+            { k: 'cap', x: 70, y: 130, w: 860, big: true, t: 'Fixes pilots asked for.', in: 'a' },
+            { k: 'note', x: 70, y: 235, w: 860, d: '10 November', t: 'A lesson\'s Land counts a quad resting on the pad, even with the throttle still up.', in: 'a', small: true },
+            { k: 'note', x: 70, y: 345, w: 860, d: '13 November', t: 'Into the Goggles says why a turn is not counting.', in: 'a', small: true },
+            { k: 'note', x: 70, y: 455, w: 860, d: '11 November', t: 'A Meta Quest gets the Android stick help.', in: 'a', small: true },
+            { k: 'note', x: 70, y: 565, w: 860, d: '14 November', t: 'A crash flip by hand in Angle mode no longer breaks the flight.', in: 'a', small: true },
+            { k: 'note', x: 70, y: 675, w: 860, d: '16 November', t: 'A guest\'s map vote no longer hides under the pause menu.', in: 'a', small: true },
+            { k: 'cap', x: 70, yb: 1360, w: 520, t: 'Ekimae\'s barriers meet the ground now, so you cannot get stuck under one.', in: 'b' }
+          ]
+        },
+        {
+          id: 'c11-p9',
+          label: 'Next',
+          tone: 'paper',
+          layout: ['h', 0.56, 0.03, 'a', 'b'],
+          panels: [
+            { id: 'a', art: 'c11/p9-a', bleed: 'tlr', alt: 'The shop\'s workshop floor from above the benches, the racking and the flat wall beyond.' },
+            {
+              id: 'b',
+              fill: 'paper',
+              fx: [{ k: 'focus', at: [0.5, 0.56], r: [0.46, 0.3], n: 130, alpha: 0.7 }],
+              alt: 'A panel labelled Chapter 12, with one line lettered across it: the game will keep building.'
+            }
+          ],
+          words: [
+            { k: 'cap', x: 70, y: 70, w: 440, t: 'Realistic physics is on for the five inch, and Thomas is waiting in his shop. Pick one and go for a fly.', in: 'a' },
+            { k: 'tag', x: 80, y: 860, t: 'Chapter 12', in: 'b' },
             { k: 'letter', x: 500, y: 1010, size: 84, rot: -3, max: 820, runs: [['THE GAME WILL ', 'cream']], in: 'b' },
             { k: 'letter', x: 500, y: 1110, size: 84, rot: -3, max: 820, runs: [['KEEP BUILDING.', 'sakura']], in: 'b' },
             { k: 'fly', x: 500, y: 1220, t: 'FLY NOW', name: 'Fly WebFPV', href: 'https://webfpv.org/sim/', in: 'b' }
